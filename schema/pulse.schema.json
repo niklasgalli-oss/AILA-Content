@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/schema/pulse.schema.json",
+  "title": "AILA Daily Pulse",
+  "description": "Rolling list of DailyPulseItem objects fetched by the AILA app. English is canonical. German lives under i18n.de. At most 12 items; ids are never reused.",
+  "type": "array",
+  "minItems": 1,
+  "maxItems": 12,
+  "items": {
+    "$ref": "#/$defs/dailyPulseItem"
+  },
+  "$defs": {
+    "dailyPulseItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "date",
+        "tag",
+        "readTimeMinutes",
+        "listenTimeMinutes",
+        "hook",
+        "headline",
+        "summaryPoints",
+        "takeaway",
+        "deepDiveMarkdown",
+        "source",
+        "i18n"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^pulse-[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "Stable URL-safe id. Never reuse an id after an item rolls off the list."
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Publication time in ISO-8601."
+        },
+        "tag": {
+          "type": "string",
+          "enum": [
+            "Model Release",
+            "Framework",
+            "Autonomous Agent",
+            "Benchmarks",
+            "Hardware"
+          ]
+        },
+        "readTimeMinutes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        },
+        "listenTimeMinutes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        },
+        "hook": {
+          "type": "string",
+          "minLength": 1
+        },
+        "headline": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60
+        },
+        "summaryPoints": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "takeaway": {
+          "type": "string",
+          "minLength": 1
+        },
+        "deepDiveMarkdown": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Exactly four second-level headings, in order: The Hook, The Core Mechanism, The Trade-off, Practical Takeaway. Aim for about 150-260 words in each section."
+        },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "url"],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://"
+            }
+          }
+        },
+        "i18n": {
+          "type": "object",
+          "required": ["de"],
+          "properties": {
+            "de": {
+              "$ref": "#/$defs/localizedCopy"
+            }
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/localizedCopy"
+          }
+        }
+      }
+    },
+    "localizedCopy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "headline",
+        "hook",
+        "summaryPoints",
+        "takeaway",
+        "deepDiveMarkdown"
+      ],
+      "properties": {
+        "headline": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60
+        },
+        "hook": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summaryPoints": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "takeaway": {
+          "type": "string",
+          "minLength": 1
+        },
+        "deepDiveMarkdown": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Same four ## headings as the English deep dive. Technical AI terms stay in English."
+        }
+      }
+    }
+  }
+}
