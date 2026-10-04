@@ -3,6 +3,13 @@ name: Validate pulse
 on:
   push:
   pull_request:
+  workflow_dispatch:
+    inputs:
+      check_urls:
+        description: Request each source URL and require HTTP 200
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   validate:
@@ -16,5 +23,9 @@ jobs:
         with:
           node-version: "22"
 
+      - name: Run validator tests
+        run: node --test scripts/validate.test.mjs
+
       - name: Validate pulse.json
-        run: node scripts/validate.mjs
+        # Off on push and pull_request. Publishers often block automated clients.
+        run: node scripts/validate.mjs${{ inputs.check_urls == true && ' --check-urls' || '' }}

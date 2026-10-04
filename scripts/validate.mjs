@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const schemaPath = join(root, "schema", "pulse.schema.json");
@@ -21,30 +21,219 @@ const HEADINGS = [
   "## Practical Takeaway",
 ];
 
+const ITEM_KEYS = [
+  "id",
+  "date",
+  "tag",
+  "readTimeMinutes",
+  "listenTimeMinutes",
+  "hook",
+  "headline",
+  "summaryPoints",
+  "takeaway",
+  "deepDiveMarkdown",
+  "source",
+  "i18n",
+];
+
+const COPY_KEYS = ["headline", "hook", "summaryPoints", "takeaway", "deepDiveMarkdown"];
+
 const ID_RE = /^pulse-[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const ISO_RE =
   /^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{3}Z$/;
 
-const errors = [];
+// Lemmas are lowercase. Longest first so "tokens" wins over "token".
+const GLOSSARY_LEMMAS = [
+  "context windows",
+  "context window",
+  "open weights",
+  "fine-tuning",
+  "benchmarks",
+  "benchmark",
+  "agents",
+  "agent",
+  "tokens",
+  "token",
+  "reasoning",
+  "inference",
+];
 
-function fail(path, message) {
-  errors.push(`${path}: ${message}`);
+// Product names may contain a glossary word. Matched exactly, case-sensitive.
+export const PRODUCT_NAME_ALLOWLIST = [
+  "Open Agent Safety Platform",
+  "Claude Managed Agents",
+  "Microsoft Agent 365",
+  "Agent Toolkit",
+];
+
+const CARD_FIELDS = ["headline", "hook", "summaryPoints", "takeaway"];
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-function loadJson(path) {
-  let text;
-  try {
-    text = readFileSync(path, "utf8");
-  } catch (error) {
-    fail(path, `unreadable (${error.message})`);
-    return null;
+function glossaryPattern() {
+  return new RegExp(`\\b(?:${GLOSSARY_LEMMAS.map(escapeRegExp).join("|")})\\b`, "gi");
+}
+
+function sentenceForm(lower) {
+  return lower.charAt(0).toUpperCase() + lower.slice(1);
+}
+
+export function usesHeadlineCasing(text) {
+  const words = String(text).match(/[A-Za-z][A-Za-z'-]*/g) ?? [];
+  const significant = words.filter((word) => word.replace(/[^A-Za-z]/g, "").length >= 4);
+  if (significant.length === 0) return false;
+  return significant.every((word) => /^[A-Z]/.test(word));
+}
+
+export function isSentenceStart(text, index) {
+  const before = text.slice(0, index);
+  if (before.trim() === "") return true;
+  const trailingWs = before.match(/\s*$/)[0];
+  const core = before.slice(0, before.length - trailingWs.length);
+  if (core === "") return true;
+  if (/[.!?]["'”’)\]]*$/.test(core)) return true;
+  if (trailingWs.includes("\n")) return true;
+  return false;
+}
+
+function productSpans(text) {
+  const spans = [];
+  for (const name of PRODUCT_NAME_ALLOWLIST) {
+    let from = 0;
+    while (from < text.length) {
+      const at = text.indexOf(name, from);
+      if (at === -1) break;
+      spans.push([at, at + name.length]);
+      from = at + name.length;
+    }
   }
-  try {
-    return JSON.parse(text);
-  } catch (error) {
-    fail(path, `invalid JSON (${error.message})`);
-    return null;
+  return spans;
+}
+
+function spanCovers(spans, index) {
+  return spans.some(([start, end]) => index >= start && index < end);
+}
+
+function expectedGlossaryForm(match, lower, index, text) {
+  if (match === lower) return null;
+  if (isSentenceStart(text, index) && match === sentenceForm(lower)) return null;
+  if (isSentenceStart(text, index)) return sentenceForm(lower);
+  return lower;
+}
+
+export function glossaryViolations(text, { headline = false } = {}) {
+  if (typeof text !== "string" || text === "") return [];
+  if (headline && usesHeadlineCasing(text)) return [];
+  const spans = productSpans(text);
+  const hits = [];
+  for (const match of text.matchAll(glossaryPattern())) {
+    const term = match[0];
+    const index = match.index ?? 0;
+    if (spanCovers(spans, index)) continue;
+    const expected = expectedGlossaryForm(term, term.toLowerCase(), index, text);
+    if (!expected) continue;
+    hits.push({ term, index, expected });
   }
+  return hits;
+}
+
+export function lowercaseGlossaryTerms(text, { headline = false } = {}) {
+  if (typeof text !== "string") return text;
+  if (headline && usesHeadlineCasing(text)) return text;
+  const spans = productSpans(text);
+  return text.replace(glossaryPattern(), (match, offset) => {
+    if (spanCovers(spans, offset)) return match;
+    const expected = expectedGlossaryForm(match, match.toLowerCase(), offset, text);
+    return expected ?? match;
+  });
+}
+
+export function explainsSubject(text) {
+  if (typeof text !== "string" || text.trim() === "") return false;
+  if (/\b(?:is|are|was|were)\s+(?:a|an|the|named|built|meant|designed|used|open|one)\b/i.test(text)) {
+    return true;
+  }
+  if (/,\s+(?:a|an)\s+/i.test(text)) return true;
+  if (/\b(?:means|refers to|built for|built to|short for)\b/i.test(text)) return true;
+  if (/,\s+[a-z][^.]{0,80}\bthat\b/.test(text)) return true;
+  return false;
+}
+
+export function httpsUrlError(url) {
+  if (typeof url !== "string" || url.trim() === "" || /\s/.test(url)) {
+    return "must be a well-formed https URL";
+  }
+  let parsed;
+  try {
+    parsed = new URL(url);
+  } catch {
+    return "must be a well-formed https URL";
+  }
+  if (parsed.protocol !== "https:") return "must use https";
+  if (parsed.username || parsed.password) return "must not include credentials";
+  if (!parsed.hostname || !parsed.hostname.includes(".")) return "must have a host name";
+  return null;
+}
+
+export function canonicalSourceUrl(url) {
+  const parsed = new URL(url);
+  const hostname = parsed.hostname.toLowerCase().replace(/\.$/, "");
+  const port = parsed.port ? `:${parsed.port}` : "";
+  let pathname = parsed.pathname || "/";
+  if (pathname.length > 1 && pathname.endsWith("/")) pathname = pathname.slice(0, -1);
+  return `https://${hostname}${port}${pathname}${parsed.search}`;
+}
+
+export async function fetchHttpStatus(url) {
+  try {
+    const response = await fetch(url, {
+      redirect: "follow",
+      signal: AbortSignal.timeout(20000),
+      headers: {
+        accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "user-agent": "AILA-Content-validator/1.0 (+https://github.com/niklasgalli-oss/AILA-Content)",
+      },
+    });
+    await response.body?.cancel();
+    return response.status;
+  } catch (error) {
+    const message = error?.name === "TimeoutError" ? "timed out" : error.message;
+    return `request failed (${message})`;
+  }
+}
+
+export function collectSchemaErrors(schema) {
+  const errors = [];
+  const fail = (message) => errors.push(`schema: ${message}`);
+  if (!schema || schema.type !== "array") fail("root type must be array");
+  if (schema?.maxItems !== 12) fail("maxItems must be 12");
+  if (schema?.minItems !== 1) fail("minItems must be 1");
+  const item = schema?.$defs?.dailyPulseItem;
+  const tags = item?.properties?.tag?.enum;
+  if (!Array.isArray(tags) || tags.join("|") !== TAGS.join("|")) {
+    fail("tag enum drifted from the validator");
+  }
+  if (item?.properties?.headline?.maxLength !== 60) fail("headline maxLength must be 60");
+  const points = item?.properties?.summaryPoints;
+  if (points?.minItems !== 3 || points?.maxItems !== 3) fail("summaryPoints must be exactly 3");
+  if (!item?.properties?.i18n?.required?.includes("de")) fail("i18n.de must be required");
+  for (const key of ["readTimeMinutes", "listenTimeMinutes"]) {
+    const field = item?.properties?.[key];
+    if (field?.type !== "integer" || field?.minimum !== 1 || field?.maximum !== 30) {
+      fail(`${key} must be an integer from 1 to 30`);
+    }
+  }
+  const source = item?.properties?.source;
+  if (source?.additionalProperties !== false) fail("source must reject extra fields");
+  const sourceRequired = source?.required ?? [];
+  if (sourceRequired.length !== 2 || !sourceRequired.includes("name") || !sourceRequired.includes("url")) {
+    fail("source must require name and url only");
+  }
+  const urlPattern = source?.properties?.url?.pattern ?? "";
+  if (!urlPattern.startsWith("^https://")) fail("source.url pattern must require https");
+  return errors;
 }
 
 function headingsOf(markdown) {
@@ -54,7 +243,7 @@ function headingsOf(markdown) {
     .filter((line) => line.startsWith("## "));
 }
 
-function checkDeepDive(path, markdown) {
+function checkDeepDive(fail, path, markdown) {
   if (typeof markdown !== "string" || markdown.trim() === "") {
     fail(path, "deepDiveMarkdown must be a non-empty string");
     return;
@@ -71,7 +260,7 @@ function checkDeepDive(path, markdown) {
   }
 }
 
-function checkSummary(path, points) {
+function checkSummary(fail, path, points) {
   if (!Array.isArray(points) || points.length !== 3) {
     fail(path, "summaryPoints must contain exactly 3 strings");
     return;
@@ -83,12 +272,15 @@ function checkSummary(path, points) {
   });
 }
 
-function checkLocalized(path, copy) {
+function checkLocalized(fail, path, copy) {
   if (copy === null || typeof copy !== "object" || Array.isArray(copy)) {
     fail(path, "localized copy must be an object");
     return;
   }
-  for (const key of ["headline", "hook", "takeaway", "deepDiveMarkdown", "summaryPoints"]) {
+  for (const key of Object.keys(copy)) {
+    if (!COPY_KEYS.includes(key)) fail(path, `unexpected field ${key}`);
+  }
+  for (const key of COPY_KEYS) {
     if (!(key in copy)) fail(path, `missing ${key}`);
   }
   if (typeof copy.headline !== "string") {
@@ -103,105 +295,221 @@ function checkLocalized(path, copy) {
       fail(`${path}.${key}`, "must be a non-empty string");
     }
   }
-  checkSummary(`${path}.summaryPoints`, copy.summaryPoints);
-  checkDeepDive(`${path}.deepDiveMarkdown`, copy.deepDiveMarkdown);
+  checkSummary(fail, `${path}.summaryPoints`, copy.summaryPoints);
+  checkDeepDive(fail, `${path}.deepDiveMarkdown`, copy.deepDiveMarkdown);
 }
 
-function assertSchemaShape(schema) {
-  if (!schema || schema.type !== "array") fail("schema", "root type must be array");
-  if (schema.maxItems !== 12) fail("schema", "maxItems must be 12");
-  const item = schema?.$defs?.dailyPulseItem;
-  const tags = item?.properties?.tag?.enum;
-  if (!Array.isArray(tags) || tags.join("|") !== TAGS.join("|")) {
-    fail("schema", "tag enum drifted from the validator");
-  }
-  if (item?.properties?.headline?.maxLength !== 60) {
-    fail("schema", "headline maxLength must be 60");
-  }
-  const points = item?.properties?.summaryPoints;
-  if (points?.minItems !== 3 || points?.maxItems !== 3) {
-    fail("schema", "summaryPoints must be exactly 3");
-  }
-  if (!item?.properties?.i18n?.required?.includes("de")) {
-    fail("schema", "i18n.de must be required");
+function checkGlossaryField(fail, path, text, { headline = false } = {}) {
+  if (typeof text !== "string") return;
+  for (const hit of glossaryViolations(text, { headline })) {
+    fail(
+      path,
+      `capitalised glossary term "${hit.term}"; use "${hit.expected}" unless it is a product name or starts a sentence`,
+    );
   }
 }
 
-const schema = loadJson(schemaPath);
-const pulse = loadJson(pulsePath);
-assertSchemaShape(schema);
+export async function lintFeed(pulse, options = {}) {
+  const errors = [];
+  const warnings = [];
+  const fail = (path, message) => errors.push(`${path}: ${message}`);
+  const warn = (path, message) => warnings.push(`${path}: ${message}`);
+  const now = options.now ?? Date.now();
 
-if (!Array.isArray(pulse)) {
-  fail("pulse.json", "must be a JSON array");
-} else {
+  if (!Array.isArray(pulse)) {
+    fail("pulse.json", "must be a JSON array");
+    return { errors, warnings };
+  }
   if (pulse.length < 1 || pulse.length > 12) {
     fail("pulse.json", `must contain 1 to 12 items (has ${pulse.length})`);
   }
-  const ids = new Set();
+
+  const ids = new Map();
+  const urls = new Map();
+  const urlChecks = [];
+
   pulse.forEach((item, index) => {
     const path = `pulse.json[${index}]`;
     if (item === null || typeof item !== "object" || Array.isArray(item)) {
       fail(path, "must be an object");
       return;
     }
+    for (const key of Object.keys(item)) {
+      if (!ITEM_KEYS.includes(key)) fail(path, `unexpected field ${key}`);
+    }
     if (typeof item.id !== "string" || !ID_RE.test(item.id)) {
       fail(`${path}.id`, "must match pulse-YYYY-MM-DD-short-slug");
     } else if (ids.has(item.id)) {
-      fail(`${path}.id`, `duplicate id ${item.id}`);
+      fail(`${path}.id`, `duplicate id ${item.id} (also ${ids.get(item.id)}); ids are never reused`);
     } else {
-      ids.add(item.id);
+      ids.set(item.id, path);
     }
     if (typeof item.date !== "string" || !ISO_RE.test(item.date) || Number.isNaN(Date.parse(item.date))) {
       fail(`${path}.date`, "must be an ISO-8601 UTC timestamp with millisecond precision");
-    } else if (typeof item.id === "string" && !item.id.startsWith(`pulse-${item.date.slice(0, 10)}-`)) {
-      fail(`${path}.id`, "date prefix must match the UTC calendar date");
+    } else {
+      if (typeof item.id === "string" && !item.id.startsWith(`pulse-${item.date.slice(0, 10)}-`)) {
+        fail(`${path}.id`, "date prefix must match the UTC calendar date");
+      }
+      if (Date.parse(item.date) > now) fail(`${path}.date`, "must not be in the future");
     }
-    if (!TAGS.includes(item.tag)) {
-      fail(`${path}.tag`, `must be one of ${TAGS.join(", ")}`);
-    }
+    if (!TAGS.includes(item.tag)) fail(`${path}.tag`, `must be one of ${TAGS.join(", ")}`);
     for (const key of ["readTimeMinutes", "listenTimeMinutes"]) {
       const value = item[key];
       if (!Number.isInteger(value) || value < 1 || value > 30) {
-        fail(`${path}.${key}`, "must be an integer from 1 to 30");
+        fail(`${path}.${key}`, "must be a positive whole number of minutes from 1 to 30");
       }
     }
-    checkLocalized(path, {
+    checkLocalized(fail, path, {
       headline: item.headline,
       hook: item.hook,
       summaryPoints: item.summaryPoints,
       takeaway: item.takeaway,
       deepDiveMarkdown: item.deepDiveMarkdown,
     });
+    for (const field of CARD_FIELDS) {
+      if (field === "summaryPoints") {
+        if (Array.isArray(item.summaryPoints)) {
+          item.summaryPoints.forEach((point, pointIndex) => {
+            checkGlossaryField(fail, `${path}.summaryPoints[${pointIndex}]`, point);
+          });
+        }
+      } else {
+        checkGlossaryField(fail, `${path}.${field}`, item[field], { headline: field === "headline" });
+      }
+    }
+    const hookOk = typeof item.hook === "string" && item.hook.trim() !== "";
+    const firstPoint = Array.isArray(item.summaryPoints) ? item.summaryPoints[0] : undefined;
+    const pointOk = typeof firstPoint === "string" && firstPoint.trim() !== "";
+    if (hookOk && pointOk && !explainsSubject(item.hook) && !explainsSubject(firstPoint)) {
+      warn(
+        path,
+        "beginner sentence: hook or summaryPoints[0] should say what this is, in plain language, before the news",
+      );
+    }
     const source = item.source;
-    if (!source || typeof source !== "object") {
+    if (!source || typeof source !== "object" || Array.isArray(source)) {
       fail(`${path}.source`, "must be an object with name and url");
     } else {
-      if (typeof source.name !== "string" || source.name.trim() === "") {
-        fail(`${path}.source.name`, "must be a non-empty string");
+      for (const key of Object.keys(source)) {
+        if (key !== "name" && key !== "url") fail(`${path}.source`, `unexpected field ${key}`);
       }
-      if (typeof source.url !== "string" || !source.url.startsWith("https://")) {
-        fail(`${path}.source.url`, "must be an https URL");
+      if (typeof source.name !== "string" || source.name.trim() === "") {
+        fail(`${path}.source.name`, "must be a non-empty publisher name");
+      }
+      const urlProblem = httpsUrlError(source.url);
+      if (urlProblem) {
+        fail(`${path}.source.url`, urlProblem);
       } else {
-        try {
-          const parsed = new URL(source.url);
-          if (parsed.protocol !== "https:") fail(`${path}.source.url`, "must be https");
-        } catch {
-          fail(`${path}.source.url`, "must be a valid URL");
+        const canonical = canonicalSourceUrl(source.url);
+        if (urls.has(canonical)) {
+          fail(
+            `${path}.source.url`,
+            `duplicate of ${urls.get(canonical)}; do not reuse a source URL under a new headline`,
+          );
+        } else {
+          urls.set(canonical, item.id ?? path);
         }
+        urlChecks.push({ path: `${path}.source.url`, url: source.url });
       }
     }
-    if (!item.i18n || typeof item.i18n !== "object" || !item.i18n.de) {
+    if (!item.i18n || typeof item.i18n !== "object" || Array.isArray(item.i18n)) {
+      fail(`${path}.i18n`, "must be an object with de");
+    } else if (!item.i18n.de) {
       fail(`${path}.i18n.de`, "German copy is required");
     } else {
-      checkLocalized(`${path}.i18n.de`, item.i18n.de);
+      for (const [locale, copy] of Object.entries(item.i18n)) {
+        checkLocalized(fail, `${path}.i18n.${locale}`, copy);
+      }
     }
   });
+
+  if (options.checkUrls) {
+    const fetchStatus = options.fetchUrl ?? fetchHttpStatus;
+    const results = await Promise.all(
+      urlChecks.map(async (target) => ({ ...target, status: await fetchStatus(target.url) })),
+    );
+    for (const result of results) {
+      if (result.status !== 200) {
+        const detail = typeof result.status === "number" ? `HTTP ${result.status}` : result.status;
+        fail(result.path, `expected HTTP 200, got ${detail}`);
+      }
+    }
+  }
+
+  return { errors, warnings };
 }
 
-if (errors.length > 0) {
-  console.error(`pulse.json failed validation (${errors.length})`);
-  for (const error of errors) console.error(`- ${error}`);
-  process.exit(1);
+function loadJson(path, fail) {
+  let text;
+  try {
+    text = readFileSync(path, "utf8");
+  } catch (error) {
+    fail(path, `unreadable (${error.message})`);
+    return null;
+  }
+  try {
+    return JSON.parse(text);
+  } catch (error) {
+    fail(path, `invalid JSON (${error.message})`);
+    return null;
+  }
 }
 
-console.log(`pulse.json ok (${pulse.length} item${pulse.length === 1 ? "" : "s"})`);
+function parseArgs(argv) {
+  let checkUrls = false;
+  for (const arg of argv) {
+    if (arg === "--check-urls") checkUrls = true;
+    else if (arg === "--help" || arg === "-h") return { help: true, checkUrls: false };
+    else throw new Error(`unknown argument: ${arg}`);
+  }
+  return { help: false, checkUrls };
+}
+
+async function main() {
+  const args = parseArgs(process.argv.slice(2));
+  if (args.help) {
+    console.log("Usage: node scripts/validate.mjs [--check-urls]");
+    console.log("Checks schema/pulse.schema.json and pulse.json.");
+    console.log("--check-urls requests each source URL and requires HTTP 200.");
+    return;
+  }
+
+  const errors = [];
+  const fail = (path, message) => errors.push(`${path}: ${message}`);
+  const schema = loadJson(schemaPath, fail);
+  const pulse = loadJson(pulsePath, fail);
+  if (schema) errors.push(...collectSchemaErrors(schema));
+  let warnings = [];
+  if (pulse) {
+    const result = await lintFeed(pulse, { checkUrls: args.checkUrls, now: Date.now() });
+    errors.push(...result.errors);
+    warnings = result.warnings;
+  }
+
+  if (errors.length > 0) {
+    console.error(`pulse.json failed validation (${errors.length} error${errors.length === 1 ? "" : "s"})`);
+    for (const error of errors) console.error(`- ${error}`);
+  }
+  if (warnings.length > 0) {
+    console.error(`pulse.json warnings (${warnings.length})`);
+    for (const warning of warnings) console.error(`- ${warning}`);
+  }
+  if (errors.length > 0) process.exit(1);
+
+  const count = Array.isArray(pulse) ? pulse.length : 0;
+  const warningNote = warnings.length === 0 ? "" : `, ${warnings.length} warning${warnings.length === 1 ? "" : "s"}`;
+  console.log(`pulse.json ok (${count} item${count === 1 ? "" : "s"}${warningNote})`);
+}
+
+function isDirectRun() {
+  const entry = process.argv[1];
+  if (!entry) return false;
+  return import.meta.url === pathToFileURL(entry).href;
+}
+
+if (isDirectRun()) {
+  main().catch((error) => {
+    console.error(error.message);
+    process.exit(1);
+  });
+}
