@@ -10,6 +10,14 @@ https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/pulse.json
 
 An AI news bot updates `pulse.json` three times a day. Each entry is a `DailyPulseItem`. English is the primary language in the top-level fields. German copy lives under `i18n.de`.
 
+## Legal
+
+The privacy policy and the legal notice (Impressum) are static pages in `docs/`, published with GitHub Pages from the `main` branch folder `/docs`. `pulse.json` stays at the repository root. The app keeps loading it from the raw URL above.
+
+- [Datenschutzerklärung](https://niklasgalli-oss.github.io/AILA-Content/privacy/) (German)
+- [Privacy policy](https://niklasgalli-oss.github.io/AILA-Content/privacy/en/) (English)
+- [Impressum / Legal notice](https://niklasgalli-oss.github.io/AILA-Content/impressum/)
+
 ## Item shape
 
 `pulse.json` is a JSON array. The contract is `schema/pulse.schema.json`. `scripts/validate.mjs` checks the file on every push and pull request (see `.github/workflows/validate-pulse.yml`).
