@@ -81,6 +81,27 @@ const NOW = Date.parse("2026-10-04T12:00:00.000Z");
 
 test("schema still matches the validator contract", () => {
   assert.deepEqual(collectSchemaErrors(schema), []);
+  assert.equal(schema.$defs.dailyPulseItem.required.includes("priority"), false);
+  assert.equal(schema.$defs.dailyPulseItem.additionalProperties, false);
+});
+
+test("Tools tag is accepted and priority stays optional", async () => {
+  const omitted = await lintFeed([item({ tag: "Tools" })], { now: NOW });
+  assert.deepEqual(omitted.errors, []);
+  assert.equal(Object.hasOwn(item({ tag: "Tools" }), "priority"), false);
+
+  for (const priority of ["normal", "breaking"]) {
+    const result = await lintFeed([item({ tag: "Tools", priority })], { now: NOW });
+    assert.deepEqual(result.errors, [], priority);
+  }
+
+  const routine = await lintFeed([item()], { now: NOW });
+  assert.deepEqual(routine.errors, []);
+
+  for (const priority of ["urgent", "", null, 1]) {
+    const result = await lintFeed([item({ priority })], { now: NOW });
+    assert.match(result.errors.join("\n"), /priority/, String(priority));
+  }
 });
 
 test("live source URLs are https and match the schema pattern", () => {

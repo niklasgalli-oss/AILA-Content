@@ -45,8 +45,18 @@
             "Framework",
             "Autonomous Agent",
             "Benchmarks",
-            "Hardware"
-          ]
+            "Hardware",
+            "Tools"
+          ],
+          "description": "Tools is for consumer and everyday products people can try today (ChatGPT features, free tiers, mobile apps, SDKs end users install), not for research papers or infrastructure alone."
+        },
+        "priority": {
+          "type": "string",
+          "enum": [
+            "normal",
+            "breaking"
+          ],
+          "description": "`breaking` marks major model/product launches the app may pin at the top; omit or use `normal` for routine daily items."
         },
         "readTimeMinutes": {
           "type": "integer",

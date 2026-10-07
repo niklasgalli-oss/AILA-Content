@@ -12,7 +12,10 @@ const TAGS = [
   "Autonomous Agent",
   "Benchmarks",
   "Hardware",
+  "Tools",
 ];
+
+const PRIORITIES = ["normal", "breaking"];
 
 const HEADINGS = [
   "## The Hook",
@@ -25,6 +28,7 @@ const ITEM_KEYS = [
   "id",
   "date",
   "tag",
+  "priority",
   "readTimeMinutes",
   "listenTimeMinutes",
   "hook",
@@ -215,6 +219,12 @@ export function collectSchemaErrors(schema) {
   if (!Array.isArray(tags) || tags.join("|") !== TAGS.join("|")) {
     fail("tag enum drifted from the validator");
   }
+  const priority = item?.properties?.priority;
+  const priorityEnum = priority?.enum;
+  if (priority?.type !== "string" || !Array.isArray(priorityEnum) || priorityEnum.join("|") !== PRIORITIES.join("|")) {
+    fail("priority must be an optional string enum of normal or breaking");
+  }
+  if (item?.required?.includes("priority")) fail("priority must not be required");
   if (item?.properties?.headline?.maxLength !== 60) fail("headline maxLength must be 60");
   const points = item?.properties?.summaryPoints;
   if (points?.minItems !== 3 || points?.maxItems !== 3) fail("summaryPoints must be exactly 3");
@@ -353,6 +363,9 @@ export async function lintFeed(pulse, options = {}) {
       if (Date.parse(item.date) > now) fail(`${path}.date`, "must not be in the future");
     }
     if (!TAGS.includes(item.tag)) fail(`${path}.tag`, `must be one of ${TAGS.join(", ")}`);
+    if (Object.prototype.hasOwnProperty.call(item, "priority") && !PRIORITIES.includes(item.priority)) {
+      fail(`${path}.priority`, `must be one of ${PRIORITIES.join(", ")} when set`);
+    }
     for (const key of ["readTimeMinutes", "listenTimeMinutes"]) {
       const value = item[key];
       if (!Number.isInteger(value) || value < 1 || value > 30) {
