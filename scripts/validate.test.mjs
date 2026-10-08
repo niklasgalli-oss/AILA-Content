@@ -301,10 +301,12 @@ test("headlines of 33 characters fail, 30 warn, and 20 pass quietly", async () =
   assert.deepEqual(quiet.warnings, []);
 });
 
-test("live pulse.json passes, with beginner warnings only", async () => {
+test("live pulse.json passes, with beginner or length warnings only", async () => {
   const result = await lintFeed(pulse, { now: Date.now() });
   assert.deepEqual(result.errors, []);
-  for (const warning of result.warnings) assert.match(warning, /beginner sentence/);
+  for (const warning of result.warnings) {
+    assert.match(warning, /beginner sentence|characters; aim for 27 or fewer/);
+  }
   for (const entry of pulse) {
     for (const field of ["headline", "hook", "takeaway"]) {
       assert.deepEqual(

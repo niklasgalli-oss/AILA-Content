@@ -7,7 +7,7 @@
     "readTimeMinutes": 5,
     "listenTimeMinutes": 6,
     "hook": "Gemini is the AI chatbot from Google, and from October 9 its free plan will only include the small Flash Lite model, The Verge reports.",
-    "headline": "Gemini free: Flash Lite",
+    "headline": "Gemini free plan downgrades",
     "summaryPoints": [
       "The Verge reported on October 6, 2026 that free Gemini users lose Flash and Pro on October 9 and keep only Flash Lite, while Flash moves to the $4.99 per month AI Plus plan.",
       "This comes from one news report on Google's plans; it does not spell out exact usage limits per plan or say whether every country switches on the same day.",
@@ -21,7 +21,7 @@
     },
     "i18n": {
       "de": {
-        "headline": "Gemini gratis: Flash Lite",
+        "headline": "Gratis-Gemini wird schwächer",
         "hook": "Gemini ist der KI-Chatbot von Google, und ab dem 9. Oktober enthält der kostenlose Tarif nur noch das kleine Modell Flash Lite, berichtet The Verge.",
         "summaryPoints": [
           "Laut The Verge (6. Oktober 2026) verlieren Gratis-Nutzer von Gemini am 9. Oktober Flash und Pro und behalten nur Flash Lite, Flash wandert ins Abo AI Plus für 4,99 US-Dollar im Monat.",
@@ -41,7 +41,7 @@
     "readTimeMinutes": 5,
     "listenTimeMinutes": 6,
     "hook": "Claude for Startups is a program from Anthropic that now gives young companies a free year of its group plan plus credits for building with Claude.",
-    "headline": "Free year of Claude Team",
+    "headline": "Startups get Claude free",
     "summaryPoints": [
       "TechCrunch reported on October 6, 2026 that the expanded program includes a free year of Claude Team with up to five premium seats and $1,000 in API credits.",
       "Only companies founded in the last five years or funded in the last two qualify, they must apply, and the report does not say what pricing applies after the free year.",
@@ -55,7 +55,7 @@
     },
     "i18n": {
       "de": {
-        "headline": "Claude Team ein Jahr gratis",
+        "headline": "Claude gratis für Start-ups",
         "hook": "Claude for Startups ist ein Programm von Anthropic, das jungen Firmen jetzt ein Gratisjahr im Team-Tarif plus Guthaben zum Entwickeln mit Claude gibt.",
         "summaryPoints": [
           "Laut TechCrunch (6. Oktober 2026) umfasst das erweiterte Programm ein kostenloses Jahr Claude Team mit bis zu fünf Premium-Plätzen und 1.000 US-Dollar API-Guthaben.",
@@ -75,7 +75,7 @@
     "readTimeMinutes": 5,
     "listenTimeMinutes": 6,
     "hook": "Hark Pro is an AI assistant that operates your computer for you, and the startup Hark released it widely on October 6 with a free tier.",
-    "headline": "Hark Pro uses your computer",
+    "headline": "AI that runs your computer",
     "summaryPoints": [
       "TechCrunch reported on October 6, 2026 that Hark Pro is free to use, with a paid tier for heavy users, and runs on a model trained specifically for computer use.",
       "The claims that it beats rivals and protects your data come from Hark's own design lead, not from an independent test or security review.",
@@ -89,7 +89,7 @@
     },
     "i18n": {
       "de": {
-        "headline": "Hark Pro bedient deinen PC",
+        "headline": "KI bedient deinen Computer",
         "hook": "Hark Pro ist ein KI-Assistent, der deinen Computer für dich bedient, und das Start-up Hark hat ihn am 6. Oktober mit einem Gratis-Tarif breit veröffentlicht.",
         "summaryPoints": [
           "Laut TechCrunch (6. Oktober 2026) ist Hark Pro kostenlos nutzbar, hat ein Abo für Vielnutzer und läuft auf einem Modell, das speziell für Computer Use trainiert wurde.",
@@ -109,7 +109,7 @@
     "readTimeMinutes": 5,
     "listenTimeMinutes": 6,
     "hook": "Nano Banana 2.1 is Google's new AI model for creating and editing images from text, and it is already rolling out in the Gemini app at about half the old API price.",
-    "headline": "Nano Banana 2.1 is cheaper",
+    "headline": "Cheaper AI images in Gemini",
     "summaryPoints": [
       "Nano Banana 2.1 is an image model you can use in the Gemini app, and The Decoder reported on October 6, 2026 that Google now charges 3.36 cents per 1K image in its API, down from 6.70 cents.",
       "Google's claims of better text in images and consistent characters rest on its own preference scores, and in The Decoder's own test Nano Banana Pro still looked more realistic.",
@@ -123,7 +123,7 @@
     },
     "i18n": {
       "de": {
-        "headline": "Nano Banana 2.1: günstiger",
+        "headline": "KI-Bilder für den halben Preis",
         "hook": "Nano Banana 2.1 ist Googles neues KI-Modell, das Bilder aus Text erstellt und bearbeitet, und es kommt gerade in die Gemini-App, zum etwa halben API-Preis.",
         "summaryPoints": [
           "Nano Banana 2.1 ist ein Bildmodell, das du in der Gemini-App nutzen kannst. Laut The Decoder (6. Oktober 2026) kostet ein 1K-Bild über Googles API jetzt 3,36 Cent statt 6,70 Cent.",
@@ -143,7 +143,7 @@
     "readTimeMinutes": 5,
     "listenTimeMinutes": 6,
     "hook": "A text watermark is an invisible pattern hidden in an AI model's word choices, and OpenAI says ChatGPT and Codex will add one to text for EU users in the coming weeks.",
-    "headline": "ChatGPT watermarks EU text",
+    "headline": "ChatGPT text gets a watermark",
     "summaryPoints": [
       "OpenAI's watermark, called textGrain, nudges which words the model picks, and on October 5, 2026 OpenAI said it will reach eligible ChatGPT and Codex users on all EU plans, with no exact date yet.",
       "All detection figures are OpenAI's own: Mixed reported on October 7, 2026 that, per OpenAI, swapping 25% of the words in a 400-token passage cut detection from about 92% to 17%.",
@@ -157,7 +157,7 @@
     },
     "i18n": {
       "de": {
-        "headline": "EU-Wasserzeichen in ChatGPT",
+        "headline": "ChatGPT-Texte mit Wasserzeichen",
         "hook": "Ein Text-Wasserzeichen ist ein unsichtbares Muster in der Wortwahl eines KI-Modells, und laut OpenAI bekommen ChatGPT und Codex in der EU in den kommenden Wochen eines.",
         "summaryPoints": [
           "OpenAIs Wasserzeichen heißt textGrain und lenkt leicht, welche Wörter das Modell wählt. Laut OpenAI (5. Oktober 2026) kommt es für berechtigte Nutzer aller Tarife in der EU, ein genaues Datum fehlt noch.",
@@ -177,7 +177,7 @@
     "readTimeMinutes": 5,
     "listenTimeMinutes": 6,
     "hook": "SynthID is an invisible watermark that Google and its partners hide in AI-made images, videos and audio, and Google's free SynthID Detector website now lets anyone check a file for it.",
-    "headline": "SynthID Detector for all",
+    "headline": "Spot AI fakes yourself",
     "summaryPoints": [
       "On October 7, 2026 Google opened SynthID Detector at synthid.com to everyone in English, and Ars Technica reported the same day that it checks uploads for watermarks from Google, OpenAI, Nvidia, Kakao and, soon, Apple.",
       "A \"not found\" proves little: Ars Technica notes that Meta uses a different watermark, many tools use none, and open-weight models people run at home can skip labels entirely.",
@@ -191,7 +191,7 @@
     },
     "i18n": {
       "de": {
-        "headline": "SynthID Detector für alle",
+        "headline": "KI-Fakes selbst erkennen",
         "hook": "SynthID ist ein unsichtbares Wasserzeichen, das Google und seine Partner in KI-Bilder, -Videos und -Audio einbauen, und mit Googles kostenloser Website SynthID Detector kann jetzt jeder eine Datei darauf prüfen.",
         "summaryPoints": [
           "Google hat SynthID Detector am 7. Oktober 2026 unter synthid.com für alle geöffnet, auf Englisch; laut Ars Technica erkennt die Seite Wasserzeichen von Google, OpenAI, Nvidia, Kakao und bald auch Apple.",
@@ -211,7 +211,7 @@
     "readTimeMinutes": 5,
     "listenTimeMinutes": 6,
     "hook": "Playground is an experimental Google Labs website where you describe a game in plain words and AI builds it, and Google launched it on October 7, 2026 for adults in the US.",
-    "headline": "Playground: prompt to game",
+    "headline": "Turn a prompt into a game",
     "summaryPoints": [
       "TechCrunch reported on October 7, 2026 that Playground lets you pick a genre, 2D or 3D and single or multiplayer, describe the rules and style, then play or share the browser game on a phone or laptop.",
       "For now only people 18 and older in the US can use it, and building games draws on a weekly token allowance that is limited on the free tier, according to TechCrunch.",
@@ -225,7 +225,7 @@
     },
     "i18n": {
       "de": {
-        "headline": "Playground macht ein Spiel",
+        "headline": "Spiele per Prompt bauen",
         "hook": "Playground ist eine experimentelle Website von Google Labs, auf der du ein Spiel in normalen Worten beschreibst und die KI es baut; Google hat sie am 7. Oktober 2026 für Erwachsene in den USA gestartet.",
         "summaryPoints": [
           "Laut TechCrunch vom 7. Oktober 2026 wählst du bei Playground ein Genre, 2D oder 3D und Einzel- oder Mehrspieler, beschreibst Regeln und Stil und spielst oder teilst das Browserspiel dann auf Handy oder Laptop.",
@@ -245,7 +245,7 @@
     "readTimeMinutes": 6,
     "listenTimeMinutes": 7,
     "hook": "An embedding model is a kind of AI that turns text, images or sound into lists of numbers so software can find similar things, and Google's new EmbeddingGemma 2 does this for free on phones and laptops.",
-    "headline": "EmbeddingGemma 2 on device",
+    "headline": "Free AI search on your phone",
     "summaryPoints": [
       "Mixed reported on October 7, 2026 that EmbeddingGemma 2 has 740 million parameters, maps text, code, images, video and audio into one 768-number space, and ships under Apache 2.0 with no download approval.",
       "All scores are Google's own, and Mixed notes the model card compares only against EmbeddingGemma 1, for example 78.68 versus 68.76 on the MTEB code benchmark.",
@@ -259,7 +259,7 @@
     },
     "i18n": {
       "de": {
-        "headline": "EmbeddingGemma 2 aufs Gerät",
+        "headline": "Gratis KI-Suche auf dem Handy",
         "hook": "Ein Embedding-Modell verwandelt Text, Bilder oder Töne in Zahlenreihen, damit Software Ähnliches findet, und Googles neues EmbeddingGemma 2 macht das kostenlos direkt auf Handy und Laptop.",
         "summaryPoints": [
           "Laut Mixed vom 7. Oktober 2026 hat EmbeddingGemma 2 740 Millionen Parameter, bildet Text, Code, Bilder, Video und Audio in einem gemeinsamen Raum aus 768 Zahlen ab und steht unter Apache 2.0 ohne Freigabepflicht zum Download.",
@@ -279,7 +279,7 @@
     "readTimeMinutes": 5,
     "listenTimeMinutes": 6,
     "hook": "Claude for Google Workspace is an add-on that puts Anthropic's chatbot in a sidebar next to your open document, spreadsheet or slide deck, so it can edit the file directly.",
-    "headline": "Claude in Google Workspace",
+    "headline": "Claude edits your Google Docs",
     "summaryPoints": [
       "9to5Google reported on October 6, 2026 that the add-on is in public beta for all paid Claude plans and that one install from the Google Workspace Marketplace covers Docs, Sheets and Slides.",
       "The feature list comes from Anthropic, and it is still a beta: Anthropic's help center says Firefox is not supported and that closing the sidebar stops the current task.",
@@ -293,7 +293,7 @@
     },
     "i18n": {
       "de": {
-        "headline": "Claude in Googles Workspace",
+        "headline": "Claude bearbeitet Google Docs",
         "hook": "Claude for Google Workspace ist ein Add-on, das Anthropics Chatbot in eine Seitenleiste neben dein geöffnetes Dokument, deine Tabelle oder Präsentation holt, damit er die Datei direkt bearbeiten kann.",
         "summaryPoints": [
           "Laut 9to5Google vom 6. Oktober 2026 ist das Add-on als öffentliche Beta in allen bezahlten Claude-Tarifen verfügbar, und eine Installation aus dem Google Workspace Marketplace deckt Docs, Sheets und Slides ab.",
@@ -313,7 +313,7 @@
     "readTimeMinutes": 6,
     "listenTimeMinutes": 7,
     "hook": "GPT-6 is the new model family behind ChatGPT's main chat, and it can now answer with charts, buttons and small interactive tools instead of only text.",
-    "headline": "GPT-6 in ChatGPT",
+    "headline": "ChatGPT answers visually now",
     "summaryPoints": [
       "OpenAI said on October 7, 2026 that GPT-6 is rolling out in ChatGPT's Chat tab with Intelligent UI, starting with GPT-6 Sol for Plus, Pro, Business and Enterprise and reaching Free and Go users with GPT-6 Luna from October 8.",
       "The speed figure is OpenAI's own: it says GPT-6 Instant starts answers that need a web search 44% sooner on average than GPT-5.6 Instant, which measures the first words, not a finished answer.",
@@ -327,7 +327,7 @@
     },
     "i18n": {
       "de": {
-        "headline": "GPT-6 jetzt in ChatGPT",
+        "headline": "ChatGPT antwortet jetzt visuell",
         "hook": "GPT-6 ist die neue Modellfamilie hinter dem normalen Chat von ChatGPT und kann jetzt mit Diagrammen, Buttons und kleinen interaktiven Werkzeugen antworten statt nur mit Text.",
         "summaryPoints": [
           "Laut OpenAI vom 7. Oktober 2026 wird GPT-6 mit Intelligent UI im Chat von ChatGPT ausgerollt, zuerst als GPT-6 Sol für Plus, Pro, Business und Enterprise und ab dem 8. Oktober als GPT-6 Luna für Free- und Go-Nutzer.",
@@ -347,7 +347,7 @@
     "readTimeMinutes": 5,
     "listenTimeMinutes": 6,
     "hook": "Claude Haiku 5.5 is the smallest and fastest model in Anthropic's current Claude lineup, built for quick everyday jobs like summaries and sorting, and it now costs far less to run.",
-    "headline": "Haiku 5.5: fast and cheap",
+    "headline": "Claude Haiku gets far cheaper",
     "summaryPoints": [
       "Anthropic released Claude Haiku 5.5 on October 7, 2026 and says it costs around 75% less to run than Haiku 4.5 on average, with API prices starting at $0.10 per million input tokens.",
       "The big jumps, such as 72.4% on OSWorld 2.1 versus 15.7% for Haiku 4.5, are Anthropic's own benchmark numbers, and Anthropic itself says Sonnet 5.5 and Opus 5.5 remain better for complex coding work.",
@@ -361,7 +361,7 @@
     },
     "i18n": {
       "de": {
-        "headline": "Haiku 5.5: schnell, günstig",
+        "headline": "Claude Haiku wird viel billiger",
         "hook": "Claude Haiku 5.5 ist das kleinste und schnellste Modell in Anthropics aktueller Claude-Reihe, gedacht für schnelle Alltagsaufgaben wie Zusammenfassen und Sortieren, und es kostet jetzt deutlich weniger.",
         "summaryPoints": [
           "Anthropic hat Claude Haiku 5.5 am 7. Oktober 2026 veröffentlicht und gibt an, dass es im Schnitt rund 75 Prozent günstiger läuft als Haiku 4.5, mit API-Preisen ab 0,10 US-Dollar pro Million Input-Token.",
@@ -381,7 +381,7 @@
     "readTimeMinutes": 5,
     "listenTimeMinutes": 6,
     "hook": "Meetings is a new plugin for the ChatGPT app on Mac that listens to a video call or an in-person meeting and turns it into notes, a summary and suggested next steps.",
-    "headline": "ChatGPT: Mac meeting notes",
+    "headline": "ChatGPT takes meeting notes",
     "summaryPoints": [
       "News9 reported on October 7, 2026 that OpenAI's Meetings plugin is in beta for ChatGPT Pro and Business users in the macOS desktop app and records audio without a bot joining the call.",
       "It is not for everyone yet: Free, Go and Plus users are not included, Windows, iOS and Android are only planned, and OpenAI itself tells users to review important details because the notes can miss parts of a conversation.",
@@ -395,7 +395,7 @@
     },
     "i18n": {
       "de": {
-        "headline": "ChatGPT-Notizen auf dem Mac",
+        "headline": "ChatGPT schreibt Meeting-Notizen",
         "hook": "Meetings ist ein neues Plugin für die ChatGPT-App auf dem Mac, das einen Videocall oder ein Gespräch vor Ort mithört und daraus Notizen, eine Zusammenfassung und Vorschläge für nächste Schritte macht.",
         "summaryPoints": [
           "Laut News9 vom 7. Oktober 2026 ist OpenAIs Meetings-Plugin als Beta für ChatGPT Pro und Business in der Desktop-App für macOS verfügbar und nimmt Audio auf, ohne dass ein Bot dem Call beitritt.",
