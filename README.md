@@ -2,7 +2,7 @@
 
 Content feed for [AILA](https://github.com/niklasgalli-oss/AILA-Development), an Expo / React Native app for learning about AI. This repository holds the stories the app loads. The app code lives in the private app repo.
 
-The app fetches one file at runtime:
+The app fetches its feeds at runtime. The daily pulse is:
 
 ```
 https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/pulse.json
@@ -43,7 +43,8 @@ Run the check locally:
 
 ```bash
 node scripts/validate.mjs
-node --test scripts/validate.test.mjs
+node scripts/validate-briefing.mjs
+node --test scripts/validate.test.mjs scripts/validate-briefing.test.mjs
 node scripts/validate.mjs --check-urls
 ```
 
@@ -84,3 +85,31 @@ Keep at most 12 items.
 Write `i18n.de` in German. Keep the glossary terms in English inside that German text. German capitalises nouns, so the English term stays capitalised there (`Agent`, `Token`, `Benchmark`, `Context Window`). That capitalisation is correct in German and the validator does not flag it.
 
 In English fields the same words are ordinary lowercase nouns (`agent`, `token`, `benchmark`, `context window`), except as product names or at the start of a sentence or in a title-cased headline.
+
+## Daily briefing (briefing.json)
+
+The app also fetches a short daily briefing:
+
+```
+https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/briefing.json
+```
+
+`briefing.json` is one JSON object (`schemaVersion`, `updatedAt`, `days`). The contract is `schema/briefing.schema.json`. `scripts/validate-briefing.mjs` checks it on every push and pull request, in the same workflow as the pulse feed. The check stays offline.
+
+`updatedAt` is an ISO-8601 date-time with a numeric offset, for example `2026-10-08T04:45:00+02:00`. `days` holds 1 to 7 objects, newest first. Each day has a Europe/Berlin calendar `date` (`YYYY-MM-DD`) and 6 to 8 items.
+
+| Field | Rule |
+| --- | --- |
+| `id` | `YYYY-MM-DD-short-slug`. Unique across the file. The date prefix equals that day's `date`. |
+| `headline` | 1 to 60 characters, sentence case. |
+| `summary` | 1 to 240 characters, one or two sentences. |
+| `source` | Exactly `{ "name", "url" }`. `url` is `https`, with the same pattern as the pulse feed. |
+| `tag` | The pulse tag list: `Model Release`, `Framework`, `Autonomous Agent`, `Benchmarks`, `Hardware`, `Tools`. The briefing schema references that enum. |
+| `priority` | Optional. `normal` or `breaking`, with the same meaning as in `pulse.json`. |
+| `pulseId` | Optional. Must be an `id` that exists in the current `pulse.json`. |
+| `level` | Optional. `beginner` or `advanced`. Missing means beginner-friendly. Use `advanced` only for real jargon. |
+| `i18n.de` | German `headline` (1–60) and `summary` (1–240). Technical AI terms stay in English: LLM, agent, token, RAG, prompt, context window, benchmark, reasoning, open weights, fine-tuning, inference. |
+
+Rolling window: keep at most 7 days, newest first. When you add a new day and the list would pass 7, drop the oldest day.
+
+In the English `headline` and `summary`, agent, token, reasoning, inference, benchmark, context window, open weights, and fine-tuning stay lowercase common nouns, same as the pulse feed. A capitalised glossary term is an error. German copy may capitalise those English terms.

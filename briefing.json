@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-08T04:45:00+02:00",
+  "days": [
+    {
+      "date": "2026-10-08",
+      "items": [
+        {
+          "id": "2026-10-08-chatgpt-gpt-6-intelligent-ui",
+          "headline": "GPT-6 arrives in ChatGPT with an interactive UI",
+          "summary": "GPT-6 in ChatGPT: Intelligent UI (interactive diagrams, charts, buttons, small calculators), which OpenAI says should make complex topics easier to understand; Plus/Pro/Business/Enterprise: GPT-6 Sol Oct 7, Free and Go get GPT-6 Luna Oct 8.",
+          "tag": "Tools",
+          "priority": "breaking",
+          "pulseId": "pulse-2026-10-07-gpt-6-intelligent-ui",
+          "level": "beginner",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "GPT-6 bringt ChatGPT eine interaktive Oberfläche",
+              "summary": "GPT-6 kommt mit Intelligent UI in ChatGPT (interaktive Diagramme, Charts, Buttons, kleine Rechner). Komplexe Themen werden laut OpenAI verständlicher. Plus/Pro/Business/Enterprise haben GPT-6 Sol seit 7.10., Free und Go GPT-6 Luna ab 8.10."
+            }
+          }
+        },
+        {
+          "id": "2026-10-08-claude-haiku-5-5",
+          "headline": "Claude Haiku 5.5 is Anthropic's cheapest, fastest model",
+          "summary": "Anthropic released Claude Haiku 5.5, its cheapest and fastest model, and says it is about 75% cheaper than Haiku 4.5 on average, with a 1M token context, effort control, from $0.10 per million input tokens. Sonnet 5.5 caching gets cheaper.",
+          "tag": "Model Release",
+          "priority": "normal",
+          "pulseId": "pulse-2026-10-07-claude-haiku-5-5",
+          "level": "beginner",
+          "source": {
+            "name": "Anthropic",
+            "url": "https://www.anthropic.com/claude-haiku-5-5"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Claude Haiku 5.5 ist Anthropics günstigstes Schnellmodell",
+              "summary": "Anthropic hat Claude Haiku 5.5 veröffentlicht, sein günstigstes und schnellstes Modell: im Schnitt 75 % günstiger als Haiku 4.5, Context Window 1 Mio. Token, Effort Control, ab 0,10 $/Mio. Input-Token. Caching für Sonnet 5.5 wird günstiger."
+            }
+          }
+        },
+        {
+          "id": "2026-10-08-openai-math-papers",
+          "headline": "An OpenAI model offers solutions to open math problems",
+          "summary": "An unnamed internal OpenAI model produced full or partial solutions to over 370 open math problems; New Scientist counts 722 papers. Mathematicians are impressed but criticize missing transparency on prompts, compute, and failed attempts.",
+          "tag": "Benchmarks",
+          "level": "beginner",
+          "source": {
+            "name": "New Scientist",
+            "url": "https://www.newscientist.com/article/2592421-openai-announces-722-mathematical-discoveries-in-one-go/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "OpenAI-Modell liefert Lösungen für offene Matheprobleme",
+              "summary": "Ein unbenanntes internes OpenAI-Modell lieferte volle oder teils Lösungen zu über 370 offenen Matheproblemen; New Scientist: 722 Papers. Mathematiker sind beeindruckt, kritisieren Intransparenz zu Prompts, Rechenaufwand und Fehlversuchen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-08-nous-research-hermes-business",
+          "headline": "Nous Research brings its agent Hermes to companies",
+          "summary": "Nous Research raised $90 million at a $1.5 billion valuation to bring its open-source agent Hermes to companies as Hermes for Businesses, with private, customizable agents for multi-step workflows.",
+          "tag": "Autonomous Agent",
+          "level": "advanced",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Nous Research bringt den Agent Hermes in Unternehmen",
+              "summary": "Nous Research sammelte 90 Millionen US-Dollar bei einer Bewertung von 1,5 Milliarden ein, um den Open-Source-Agent Hermes als Hermes for Businesses in Unternehmen zu bringen: private, anpassbare Agents für Abläufe über mehrere Schritte."
+            }
+          }
+        },
+        {
+          "id": "2026-10-08-virtual-biology-initiative",
+          "headline": "Partners put $1.8B into a virtual cell data effort",
+          "summary": "Biohub (Chan Zuckerberg), US Department of Energy, NIH, Google DeepMind, Isomorphic Labs and Meta expand Virtual Biology Initiative, $1.8B for AI-ready biology data. A virtual cell model predicts disease and therapy outcomes, and open data.",
+          "tag": "Framework",
+          "level": "beginner",
+          "source": {
+            "name": "CNBC",
+            "url": "https://www.cnbc.com/2026/10/07/government-google-join-zuckerberg-backed-biohub-ai-biology-data.html"
+          },
+          "i18n": {
+            "de": {
+              "headline": "1,8 Milliarden für Daten zu einem virtuellen Zellmodell",
+              "summary": "Biohub (Chan Zuckerberg), US-Energieministerium, NIH, Google DeepMind, Isomorphic Labs, Meta: Virtual Biology Initiative plus 1,8 Mrd. $ für KI-fertige Biologiedaten, virtuelles Zellmodell für Krankheits- und Therapieverläufe, Daten offen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-08-humanitys-sixth-sense",
+          "headline": "Humanity's Sixth Sense tests intuitive visual reasoning",
+          "summary": "Scale AI and Elorian introduced Humanity's Sixth Sense, 522 tasks on intuitive visual reasoning such as spatial logic, cause and effect, and social cues in images and videos. Even the best model, GPT-6 Astra, scores about 54%.",
+          "tag": "Benchmarks",
+          "level": "beginner",
+          "source": {
+            "name": "Elorian",
+            "url": "https://elorian.ai/blog/humanitys-sixth-sense"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Humanity's Sixth Sense prüft visuelles Reasoning",
+              "summary": "Scale AI und Elorian stellten Humanity's Sixth Sense vor: 522 Aufgaben zu intuitivem visuellem Reasoning, etwa räumliche Logik, Ursache und Wirkung, soziale Hinweise in Bildern und Videos. Das beste Modell, GPT-6 Astra, erreicht etwa 54 %."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

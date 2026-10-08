@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/schema/briefing.schema.json",
+  "title": "AILA Daily Briefing",
+  "description": "Rolling daily briefing fetched by the AILA app. English is canonical. German lives under i18n.de. At most 7 days, newest first, with 6 to 8 items each day.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "updatedAt", "days"],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\\.[0-9]+)?[+-][0-9]{2}:[0-9]{2}$",
+      "description": "ISO-8601 date-time with a numeric offset, for example 2026-10-08T04:45:00+02:00. A trailing Z is not an offset here."
+    },
+    "days": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 7,
+      "description": "Newest Europe/Berlin calendar day first. Drop the oldest day when a new one would make eight.",
+      "items": {
+        "$ref": "#/$defs/day"
+      }
+    }
+  },
+  "$defs": {
+    "day": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["date", "items"],
+      "properties": {
+        "date": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+          "description": "Europe/Berlin calendar date, YYYY-MM-DD."
+        },
+        "items": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 8,
+          "items": {
+            "$ref": "#/$defs/item"
+          }
+        }
+      }
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "headline", "summary", "source", "tag", "i18n"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "Unique across the file. The date prefix equals the day's date."
+        },
+        "headline": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60,
+          "description": "Sentence case. At most 60 characters. Glossary terms stay lowercase common nouns."
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240,
+          "description": "One or two sentences. At most 240 characters."
+        },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Exactly one source: the publisher name and a single https URL.",
+          "required": ["name", "url"],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Publisher name, for example TechCrunch or Anthropic."
+            },
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://[^\\s/?#]+\\.[^\\s/?#]+(?:[/?#][^\\s]*)?$",
+              "description": "Well-formed https URL of that publication. Same pattern as pulse.schema.json."
+            }
+          }
+        },
+        "tag": {
+          "$ref": "pulse.schema.json#/$defs/dailyPulseItem/properties/tag",
+          "description": "Same tag list as the daily pulse. The reference keeps the two schemas in sync."
+        },
+        "priority": {
+          "$ref": "pulse.schema.json#/$defs/dailyPulseItem/properties/priority",
+          "description": "Optional. breaking marks a major launch the app may pin. Omit it, or use normal, for a routine item."
+        },
+        "pulseId": {
+          "type": "string",
+          "pattern": "^pulse-[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "Optional id of a related pulse.json item. The validator requires that id to exist in the current pulse.json."
+        },
+        "level": {
+          "type": "string",
+          "enum": ["beginner", "advanced"],
+          "description": "Optional. Missing means beginner-friendly. Use advanced only when the item needs real jargon."
+        },
+        "i18n": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["de"],
+          "properties": {
+            "de": {
+              "$ref": "#/$defs/localizedCopy"
+            }
+          }
+        }
+      }
+    },
+    "localizedCopy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["headline", "summary"],
+      "properties": {
+        "headline": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240,
+          "description": "German prose. Technical AI terms stay in English."
+        }
+      }
+    }
+  }
+}
