@@ -190,7 +190,7 @@ test("duplicate ids and source URLs are errors", async () => {
   const first = item({ id: "pulse-2026-10-01-one", source: { url: "https://example.com/same/" } });
   const second = item({
     id: "pulse-2026-10-01-two",
-    headline: "A second headline for the same source",
+    headline: "Same source, new headline",
     source: { url: "https://EXAMPLE.com/same" },
   });
   const result = await lintFeed([first, second], { now: NOW });
@@ -252,6 +252,53 @@ test("--check-urls requires HTTP 200 and can be injected", async () => {
 
   const skipped = await lintFeed([item()], { now: NOW, checkUrls: false, fetchUrl: async () => 500 });
   assert.deepEqual(skipped.errors, []);
+});
+
+test("headlines of 33 characters fail, 30 warn, and 20 pass quietly", async () => {
+  const text = (length) => "A".repeat(length);
+
+  const longEn = await lintFeed([item({ headline: text(33) })], { now: NOW });
+  assert.match(longEn.errors.join("\n"), /\[0\]\.headline: must be <= 32 characters \(is 33\)/);
+  assert.equal(longEn.warnings.some((warning) => warning.includes("characters")), false);
+
+  const longDe = await lintFeed(
+    [item({ i18n: { de: copy({ headline: text(33) }) } })],
+    { now: NOW },
+  );
+  assert.match(longDe.errors.join("\n"), /i18n\.de\.headline: must be <= 32 characters \(is 33\)/);
+  assert.equal(longDe.warnings.some((warning) => warning.includes("characters")), false);
+
+  const warnEn = await lintFeed([item({ headline: text(30) })], { now: NOW });
+  assert.deepEqual(warnEn.errors, []);
+  assert.deepEqual(warnEn.warnings, [
+    "pulse.json[0].headline: is 30 characters; aim for 27 or fewer",
+  ]);
+
+  const warnDe = await lintFeed(
+    [item({ i18n: { de: copy({ headline: text(30) }) } })],
+    { now: NOW },
+  );
+  assert.deepEqual(warnDe.errors, []);
+  assert.deepEqual(warnDe.warnings, [
+    "pulse.json[0].i18n.de.headline: is 30 characters; aim for 27 or fewer",
+  ]);
+
+  for (const length of [28, 32]) {
+    const edge = await lintFeed([item({ headline: text(length) })], { now: NOW });
+    assert.deepEqual(edge.errors, [], String(length));
+    assert.match(edge.warnings.join("\n"), new RegExp(`is ${length} characters`));
+  }
+
+  const under = await lintFeed([item({ headline: text(27) })], { now: NOW });
+  assert.deepEqual(under.errors, []);
+  assert.deepEqual(under.warnings, []);
+
+  const quiet = await lintFeed(
+    [item({ headline: text(20), i18n: { de: copy({ headline: text(20) }) } })],
+    { now: NOW },
+  );
+  assert.deepEqual(quiet.errors, []);
+  assert.deepEqual(quiet.warnings, []);
 });
 
 test("live pulse.json passes, with beginner warnings only", async () => {

@@ -32,12 +32,12 @@ Each item has:
 | `priority` | Optional. `breaking` marks major model or product launches the app may pin at the top. Omit it, or use `normal`, for routine daily items. |
 | `readTimeMinutes`, `listenTimeMinutes` | Positive whole minutes, from 1 to 30. Both clocks use minutes for the same item. |
 | `hook` | One sentence under the title. |
-| `headline` | At most 60 characters. Sentence case, unless the whole headline is title case. |
+| `headline` | 2-5 words, at most 32 characters, in English and in `i18n.de` alike. Aim for 27 or fewer: 28-32 characters is a warning, and longer than 32 is an error. Sentence case, unless the whole headline is title case. Details belong in `hook` or `summaryPoints`, not in the title. `briefing.json` headlines are unaffected and stay at most 60 characters. |
 | `summaryPoints` | Exactly three strings: what the source shows, the limit of that claim, and what to check next. |
 | `takeaway` | One concrete action. |
 | `deepDiveMarkdown` | Exactly four `## ` sections, in this order: `The Hook`, `The Core Mechanism`, `The Trade-off`, `Practical Takeaway`. Aim for about 150–260 words in each section. |
 | `source` | Exactly one `{ "name", "url" }`. `name` is the publisher. `url` is one well-formed `https` URL. Do not reuse a URL on another item. |
-| `i18n.de` | `headline`, `hook`, `summaryPoints`, `takeaway`, and `deepDiveMarkdown`, with the same structure as English. Technical AI terms stay in English. |
+| `i18n.de` | German `headline` (same 2-5 words, max 32 characters), `hook`, `summaryPoints`, `takeaway`, and `deepDiveMarkdown`, with the same structure as English. Technical AI terms stay in English and are capitalised as German nouns. |
 
 Run the check locally:
 
@@ -50,11 +50,11 @@ node scripts/validate.mjs --check-urls
 
 `--check-urls` requests each source URL and requires HTTP 200. It is off by default, including on push and pull request, because a publisher can block an automated client. Run the GitHub Actions workflow manually with the `check_urls` input when you want that check in CI.
 
-Errors fail the process. Warnings do not. A capitalised glossary term in the English card fields, a reused id, and a reused source URL are errors. A missing beginner sentence is a warning.
+Errors fail the process. Warnings do not. A capitalised glossary term in the English card fields, a reused id, a reused source URL, and a pulse headline longer than 32 characters are errors. A missing beginner sentence is a warning. A pulse headline of 28-32 characters is a warning too. `briefing.json` headlines stay at most 60 characters and do not use that warning.
 
 ## Editorial checklist
 
-Tick these 14 points before you add an item.
+Tick these 15 points before you add an item.
 
 1. **Sourcing.** One real publication per item. `source.name` is the publisher, `source.url` is that publication's `https` URL, and `date` is the publication time. The URL has to be well-formed. Use `--check-urls` when you want an HTTP 200 check.
 2. **Numbers with a retrieval time.** Every figure says who measured it and the date of the source, which is the day a reader would retrieve it. Do not float a percentage with no owner and no date.
@@ -70,6 +70,7 @@ Tick these 14 points before you add an item.
 12. **German keeps technical terms in English.** `i18n.de` is German prose, not a sentence-by-sentence translation. Do not translate agent, token, reasoning, inference, benchmark, context window, open weights, or fine-tuning. Leave the English word in the German sentence.
 13. **Human-style spot check.** Read the headline, hook, three summary points, and takeaway aloud. They should sound like a person explaining the story to a newcomer, including the deep dive.
 14. **Priority and Tools.** Set `priority` to `breaking` only for a major model or product launch the app may pin. Omit `priority`, or use `normal`, for a routine daily item. Use the `Tools` tag for a consumer product people can try today, such as a ChatGPT feature, a free tier, a mobile app, or an SDK end users install. A research paper or infrastructure alone is not `Tools`.
+15. **Short titles.** The pulse `headline`, in English and in German, is 2-5 words and at most 32 characters. Aim for 27 or fewer. A headline of 28-32 characters prints a warning and still passes; 33 or more is an error. Details belong in `hook` or `summaryPoints`, not in the title. Good titles: `GPT-6 in ChatGPT`, `Haiku 5.5: schnell & günstig`, `Meeting-Notizen auf dem Mac`. Headlines in `briefing.json` are unaffected and stay at most 60 characters.
 
 ## Rolling list of 12
 
@@ -82,7 +83,7 @@ Keep at most 12 items.
 
 ## German copy
 
-Write `i18n.de` in German. Keep the glossary terms in English inside that German text. German capitalises nouns, so the English term stays capitalised there (`Agent`, `Token`, `Benchmark`, `Context Window`). That capitalisation is correct in German and the validator does not flag it.
+Write `i18n.de` in German. The German `headline` follows the same length rule as English: 2-5 words, at most 32 characters, aim for 27 or fewer. Keep the glossary terms in English inside that German text. German capitalises nouns, so the English term stays capitalised there (`Agent`, `Token`, `Benchmark`, `Context Window`). That capitalisation is correct in German and the validator does not flag it.
 
 In English fields the same words are ordinary lowercase nouns (`agent`, `token`, `benchmark`, `context window`), except as product names or at the start of a sentence or in a title-cased headline.
 
@@ -101,7 +102,7 @@ https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/briefing.jso
 | Field | Rule |
 | --- | --- |
 | `id` | `YYYY-MM-DD-short-slug`. Unique across the file. The date prefix equals that day's `date`. |
-| `headline` | 1 to 60 characters, sentence case. |
+| `headline` | 1 to 60 characters, sentence case. Unaffected by the 32-character pulse headline limit. |
 | `summary` | 1 to 240 characters, one or two sentences. |
 | `source` | Exactly `{ "name", "url" }`. `url` is `https`, with the same pattern as the pulse feed. |
 | `tag` | The pulse tag list: `Model Release`, `Framework`, `Autonomous Agent`, `Benchmarks`, `Hardware`, `Tools`. The briefing schema references that enum. |

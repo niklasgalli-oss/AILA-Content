@@ -225,7 +225,10 @@ export function collectSchemaErrors(schema) {
     fail("priority must be an optional string enum of normal or breaking");
   }
   if (item?.required?.includes("priority")) fail("priority must not be required");
-  if (item?.properties?.headline?.maxLength !== 60) fail("headline maxLength must be 60");
+  if (item?.properties?.headline?.maxLength !== 32) fail("headline maxLength must be 32");
+  if (schema?.$defs?.localizedCopy?.properties?.headline?.maxLength !== 32) {
+    fail("localized headline maxLength must be 32");
+  }
   const points = item?.properties?.summaryPoints;
   if (points?.minItems !== 3 || points?.maxItems !== 3) fail("summaryPoints must be exactly 3");
   if (!item?.properties?.i18n?.required?.includes("de")) fail("i18n.de must be required");
@@ -282,7 +285,22 @@ function checkSummary(fail, path, points) {
   });
 }
 
-function checkLocalized(fail, path, copy) {
+function checkHeadline(fail, warn, path, headline) {
+  if (typeof headline !== "string") {
+    fail(`${path}.headline`, "must be a string");
+    return;
+  }
+  const length = [...headline].length;
+  if (length > 32) {
+    fail(`${path}.headline`, `must be <= 32 characters (is ${length})`);
+  } else if (headline.trim() === "") {
+    fail(`${path}.headline`, "must be non-empty");
+  } else if (length >= 28) {
+    warn(`${path}.headline`, `is ${length} characters; aim for 27 or fewer`);
+  }
+}
+
+function checkLocalized(fail, path, copy, warn = () => {}) {
   if (copy === null || typeof copy !== "object" || Array.isArray(copy)) {
     fail(path, "localized copy must be an object");
     return;
@@ -293,13 +311,7 @@ function checkLocalized(fail, path, copy) {
   for (const key of COPY_KEYS) {
     if (!(key in copy)) fail(path, `missing ${key}`);
   }
-  if (typeof copy.headline !== "string") {
-    fail(`${path}.headline`, "must be a string");
-  } else if ([...copy.headline].length > 60) {
-    fail(`${path}.headline`, `must be <= 60 characters (is ${[...copy.headline].length})`);
-  } else if (copy.headline.trim() === "") {
-    fail(`${path}.headline`, "must be non-empty");
-  }
+  checkHeadline(fail, warn, path, copy.headline);
   for (const key of ["hook", "takeaway"]) {
     if (typeof copy[key] !== "string" || copy[key].trim() === "") {
       fail(`${path}.${key}`, "must be a non-empty string");
@@ -372,13 +384,18 @@ export async function lintFeed(pulse, options = {}) {
         fail(`${path}.${key}`, "must be a positive whole number of minutes from 1 to 30");
       }
     }
-    checkLocalized(fail, path, {
-      headline: item.headline,
-      hook: item.hook,
-      summaryPoints: item.summaryPoints,
-      takeaway: item.takeaway,
-      deepDiveMarkdown: item.deepDiveMarkdown,
-    });
+    checkLocalized(
+      fail,
+      path,
+      {
+        headline: item.headline,
+        hook: item.hook,
+        summaryPoints: item.summaryPoints,
+        takeaway: item.takeaway,
+        deepDiveMarkdown: item.deepDiveMarkdown,
+      },
+      warn,
+    );
     for (const field of CARD_FIELDS) {
       if (field === "summaryPoints") {
         if (Array.isArray(item.summaryPoints)) {
@@ -431,7 +448,7 @@ export async function lintFeed(pulse, options = {}) {
       fail(`${path}.i18n.de`, "German copy is required");
     } else {
       for (const [locale, copy] of Object.entries(item.i18n)) {
-        checkLocalized(fail, `${path}.i18n.${locale}`, copy);
+        checkLocalized(fail, `${path}.i18n.${locale}`, copy, warn);
       }
     }
   });

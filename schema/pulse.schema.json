@@ -78,8 +78,8 @@
         "headline": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 60,
-          "description": "At most 60 characters. In sentence case, glossary terms stay lowercase common nouns."
+          "maxLength": 32,
+          "description": "2-5 words, at most 32 characters (aim for 27 or fewer). Sentence case, unless the whole headline is title case. Glossary terms stay lowercase common nouns. Details belong in hook or summaryPoints."
         },
         "summaryPoints": {
           "type": "array",
@@ -147,7 +147,8 @@
         "headline": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 60
+          "maxLength": 32,
+          "description": "Same limit as the English headline: 2-5 words, at most 32 characters (aim for 27 or fewer). German prose; technical AI terms stay in English."
         },
         "hook": {
           "type": "string",
