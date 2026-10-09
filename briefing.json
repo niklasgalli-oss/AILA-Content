@@ -1,7 +1,132 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-08T04:45:00+02:00",
+  "updatedAt": "2026-10-09T04:50:00+02:00",
   "days": [
+    {
+      "date": "2026-10-09",
+      "items": [
+        {
+          "id": "2026-10-09-gemini-workplace-agent",
+          "headline": "Google launches a Gemini agent for workplace tasks",
+          "summary": "At Gemini at Work, Google Cloud unveiled a universal Gemini agent that plans work, uses tools, and connects to Workspace, Microsoft 365, and Slack. It can act as a coworker with its own email and is in private preview for businesses.",
+          "tag": "Autonomous Agent",
+          "priority": "breaking",
+          "level": "beginner",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/08/google-brings-agentic-ai-to-gemini-starting-with-businesses/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Google startet einen Gemini-Agenten für die Arbeit",
+              "summary": "Auf Gemini at Work stellte Google Cloud einen universellen Gemini-Agent vor: Er plant Arbeit, nutzt Tools und verbindet Workspace, Microsoft 365 sowie Slack. Er kann als Kollege mit eigener E-Mail laufen; Private Preview für Firmen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-09-anthropic-oss-scanner",
+          "headline": "Anthropic offers free AI vulnerability scans for open source",
+          "summary": "Anthropic launched OSS Scanner, an opt-in service that periodically scans eligible open-source projects with its strongest models at no cost. Reports are model-generated without human triage, so some findings may be wrong.",
+          "tag": "Tools",
+          "level": "beginner",
+          "source": {
+            "name": "Anthropic",
+            "url": "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Anthropic scannt Open Source gratis auf Schwachstellen",
+              "summary": "Anthropic startet OSS Scanner: ein Opt-in-Dienst, der geeignete Open-Source-Projekte periodisch mit den stärksten Modellen kostenlos prüft. Die Reports sind modellgeneriert ohne menschliche Triage; Fehler sind möglich."
+            }
+          }
+        },
+        {
+          "id": "2026-10-09-anthropic-critical-infra",
+          "headline": "Anthropic helps harden critical infrastructure cyber defense",
+          "summary": "Anthropic's Critical Infrastructure Defense Program pairs frontier models and engineers with partners such as Accenture, CrowdStrike, and Dragos that protect power grids and water systems. It sits under a broader Anthropic Cyber Mission.",
+          "tag": "Framework",
+          "level": "beginner",
+          "source": {
+            "name": "SiliconANGLE",
+            "url": "https://siliconangle.com/2026/10/08/anthropic-launches-critical-infrastructure-program-and-free-oss-scanner-for-open-source/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Anthropic stärkt Cyberabwehr kritischer Infrastruktur",
+              "summary": "Das Critical Infrastructure Defense Program von Anthropic bringt Frontier-Modelle und Ingenieure zu Partnern wie Accenture, CrowdStrike und Dragos, die Stromnetze und Wasserwerke schützen. Es gehört zur Anthropic Cyber Mission."
+            }
+          }
+        },
+        {
+          "id": "2026-10-09-anthropic-usage-policy",
+          "headline": "Anthropic tightens rules on elections, abuse, and deception",
+          "summary": "Anthropic published a 2026 Usage Policy update that consolidates bans on deceptive campaigns, sharpens election interference rules, and limits sustained cruel abuse of models. The policy takes effect on November 12.",
+          "tag": "Framework",
+          "level": "beginner",
+          "source": {
+            "name": "Anthropic",
+            "url": "https://www.anthropic.com/news/2026-usage-policy-update"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Anthropic schärft Regeln zu Wahlen, Missbrauch und Täuschung",
+              "summary": "Anthropic hat die Usage Policy 2026 aktualisiert: gebündelte Verbote täuschender Kampagnen, schärfere Wahl-Interferenz-Regeln und Grenzen für anhaltenden grausamen Missbrauch der Modelle. Gültig ab 12. November."
+            }
+          }
+        },
+        {
+          "id": "2026-10-09-openai-false-front-ops",
+          "headline": "OpenAI bans Russia and Iran AI influence campaigns",
+          "summary": "OpenAI banned ChatGPT accounts behind two covert influence operations that used fake journalist personas and a Latin American think tank front. It rated the Russia-origin case Category 5, the highest it has disrupted so far.",
+          "tag": "Framework",
+          "level": "beginner",
+          "source": {
+            "name": "OpenAI",
+            "url": "https://openai.com/index/disrupting-ai-enabled-false-front-operations"
+          },
+          "i18n": {
+            "de": {
+              "headline": "OpenAI sperrt KI-Einflusskampagnen aus Russland und Iran",
+              "summary": "OpenAI hat ChatGPT-Konten hinter zwei verdeckten Einflussoperationen gesperrt: gefälschte Journalisten-Personas und eine Think-Tank-Fassade in Lateinamerika. Die Russland-Operation ist Category 5, bisher der höchste Score."
+            }
+          }
+        },
+        {
+          "id": "2026-10-09-manus-500m-funding",
+          "headline": "Manus raises over $500M after the Meta deal collapse",
+          "summary": "Butterfly Effect, parent of Chinese AI agent startup Manus, raised more than $500 million led by Boyu Capital and IDG Capital. Investors stayed in after China forced Meta to unwind a $2 billion acquisition.",
+          "tag": "Autonomous Agent",
+          "level": "beginner",
+          "source": {
+            "name": "CNBC",
+            "url": "https://www.cnbc.com/2026/10/08/manus-fund-raise-meta-muse-tencent.html"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Manus sammelt über 500 Mio. $ nach geplatztem Meta-Deal",
+              "summary": "Butterfly Effect, Mutter von Manus, holte über 500 Millionen Dollar ein, angeführt von Boyu Capital und IDG Capital. Investoren blieben dabei, nachdem China Metas Übernahme für 2 Milliarden Dollar gestoppt hatte."
+            }
+          }
+        },
+        {
+          "id": "2026-10-09-manus-cue-agents",
+          "headline": "Manus Cue gives personal agents email, phone, and wallets",
+          "summary": "Manus introduced Cue, a stand-alone app where personal agents get their own email addresses, phone numbers, digital wallets, and computers. Agents can communicate, handle tasks across services, and pay within user-set limits.",
+          "tag": "Tools",
+          "level": "beginner",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/08/chinas-manus-raises-over-500m-in-first-funding-round-since-split-with-meta/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Manus Cue gibt Agents E-Mail, Telefon und Wallet",
+              "summary": "Manus stellte Cue vor: eine App, in der persönliche Agents eigene E-Mail-Adressen, Telefonnummern, digitale Wallets und Computer bekommen. Sie kommunizieren, erledigen Aufgaben über Dienste und zahlen innerhalb gesetzter Limits."
+            }
+          }
+        }
+      ]
+    },
     {
       "date": "2026-10-08",
       "items": [
