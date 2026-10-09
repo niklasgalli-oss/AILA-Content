@@ -236,10 +236,10 @@ test("live briefing.json passes", () => {
   const result = lintBriefing(briefing);
   assert.deepEqual(result.errors, []);
   assert.equal(briefing.schemaVersion, 1);
-  assert.equal(briefing.updatedAt, "2026-10-08T04:45:00+02:00");
-  assert.equal(briefing.days.length, 1);
-  assert.equal(briefing.days[0].date, "2026-10-08");
-  assert.equal(briefing.days[0].items.length, 6);
+  assert.equal(briefing.updatedAt, "2026-10-09T04:50:00+02:00");
+  assert.equal(briefing.days.length, 2);
+  assert.equal(briefing.days[0].date, "2026-10-09");
+  assert.equal(briefing.days[0].items.length, 7);
   for (const entry of briefing.days[0].items) {
     assert.equal(httpsUrlError(entry.source.url), null, entry.source.url);
     assert.equal(sentenceCount(entry.summary) >= 1 && sentenceCount(entry.summary) <= 2, true, entry.id);
