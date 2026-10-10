@@ -200,7 +200,7 @@ function checkGlossaryField(fail, path, text, options) {
   for (const hit of glossaryViolations(text, options)) {
     fail(
       path,
-      `capitalised glossary term "${hit.term}"; use "${hit.expected}" unless it is a product name or starts a sentence`,
+      `capitalised glossary term "${hit.term}"; use "${hit.expected}" unless it is a product name, starts a sentence, or sits inside a title-cased proper name`,
     );
   }
 }
@@ -244,7 +244,9 @@ function readDefaultPulseIds() {
 
 export function lintBriefing(briefing, options = {}) {
   const errors = [];
+  const warnings = [];
   const fail = (path, message) => errors.push(`${path}: ${message}`);
+  const warn = (path, message) => warnings.push(`${path}: ${message}`);
   let tags = options.tags;
   if (tags === undefined) {
     try {
@@ -266,7 +268,7 @@ export function lintBriefing(briefing, options = {}) {
 
   if (briefing === null || typeof briefing !== "object" || Array.isArray(briefing)) {
     fail("briefing.json", "must be a JSON object");
-    return { errors };
+    return { errors, warnings };
   }
   for (const key of Object.keys(briefing)) {
     if (!ROOT_KEYS.includes(key)) fail("briefing.json", `unexpected field ${key}`);
@@ -277,7 +279,7 @@ export function lintBriefing(briefing, options = {}) {
 
   if (!Array.isArray(briefing.days)) {
     fail("briefing.json.days", "must be an array");
-    return { errors };
+    return { errors, warnings };
   }
   if (briefing.days.length < 1 || briefing.days.length > 7) {
     fail("briefing.json.days", `must contain 1 to 7 days (has ${briefing.days.length})`);
@@ -363,7 +365,10 @@ export function lintBriefing(briefing, options = {}) {
         if (typeof item.pulseId !== "string" || !PULSE_ID_RE.test(item.pulseId)) {
           fail(`${path}.pulseId`, "must match pulse-YYYY-MM-DD-short-slug");
         } else if (!pulseIds.has(item.pulseId)) {
-          fail(`${path}.pulseId`, `unknown id ${item.pulseId}; it must exist in pulse.json`);
+          warn(
+            `${path}.pulseId`,
+            `unknown id ${item.pulseId}; not in the current pulse.json, so the app hides the deep-dive link`,
+          );
         }
       }
       const source = item.source;
@@ -391,7 +396,7 @@ export function lintBriefing(briefing, options = {}) {
     });
   });
 
-  return { errors };
+  return { errors, warnings };
 }
 
 function parseArgs(argv) {
@@ -407,12 +412,14 @@ function main() {
   if (args.help) {
     console.log("Usage: node scripts/validate-briefing.mjs");
     console.log("Checks schema/briefing.schema.json and briefing.json.");
-    console.log("pulseId values must exist in pulse.json. No network.");
+    console.log("A well-formed pulseId missing from pulse.json is a warning. A malformed pulseId is an error.");
+    console.log("No network.");
     return;
   }
 
   const errors = [];
   const fail = (path, message) => errors.push(`${path}: ${message}`);
+  let warnings = [];
   let schema = null;
   let pulseSchema = null;
   let briefing = null;
@@ -444,20 +451,26 @@ function main() {
     const tags = pulseSchema ? pulseTagEnum(pulseSchema) : null;
     const result = lintBriefing(briefing, { pulseIds, tags });
     errors.push(...result.errors);
+    warnings = result.warnings;
   }
 
   if (errors.length > 0) {
     console.error(`briefing.json failed validation (${errors.length} error${errors.length === 1 ? "" : "s"})`);
     for (const error of errors) console.error(`- ${error}`);
-    process.exit(1);
   }
+  if (warnings.length > 0) {
+    console.error(`briefing.json warnings (${warnings.length})`);
+    for (const warning of warnings) console.error(`- ${warning}`);
+  }
+  if (errors.length > 0) process.exit(1);
 
   const dayCount = Array.isArray(briefing?.days) ? briefing.days.length : 0;
   const itemCount = Array.isArray(briefing?.days)
     ? briefing.days.reduce((sum, day) => sum + (Array.isArray(day?.items) ? day.items.length : 0), 0)
     : 0;
+  const warningNote = warnings.length === 0 ? "" : `, ${warnings.length} warning${warnings.length === 1 ? "" : "s"}`;
   console.log(
-    `briefing.json ok (${dayCount} day${dayCount === 1 ? "" : "s"}, ${itemCount} item${itemCount === 1 ? "" : "s"})`,
+    `briefing.json ok (${dayCount} day${dayCount === 1 ? "" : "s"}, ${itemCount} item${itemCount === 1 ? "" : "s"}${warningNote})`,
   );
 }
 

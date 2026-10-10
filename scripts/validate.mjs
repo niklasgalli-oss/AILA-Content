@@ -120,6 +120,34 @@ function spanCovers(spans, index) {
   return spans.some(([start, end]) => index >= start && index < end);
 }
 
+// A title-cased word starts with a capital. Two or more in a row are a proper name
+// ("Personal Agent Protocol", "Critical Infrastructure Defense Program").
+const CAPITAL_WORD = "[A-Z][A-Za-z'-]*";
+const LEADING_ARTICLE_RE = /^(?:The|A|An)\s+/;
+
+function properNameSpans(text) {
+  const spans = [];
+  const re = new RegExp(`\\b${CAPITAL_WORD}(?:\\s+${CAPITAL_WORD})+\\b`, "g");
+  const body = new RegExp(`^${CAPITAL_WORD}(?:\\s+${CAPITAL_WORD})+$`);
+  for (const match of text.matchAll(re)) {
+    let start = match.index ?? 0;
+    let raw = match[0];
+    const article = LEADING_ARTICLE_RE.exec(raw);
+    if (article) {
+      raw = raw.slice(article[0].length);
+      start += article[0].length;
+      if (!body.test(raw)) continue;
+    }
+    spans.push([start, start + raw.length]);
+  }
+  return spans;
+}
+
+function insideProperName(spans, index, term) {
+  if (/\s/.test(term)) return false;
+  return spanCovers(spans, index);
+}
+
 function expectedGlossaryForm(match, lower, index, text) {
   if (match === lower) return null;
   if (isSentenceStart(text, index) && match === sentenceForm(lower)) return null;
@@ -130,12 +158,13 @@ function expectedGlossaryForm(match, lower, index, text) {
 export function glossaryViolations(text, { headline = false } = {}) {
   if (typeof text !== "string" || text === "") return [];
   if (headline && usesHeadlineCasing(text)) return [];
-  const spans = productSpans(text);
+  const products = productSpans(text);
+  const names = properNameSpans(text);
   const hits = [];
   for (const match of text.matchAll(glossaryPattern())) {
     const term = match[0];
     const index = match.index ?? 0;
-    if (spanCovers(spans, index)) continue;
+    if (spanCovers(products, index) || insideProperName(names, index, term)) continue;
     const expected = expectedGlossaryForm(term, term.toLowerCase(), index, text);
     if (!expected) continue;
     hits.push({ term, index, expected });
@@ -146,9 +175,10 @@ export function glossaryViolations(text, { headline = false } = {}) {
 export function lowercaseGlossaryTerms(text, { headline = false } = {}) {
   if (typeof text !== "string") return text;
   if (headline && usesHeadlineCasing(text)) return text;
-  const spans = productSpans(text);
+  const products = productSpans(text);
+  const names = properNameSpans(text);
   return text.replace(glossaryPattern(), (match, offset) => {
-    if (spanCovers(spans, offset)) return match;
+    if (spanCovers(products, offset) || insideProperName(names, offset, match)) return match;
     const expected = expectedGlossaryForm(match, match.toLowerCase(), offset, text);
     return expected ?? match;
   });
@@ -326,7 +356,7 @@ function checkGlossaryField(fail, path, text, { headline = false } = {}) {
   for (const hit of glossaryViolations(text, { headline })) {
     fail(
       path,
-      `capitalised glossary term "${hit.term}"; use "${hit.expected}" unless it is a product name or starts a sentence`,
+      `capitalised glossary term "${hit.term}"; use "${hit.expected}" unless it is a product name, starts a sentence, or sits inside a title-cased proper name`,
     );
   }
 }

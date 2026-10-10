@@ -163,11 +163,20 @@ test("priority, level, and pulseId follow the pulse contract", () => {
   }
 
   const known = [...pulseIds][0];
-  const linked = feed({ days: [day("2026-10-08", 6, () => ({ pulseId: known }))] });
-  assert.deepEqual(lint(linked).errors, []);
+  const linked = lint(feed({ days: [day("2026-10-08", 6, () => ({ pulseId: known }))] }));
+  assert.deepEqual(linked.errors, []);
+  assert.deepEqual(linked.warnings, []);
 
-  const missing = feed({ days: [day("2026-10-08", 6, () => ({ pulseId: "pulse-2026-10-08-missing" }))] });
-  assert.match(lint(missing, { pulseIds: new Set() }).errors.join("\n"), /unknown id pulse-2026-10-08-missing/);
+  const missing = lint(
+    feed({ days: [day("2026-10-08", 6, () => ({ pulseId: "pulse-2026-10-08-missing" }))] }),
+    { pulseIds: new Set() },
+  );
+  assert.deepEqual(missing.errors, []);
+  assert.match(missing.warnings.join("\n"), /unknown id pulse-2026-10-08-missing/);
+
+  const malformed = lint(feed({ days: [day("2026-10-08", 6, () => ({ pulseId: "pulse-not-an-id" }))] }));
+  assert.match(malformed.errors.join("\n"), /must match pulse-YYYY-MM-DD-short-slug/);
+  assert.deepEqual(malformed.warnings, []);
 
   for (const priority of ["urgent", "", null]) {
     const result = lint(feed({ days: [day("2026-10-08", 6, () => ({ priority }))] }));
@@ -235,16 +244,4 @@ test("lengths, sentences, https URLs, and extra fields are checked", () => {
 test("live briefing.json passes", () => {
   const result = lintBriefing(briefing);
   assert.deepEqual(result.errors, []);
-  assert.equal(briefing.schemaVersion, 1);
-  assert.equal(briefing.updatedAt, "2026-10-09T04:50:00+02:00");
-  assert.equal(briefing.days.length, 2);
-  assert.equal(briefing.days[0].date, "2026-10-09");
-  assert.equal(briefing.days[0].items.length, 7);
-  for (const entry of briefing.days[0].items) {
-    assert.equal(httpsUrlError(entry.source.url), null, entry.source.url);
-    assert.equal(sentenceCount(entry.summary) >= 1 && sentenceCount(entry.summary) <= 2, true, entry.id);
-    assert.deepEqual(glossaryViolations(entry.headline, { headline: true }), [], entry.id);
-    assert.deepEqual(glossaryViolations(entry.summary), [], entry.id);
-    if (entry.pulseId) assert.equal(pulseIds.has(entry.pulseId), true, entry.pulseId);
-  }
 });

@@ -98,7 +98,7 @@
         "pulseId": {
           "type": "string",
           "pattern": "^pulse-[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*$",
-          "description": "Optional id of a related pulse.json item. The validator requires that id to exist in the current pulse.json."
+          "description": "Optional id of a related pulse.json item. A well-formed id that is not in the current pulse.json is a warning; the app hides the deep-dive link. A malformed id is an error."
         },
         "level": {
           "type": "string",

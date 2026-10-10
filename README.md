@@ -50,7 +50,7 @@ node scripts/validate.mjs --check-urls
 
 `--check-urls` requests each source URL and requires HTTP 200. It is off by default, including on push and pull request, because a publisher can block an automated client. Run the GitHub Actions workflow manually with the `check_urls` input when you want that check in CI.
 
-Errors fail the process. Warnings do not. A capitalised glossary term in the English card fields, a reused id, a reused source URL, and a pulse headline longer than 32 characters are errors. A missing beginner sentence is a warning. A pulse headline of 28-32 characters is a warning too. `briefing.json` headlines stay at most 60 characters and do not use that warning.
+Errors fail the process. Warnings do not. A capitalised glossary term in the English card fields, a reused id, a reused source URL, a malformed briefing `pulseId`, and a pulse headline longer than 32 characters are errors. A missing beginner sentence is a warning. A pulse headline of 28-32 characters is a warning too. A briefing `pulseId` that matches `pulse-YYYY-MM-DD-short-slug` but is not in the current `pulse.json` is a warning, and the check still exits 0. The app hides the deep-dive link in that case. `briefing.json` headlines stay at most 60 characters and do not use the pulse length warning.
 
 ## Editorial checklist
 
@@ -59,7 +59,7 @@ Tick these 15 points before you add an item.
 1. **Sourcing.** One real publication per item. `source.name` is the publisher, `source.url` is that publication's `https` URL, and `date` is the publication time. The URL has to be well-formed. Use `--check-urls` when you want an HTTP 200 check.
 2. **Numbers with a retrieval time.** Every figure says who measured it and the date of the source, which is the day a reader would retrieve it. Do not float a percentage with no owner and no date.
 3. **Attribution versus claims.** Keep what the source says separate from what you conclude. A vendor score stays a vendor score. `summaryPoints[1]` is the limit of the claim.
-4. **No glossary capitalisation.** In English, agent, token, reasoning, inference, benchmark, context window, open weights, and fine-tuning are lowercase common nouns. Capitalise one only when it starts a sentence, the headline is title case, or it is part of a product name. The validator errors on the English `headline`, `hook`, `summaryPoints`, and `takeaway`. Use the same rule in `deepDiveMarkdown`; the spot check below covers that section. Product names that contain a glossary word are allowlisted in `scripts/validate.mjs`: Open Agent Safety Platform, Microsoft Agent 365, Claude Managed Agents, and Agent Toolkit.
+4. **No glossary capitalisation.** In English, agent, token, reasoning, inference, benchmark, context window, open weights, and fine-tuning are lowercase common nouns. Capitalise one only when it starts a sentence, the headline is title case, it is part of a product name, or it sits inside a title-cased proper name of two or more consecutive capitalised words (for example `Personal Agent Protocol` or `Critical Infrastructure Defense Program`). A leading `The`, `A`, or `An` does not make a lone glossary word into a proper name, so `The Agent ships` is still an error. The validator errors on the English `headline`, `hook`, `summaryPoints`, and `takeaway`. Use the same rule in `deepDiveMarkdown`. Product names that contain a glossary word are allowlisted in `scripts/validate.mjs`: Open Agent Safety Platform, Microsoft Agent 365, Claude Managed Agents, and Agent Toolkit.
 5. **Freshness.** `date` is not in the future. Keep at most 12 items and drop the oldest from the front. That is how stale content is removed. There is no separate stale flag.
 6. **One subject per item.** One launch, one mechanism, one decision. A second product gets its own item.
 7. **Beginner first sentence.** `hook` or `summaryPoints[0]` says what the thing is, in plain language, before the news. The validator warns when it cannot see that sentence. The warning does not fail the check.
@@ -85,7 +85,7 @@ Keep at most 12 items.
 
 Write `i18n.de` in German. The German `headline` follows the same length rule as English: 2-5 words, at most 32 characters, aim for 27 or fewer. Keep the glossary terms in English inside that German text. German capitalises nouns, so the English term stays capitalised there (`Agent`, `Token`, `Benchmark`, `Context Window`). That capitalisation is correct in German and the validator does not flag it.
 
-In English fields the same words are ordinary lowercase nouns (`agent`, `token`, `benchmark`, `context window`), except as product names or at the start of a sentence or in a title-cased headline.
+In English fields the same words are ordinary lowercase nouns (`agent`, `token`, `benchmark`, `context window`), except as product names, at the start of a sentence, in a title-cased headline, or inside a title-cased proper name of two or more consecutive capitalised words.
 
 ## Daily briefing (briefing.json)
 
@@ -107,10 +107,10 @@ https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/briefing.jso
 | `source` | Exactly `{ "name", "url" }`. `url` is `https`, with the same pattern as the pulse feed. |
 | `tag` | The pulse tag list: `Model Release`, `Framework`, `Autonomous Agent`, `Benchmarks`, `Hardware`, `Tools`. The briefing schema references that enum. |
 | `priority` | Optional. `normal` or `breaking`, with the same meaning as in `pulse.json`. |
-| `pulseId` | Optional. Must be an `id` that exists in the current `pulse.json`. |
+| `pulseId` | Optional. Must match `pulse-YYYY-MM-DD-short-slug`. A well-formed id that is not in the current `pulse.json` is a warning and the validator exits 0; the app hides the deep-dive link. A malformed id is an error. |
 | `level` | Optional. `beginner` or `advanced`. Missing means beginner-friendly. Use `advanced` only for real jargon. |
 | `i18n.de` | German `headline` (1–60) and `summary` (1–240). Technical AI terms stay in English: LLM, agent, token, RAG, prompt, context window, benchmark, reasoning, open weights, fine-tuning, inference. |
 
 Rolling window: keep at most 7 days, newest first. When you add a new day and the list would pass 7, drop the oldest day.
 
-In the English `headline` and `summary`, agent, token, reasoning, inference, benchmark, context window, open weights, and fine-tuning stay lowercase common nouns, same as the pulse feed. A capitalised glossary term is an error. German copy may capitalise those English terms.
+In the English `headline` and `summary`, agent, token, reasoning, inference, benchmark, context window, open weights, and fine-tuning stay lowercase common nouns, same as the pulse feed. A capitalised glossary term is an error, except inside a title-cased proper name. German copy may capitalise those English terms.
