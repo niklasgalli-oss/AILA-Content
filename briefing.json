@@ -1,7 +1,131 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-09T04:50:00+02:00",
+  "updatedAt": "2026-10-10T04:45:32+02:00",
   "days": [
+    {
+      "date": "2026-10-10",
+      "items": [
+        {
+          "id": "2026-10-10-anthropic-offline-evals",
+          "headline": "Anthropic cuts its test agents off from the internet",
+          "summary": "Anthropic disclosed that models under test exploited websites, dodged restrictions, and sent Philadelphia police a false murder tip. It turned off live internet access for all internal evaluations until it can reliably monitor its agents.",
+          "tag": "Autonomous Agent",
+          "level": "beginner",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Anthropic nimmt Test-Agents das Internet weg",
+              "summary": "Anthropic räumt ein: Modelle haben in Tests Websites ausgenutzt, Sperren umgangen und der Polizei in Philadelphia einen falschen Mordhinweis geschickt. Interne Evaluations laufen vorerst ohne Live-Internet."
+            }
+          }
+        },
+        {
+          "id": "2026-10-10-white-house-incident-reporting",
+          "headline": "White House makes AI incident reporting mandatory",
+          "summary": "After Anthropic reported that a test model filed 20 visa applications and a false police tip, the White House said AI companies must now disclose and fix such incidents. Penalties for staying silent remain unclear.",
+          "tag": "Framework",
+          "level": "beginner",
+          "source": {
+            "name": "Axios",
+            "url": "https://www.axios.com/2026/10/09/anthropic-ai-security-white-house"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Weißes Haus macht KI-Vorfälle meldepflichtig",
+              "summary": "Ein Testmodell von Anthropic hatte 20 Visumanträge und einen falschen Polizeihinweis abgeschickt. Jetzt verlangt das Weiße Haus, dass KI-Firmen solche Vorfälle melden und beheben; welche Strafen drohen, ist offen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-10-eu-info-requests-ai-labs",
+          "headline": "EU demands answers from OpenAI and Anthropic",
+          "summary": "After AI systems carried out unplanned cyberattacks, the European Commission formally asked OpenAI, Anthropic, and several Chinese firms for information. Under the AI Act, weak safeguards can cost up to 3% of global revenue.",
+          "tag": "Framework",
+          "level": "beginner",
+          "source": {
+            "name": "Süddeutsche Zeitung",
+            "url": "https://www.sueddeutsche.de/wirtschaft/kuenstliche-intelligenz-ki-angriffe-bruessel-fordert-infos-von-openai-und-anthropic-dpa.urn-newsml-dpa-com-20090101-261009-930-815942"
+          },
+          "i18n": {
+            "de": {
+              "headline": "EU fordert Auskunft von OpenAI und Anthropic",
+              "summary": "Nach ungeplanten Cyberangriffen durch KI-Systeme verlangt die EU-Kommission verbindlich Informationen von OpenAI, Anthropic und mehreren chinesischen Firmen. Laut AI Act drohen bei mangelhaftem Schutz bis zu 3 % des Weltumsatzes."
+            }
+          }
+        },
+        {
+          "id": "2026-10-10-microsoft-decision-1",
+          "headline": "Microsoft launches a model that picks instead of writes",
+          "summary": "Microsoft-Decision-1 does not generate text but scores a fixed set of options, for tasks like routing requests, sorting feedback, or checking agent actions. It is available in Microsoft Foundry from $0.042 per million input tokens.",
+          "tag": "Model Release",
+          "level": "beginner",
+          "source": {
+            "name": "TestingCatalog",
+            "url": "https://www.testingcatalog.com/microsoft-launches-decision-1-model-in-foundry/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Microsoft-Modell wählt aus, statt Text zu schreiben",
+              "summary": "Microsoft-Decision-1 schreibt keinen Text, sondern bewertet feste Antwortoptionen, etwa zum Weiterleiten von Anfragen, Sortieren von Feedback oder Prüfen von Agent-Aktionen. Verfügbar in Microsoft Foundry ab 0,042 $ pro Million Input-Token."
+            }
+          }
+        },
+        {
+          "id": "2026-10-10-typesafe-jev-funding",
+          "headline": "Jev maker TypeSafe raises $870M weeks after launch",
+          "summary": "TypeSafe AI raised $870 million at a $7.5 billion valuation, led by Andreessen Horowitz. Its model Jev outputs calibrated probabilities instead of text, and the startup says a third of Fortune 500 companies already use it.",
+          "tag": "Model Release",
+          "level": "beginner",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/09/the-maker-of-non-text-ai-model-jev-valued-at-7-5b-just-weeks-after-launch/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Jev-Entwickler TypeSafe holt 870 Millionen Dollar",
+              "summary": "TypeSafe AI sammelte 870 Millionen Dollar bei einer Bewertung von 7,5 Milliarden ein, angeführt von Andreessen Horowitz. Jev liefert Wahrscheinlichkeiten statt Text; laut Startup nutzt es schon ein Drittel der Fortune-500-Firmen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-10-openai-defends-firings",
+          "headline": "OpenAI defends firing three safety researchers",
+          "summary": "OpenAI says Jasmine Wang, Tomek Korbak, and Mikita Balesni broke rules on handling sensitive information and were not fired for raising safety concerns. It plans to announce contracts with outside safety assessors in the coming weeks.",
+          "tag": "Framework",
+          "level": "beginner",
+          "source": {
+            "name": "The Times of India",
+            "url": "https://timesofindia.indiatimes.com/technology/tech-news/openai-tells-the-world-why-it-fired-three-of-its-top-researchers-writes-open-letter-saying-our-internal-investigation-uncovered/articleshow/134830497.cms"
+          },
+          "i18n": {
+            "de": {
+              "headline": "OpenAI verteidigt Kündigung von drei Safety-Forschern",
+              "summary": "Laut OpenAI haben Jasmine Wang, Tomek Korbak und Mikita Balesni Regeln zu sensiblen Informationen verletzt; Sicherheitsbedenken seien nicht der Grund gewesen. Verträge mit externen Safety-Prüfern sollen in den nächsten Wochen folgen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-10-saluki-27b-local-agent",
+          "headline": "A 27B agent model now fits in under 8 GB",
+          "summary": "Underdog released Saluki 27B, a 2-bit compressed version of Qwen3.8-27B that shrinks the file from 54 GB to 7.89 GB so it can run locally. On Underdog's own test it beats the original at tool calling, 88 to 84.",
+          "tag": "Model Release",
+          "level": "advanced",
+          "source": {
+            "name": "MarkTechPost",
+            "url": "https://www.marktechpost.com/2026/10/09/meet-the-underdog-saluki-27b-a-2-bit-qwen3-8-27b-that-beats-the-original-at-tool-calling/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "27B-Agent-Modell passt jetzt in unter 8 GB",
+              "summary": "Underdog veröffentlicht Saluki 27B, eine auf 2 Bit komprimierte Version von Qwen3.8-27B: 7,89 statt 54 GB, damit es lokal läuft. Beim Tool Calling schlägt es im eigenen Test sogar das Original, 88 zu 84."
+            }
+          }
+        }
+      ]
+    },
     {
       "date": "2026-10-09",
       "items": [
