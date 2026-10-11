@@ -24,7 +24,7 @@
     <main id="content">
       <p class="lang">Deutsche Fassung: <a href="../" hreflang="de" lang="de">Datenschutzerklärung</a>. If the two versions differ, the German text prevails.</p>
       <h1>Privacy policy</h1>
-      <p class="meta">Last updated: <time datetime="2026-10-07">7 October 2026</time></p>
+      <p class="meta">Last updated: <time datetime="2026-10-11">11 October 2026</time></p>
       <p>This policy describes the personal data processed when you use the AILA learning app and when you open this website. The EU General Data Protection Regulation (GDPR) applies. German data-protection law, in particular the Federal Data Protection Act (BDSG), applies alongside it.</p>
 
       <h2>1. Controller</h2>
@@ -39,21 +39,24 @@
       <p>Product name: AILA. Email: <a href="mailto:niklas.galli@getaila.de">niklas.galli@getaila.de</a>. No telephone number is published. Please use the email address.</p>
 
       <h2>2. What this policy covers</h2>
-      <p>AILA is a learning app for iOS and Android. This policy covers the processing in that scope: personalization and learning progress on the device, loading public learning content from this repository, paid use through the Apple App Store or Google Play including a seven-day trial, local notifications, email to the controller, and visits to this website.</p>
+      <p>AILA is a learning app for iOS and Android. This policy covers the processing in that scope: reading progress, personalization, settings, and a cache on the device, loading public content from this repository, paid use through the Apple App Store or Google Play including a seven-day trial, checking subscription status through RevenueCat, delivering app updates through Expo, local notifications, email to the controller, and visits to this website.</p>
       <p>This website publishes the privacy policy and the legal notice. It is a static site hosted on GitHub Pages.</p>
 
       <h2>3. Processing</h2>
 
-      <h3>3.1 Personalization and learning progress on the device</h3>
-      <p>The app stores personalization and learning progress locally on your device, using AsyncStorage. That data is not sent to the controller. He does not keep a copy.</p>
-      <p>The purpose is the learning function of the app: progress and personalization remain available on the same device. The legal basis is Article 6(1)(b) GDPR, because storage is necessary to provide the app you asked for.</p>
+      <h3>3.1 Reading progress, settings, and cache on the device</h3>
+      <p>The app stores reading progress, personalization, settings, and a cache locally on your device, using AsyncStorage. That data stays on the device. It is not sent to the controller. He does not keep a copy.</p>
+      <p>The purpose is the learning function of the app: progress, personalization, and settings remain available on the same device, and content that was already loaded can be shown from the cache. The legal basis is Article 6(1)(b) GDPR, because storage is necessary to provide the app you asked for.</p>
       <p>The data stays on the device until you remove the app data or uninstall the app. The control for that is in the operating system, not on a server of the controller. Because he does not receive the data, he cannot delete it from a server or hand it over from one.</p>
 
-      <h3>3.2 Public learning content (pulse.json)</h3>
-      <p>The app loads public learning content directly from your device at this address:</p>
-      <p><a href="https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/pulse.json">https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/pulse.json</a></p>
-      <p>The file contains editorial articles. It does not contain personal data of people who use the app. When the file is requested, GitHub receives the connection data needed to open the address, in particular the IP address, date and time, and the details your device sends to make the connection. The request goes directly from your device to GitHub. This repository does not build a profile about you from that request. The controller does not run his own server for the request.</p>
-      <p>The purpose is to show the learning content in the app. The legal basis is Article 6(1)(b) GDPR. GitHub is the recipient of those connection data and processes them as its own controller. Section 4 explains the transfer.</p>
+      <h3>3.2 Public content (pulse.json and briefing.json)</h3>
+      <p>The app loads public content directly from your device at these addresses:</p>
+      <ul>
+        <li><a href="https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/pulse.json">https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/pulse.json</a></li>
+        <li><a href="https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/briefing.json">https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/briefing.json</a></li>
+      </ul>
+      <p>The files contain editorial articles and the daily briefing. They do not contain personal data of people who use the app. When a file is requested, GitHub receives the connection data needed to open the address, in particular the IP address, date and time, and the details your device sends to make the connection. The request goes directly from your device to GitHub. This repository does not build a profile about you from that request. The controller does not run his own server for the request.</p>
+      <p>The purpose is to show the learning content and the briefing in the app. The legal basis is Article 6(1)(b) GDPR. The recipient of those connection data is GitHub, Inc., a Microsoft company, established in the United States. GitHub processes them as its own controller. Section 4 explains the transfer.</p>
 
       <h3>3.3 Subscriptions through the Apple App Store and Google Play</h3>
       <p>Paid use, including a seven-day trial, is offered through the Apple App Store or Google Play. The contract and the payment are made with that store, not on this website. The stores may ask for a payment method for the trial.</p>
@@ -64,17 +67,30 @@
         <li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
       </ul>
       <p>The controller does not store payment-card data himself. Apple and Google decide how long they keep purchase data.</p>
+      <p>The app checks the status of the trial and the subscription through RevenueCat. Section 3.4 describes that.</p>
 
-      <h3>3.4 Local notifications</h3>
+      <h3>3.4 Subscription status through RevenueCat</h3>
+      <p>The app asks RevenueCat whether the trial or the subscription is unlocked. RevenueCat, Inc., United States, processes this data as a processor for the controller. The data are an anonymous identifier of app use, purchase receipts and transaction data, the status of the trial and the subscription, and device and app details such as device type and operating system. In its <a href="https://www.revenuecat.com/privacy-policy">privacy policy</a>, RevenueCat names among that data the Apple receipt file, the Google purchase token, and the time the app was last seen.</p>
+      <p>The purpose is to perform the contract for the trial and the subscription. The legal basis is Article 6(1)(b) GDPR. Payment and the store account remain with Apple or Google, as section 3.3 describes. The controller does not store the data processed at RevenueCat on a server of his own.</p>
+      <p>The data are transferred to the United States. RevenueCat’s privacy policy states that it stores them on Amazon Web Services in the United States. For a transfer from the European Economic Area, the <a href="https://www.revenuecat.com/dpa">data processing addendum</a> makes available the European Commission’s standard contractual clauses (Implementing Decision 2021/914, module 2, where the controller transfers the data as controller). Sub-processors are listed in that addendum.</p>
+      <p>Under the data processing addendum, the data stay stored until RevenueCat’s service ends. If the controller asks within thirty days after that end, RevenueCat deletes the data or returns them. That is subject to ordinary backup and archive copies. The privacy policy also provides for storage where it is required for legal duties, resolving disputes, and enforcing agreements. RevenueCat describes a period of six years after an account ends for people who have an account of their own with RevenueCat. The data described here are an anonymous identifier and the purchase data, not the sign-in details of such an account.</p>
+
+      <h3>3.5 App updates (EAS Update)</h3>
+      <p>The app asks Expo for updates to the program files. The service is called EAS Update. A new version of the app logic can be loaded that way, without the store providing a new installation. The provider is 650 Industries, Inc., United States. The request goes from the device to Expo’s servers.</p>
+      <p>The request transmits the IP address, the device platform, and the app and runtime version. The runtime version names the native build the update must match. Expo additionally describes the contents of such a request as the operating system, the project identifier, and a random token for the installation. Expo states that this token is not an advertising identifier.</p>
+      <p>The purpose is to keep the app secure and up to date. The legal basis is Article 6(1)(f) GDPR. The legitimate interest is closing faults and security gaps in the app that has been shipped. You can object to the processing; see section 6.</p>
+      <p>Expo processes the request in order to deliver the update. In its <a href="https://expo.dev/privacy-explained">explanation of end-user data</a>, Expo describes itself as a processor for that. For aggregated details, or details from which identifiers have been removed, where they are still personal data under the GDPR, Expo describes itself in its <a href="https://expo.dev/terms">terms of service</a> as its own controller. In its <a href="https://expo.dev/privacy">privacy policy</a>, Expo states that it complies with the EU-U.S. Data Privacy Framework and that it has self-certified to that framework. For transfers, the same policy names standard contractual clauses or other appropriate mechanisms where applicable law requires them. Expo’s privacy policy states that it keeps information only for as long as necessary for the purposes described there.</p>
+
+      <h3>3.6 Local notifications</h3>
       <p>The app can schedule notifications locally on the device. That requires permission from the operating system. No device token is sent to the controller, and he does not run a notification server.</p>
       <p>The legal basis is your consent through the system prompt, Article 6(1)(a) GDPR. You can withdraw consent by turning off notifications for AILA in the iOS or Android settings. Withdrawal applies going forward.</p>
 
-      <h3>3.5 Email to the controller</h3>
+      <h3>3.7 Email to the controller</h3>
       <p>If you write to <a href="mailto:niklas.galli@getaila.de">niklas.galli@getaila.de</a>, the controller processes your email address, the message, and his reply in order to handle the request.</p>
       <p>The legal basis is Article 6(1)(b) GDPR when the message concerns the contract or the app, and otherwise Article 6(1)(f) GDPR. The legitimate interest is answering enquiries. Where commercial or tax retention duties apply, Article 6(1)(c) GDPR is an additional legal basis.</p>
       <p>Correspondence is kept for as long as handling the request and any statutory retention period require, and is then deleted.</p>
 
-      <h3>3.6 This website</h3>
+      <h3>3.8 This website</h3>
       <p>These pages are static files delivered through GitHub Pages. Their own code sets no cookies and uses no analytics tool. There is no consent banner for that reason. When you open a page, GitHub Pages receives the connection data the request requires, in particular the IP address.</p>
       <p>The purpose is to publish the information the law requires and to deliver the pages. The legal basis is Article 6(1)(c) GDPR where the pages provide the information required by section 5 of the German Digital Services Act (DDG) and Article 13 GDPR, and Article 6(1)(f) GDPR for technical delivery. The legitimate interest is reliable publication without an account on this site. You can object to processing based on point (f); see section 6.</p>
 
@@ -90,14 +106,24 @@
           </thead>
           <tbody>
             <tr>
-              <td>Request for pulse.json, and visits to this website</td>
-              <td>GitHub</td>
-              <td>Its own controller for the connection data. Privacy statement: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>.</td>
+              <td>Request for pulse.json and briefing.json, and visits to this website</td>
+              <td>GitHub, Inc. (Microsoft), United States</td>
+              <td>Its own controller for the connection data, in particular the IP address. Privacy statement: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>.</td>
             </tr>
             <tr>
-              <td>Subscription and trial</td>
+              <td>Subscription and trial, payment</td>
               <td>Apple, Google</td>
               <td>Their own controllers for payment and the store account. The operator does not receive the card number.</td>
+            </tr>
+            <tr>
+              <td>Status of the trial and the subscription</td>
+              <td>RevenueCat, Inc., United States</td>
+              <td>Processor. Privacy policy: <a href="https://www.revenuecat.com/privacy-policy">Privacy Policy</a>. Transfer: standard contractual clauses in the <a href="https://www.revenuecat.com/dpa">data processing addendum</a>.</td>
+            </tr>
+            <tr>
+              <td>App updates (EAS Update)</td>
+              <td>650 Industries, Inc. (Expo), United States</td>
+              <td>Processor for delivery. Privacy policy: <a href="https://expo.dev/privacy">Privacy policy</a>.</td>
             </tr>
             <tr>
               <td>Email to the address above</td>
@@ -107,10 +133,10 @@
           </tbody>
         </table>
       </div>
-      <p>GitHub may process connection data in the United States and in other countries. The request is a direct connection from your device to GitHub. GitHub states that it complies with the EU-U.S. Data Privacy Framework and that it generally uses the European Commission’s standard contractual clauses (Implementing Decision 2021/914) for transfers to countries without an adequacy decision. GitHub’s listing is in the <a href="https://www.dataprivacyframework.gov/participant/6174">Data Privacy Framework</a>, and the details are in the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>. Apple and Google describe their own transfers in their privacy policies.</p>
+      <p>GitHub may process connection data in the United States and in other countries. The request for pulse.json and briefing.json, and a visit to this website, are direct connections from your device to GitHub. GitHub states that it complies with the EU-U.S. Data Privacy Framework and that it generally uses the European Commission’s standard contractual clauses (Implementing Decision 2021/914) for transfers to countries without an adequacy decision. GitHub’s listing is in the <a href="https://www.dataprivacyframework.gov/participant/6174">Data Privacy Framework</a>, and the details are in the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>. Apple and Google describe their own transfers in their privacy policies. The transfers to RevenueCat and to Expo are described in sections 3.4 and 3.5.</p>
 
       <h2>5. Whether you must provide data, and automated decisions</h2>
-      <p>You are not required by law to provide data. Without local storage, the app cannot keep personalization and progress on the device. Without the request for pulse.json, it cannot show the current texts. Without a purchase through Apple or Google, there is no subscription. Without the system permission, there are no local notifications.</p>
+      <p>You are not required by law to provide data. Without local storage, the app cannot keep reading progress, personalization, and settings on the device. Without the request for pulse.json and briefing.json, it cannot show the current texts. Without a purchase through Apple or Google, there is no subscription. Without the request to RevenueCat, the app cannot determine the status of the trial and the subscription. Without the update request to Expo, the device does not load a program update by that route. Without the system permission, there are no local notifications.</p>
       <p>The controller does not make a decision based solely on automated processing that produces legal effects or similarly significantly affects you (Article 22 GDPR). Personalization runs on the device and does not change your legal position.</p>
 
       <h2>6. Your rights</h2>
@@ -125,11 +151,11 @@
         <li>withdrawal of consent for the future, Article 7(3) GDPR</li>
         <li>a complaint to a supervisory authority, Article 77 GDPR</li>
       </ul>
-      <p>For personalization and learning progress, access and erasure are practical steps on the device, because the controller does not receive that data. For every other request, write to <a href="mailto:niklas.galli@getaila.de">niklas.galli@getaila.de</a>.</p>
+      <p>For reading progress, personalization, settings, and the cache, access and erasure are practical steps on the device, because the controller does not receive that data. For every other request, write to <a href="mailto:niklas.galli@getaila.de">niklas.galli@getaila.de</a>.</p>
       <p>The supervisory authority for the controller in Bavaria is the Bavarian Data Protection Authority for the private sector (Bayerisches Landesamt für Datenschutzaufsicht, BayLDA), Promenade 18, 91522 Ansbach, Germany, <a href="mailto:poststelle@lda.bayern.de">poststelle@lda.bayern.de</a>, <a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>. You may also contact the supervisory authority of your place of residence or work.</p>
 
       <h2>7. Language and date</h2>
-      <p>The <a href="../" hreflang="de" lang="de">German version</a> prevails. This English text is a translation for easier reading. Last updated: <time datetime="2026-10-07">7 October 2026</time>.</p>
+      <p>The <a href="../" hreflang="de" lang="de">German version</a> prevails. This English text is a translation for easier reading. Last updated: <time datetime="2026-10-11">11 October 2026</time>.</p>
     </main>
     <footer>
       <a href="../../impressum/">Legal notice / Impressum</a>
