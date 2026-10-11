@@ -277,7 +277,6 @@ summary:focus-visible {
 .hero-cover .cover-index,
 .hero-cover .screen-kicker {
   color: var(--ink);
-  opacity: 0.72;
 }
 
 .hero-cover strong {
@@ -376,7 +375,6 @@ summary:focus-visible {
 .cover-index {
   font-size: 0.85rem;
   color: var(--ink);
-  opacity: 0.7;
 }
 
 .cover-title {
@@ -411,7 +409,6 @@ summary:focus-visible {
 .level-index {
   margin: 0;
   color: var(--ink);
-  opacity: 0.7;
   font-size: 0.85rem;
 }
 
