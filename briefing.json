@@ -1,7 +1,131 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-10T04:45:32+02:00",
+  "updatedAt": "2026-10-11T04:50:48+02:00",
   "days": [
+    {
+      "date": "2026-10-11",
+      "items": [
+        {
+          "id": "2026-10-11-claude-code-projects-waitlist",
+          "headline": "Claude Code Projects now open to Pro and Max waitlist",
+          "summary": "Anthropic let every Pro and Max subscriber on the waitlist into Projects, where a coordinator splits a goal into parallel cloud threads that open pull requests. Each thread is a full session, so plan limits run out faster.",
+          "tag": "Tools",
+          "level": "advanced",
+          "source": {
+            "name": "METAL",
+            "url": "https://metallab.ai/en/2026/10/claude-code-projects-waitlist-pro-max"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Claude Code Projects jetzt für alle auf der Warteliste",
+              "summary": "Anthropic hat alle Pro- und Max-Abonnenten der Warteliste für Projects freigeschaltet: Ein Coordinator zerlegt ein Ziel in parallele Cloud-Threads, die selbst Pull Requests öffnen. Jeder Thread ist eine volle Session, das kostet Limits."
+            }
+          }
+        },
+        {
+          "id": "2026-10-11-ai-labs-day-after-drills",
+          "headline": "AI labs rehearse the fallout of a major AI disaster",
+          "summary": "Executives at OpenAI, Anthropic, and others are gaming out the political backlash after a catastrophic AI event, such as a cyberattack on banks or power grids, Axios reports. Many insiders expect such an incident within 6 to 12 months.",
+          "tag": "Framework",
+          "level": "beginner",
+          "source": {
+            "name": "Axios",
+            "url": "https://www.axios.com/2026/10/09/ai-companies-day-after-major-attack"
+          },
+          "i18n": {
+            "de": {
+              "headline": "KI-Labs proben den Tag nach einer KI-Katastrophe",
+              "summary": "Manager von OpenAI, Anthropic und anderen spielen laut Axios durch, wie Politik und Öffentlichkeit auf einen schweren KI-Vorfall reagieren, etwa einen Cyberangriff auf Banken oder Stromnetze. Viele Insider erwarten ihn in 6 bis 12 Monaten."
+            }
+          }
+        },
+        {
+          "id": "2026-10-11-germany-drops-mistral-sap-deal",
+          "headline": "Germany shelves its planned AI deal with Mistral and SAP",
+          "summary": "Germany's digital ministry has no plans to buy from Mistral, shelving a framework contract for AI in public administration that Berlin and Paris announced in 2025. Berlin search engine Ecosia also dropped Mistral over quality.",
+          "tag": "Framework",
+          "level": "beginner",
+          "source": {
+            "name": "Dr. Web",
+            "url": "https://www.drweb.de/mistral-sap-bund-verwaltungs-ki-rahmenvertrag/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Bund legt KI-Deal mit Mistral und SAP auf Eis",
+              "summary": "Das Digitalministerium plant keine Beschaffung bei Mistral; der 2025 mit Frankreich angekündigte Rahmenvertrag für KI in der Verwaltung liegt auf Eis. Auch die Berliner Suchmaschine Ecosia trennt sich wegen Qualitätsmängeln von Mistral."
+            }
+          }
+        },
+        {
+          "id": "2026-10-11-tesla-assisted-driving-europe",
+          "headline": "Tesla renames Full Self-Driving in Europe",
+          "summary": "After criticism that the name promised autonomy, Tesla now calls the system Tesla Assisted Driving in Germany and other European countries. Germany backs EU-wide approval if it never exceeds speed limits by more than 10%.",
+          "tag": "Framework",
+          "level": "beginner",
+          "source": {
+            "name": "WirtschaftsWoche",
+            "url": "https://www.wiwo.de/technologie/digitale-welt/assisted-driving-tesla-benennt-nach-kritik-assistenzsystem-in-europa-um/100261196.html"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Tesla nennt FSD in Europa jetzt Assisted Driving",
+              "summary": "Weil der Name autonomes Fahren versprach, heißt das System in Deutschland und anderen europäischen Ländern nun Tesla Assisted Driving. Minister Bilger unterstützt eine EU-Zulassung, wenn es Tempolimits um höchstens 10 % überschreitet."
+            }
+          }
+        },
+        {
+          "id": "2026-10-11-qualcomm-100b-phone-models",
+          "headline": "AI firms want phones to run 100B-parameter models by 2028",
+          "summary": "Qualcomm CEO Cristiano Amon says leading AI companies are asking for phones that can run models with at least 100 billion parameters all the time by 2028. Qualcomm's newest chips handle up to 30 billion.",
+          "tag": "Hardware",
+          "level": "beginner",
+          "source": {
+            "name": "Crypto Briefing",
+            "url": "https://cryptobriefing.com/qualcomm-ceo-100b-parameter-ai-phones-2028/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "KI-Firmen wollen bis 2028 100B-Modelle aufs Handy",
+              "summary": "Laut Qualcomm-Chef Cristiano Amon verlangen führende KI-Firmen Smartphones, die bis 2028 Modelle mit mindestens 100 Milliarden Parametern dauerhaft ausführen. Qualcomms neueste Chips schaffen bis zu 30 Milliarden."
+            }
+          }
+        },
+        {
+          "id": "2026-10-11-claude-startups-perks-paused",
+          "headline": "Anthropic pauses free Claude perks for startups",
+          "summary": "Three days after launch, Anthropic paused the free year of Claude Team and $1,000 in API credits after getting 21 times more applications in 48 hours than in the prior five months. Unclaimed approvals are re-reviewed.",
+          "tag": "Tools",
+          "level": "beginner",
+          "source": {
+            "name": "Forbes Middle East",
+            "url": "https://forbesmiddleeast.com/innovation/technology/anthropic-pauses-free-claude-startup-perks-days-after-launch-1"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Anthropic stoppt Gratis-Claude für Startups",
+              "summary": "Drei Tage nach dem Start pausiert Anthropic das Gratisjahr Claude Team und 1.000 $ API-Credits: In 48 Stunden kamen 21-mal so viele Bewerbungen wie in den fünf Monaten davor. Nicht eingelöste Zusagen werden neu geprüft."
+            }
+          }
+        },
+        {
+          "id": "2026-10-11-devin-chatgpt-plans",
+          "headline": "Devin can now bill GPT usage to your ChatGPT plan",
+          "summary": "Cognition's coding agent Devin now links any personal ChatGPT Go, Plus, or Pro plan, so GPT model usage counts against ChatGPT instead of Devin quota. It requires a paid self-serve Devin plan.",
+          "tag": "Tools",
+          "level": "beginner",
+          "source": {
+            "name": "Devin Docs",
+            "url": "https://docs.devin.ai/admin/billing/chatgpt"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Devin rechnet GPT-Nutzung über dein ChatGPT-Abo ab",
+              "summary": "Der Coding-Agent Devin von Cognition lässt sich jetzt mit jedem privaten ChatGPT-Abo (Go, Plus, Pro) verknüpfen; die GPT-Nutzung zählt dann aufs ChatGPT-Kontingent statt auf Devin. Nötig ist ein bezahlter Self-Serve-Plan."
+            }
+          }
+        }
+      ]
+    },
     {
       "date": "2026-10-10",
       "items": [
