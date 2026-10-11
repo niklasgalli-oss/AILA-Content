@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://niklasgalli-oss.github.io/AILA-Content/sitemap.xml
