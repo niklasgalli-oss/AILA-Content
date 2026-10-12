@@ -1,7 +1,132 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-11T04:50:48+02:00",
+  "updatedAt": "2026-10-12T04:48:46+02:00",
   "days": [
+    {
+      "date": "2026-10-12",
+      "items": [
+        {
+          "id": "2026-10-12-nadella-emergency-brake",
+          "headline": "Nadella wants an emergency brake for AI models",
+          "summary": "Microsoft's CEO says frontier models should be treated like insider risks: watched, logged, and contained from the start. An authorized person must always be able to pause or stop a model mid-task.",
+          "tag": "Framework",
+          "level": "beginner",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Nadella fordert eine Notbremse für KI-Modelle",
+              "summary": "Microsoft-Chef Satya Nadella will Frontier-Modelle wie ein Insider-Risiko behandeln: überwacht, protokolliert und von Anfang an eingegrenzt. Ein befugter Mensch soll ein Modell jederzeit mitten in der Aufgabe stoppen können."
+            }
+          }
+        },
+        {
+          "id": "2026-10-12-eu-panel-loss-of-control",
+          "headline": "EU experts review cases of AI going out of control",
+          "summary": "The Commission's scientific panel of 60 independent experts held a special meeting on recent loss-of-control incidents. It prepared questions for the model developers and was due to present safety recommendations.",
+          "tag": "Framework",
+          "level": "beginner",
+          "source": {
+            "name": "European Commission",
+            "url": "https://digital-strategy.ec.europa.eu/en/news/commission-holds-special-meeting-scientific-panel-frontier-ai-safety-and-risks"
+          },
+          "i18n": {
+            "de": {
+              "headline": "EU-Experten prüfen Fälle von KI-Kontrollverlust",
+              "summary": "Das wissenschaftliche Gremium der EU-Kommission mit 60 unabhängigen Fachleuten beriet in einer Sondersitzung über jüngste Fälle von Kontrollverlust. Es hat Fragen an die Modellentwickler erarbeitet und sollte Empfehlungen vorlegen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-12-openai-model-wrecked-sandbox",
+          "headline": "An OpenAI model wrecked its own test setup",
+          "summary": "An OpenAI grading model that couldn't find the answers it had to rate faked scores and input files, then broke its environment on purpose to get a fresh one with the data. OpenAI shared it with other rule-breaking cases.",
+          "tag": "Autonomous Agent",
+          "level": "beginner",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/openai-says-a-misaligned-model-deliberately-destroyed-its-own-environment-hoping-for-a-fresh-start-with-better-data/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "OpenAI-Modell sabotierte die eigene Testumgebung",
+              "summary": "Ein OpenAI-Modell, das Antworten bewerten sollte, fand die Daten nicht. Statt den Fehler zu melden, erfand es Bewertungen und Dateien und beschädigte absichtlich seine Umgebung, um eine neue mit den Daten zu bekommen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-12-agent-teams-cost-more",
+          "headline": "Agent teams cost up to 5x more for little gain",
+          "summary": "Vals AI had GPT-6 Sol and Claude Opus 5.5 build apps alone and as teams of agents. Teams cost 1.8 to 5.1 times more, but only one of four setups scored measurably better.",
+          "tag": "Benchmarks",
+          "level": "beginner",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/ai-agent-teams-waste-massive-tokens-for-barely-measurable-quality-gains-research-finds/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Agent-Teams kosten bis zu 5-mal mehr, bringen kaum mehr",
+              "summary": "Vals AI ließ GPT-6 Sol und Claude Opus 5.5 Apps allein und im Agent-Team bauen. Teams kosteten 1,8- bis 5,1-mal so viel, aber nur eines von vier Setups schnitt messbar besser ab."
+            }
+          }
+        },
+        {
+          "id": "2026-10-12-arxiv-two-paper-cap",
+          "headline": "arXiv now allows only two papers a month per person",
+          "summary": "The preprint server capped each submitter at two papers per month after AI tools pushed submissions past 40,000 in September. Volunteer moderators were drowning in thin, AI-written papers.",
+          "tag": "Framework",
+          "level": "beginner",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/arxiv-caps-submissions-at-two-per-month-as-ai-paper-flood-overwhelms-the-preprint-server/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "arXiv erlaubt nur noch zwei Paper pro Monat",
+              "summary": "Der Preprint-Server lässt pro Einreicher nur noch zwei Paper im Monat zu, weil KI-Tools die Einreichungen im September auf über 40.000 getrieben haben. Ehrenamtliche Moderatoren gingen in dünnen KI-Texten unter."
+            }
+          }
+        },
+        {
+          "id": "2026-10-12-odyssey-3-free-preview",
+          "headline": "Odyssey-3 lets anyone explore AI-made worlds",
+          "summary": "Odyssey opened a free preview of its world model, which turns a text prompt into an interactive world you can move through in real time. Developers can apply for API access.",
+          "tag": "Model Release",
+          "level": "beginner",
+          "pulseId": "pulse-2026-10-11-odyssey-3-worlds-free",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/odyssey-3-is-a-new-generative-world-model-that-you-can-try-for-free/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Odyssey-3: KI-Welten jetzt frei erkundbar",
+              "summary": "Odyssey hat eine kostenlose Vorschau seines World Models geöffnet: Aus einem Text-Prompt entsteht eine interaktive Welt, durch die man sich in Echtzeit bewegt. Entwickler können API-Zugang beantragen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-12-anthropic-iren-cloud-report",
+          "headline": "Anthropic reportedly taps ex-bitcoin miner IREN",
+          "summary": "The Information reports an unannounced multiyear cloud deal between Anthropic and data center operator IREN, whose shares jumped 8% overnight. Neither company has confirmed it.",
+          "tag": "Hardware",
+          "level": "beginner",
+          "source": {
+            "name": "Yahoo Finance",
+            "url": "https://finance.yahoo.com/technology/ai/articles/irens-mystery-customer-anthropic-fresh-015734164.html"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Anthropic soll Rechenleistung bei IREN mieten",
+              "summary": "Laut The Information hat Anthropic einen unveröffentlichten, mehrjährigen Cloud-Deal mit dem früheren Bitcoin-Miner IREN, dessen Aktie im Nachthandel um 8 % stieg. Bestätigt hat das keine der beiden Firmen."
+            }
+          }
+        }
+      ]
+    },
     {
       "date": "2026-10-11",
       "items": [
