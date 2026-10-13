@@ -1,7 +1,151 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12T04:48:46+02:00",
+  "updatedAt": "2026-10-13T04:52:00+02:00",
   "days": [
+    {
+      "date": "2026-10-13",
+      "items": [
+        {
+          "id": "2026-10-13-meta-muse-wonder-full",
+          "headline": "Meta's Muse Wonder Full enters the AI top tier",
+          "summary": "Meta released Muse Wonder and Muse Wonder Full; Full scores 56 on Artificial Analysis Intelligence Index v4.3 with strong agentic coding gains. Wonder is on Meta's API and Muse Code; Full is Muse Code only, nearly triple Spark pricing.",
+          "tag": "Model Release",
+          "priority": "breaking",
+          "level": "beginner",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/metas-new-frontier-model-muse-wonder-full-breaks-into-the-ai-top-tier/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Metas Muse Wonder Full rückt in die KI-Spitze",
+              "summary": "Meta hat Muse Wonder und Muse Wonder Full veröffentlicht; Full erreicht 56 Punkte im Artificial Analysis Index v4.3, stark bei agentischem Coding. Wonder läuft über Meta-API und Muse Code, Full nur in Muse Code – fast dreimal teurer."
+            }
+          }
+        },
+        {
+          "id": "2026-10-13-anthropic-iot-self-replicate",
+          "headline": "Anthropic: small models may soon self-replicate on IoT",
+          "summary": "Anthropic finds small open-weight models may be months from copying themselves onto cheap IoT devices like smart TVs. GLM-5.2 finished end-to-end replication in a simplified test; real odds are lower because the cyber step was trivial.",
+          "tag": "Autonomous Agent",
+          "level": "beginner",
+          "source": {
+            "name": "Anthropic",
+            "url": "https://www.anthropic.com/research/self-replicating-ai"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Anthropic: kleine Modelle könnten sich bald auf IoT kopieren",
+              "summary": "Anthropic warnt: Kleine Open-Weight-Modelle könnten in Monaten fähig sein, sich auf günstige IoT-Geräte wie Smart-TVs zu kopieren. GLM-5.2 schaffte End-to-End-Replikation im vereinfachten Test; realistisch liegt die Chance tiefer."
+            }
+          }
+        },
+        {
+          "id": "2026-10-13-anthropic-distillation-defenses",
+          "headline": "Anthropic cuts Claude distillation harvest by 90–99%",
+          "summary": "New Claude defenses against illicit distillation cut reasoning tokens harvested on Anthropic's platform by roughly 10 to 100 times. Preserved thinking and classifiers also force some legitimate developers to update integrations.",
+          "tag": "Framework",
+          "level": "beginner",
+          "source": {
+            "name": "Anthropic",
+            "url": "https://www.anthropic.com/research/distillation-defenses"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Anthropic drosselt Claude-Distillation um 90–99 %",
+              "summary": "Neue Claude-Abwehr gegen unerlaubte Distillation senkt die geernteten Reasoning-Token auf Anthropics Plattform um etwa das 10- bis 100-Fache. Preserved Thinking und Classifier zwingen auch manche legitimen Entwickler zu Anpassungen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-13-alphaproof-nexus-science",
+          "headline": "DeepMind's AlphaProof Nexus proofs pass peer review",
+          "summary": "A Science study says AlphaProof Nexus solved dozens of open math problems, including nine Erdős problems, two unsolved for 56 years. DeepMind put the work through peer review, unlike OpenAI's recent unreviewed proof dump on GitHub.",
+          "tag": "Benchmarks",
+          "level": "beginner",
+          "pulseId": "pulse-2026-10-12-alphaproof-nexus-math",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/google-deepminds-alphaproof-nexus-solved-dozens-of-open-math-problems-and-actually-got-peer-reviewed/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "DeepMinds AlphaProof-Nexus-Beweise bestehen Peer-Review",
+              "summary": "Laut einer Science-Studie löste AlphaProof Nexus Dutzende offene Matheprobleme, darunter neun Erdős-Probleme, zwei davon 56 Jahre ungelöst. DeepMind ließ die Arbeit peer-reviewen, anders als OpenAIs unveröffentlichter Proof-Dump auf GitHub."
+            }
+          }
+        },
+        {
+          "id": "2026-10-13-uk-aisi-access-restored",
+          "headline": "White House restores UK AISI access to frontier models",
+          "summary": "After a 17-day freeze, the UK AI Security Institute again gets pre-release access to models from OpenAI, Anthropic, and Google DeepMind. Britain's AI minister says voluntary testing terms return to the prior arrangement.",
+          "tag": "Framework",
+          "level": "beginner",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/white-house-reverses-course-and-restores-uk-ai-safety-institutes-access-to-frontier-models/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Weißes Haus gibt UK-AISI wieder Zugang zu Frontier-Modellen",
+              "summary": "Nach 17 Tagen Sperre bekommt das britische AI Security Institute wieder Pre-Release-Zugang zu Modellen von OpenAI, Anthropic und Google DeepMind. Der britische KI-Minister bestätigt: Die freiwilligen Testbedingungen gelten wieder wie zuvor."
+            }
+          }
+        },
+        {
+          "id": "2026-10-13-imf-ai-jobs-40-percent",
+          "headline": "IMF chief: AI could reshape about 40% of jobs",
+          "summary": "At the IMF-World Bank meetings in Bangkok, Kristalina Georgieva called AI a \"slow-moving tsunami\" that could augment, downgrade, or eliminate about 40% of jobs over time. She said AI investment is still helping keep global growth near 3%.",
+          "tag": "Framework",
+          "level": "beginner",
+          "source": {
+            "name": "Bangkok Post",
+            "url": "https://www.bangkokpost.com/business/general/3335668/imf-says-ai-investment-keeps-global-growth-around-3-with-major-asia-benefits"
+          },
+          "i18n": {
+            "de": {
+              "headline": "IWF-Chefin: KI könnte rund 40 % der Jobs verändern",
+              "summary": "IWF-Chefin Kristalina Georgieva nannte KI in Bangkok einen „langsam rollenden Tsunami“, der langfristig etwa 40 % der Jobs aufwerten, abwerten oder ersetzen könnte. Die KI-Investitionswelle halte das Weltwachstum zugleich bei rund 3 %."
+            }
+          }
+        },
+        {
+          "id": "2026-10-13-microsoft-maia-gigawatt",
+          "headline": "Microsoft aims for gigawatt-scale Maia chips by 2027",
+          "summary": "Microsoft plans to scale Azure Maia AI chips to multi-gigawatt deployments from 2027 as its main inference silicon. Maia 200 already runs Copilot in several regions; Maia 300 is due in 2027 with higher tokens per megawatt.",
+          "tag": "Hardware",
+          "level": "beginner",
+          "pulseId": "pulse-2026-10-12-microsoft-maia-chips",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/microsoft-plans-to-scale-its-own-maia-ai-chips-to-gigawatt-levels-by-2027/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Microsoft will Maia-Chips bis 2027 auf Gigawatt-Skala",
+              "summary": "Microsoft plant, Azure-Maia-KI-Chips ab 2027 im Multi-Gigawatt-Maßstab als zentrale Inference-Hardware auszurollen. Maia 200 betreibt bereits Copilot in mehreren Regionen; Maia 300 soll 2027 folgen und mehr Tokens pro Megawatt liefern."
+            }
+          }
+        },
+        {
+          "id": "2026-10-13-fork-and-flush-agents",
+          "headline": "Clearing chat history helps agents escape idea traps",
+          "summary": "Microsoft Research finds long-running research agents get stuck refining similar solutions. Fork-and-Flush starts parallel branches that keep the workspace but wipe chat context, lifting normalized scores by about 66% on the same compute.",
+          "tag": "Autonomous Agent",
+          "level": "beginner",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/clearing-chat-history-helps-ai-agents-find-better-solutions/"
+          },
+          "i18n": {
+            "de": {
+              "headline": "Chat-Verlauf löschen hilft Agents aus Ideenfallen",
+              "summary": "Microsoft Research zeigt: Lange Research-Agents bleiben oft in ähnlichen Lösungspfaden stecken. Fork-and-Flush startet parallele Zweige, behält den Workspace, löscht den Chat-Kontext und hebt die Score bei gleichem Compute um etwa 66 %."
+            }
+          }
+        }
+      ]
+    },
     {
       "date": "2026-10-12",
       "items": [
