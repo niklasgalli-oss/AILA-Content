@@ -1235,45 +1235,66 @@ summary:focus-visible {
 }
 
 .compare-slider {
+  display: grid;
   position: relative;
   margin-top: 1.5rem;
-  min-height: 11.5rem;
   border: 1px solid rgba(26, 22, 18, 0.25);
   background: rgba(26, 22, 18, 0.04);
-  touch-action: none;
+  overflow: hidden;
+  cursor: ew-resize;
+  /* touch-action is not inherited. Safari reads it from the hit target,
+     so the slider and every descendant allow vertical panning only.
+     Horizontal drags are claimed in JS and do not scroll the page. */
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.compare-slider * {
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .compare-pane {
-  position: absolute;
-  inset: 0;
-  padding: 1rem;
+  grid-area: 1 / 1;
+  position: relative;
+  z-index: 0;
+  padding: 1rem 1.15rem 1.2rem;
+  min-height: 9.25rem;
 }
 
 .compare-pane p {
   margin: 0.4rem 0 0;
-  max-width: 34rem;
+  max-width: none;
   font-family: var(--serif);
-  font-size: clamp(1.25rem, 2.4vw, 1.7rem);
-  line-height: 1.25;
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+  line-height: 1.28;
 }
 
 .compare-after {
+  z-index: 1;
   background: var(--ink);
   color: var(--paper);
   clip-path: inset(0 0 0 50%);
+  -webkit-clip-path: inset(0 0 0 50%);
 }
 
 .compare-handle {
   position: absolute;
+  z-index: 2;
   top: 0;
   bottom: 0;
   left: 50%;
   width: 44px;
-  margin-left: -22px;
+  margin: 0;
+  padding: 0;
   border: 0;
   background: transparent;
+  transform: translateX(-50%);
   cursor: ew-resize;
-  padding: 0;
 }
 
 .compare-handle::before {
@@ -1282,8 +1303,21 @@ summary:focus-visible {
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 1px;
+  width: 2px;
+  margin-left: -1px;
   background: var(--ink);
+}
+
+.compare-handle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--ink);
+  background: var(--paper);
 }
 
 .stats-row {
