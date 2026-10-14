@@ -2,9 +2,11 @@
  * AILA landing config.
  *
  * AILA_APP_STORE_URL is the only App Store link. Leave it as "" until the
- * listing exists. An empty value is the "Bald im App Store" state: the German
- * page says that, the English page says "Coming to the App Store", and neither
- * page shows a Download on the App Store badge.
+ * listing exists. An empty value keeps the coming-soon lines: English says
+ * "Coming soon on App Store" and "Coming soon on Google Play". German says
+ * "Demnächst im App Store" and "Demnächst bei Google Play". Neither page
+ * shows a Download on the App Store badge while this stays empty. Google Play
+ * has no URL yet, so that line stays coming soon.
  *
  * Apple's badge must link to the product page. When the listing is live, set
  * this to the https://apps.apple.com/... URL. The page then shows Apple's

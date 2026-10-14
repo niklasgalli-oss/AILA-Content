@@ -61,10 +61,12 @@ test("English and German pages carry the landing sections", () => {
     assert.doesNotMatch(html, /fonts\.googleapis\.com/);
     assert.doesNotMatch(html, /googletagmanager|google-analytics|plausible|cdn\.jsdelivr/i);
   }
-  assert.match(en, /Coming to the App Store/);
+  assert.match(en, /Coming soon on App Store/);
+  assert.match(en, /Coming soon on Google Play/);
   assert.match(en, /Learn AI/);
   assert.match(en, /Android follows/);
-  assert.match(de, /Bald im App Store/);
+  assert.match(de, /Demnächst im App Store/);
+  assert.match(de, /Demnächst bei Google Play/);
   assert.match(de, /Android folgt/);
   assert.match(de, /KI lernen/);
   assert.match(en, /href="impressum\/"/);
@@ -75,9 +77,11 @@ test("English and German pages carry the landing sections", () => {
 
 test("landing assets stay self-hosted and flat-colored", () => {
   const css = read("docs/landing.css");
-  assert.match(css, /bricolage-grotesque-latin\.woff2/);
+  assert.match(css, /newsreader-latin-500\.woff2/);
+  assert.match(css, /source-sans-3-latin-400\.woff2/);
   assert.doesNotMatch(css, /linear-gradient|radial-gradient|fonts\.googleapis/i);
-  assert.equal(existsSync(join(root, "docs/assets/bricolage-grotesque-latin.woff2")), true);
+  assert.equal(existsSync(join(root, "docs/assets/newsreader-latin-500.woff2")), true);
+  assert.equal(existsSync(join(root, "docs/assets/source-sans-3-latin-400.woff2")), true);
   assert.equal(existsSync(join(root, "docs/assets/OFL.txt")), true);
   assert.equal(existsSync(join(root, "docs/assets/app-store-badge-en.svg")), true);
   assert.equal(existsSync(join(root, "docs/assets/app-store-badge-de.svg")), true);
