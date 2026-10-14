@@ -172,110 +172,6 @@ wireStore();
 loadBriefing();
 wireEditionMotion();
 
-function wireCompare(slider) {
-  const after = slider.querySelector(".compare-after");
-  const handle = slider.querySelector(".compare-handle");
-  if (!after || !handle) return;
-
-  const innerBox = () => {
-    const rect = slider.getBoundingClientRect();
-    return {
-      left: rect.left + slider.clientLeft,
-      width: slider.clientWidth
-    };
-  };
-
-  const setPercent = (percent) => {
-    const next = Math.max(0, Math.min(100, percent));
-    const px = (next / 100) * innerBox().width;
-    const clip = "inset(0px 0px 0px " + px + "px)";
-    after.style.clipPath = clip;
-    after.style.webkitClipPath = clip;
-    handle.style.left = px + "px";
-    handle.setAttribute("aria-valuenow", String(Math.round(next)));
-  };
-
-  const percentFromX = (clientX) => {
-    const box = innerBox();
-    if (!box.width) return 50;
-    return ((clientX - box.left) / box.width) * 100;
-  };
-
-  const currentPercent = () => Number(handle.getAttribute("aria-valuenow")) || 0;
-
-  let pointerId = null;
-  slider.addEventListener("pointerdown", (event) => {
-    if (event.pointerType === "touch") return;
-    if (event.button !== 0) return;
-    event.preventDefault();
-    pointerId = event.pointerId;
-    try {
-      slider.setPointerCapture(event.pointerId);
-    } catch {
-      /* Dragging still tracks while the pointer stays over the slider. */
-    }
-    handle.focus({ preventScroll: true });
-    setPercent(percentFromX(event.clientX));
-  });
-
-  slider.addEventListener("pointermove", (event) => {
-    if (event.pointerType === "touch" || pointerId !== event.pointerId) return;
-    setPercent(percentFromX(event.clientX));
-  });
-
-  const endPointer = (event) => {
-    if (pointerId === event.pointerId) pointerId = null;
-  };
-  slider.addEventListener("pointerup", endPointer);
-  slider.addEventListener("pointercancel", endPointer);
-
-  let touch = null;
-  slider.addEventListener("touchstart", (event) => {
-    if (event.touches.length !== 1) return;
-    const point = event.touches[0];
-    touch = { x: point.clientX, y: point.clientY, axis: "" };
-  }, { passive: true });
-
-  slider.addEventListener("touchmove", (event) => {
-    if (!touch || event.touches.length !== 1) return;
-    const point = event.touches[0];
-    const dx = Math.abs(point.clientX - touch.x);
-    const dy = Math.abs(point.clientY - touch.y);
-    if (!touch.axis) {
-      if (dx < 8 && dy < 8) {
-        /* Claim a horizontal-leaning gesture before Safari starts a scroll. */
-        if (dx >= dy && event.cancelable) event.preventDefault();
-        return;
-      }
-      touch.axis = dx > dy ? "x" : "y";
-    }
-    if (touch.axis !== "x") return;
-    if (event.cancelable) event.preventDefault();
-    setPercent(percentFromX(point.clientX));
-  }, { passive: false });
-
-  const endTouch = () => {
-    if (touch && !touch.axis) setPercent(percentFromX(touch.x));
-    touch = null;
-  };
-  slider.addEventListener("touchend", endTouch);
-  slider.addEventListener("touchcancel", () => {
-    touch = null;
-  });
-
-  handle.addEventListener("keydown", (event) => {
-    const step = event.shiftKey ? 10 : 5;
-    let next = null;
-    if (event.key === "ArrowLeft") next = currentPercent() - step;
-    else if (event.key === "ArrowRight") next = currentPercent() + step;
-    else if (event.key === "Home") next = 0;
-    else if (event.key === "End") next = 100;
-    else return;
-    event.preventDefault();
-    setPercent(next);
-  });
-}
-
 function wireEditionMotion() {
   const header = document.getElementById("site-header");
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -335,10 +231,6 @@ function wireEditionMotion() {
       spot.style.left = (event.clientX - rect.left) + "px";
       spot.style.top = (event.clientY - rect.top) + "px";
     });
-  });
-
-  document.querySelectorAll("[data-compare]").forEach((slider) => {
-    wireCompare(slider);
   });
 
   const back = document.getElementById("back-to-top");

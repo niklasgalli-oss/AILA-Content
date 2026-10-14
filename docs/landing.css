@@ -609,12 +609,8 @@ summary:focus-visible {
   background: rgba(26, 22, 18, 0.35);
 }
 
-.compare-after .kicker {
+.wording--after .kicker {
   color: var(--paper);
-}
-
-.compare-handle::before {
-  box-shadow: 1px 0 0 var(--paper);
 }
 
 .essay h2 {
@@ -1234,39 +1230,19 @@ summary:focus-visible {
   content: "+";
 }
 
-.compare-slider {
+.wording-pair {
   display: grid;
-  position: relative;
+  gap: 0.75rem;
   margin-top: 1.5rem;
+}
+
+.wording {
+  padding: 1rem 1.15rem 1.2rem;
   border: 1px solid rgba(26, 22, 18, 0.25);
   background: rgba(26, 22, 18, 0.04);
-  overflow: hidden;
-  cursor: ew-resize;
-  /* touch-action is not inherited. Safari reads it from the hit target,
-     so the slider and every descendant allow vertical panning only.
-     Horizontal drags are claimed in JS and do not scroll the page. */
-  touch-action: pan-y;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
 }
 
-.compare-slider * {
-  touch-action: pan-y;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-}
-
-.compare-pane {
-  grid-area: 1 / 1;
-  position: relative;
-  z-index: 0;
-  padding: 1rem 1.15rem 1.2rem;
-  min-height: 9.25rem;
-}
-
-.compare-pane p {
+.wording p {
   margin: 0.4rem 0 0;
   max-width: none;
   font-family: var(--serif);
@@ -1274,50 +1250,16 @@ summary:focus-visible {
   line-height: 1.28;
 }
 
-.compare-after {
-  z-index: 1;
+.wording .kicker {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+.wording--after {
   background: var(--ink);
   color: var(--paper);
-  clip-path: inset(0 0 0 50%);
-  -webkit-clip-path: inset(0 0 0 50%);
-}
-
-.compare-handle {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 44px;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  transform: translateX(-50%);
-  cursor: ew-resize;
-}
-
-.compare-handle::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 2px;
-  margin-left: -1px;
-  background: var(--ink);
-}
-
-.compare-handle::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 28px;
-  height: 28px;
-  transform: translate(-50%, -50%);
-  border: 1px solid var(--ink);
-  background: var(--paper);
 }
 
 .stats-row {
@@ -1420,7 +1362,8 @@ summary:focus-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .compare-pair {
+  .compare-pair,
+  .wording-pair {
     grid-template-columns: 1fr 1fr;
   }
 
