@@ -37,38 +37,57 @@
 </head>
 <body>
   <a class="skip" href="#content">Skip to content</a>
-  <header class="masthead">
+  <div class="nav-backdrop" id="nav-backdrop"></div>
+  <nav class="mobile-nav" id="mobile-nav-panel" aria-label="Sections" inert>
+    <a class="nav-link" href="#learn"><span class="mobile-nav-index">01</span>Path</a>
+    <a class="nav-link" href="#briefing"><span class="mobile-nav-index">02</span>Briefing</a>
+    <a class="nav-link" href="#stakes"><span class="mobile-nav-index">03</span>Why now</a>
+    <a class="nav-link" href="#teams"><span class="mobile-nav-index">04</span>Teams</a>
+    <a class="nav-link" href="#faq"><span class="mobile-nav-index">05</span>FAQ</a>
+    <a href="de/" hreflang="de" lang="de">Deutsch</a>
+  </nav>
+  <header class="masthead" id="site-header">
     <div class="wrap">
       <div class="mast-top">
         <a class="brand" href="./">AILA</a>
         <p class="mast-issue">Vol. I · No. 1</p>
-        <a class="lang" href="de/" hreflang="de" lang="de">Deutsch</a>
+        <div class="mast-tools">
+          <a class="lang" href="de/" hreflang="de" lang="de">Deutsch</a>
+          <button class="burger" id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav-panel" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </div>
       <nav class="site-nav" aria-label="Primary">
-        <a href="#learn">Path</a>
-        <a href="#briefing">Briefing</a>
-        <a href="#stakes">Why now</a>
-        <a href="#teams">Teams</a>
-        <a href="#faq">FAQ</a>
+        <a class="nav-link" href="#learn">Path</a>
+        <a class="nav-link" href="#briefing">Briefing</a>
+        <a class="nav-link" href="#stakes">Why now</a>
+        <a class="nav-link" href="#teams">Teams</a>
+        <a class="nav-link" href="#faq">FAQ</a>
       </nav>
       <div class="rules" aria-hidden="true"><span></span><span></span></div>
     </div>
   </header>
   <main id="content">
-    <section class="front wrap">
-      <div class="front-grid">
-        <div class="lead">
-          <p class="kicker">For iPhone and Android</p>
+    <section class="front" id="hero-section">
+      <span class="hero-rule hero-rule-left" aria-hidden="true"></span>
+      <span class="hero-rule hero-rule-right" aria-hidden="true"></span>
+      <div class="wrap front-grid">
+        <div class="edition-frame">
+          <p class="edition-bar"><span>Vol. I · No. 1</span><span>For iPhone and Android</span></p>
           <h1>Learn AI like a language.</h1>
-          <p class="standfirst">Earlier, languages with Duolingo. Now, AI with AILA.</p>
-          <div class="store" data-aila-store data-badge="assets/app-store-badge-en.svg" data-badge-alt="Download on the App Store">
-            <p class="store-row">
-              <span class="store-pending" data-store-pending>Coming soon on App Store</span>
-              <span class="store-pending store-play">Coming soon on Google Play</span>
-            </p>
+          <div class="edition-split">
+            <p class="standfirst">Earlier, languages with Duolingo. Now, AI with AILA.</p>
+            <div>
+              <div class="store" data-aila-store data-badge="assets/app-store-badge-en.svg" data-badge-alt="Download on the App Store">
+                <p class="store-row">
+                  <span class="store-pending" data-store-pending>Coming soon on App Store</span>
+                  <span class="store-pending store-play">Coming soon on Google Play</span>
+                </p>
+              </div>
+              <p class="price-note">The core is free. AILA Premium includes a 7-day free trial. The App Store or Google Play shows the price.</p>
+            </div>
           </div>
-          <p class="price-note">The core is free. AILA Premium includes a 7-day free trial. The App Store or Google Play shows the price.</p>
-          <p class="lede">A guided path from zero, in plain language. Articles when you want the mechanism. A Daily AI Briefing, three times a day, including the tools you already use. Matched to your level. The habit is how you stay on the winning side. Skip it, and the room moves on.</p>
         </div>
         <aside class="rail" aria-labelledby="contents-label">
           <p class="kicker" id="contents-label">In this issue</p>
@@ -89,40 +108,106 @@
           </div>
         </aside>
       </div>
+      <div class="wrap">
+        <a class="scroll-indicator" href="#learn">Scroll<span class="scroll-indicator-line" aria-hidden="true"></span></a>
+      </div>
+    </section>
+
+    <section class="trust-bar" aria-label="What the practice includes">
+      <div class="wrap trust-inner">
+        <p class="trust-label">The practice</p>
+        <div class="trust-logos">
+          <div class="trust-track">
+            <div class="trust-set">
+              <span class="trust-item">From zero</span><span class="trust-slash" aria-hidden="true">/</span>
+              <span class="trust-item">No jargon</span><span class="trust-slash" aria-hidden="true">/</span>
+              <span class="trust-item">Briefing three times a day</span><span class="trust-slash" aria-hidden="true">/</span>
+              <span class="trust-item">Matched to your level</span><span class="trust-slash" aria-hidden="true">/</span>
+              <span class="trust-item">Core is free</span><span class="trust-slash" aria-hidden="true">/</span>
+              <span class="trust-item">Seven-day trial</span><span class="trust-slash" aria-hidden="true">/</span>
+            </div>
+            <div class="trust-set" aria-hidden="true">
+              <span class="trust-item">From zero</span><span class="trust-slash">/</span>
+              <span class="trust-item">No jargon</span><span class="trust-slash">/</span>
+              <span class="trust-item">Briefing three times a day</span><span class="trust-slash">/</span>
+              <span class="trust-item">Matched to your level</span><span class="trust-slash">/</span>
+              <span class="trust-item">Core is free</span><span class="trust-slash">/</span>
+              <span class="trust-item">Seven-day trial</span><span class="trust-slash">/</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="block wrap" id="learn">
-      <div class="section-head">
+      <div class="path-grid">
         <div>
-          <p class="kicker">The path</p>
-          <h2>Three levels. You start at the first.</h2>
+          <p class="section-eyebrow"><span>(01)</span><span class="section-eyebrow-dot" aria-hidden="true"></span><span>The path</span></p>
+          <h2 class="reveal-text">Three levels. You start at the first.</h2>
+          <p class="lede">A guided path from zero, in plain language. Articles when you want the mechanism. A Daily AI Briefing, three times a day, including the tools you already use. Matched to your level. The habit is how you stay on the winning side. Skip it, and the room moves on.</p>
+        </div>
+        <div class="chance-visual">
+          <p class="chance-badge">Where you start</p>
+          <div class="chance-row"><span>Basics</span><div class="chance-bar"><i style="width:100%"></i></div></div>
+          <div class="chance-row"><span>Core</span><div class="chance-bar"><i style="width:66%"></i></div></div>
+          <div class="chance-row"><span>Depth</span><div class="chance-bar"><i style="width:40%"></i></div></div>
+          <p class="chance-note">A picture of the path, not a score.</p>
         </div>
       </div>
-      <p class="lede">The app moves with you. Staying on Basics is enough.</p>
+      <ul class="bento" aria-label="Topics on the Basics path">
+        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">01</span><strong>What AI is</strong></li>
+        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">02</span><strong>A prompt</strong></li>
+        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">03</span><strong>A model</strong></li>
+        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">04</span><strong>Tokens</strong></li>
+        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">05</span><strong>Context window</strong></li>
+        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">06</span><strong>Everyday tools</strong></li>
+        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">07</span><strong>A real limit</strong></li>
+        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">08</span><strong>Read a headline</strong></li>
+      </ul>
       <ol class="levels">
-        <li class="level basics">
+        <li class="level giant-row basics">
           <p class="level-index">01</p>
-          <h3>Basics</h3>
-          <p>What AI is, what a prompt is, and what the tools on your phone already do. Written for a complete beginner. No jargon.</p>
+          <div>
+            <h3>Basics</h3>
+            <p>What AI is, what a prompt is, and what the tools on your phone already do. Written for a complete beginner. No jargon.</p>
+          </div>
+          <span class="giant-arrow" aria-hidden="true">→</span>
         </li>
-        <li class="level core">
+        <li class="level giant-row core">
           <p class="level-index">02</p>
-          <h3>Core</h3>
-          <p>The parts, with their real names: model, token, context window. Each one in plain language before it is used again.</p>
+          <div>
+            <h3>Core</h3>
+            <p>The parts, with their real names: model, token, context window. Each one in plain language before it is used again.</p>
+          </div>
+          <span class="giant-arrow" aria-hidden="true">→</span>
         </li>
-        <li class="level depth">
+        <li class="level giant-row depth">
           <p class="level-index">03</p>
-          <h3>Depth</h3>
-          <p>Longer articles. Agents, benchmarks, fine-tuning, and how to check a claim in an AI headline.</p>
+          <div>
+            <h3>Depth</h3>
+            <p>Longer articles. Agents, benchmarks, fine-tuning, and how to check a claim in an AI headline.</p>
+          </div>
+          <span class="giant-arrow" aria-hidden="true">→</span>
         </li>
       </ol>
+      <div class="section-breadcrumb">
+        <div class="section-breadcrumb-row"><span><i class="section-breadcrumb-dot" aria-hidden="true"></i>The path</span><span>/ 01 / AILA</span></div>
+        <div class="section-breadcrumb-line"></div>
+      </div>
+    </section>
+
+    <section class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <p class="marquee-phrase"><span>Don’t get left behind</span><span class="marquee-slash">/</span><span>Earlier, languages. Now, AI.</span></p>
+        <p class="marquee-phrase" aria-hidden="true"><span>Don’t get left behind</span><span class="marquee-slash">/</span><span>Earlier, languages. Now, AI.</span></p>
+      </div>
     </section>
 
     <section class="block wrap" id="briefing" data-briefing data-locale="en">
       <div class="section-head">
         <div>
-          <p class="kicker">Three times a day</p>
-          <h2>Daily AI Briefing</h2>
+          <p class="section-eyebrow"><span>(02)</span><span class="section-eyebrow-dot" aria-hidden="true"></span><span>Three times a day</span></p>
+          <h2 class="reveal-text">Daily AI Briefing</h2>
         </div>
         <p class="meta">Latest briefing · <time data-briefing-date datetime="2026-10-11">11 October 2026</time></p>
       </div>
@@ -150,15 +235,47 @@
     </section>
 
     <section class="essay" id="stakes">
-      <div class="wrap essay-grid">
-        <p class="kicker">Why now</p>
-        <div>
-          <h2>Don’t get left behind.</h2>
-          <p class="pull">With AILA, you are on the winning side.</p>
+      <div class="wrap">
+        <p class="section-eyebrow"><span>(03)</span><span class="section-eyebrow-dot" aria-hidden="true"></span><span>Why now</span></p>
+        <h2 class="reveal-text">Don’t get left behind.</h2>
+        <p class="pull">With AILA, you are on the winning side.</p>
+        <div class="compare-pair">
+          <div class="compare-card compare-card--bad">
+            <h3>Left behind</h3>
+            <ul>
+              <li>The meeting uses a word you have not met.</li>
+              <li>A headline about a model is only a headline.</li>
+              <li>The tool on your phone stays a black box.</li>
+            </ul>
+          </div>
+          <div class="compare-card compare-card--good">
+            <h3>With AILA</h3>
+            <ul>
+              <li>Basics names the thing the first time it appears.</li>
+              <li>The briefing is matched to your level, three times a day.</li>
+              <li>You can say what a claim does not prove.</li>
+            </ul>
+          </div>
         </div>
-        <div class="essay-copy">
-          <p>The meeting will not pause for a definition. A tool already on the phone, a headline about a model, a number in a chart: someone is asked what it means. The people who can answer are the ones asked back.</p>
-          <p>AILA is that practice, a few minutes at a time, the way a language was learned. Basics is written for a first day. Each word is defined the first time it appears. Staying on that path is enough. Articles are there when you want the mechanism. The Daily AI Briefing includes products people open on a phone, alongside the lab news.</p>
+        <div class="compare-slider" data-compare>
+          <div class="compare-pane">
+            <p class="kicker">Before</p>
+            <p>The context window saturates, and attention thins across tokens.</p>
+          </div>
+          <div class="compare-pane compare-after">
+            <p class="kicker">After Basics</p>
+            <p>The model can only read so much at once. Say the task, and say what you do not want.</p>
+          </div>
+          <button type="button" class="compare-handle" aria-label="Drag to compare the two wordings"></button>
+        </div>
+        <div class="stats-row">
+          <p class="stat"><strong>3</strong><span>Levels. You start at Basics.</span></p>
+          <p class="stat"><strong>3×</strong><span>A briefing, every day.</span></p>
+          <p class="stat"><strong>7</strong><span>Days in the Premium trial.</span></p>
+        </div>
+        <div class="section-breadcrumb">
+          <div class="section-breadcrumb-row"><span><i class="section-breadcrumb-dot" aria-hidden="true"></i>Why now</span><span>/ 03 / AILA</span></div>
+          <div class="section-breadcrumb-line"></div>
         </div>
       </div>
     </section>
@@ -211,7 +328,9 @@
           <p class="fine">Apple, App Store, and iPhone are trademarks of Apple Inc., registered in the U.S. and other countries. Google Play is a trademark of Google LLC.</p>
         </div>
       </div>
+      <p class="wordmark" aria-hidden="true">AILA</p>
     </div>
   </footer>
+  <button type="button" class="back-top" id="back-to-top">Top</button>
 </body>
 </html>

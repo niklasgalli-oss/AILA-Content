@@ -170,3 +170,111 @@ async function loadBriefing() {
 
 wireStore();
 loadBriefing();
+wireEditionMotion();
+
+function wireEditionMotion() {
+  const header = document.getElementById("site-header");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const onScroll = () => {
+    if (header) header.classList.toggle("is-scrolled", window.scrollY > 20);
+    const top = document.getElementById("back-to-top");
+    if (top) top.classList.toggle("is-visible", window.scrollY > 500);
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  const burger = document.getElementById("mobile-menu-btn");
+  const panel = document.getElementById("mobile-nav-panel");
+  const backdrop = document.getElementById("nav-backdrop");
+  const setNav = (open) => {
+    panel?.classList.toggle("active", open);
+    backdrop?.classList.toggle("active", open);
+    burger?.setAttribute("aria-expanded", open ? "true" : "false");
+    if (panel) {
+      if (open) panel.removeAttribute("inert");
+      else panel.setAttribute("inert", "");
+    }
+    document.body.style.overflow = open ? "hidden" : "";
+  };
+  burger?.addEventListener("click", () => {
+    setNav(burger.getAttribute("aria-expanded") !== "true");
+  });
+  backdrop?.addEventListener("click", () => setNav(false));
+  panel?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setNav(false));
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setNav(false);
+  });
+
+  const links = document.querySelectorAll(".nav-link");
+  const sections = document.querySelectorAll("main section[id]");
+  if (sections.length && "IntersectionObserver" in window) {
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        links.forEach((link) => {
+          link.classList.toggle("is-active", link.getAttribute("href") === "#" + id);
+        });
+      });
+    }, { threshold: 0.3 });
+    sections.forEach((section) => navObserver.observe(section));
+  }
+
+  document.querySelectorAll(".bento-card").forEach((card) => {
+    const spot = card.querySelector(".bento-spot");
+    if (!spot) return;
+    card.addEventListener("pointermove", (event) => {
+      const rect = card.getBoundingClientRect();
+      spot.style.left = (event.clientX - rect.left) + "px";
+      spot.style.top = (event.clientY - rect.top) + "px";
+    });
+  });
+
+  document.querySelectorAll("[data-compare]").forEach((slider) => {
+    const after = slider.querySelector(".compare-after");
+    const handle = slider.querySelector(".compare-handle");
+    if (!after || !handle) return;
+    let dragging = false;
+    const place = (clientX) => {
+      const rect = slider.getBoundingClientRect();
+      const percent = Math.max(8, Math.min(92, ((clientX - rect.left) / rect.width) * 100));
+      after.style.clipPath = "inset(0 0 0 " + percent + "%)";
+      handle.style.left = percent + "%";
+    };
+    slider.addEventListener("pointerdown", (event) => {
+      dragging = true;
+      slider.setPointerCapture?.(event.pointerId);
+      place(event.clientX);
+    });
+    slider.addEventListener("pointermove", (event) => {
+      if (dragging) place(event.clientX);
+    });
+    slider.addEventListener("pointerup", () => { dragging = false; });
+    slider.addEventListener("pointercancel", () => { dragging = false; });
+    handle.addEventListener("keydown", (event) => {
+      const current = parseFloat(handle.style.left) || 50;
+      if (event.key === "ArrowLeft") place(slider.getBoundingClientRect().left + ((current - 5) / 100) * slider.getBoundingClientRect().width);
+      if (event.key === "ArrowRight") place(slider.getBoundingClientRect().left + ((current + 5) / 100) * slider.getBoundingClientRect().width);
+    });
+  });
+
+  const back = document.getElementById("back-to-top");
+  back?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  });
+
+  if (!reduce && "IntersectionObserver" in window) {
+    document.documentElement.classList.add("has-reveal");
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll(".reveal-text").forEach((el) => revealObserver.observe(el));
+  }
+}
