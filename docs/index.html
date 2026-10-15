@@ -91,12 +91,46 @@
         <div class="edition-frame">
           <p class="edition-bar"><span>Vol. I · No. 1</span><span>For iPhone and Android</span></p>
           <div class="aila-hello">
-            <div class="aila-head aila-bob">
-              <picture>
-                <source srcset="assets/aila-head-full.webp" type="image/webp">
-                <img src="assets/aila-head-full.png" alt="" width="525" height="567">
-              </picture>
-              <span class="aila-lid" aria-hidden="true"></span>
+            <div class="aila-mark" data-aila-mark data-gaze="right" data-mood="neutral">
+              <img src="assets/aila-head-full.png" alt="" width="525" height="567">
+              <svg class="aila-face" viewBox="0 0 525 567" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+                <defs>
+                  <radialGradient id="aila-iris-hero" cx="40%" cy="34%" r="68%">
+                    <stop offset="0%" stop-color="#F4FCFF"/>
+                    <stop offset="16%" stop-color="#9ADFFF"/>
+                    <stop offset="42%" stop-color="#2F8FE0"/>
+                    <stop offset="74%" stop-color="#1248A8"/>
+                    <stop offset="100%" stop-color="#07183C"/>
+                  </radialGradient>
+                  <linearGradient id="aila-brow-hero" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#7FE7FF" stop-opacity="0.2"/>
+                    <stop offset="50%" stop-color="#E9FBFF"/>
+                    <stop offset="100%" stop-color="#7FE7FF" stop-opacity="0.25"/>
+                  </linearGradient>
+                </defs>
+                <ellipse data-eye="l" data-part="white" cx="160" cy="285.2" rx="50" ry="32.4" fill="#E7F6FF"/>
+                <ellipse data-eye="l" data-part="iris" cx="166.4" cy="283.8" rx="34" ry="20.4" fill="url(#aila-iris-hero)"/>
+                <ellipse data-eye="l" data-part="pupil" cx="176" cy="283.2" rx="9" ry="6" fill="#3A4654"/>
+                <ellipse data-eye="l" data-part="gloss" cx="175.2" cy="263.4" rx="7" ry="4.5" fill="#FFE6C2" opacity="0.8"/>
+                <ellipse data-eye="l" data-part="small" cx="157.2" cy="273.4" rx="3" ry="2" fill="#FFE6C2" opacity="0.45"/>
+                <ellipse data-eye="r" data-part="white" cx="362" cy="285.2" rx="50" ry="32.4" fill="#E7F6FF"/>
+                <ellipse data-eye="r" data-part="iris" cx="368.4" cy="283.8" rx="34" ry="20.4" fill="url(#aila-iris-hero)"/>
+                <ellipse data-eye="r" data-part="pupil" cx="378" cy="283.2" rx="9" ry="6" fill="#3A4654"/>
+                <ellipse data-eye="r" data-part="gloss" cx="377.2" cy="263.4" rx="7" ry="4.5" fill="#FFE6C2" opacity="0.8"/>
+                <ellipse data-eye="r" data-part="small" cx="359.2" cy="273.4" rx="3" ry="2" fill="#FFE6C2" opacity="0.45"/>
+                <g class="brows-rest" fill="none" stroke="url(#aila-brow-hero)" stroke-width="8" stroke-linecap="round">
+                  <path d="M104 196 Q158 174 214 196"/>
+                  <path d="M308 196 Q362 174 418 196"/>
+                </g>
+                <g class="brows-raised" opacity="0" fill="none" stroke="url(#aila-brow-hero)" stroke-width="8" stroke-linecap="round">
+                  <path d="M104 188 Q158 162 214 188"/>
+                  <path d="M308 188 Q362 162 418 188"/>
+                </g>
+                <path class="mouth-smile" d="M186 396 Q260 432 334 396" fill="none" stroke="#24303A" stroke-width="7" stroke-linecap="round"/>
+                <ellipse class="mouth-open" cx="260" cy="418" rx="16" ry="3.5" fill="#24303A" opacity="0"/>
+                <ellipse class="ear" cx="48" cy="318" rx="16" ry="22" fill="#9EE7FF" opacity="0"/>
+                <ellipse class="ear" cx="476" cy="324" rx="16" ry="22" fill="#9EE7FF" opacity="0"/>
+              </svg>
             </div>
             <p class="aila-bubble">Hi, I'm Aila</p>
           </div>
@@ -114,24 +148,6 @@
             </div>
           </div>
         </div>
-        <aside class="rail" aria-labelledby="contents-label">
-          <p class="kicker" id="contents-label">In this issue</p>
-          <ol class="toc">
-            <li><span class="toc-num">01</span><span>What AI is</span></li>
-            <li><span class="toc-num">02</span><span>A prompt</span></li>
-            <li><span class="toc-num">03</span><span>A model</span></li>
-            <li><span class="toc-num">04</span><span>Tokens</span></li>
-            <li><span class="toc-num">05</span><span>Context window</span></li>
-            <li><span class="toc-num">06</span><span>Everyday tools</span></li>
-            <li><span class="toc-num">07</span><span>A real limit</span></li>
-            <li><span class="toc-num">08</span><span>Read a headline</span></li>
-          </ol>
-          <div class="excerpt">
-            <p class="kicker">From Basics</p>
-            <p class="excerpt-title">What a prompt is</p>
-            <p>The instruction you give. Say the task, and say what you do not want.</p>
-          </div>
-        </aside>
       </div>
       <div class="wrap">
         <a class="scroll-indicator" href="#learn">Scroll<span class="scroll-indicator-line" aria-hidden="true"></span></a>
@@ -166,75 +182,52 @@
 
     <section class="block wrap" id="screens" aria-labelledby="screens-title">
       <p class="section-eyebrow"><span class="section-eyebrow-dot" aria-hidden="true"></span><span>In the app</span></p>
-      <h2 id="screens-title" class="reveal-text">Drawn from the app, not a photograph.</h2>
-      <div class="phone-row">
-        <figure class="phone">
+      <h2 id="screens-title" class="reveal-text">On your phone.</h2>
+      <div class="phone-stage">
+        <figure class="phone phone-home">
           <div class="phone-bezel">
             <div class="phone-screen">
-              <p class="app-mast">AILA</p>
-              <p class="app-kicker">Today</p>
-              <p class="app-title">Your briefing</p>
-              <div class="shelf">
-                <article class="book">
-                  <p class="app-kicker">Briefing</p>
-                  <h3>Claude Code Projects now open</h3>
-                  <p>METAL</p>
-                </article>
-                <article class="book">
-                  <p class="app-kicker">Basics</p>
-                  <h3>What a prompt is</h3>
-                  <p>AILA</p>
-                </article>
-                <article class="book">
-                  <p class="app-kicker">Basics</p>
-                  <h3>Context window</h3>
-                  <p>AILA</p>
-                </article>
-              </div>
+              <img class="phone-shot" src="assets/screens/en/home-780.webp" srcset="assets/screens/en/home-390.webp 390w, assets/screens/en/home-780.webp 780w" sizes="(min-width: 1100px) 36vw, 70vw" alt="AILA home with three cover cards: AI models get cheaper, What a prompt is, and A real limit." width="780" height="1688" loading="lazy" decoding="async">
+              <span class="phone-island" aria-hidden="true"></span>
             </div>
           </div>
           <figcaption class="phone-caption">Home</figcaption>
         </figure>
-        <figure class="phone">
+        <figure class="phone phone-reader">
           <div class="phone-bezel">
             <div class="phone-screen">
-              <p class="app-mast">AILA</p>
-              <p class="app-kicker">The path</p>
-              <p class="app-title">Basics</p>
-              <div class="path-row"><span class="mini-cover">01</span><span><span class="app-kicker">Basics</span><strong>What AI is</strong></span><span class="path-chev" aria-hidden="true">›</span></div>
-              <div class="path-row"><span class="mini-cover">02</span><span><span class="app-kicker">Basics</span><strong>A prompt</strong></span><span class="path-chev" aria-hidden="true">›</span></div>
-              <div class="path-row"><span class="mini-cover">03</span><span><span class="app-kicker">Basics</span><strong>A model</strong></span><span class="path-chev" aria-hidden="true">›</span></div>
-              <div class="path-row"><span class="mini-cover">04</span><span><span class="app-kicker">Basics</span><strong>Tokens</strong></span><span class="path-chev" aria-hidden="true">›</span></div>
+              <img class="phone-shot" src="assets/screens/en/reader-780.webp" srcset="assets/screens/en/reader-390.webp 390w, assets/screens/en/reader-780.webp 780w" sizes="(min-width: 1100px) 30vw, 70vw" alt="The lesson A real limit in AILA, with Aila's term card for Hallucination." width="780" height="1688" loading="lazy" decoding="async">
+              <span class="phone-island" aria-hidden="true"></span>
+            </div>
+          </div>
+          <figcaption class="phone-caption">Reader</figcaption>
+        </figure>
+        <figure class="phone phone-activity">
+          <div class="phone-bezel">
+            <div class="phone-screen">
+              <img class="phone-shot" src="assets/screens/en/activity-780.webp" srcset="assets/screens/en/activity-390.webp 390w, assets/screens/en/activity-780.webp 780w" sizes="(min-width: 1100px) 28vw, 70vw" alt="Activity in AILA: a 7-day streak, 23 cards read, and 1 briefing." width="780" height="1688" loading="lazy" decoding="async">
+              <span class="phone-island" aria-hidden="true"></span>
+            </div>
+          </div>
+          <figcaption class="phone-caption">Activity</figcaption>
+        </figure>
+        <figure class="phone phone-basics">
+          <div class="phone-bezel">
+            <div class="phone-screen">
+              <img class="phone-shot" src="assets/screens/en/basics-780.webp" srcset="assets/screens/en/basics-390.webp 390w, assets/screens/en/basics-780.webp 780w" sizes="(min-width: 1100px) 16rem, 70vw" alt="Basics in AILA, with lessons from What AI is through Context window." width="780" height="1688" loading="lazy" decoding="async">
+              <span class="phone-island" aria-hidden="true"></span>
             </div>
           </div>
           <figcaption class="phone-caption">Basics</figcaption>
         </figure>
-        <figure class="phone">
+        <figure class="phone phone-briefing">
           <div class="phone-bezel">
             <div class="phone-screen">
-              <p class="app-kicker">Basics</p>
-              <h3 class="reader-title">What a context window is</h3>
-              <p class="reader-body">The model can only read so much at once. Say the task, and say what you do not want.</p>
-              <div class="term-card">
-                <div class="term-top">
-                  <span class="aila-head">
-                    <picture>
-                      <source srcset="assets/aila-head-full.webp" type="image/webp">
-                      <img src="assets/aila-head-full.png" alt="" width="525" height="567">
-                    </picture>
-                  </span>
-                  <p class="term-name">Context window</p>
-                </div>
-                <p>How much text the model can hold while it answers.</p>
-                <p class="app-kicker">Example</p>
-                <p>A long thread pushes the first instructions out of view.</p>
-                <p class="app-kicker">Why it matters</p>
-                <p>If the task falls out of the window, the answer drifts.</p>
-                <p class="save-pill">Save</p>
-              </div>
+              <img class="phone-shot" src="assets/screens/en/briefing-780.webp" srcset="assets/screens/en/briefing-390.webp 390w, assets/screens/en/briefing-780.webp 780w" sizes="(min-width: 1100px) 16rem, 70vw" alt="The daily briefing in AILA, set to 10 minutes, with a summary and an open question." width="780" height="1688" loading="lazy" decoding="async">
+              <span class="phone-island" aria-hidden="true"></span>
             </div>
           </div>
-          <figcaption class="phone-caption">Reader</figcaption>
+          <figcaption class="phone-caption">Briefing</figcaption>
         </figure>
       </div>
     </section>
@@ -254,16 +247,6 @@
           <p class="chance-note">A picture of the path, not a score.</p>
         </div>
       </div>
-      <ul class="bento" aria-label="Topics on the Basics path">
-        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">01</span><strong>What AI is</strong></li>
-        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">02</span><strong>A prompt</strong></li>
-        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">03</span><strong>A model</strong></li>
-        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">04</span><strong>Tokens</strong></li>
-        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">05</span><strong>Context window</strong></li>
-        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">06</span><strong>Everyday tools</strong></li>
-        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">07</span><strong>A real limit</strong></li>
-        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">08</span><strong>Read a headline</strong></li>
-      </ul>
       <ol class="levels">
         <li class="level giant-row basics">
           <p class="level-index">01</p>
@@ -431,12 +414,46 @@
     </div>
   </footer>
   <a class="aila-float" href="#screens">
-    <span class="aila-head aila-bob">
-      <picture>
-        <source srcset="assets/aila-head-full.webp" type="image/webp">
-        <img src="assets/aila-head-full.png" alt="" width="525" height="567">
-      </picture>
-      <span class="aila-lid" aria-hidden="true"></span>
+    <span class="aila-mark" data-aila-mark data-gaze="left" data-mood="neutral" data-float>
+      <img src="assets/aila-head-full.png" alt="" width="525" height="567">
+      <svg class="aila-face" viewBox="0 0 525 567" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+        <defs>
+          <radialGradient id="aila-iris-float" cx="40%" cy="34%" r="68%">
+            <stop offset="0%" stop-color="#F4FCFF"/>
+            <stop offset="16%" stop-color="#9ADFFF"/>
+            <stop offset="42%" stop-color="#2F8FE0"/>
+            <stop offset="74%" stop-color="#1248A8"/>
+            <stop offset="100%" stop-color="#07183C"/>
+          </radialGradient>
+          <linearGradient id="aila-brow-float" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#7FE7FF" stop-opacity="0.2"/>
+            <stop offset="50%" stop-color="#E9FBFF"/>
+            <stop offset="100%" stop-color="#7FE7FF" stop-opacity="0.25"/>
+          </linearGradient>
+        </defs>
+        <ellipse data-eye="l" data-part="white" cx="160" cy="285.2" rx="50" ry="32.4" fill="#E7F6FF"/>
+        <ellipse data-eye="l" data-part="iris" cx="153.6" cy="283.8" rx="34" ry="20.4" fill="url(#aila-iris-float)"/>
+        <ellipse data-eye="l" data-part="pupil" cx="144" cy="283.2" rx="9" ry="6" fill="#3A4654"/>
+        <ellipse data-eye="l" data-part="gloss" cx="168.8" cy="263.4" rx="7" ry="4.5" fill="#FFE6C2" opacity="0.8"/>
+        <ellipse data-eye="l" data-part="small" cx="150.8" cy="273.4" rx="3" ry="2" fill="#FFE6C2" opacity="0.45"/>
+        <ellipse data-eye="r" data-part="white" cx="362" cy="285.2" rx="50" ry="32.4" fill="#E7F6FF"/>
+        <ellipse data-eye="r" data-part="iris" cx="355.6" cy="283.8" rx="34" ry="20.4" fill="url(#aila-iris-float)"/>
+        <ellipse data-eye="r" data-part="pupil" cx="346" cy="283.2" rx="9" ry="6" fill="#3A4654"/>
+        <ellipse data-eye="r" data-part="gloss" cx="370.8" cy="263.4" rx="7" ry="4.5" fill="#FFE6C2" opacity="0.8"/>
+        <ellipse data-eye="r" data-part="small" cx="352.8" cy="273.4" rx="3" ry="2" fill="#FFE6C2" opacity="0.45"/>
+        <g class="brows-rest" fill="none" stroke="url(#aila-brow-float)" stroke-width="8" stroke-linecap="round">
+          <path d="M104 196 Q158 174 214 196"/>
+          <path d="M308 196 Q362 174 418 196"/>
+        </g>
+        <g class="brows-raised" opacity="0" fill="none" stroke="url(#aila-brow-float)" stroke-width="8" stroke-linecap="round">
+          <path d="M104 188 Q158 162 214 188"/>
+          <path d="M308 188 Q362 162 418 188"/>
+        </g>
+        <path class="mouth-smile" d="M186 396 Q260 432 334 396" fill="none" stroke="#24303A" stroke-width="7" stroke-linecap="round"/>
+        <ellipse class="mouth-open" cx="260" cy="418" rx="16" ry="3.5" fill="#24303A" opacity="0"/>
+        <ellipse class="ear" cx="48" cy="318" rx="16" ry="22" fill="#9EE7FF" opacity="0"/>
+        <ellipse class="ear" cx="476" cy="324" rx="16" ry="22" fill="#9EE7FF" opacity="0"/>
+      </svg>
     </span>
     <span class="visually-hidden">Hi, I'm Aila</span>
   </a>
