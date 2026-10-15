@@ -351,7 +351,6 @@ section[id] {
 h1,
 h2,
 .level h3,
-.excerpt-title,
 .brief-item h3,
 .pull {
   font-family: var(--serif);
@@ -479,51 +478,6 @@ summary:focus-visible {
   display: block;
   height: 48px;
   width: auto;
-}
-
-.rail {
-  min-width: 0;
-}
-
-.toc {
-  list-style: none;
-  margin: 0.85rem 0 0;
-  padding: 0;
-}
-
-.toc li {
-  display: grid;
-  grid-template-columns: 2.1rem minmax(0, 1fr);
-  gap: 0.55rem;
-  align-items: baseline;
-  padding: 0.38rem 0;
-  border-top: 1px solid var(--rule);
-  font-size: 1rem;
-}
-
-.toc-num {
-  font-family: var(--serif);
-  font-style: italic;
-  font-variant-numeric: tabular-nums;
-  color: var(--faint);
-}
-
-.excerpt {
-  margin: 1.35rem 0 0;
-  padding-top: 0.95rem;
-  border-top: 1px solid var(--rule-strong);
-}
-
-.excerpt-title {
-  margin: 0.4rem 0 0;
-  font-size: clamp(1.45rem, 2vw, 1.85rem);
-  line-height: 1.05;
-}
-
-.excerpt p {
-  margin: 0.55rem 0 0;
-  color: var(--muted);
-  max-width: 28rem;
 }
 
 .block {
@@ -807,16 +761,6 @@ summary:focus-visible {
     text-align: center;
   }
 
-  .front-grid {
-    grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.72fr);
-    gap: 2.5rem;
-  }
-
-  .rail {
-    border-left: 1px solid var(--rule);
-    padding-left: 1.5rem;
-  }
-
   .level {
     grid-template-columns: 3.5rem minmax(7rem, 11rem) minmax(0, 1fr);
     align-items: baseline;
@@ -901,7 +845,6 @@ summary:focus-visible {
   .lang,
   .brief-item,
   .level,
-  .toc li,
   .faq details {
     border-color: CanvasText;
   }
@@ -1085,55 +1028,6 @@ summary:focus-visible {
   margin: 0.8rem 0 0;
   font-size: 0.85rem;
   color: var(--faint);
-}
-
-.bento {
-  list-style: none;
-  margin: 1.5rem 0 0;
-  padding: 0;
-  display: grid;
-  gap: 0.65rem;
-}
-
-.bento-card {
-  position: relative;
-  overflow: hidden;
-  min-height: 7.5rem;
-  padding: 0.9rem 0.95rem;
-  border: 1px solid var(--hairline);
-  border-radius: 16px;
-  background: var(--card);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.bento-spot {
-  position: absolute;
-  width: 9rem;
-  height: 9rem;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  opacity: 0;
-}
-
-.bento-card:hover .bento-spot {
-  opacity: 1;
-}
-
-.bento-num {
-  font-family: var(--serif);
-  font-style: italic;
-  color: var(--faint);
-}
-
-.bento-card strong {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 1.35rem;
-  letter-spacing: -0.02em;
 }
 
 .level.giant-row {
@@ -1399,10 +1293,6 @@ summary:focus-visible {
     grid-template-columns: minmax(0, 1.1fr) minmax(16rem, 0.8fr);
   }
 
-  .bento {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .compare-pair,
   .wording-pair {
     grid-template-columns: 1fr 1fr;
@@ -1437,10 +1327,6 @@ summary:focus-visible {
 
   .hero-rule-left { left: 4%; }
   .hero-rule-right { right: 4%; }
-
-  .bento {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -236,16 +236,6 @@ function wireEditionMotion() {
     sections.forEach((section) => navObserver.observe(section));
   }
 
-  document.querySelectorAll(".bento-card").forEach((card) => {
-    const spot = card.querySelector(".bento-spot");
-    if (!spot) return;
-    card.addEventListener("pointermove", (event) => {
-      const rect = card.getBoundingClientRect();
-      spot.style.left = (event.clientX - rect.left) + "px";
-      spot.style.top = (event.clientY - rect.top) + "px";
-    });
-  });
-
   const back = document.getElementById("back-to-top");
   back?.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
