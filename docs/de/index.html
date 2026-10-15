@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AILA — KI lernen, von null</title>
-  <meta name="description" content="AILA erklärt KI von null, für das iPhone. Ein geführter Basics-Pfad ohne Fachjargon, vertiefende Artikel und ein Daily AI Briefing dreimal am Tag, inklusive Alltags-Tools, passend zu deinem Level.">
+  <title>AILA — KI lernen wie eine Sprache</title>
+  <meta name="description" content="Früher Sprachen mit Duolingo, heute KI mit AILA. Ein geführter Pfad von null, Artikel, wenn du den Mechanismus willst, und ein Briefing am Tag, 5, 10 oder 15 Minuten. Demnächst im App Store und bei Google Play.">
   <link rel="canonical" href="https://niklasgalli-oss.github.io/AILA-Content/de/">
   <link rel="alternate" hreflang="de" href="https://niklasgalli-oss.github.io/AILA-Content/de/">
   <link rel="alternate" hreflang="en" href="https://niklasgalli-oss.github.io/AILA-Content/">
@@ -13,184 +13,433 @@
   <meta property="og:site_name" content="AILA">
   <meta property="og:locale" content="de_DE">
   <meta property="og:locale:alternate" content="en_GB">
-  <meta property="og:title" content="AILA — KI lernen, von null">
-  <meta property="og:description" content="Ein geführter Basics-Pfad ohne Fachjargon, vertiefende Artikel und ein Daily AI Briefing dreimal am Tag. Passend zu deinem Level.">
+  <meta property="og:title" content="AILA — KI lernen wie eine Sprache">
+  <meta property="og:description" content="Früher Sprachen mit Duolingo, heute KI mit AILA. Ein Pfad von null, Artikel und ein Briefing am Tag.">
   <meta property="og:url" content="https://niklasgalli-oss.github.io/AILA-Content/de/">
   <meta property="og:image" content="https://niklasgalli-oss.github.io/AILA-Content/og-de.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="AILA. KI lernen, von null.">
+  <meta property="og:image:alt" content="AILA. KI lernen wie eine Sprache.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AILA — KI lernen, von null">
-  <meta name="twitter:description" content="Ein geführter Basics-Pfad ohne Fachjargon, vertiefende Artikel und ein Daily AI Briefing dreimal am Tag. Passend zu deinem Level.">
+  <meta name="twitter:title" content="AILA — KI lernen wie eine Sprache">
+  <meta name="twitter:description" content="Früher Sprachen mit Duolingo, heute KI mit AILA. Ein Pfad von null, Artikel und ein Briefing am Tag.">
   <meta name="twitter:image" content="https://niklasgalli-oss.github.io/AILA-Content/og-de.png">
-  <meta name="twitter:image:alt" content="AILA. KI lernen, von null.">
-  <meta name="theme-color" content="#11120e">
+  <meta name="twitter:image:alt" content="AILA. KI lernen wie eine Sprache.">
+  <meta name="theme-color" content="#F6F1E8">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-  <link rel="preload" href="../assets/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fraunces-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/source-sans-3-latin-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../landing.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AILA",
+    "url": "https://niklasgalli-oss.github.io/AILA-Content/de/",
+    "inLanguage": "de",
+    "description": "Früher Sprachen mit Duolingo, heute KI mit AILA. Ein Briefing am Tag, 5, 10 oder 15 Minuten.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Niklas Galli",
+      "email": "niklas.galli@getaila.de"
+    }
+  }
+  </script>
   <script src="../landing.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#content">Zum Inhalt</a>
-  <header class="site-header wrap">
-    <a class="brand" href="./">AILA</a>
-    <nav class="site-nav" aria-label="Navigation">
-      <a href="#learn">Lernen</a>
-      <a href="#briefing">Briefing</a>
-      <a href="#faq">FAQ</a>
-      <a class="lang" href="../" hreflang="en" lang="en">English</a>
-    </nav>
+  <div class="nav-backdrop" id="nav-backdrop"></div>
+  <nav class="mobile-nav" id="mobile-nav-panel" aria-label="Abschnitte" inert>
+    <a class="nav-link" href="#learn"><span class="mobile-nav-index">01</span>Pfad</a>
+    <a class="nav-link" href="#briefing"><span class="mobile-nav-index">02</span>Briefing</a>
+    <a class="nav-link" href="#stakes"><span class="mobile-nav-index">03</span>Warum jetzt</a>
+    <a class="nav-link" href="#teams"><span class="mobile-nav-index">04</span>Teams</a>
+    <a class="nav-link" href="#faq"><span class="mobile-nav-index">05</span>FAQ</a>
+    <a href="../" hreflang="en" lang="en">English</a>
+  </nav>
+  <header class="masthead" id="site-header">
+    <div class="wrap">
+      <div class="mast-top">
+        <a class="brand" href="./">AILA</a>
+        <p class="mast-issue">Bd. I · Nr. 1</p>
+        <div class="mast-tools">
+          <a class="lang" href="../" hreflang="en" lang="en">English</a>
+          <button class="burger" id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav-panel" aria-label="Menü öffnen">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Navigation">
+        <a class="nav-link" href="#learn">Pfad</a>
+        <a class="nav-link" href="#briefing">Briefing</a>
+        <a class="nav-link" href="#stakes">Warum jetzt</a>
+        <a class="nav-link" href="#teams">Teams</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+      </nav>
+      <div class="rules" aria-hidden="true"><span></span><span></span></div>
+    </div>
   </header>
   <main id="content">
-    <section class="hero wrap">
-      <div class="hero-grid">
-        <div>
-          <p class="eyebrow">Für iPhone · <time datetime="2026-10-21">21. Oktober 2026</time></p>
-          <h1>KI lernen,<br>von null.</h1>
-          <p class="lede">Ein geführter Basics-Pfad, ohne Fachjargon. Vertiefende Artikel, wenn du den Mechanismus willst. Ein Daily AI Briefing, dreimal am Tag, inklusive der Tools, die du schon nutzt. Passend zu deinem Level.</p>
-          <div class="store" data-aila-store data-badge="../assets/app-store-badge-de.svg" data-badge-alt="Laden im App Store">
-            <p class="store-pending" data-store-pending><span class="mark" aria-hidden="true"></span> Bald im App Store</p>
-          </div>
-          <p class="price-note">Der Kern ist kostenlos. AILA Premium enthält eine kostenlose Testphase von 7 Tagen. Den Preis zeigt der App Store.</p>
-        </div>
-        <figure class="stage">
-          <div class="stage-art" aria-hidden="true">
-            <div class="hero-cover">
-              <p class="cover-index">01 · Basics</p>
-              <strong>Was ein Prompt ist</strong>
+    <section class="front" id="hero-section">
+      <span class="hero-rule hero-rule-left" aria-hidden="true"></span>
+      <span class="hero-rule hero-rule-right" aria-hidden="true"></span>
+      <div class="wrap front-grid">
+        <div class="edition-frame">
+          <p class="edition-bar"><span>Bd. I · Nr. 1</span><span>Für iPhone und Android</span></p>
+          <div class="aila-hello">
+            <div class="aila-head aila-bob">
+              <picture>
+                <source srcset="../assets/aila-head-full.webp" type="image/webp">
+                <img src="../assets/aila-head-full.png" alt="" width="525" height="567">
+              </picture>
+              <span class="aila-lid" aria-hidden="true"></span>
             </div>
-            <div class="phone">
-              <p class="screen-kicker">Basics</p>
-              <p class="screen-title">Was ein Prompt ist</p>
-              <p class="screen-copy">Die Anweisung, die du gibst. Sag die Aufgabe, und sag, was du nicht willst.</p>
-              <div class="screen-next">
-                <span>Weiter</span>
-                <strong>Ein Modell</strong>
+            <p class="aila-bubble">Hi, ich bin Aila</p>
+          </div>
+          <h1>Früher Sprachen mit Duolingo, heute KI mit AILA.</h1>
+          <div class="edition-split">
+            <p class="standfirst">KI lernen, wie früher eine Sprache: kurz, täglich, von null.</p>
+            <div>
+              <div class="store" data-aila-store data-badge="../assets/app-store-badge-de.svg" data-badge-alt="Laden im App Store">
+                <p class="store-row">
+                  <span class="store-pending" data-store-pending>Demnächst im App Store</span>
+                  <span class="store-pending store-play">Demnächst bei Google Play</span>
+                </p>
+              </div>
+              <p class="price-note">Das tägliche Briefing bleibt frei. Premium öffnet die längeren Lektionen und Audio. Eine Testphase von 7 Tagen erscheint nur, wenn der Store sie anbietet. Den Preis zeigen App Store oder Google Play.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="rail" aria-labelledby="contents-label">
+          <p class="kicker" id="contents-label">In dieser Ausgabe</p>
+          <ol class="toc">
+            <li><span class="toc-num">01</span><span>Was KI ist</span></li>
+            <li><span class="toc-num">02</span><span>Ein Prompt</span></li>
+            <li><span class="toc-num">03</span><span>Ein Modell</span></li>
+            <li><span class="toc-num">04</span><span>Tokens</span></li>
+            <li><span class="toc-num">05</span><span>Context Window</span></li>
+            <li><span class="toc-num">06</span><span>Alltags-Tools</span></li>
+            <li><span class="toc-num">07</span><span>Eine Grenze</span></li>
+            <li><span class="toc-num">08</span><span>Eine Meldung lesen</span></li>
+          </ol>
+          <div class="excerpt">
+            <p class="kicker">Aus Basics</p>
+            <p class="excerpt-title">Was ein Prompt ist</p>
+            <p>Die Anweisung, die du gibst. Sag die Aufgabe, und sag, was du nicht willst.</p>
+          </div>
+        </aside>
+      </div>
+      <div class="wrap">
+        <a class="scroll-indicator" href="#learn">Scroll<span class="scroll-indicator-line" aria-hidden="true"></span></a>
+      </div>
+    </section>
+
+    <section class="trust-bar" aria-label="Was die Übung enthält">
+      <div class="wrap trust-inner">
+        <p class="trust-label">Die Übung</p>
+        <div class="trust-logos">
+          <div class="trust-track">
+            <div class="trust-set">
+              <span class="trust-item">Von null</span><span class="trust-slash" aria-hidden="true">/</span>
+              <span class="trust-item">Ohne Fachjargon</span><span class="trust-slash" aria-hidden="true">/</span>
+              <span class="trust-item">Ein Briefing am Tag</span><span class="trust-slash" aria-hidden="true">/</span>
+              <span class="trust-item">Passend zum Level</span><span class="trust-slash" aria-hidden="true">/</span>
+              <span class="trust-item">Briefing bleibt frei</span><span class="trust-slash" aria-hidden="true">/</span>
+              <span class="trust-item">Testphase im Store</span><span class="trust-slash" aria-hidden="true">/</span>
+            </div>
+            <div class="trust-set" aria-hidden="true">
+              <span class="trust-item">Von null</span><span class="trust-slash">/</span>
+              <span class="trust-item">Ohne Fachjargon</span><span class="trust-slash">/</span>
+              <span class="trust-item">Ein Briefing am Tag</span><span class="trust-slash">/</span>
+              <span class="trust-item">Passend zum Level</span><span class="trust-slash">/</span>
+              <span class="trust-item">Briefing bleibt frei</span><span class="trust-slash">/</span>
+              <span class="trust-item">Testphase im Store</span><span class="trust-slash">/</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block wrap" id="screens" aria-labelledby="screens-title">
+      <p class="section-eyebrow"><span class="section-eyebrow-dot" aria-hidden="true"></span><span>In der App</span></p>
+      <h2 id="screens-title" class="reveal-text">Nachgezeichnet aus der App, kein Foto.</h2>
+      <div class="phone-row">
+        <figure class="phone">
+          <div class="phone-bezel">
+            <div class="phone-screen">
+              <p class="app-mast">AILA</p>
+              <p class="app-kicker">Heute</p>
+              <p class="app-title">Dein Briefing</p>
+              <div class="shelf">
+                <article class="book">
+                  <p class="app-kicker">Briefing</p>
+                  <h3>Claude Code Projects jetzt offen</h3>
+                  <p>METAL</p>
+                </article>
+                <article class="book">
+                  <p class="app-kicker">Basics</p>
+                  <h3>Was ein Prompt ist</h3>
+                  <p>AILA</p>
+                </article>
+                <article class="book">
+                  <p class="app-kicker">Basics</p>
+                  <h3>Context Window</h3>
+                  <p>AILA</p>
+                </article>
               </div>
             </div>
           </div>
-          <figcaption class="visually-hidden">Beispiel einer Basics-Lektion, „Was ein Prompt ist“, auf einem gelben Cover neben einem Leseschirm. Die Lektionen stehen in der App.</figcaption>
+          <figcaption class="phone-caption">Home</figcaption>
+        </figure>
+        <figure class="phone">
+          <div class="phone-bezel">
+            <div class="phone-screen">
+              <p class="app-mast">AILA</p>
+              <p class="app-kicker">Der Weg</p>
+              <p class="app-title">Basics</p>
+              <div class="path-row"><span class="mini-cover">01</span><span><span class="app-kicker">Basics</span><strong>Was KI ist</strong></span><span class="path-chev" aria-hidden="true">›</span></div>
+              <div class="path-row"><span class="mini-cover">02</span><span><span class="app-kicker">Basics</span><strong>Ein Prompt</strong></span><span class="path-chev" aria-hidden="true">›</span></div>
+              <div class="path-row"><span class="mini-cover">03</span><span><span class="app-kicker">Basics</span><strong>Ein Modell</strong></span><span class="path-chev" aria-hidden="true">›</span></div>
+              <div class="path-row"><span class="mini-cover">04</span><span><span class="app-kicker">Basics</span><strong>Tokens</strong></span><span class="path-chev" aria-hidden="true">›</span></div>
+            </div>
+          </div>
+          <figcaption class="phone-caption">Basics</figcaption>
+        </figure>
+        <figure class="phone">
+          <div class="phone-bezel">
+            <div class="phone-screen">
+              <p class="app-kicker">Basics</p>
+              <h3 class="reader-title">Was ein Context Window ist</h3>
+              <p class="reader-body">Das Modell kann nur so viel auf einmal lesen. Sag die Aufgabe, und sag, was du nicht willst.</p>
+              <div class="term-card">
+                <div class="term-top">
+                  <span class="aila-head">
+                    <picture>
+                      <source srcset="../assets/aila-head-full.webp" type="image/webp">
+                      <img src="../assets/aila-head-full.png" alt="" width="525" height="567">
+                    </picture>
+                  </span>
+                  <p class="term-name">Context Window</p>
+                </div>
+                <p>Wie viel Text das Modell halten kann, während es antwortet.</p>
+                <p class="app-kicker">Beispiel</p>
+                <p>Ein langer Verlauf schiebt die ersten Anweisungen aus dem Blick.</p>
+                <p class="app-kicker">Warum das zählt</p>
+                <p>Fällt die Aufgabe aus dem Fenster, driftet die Antwort.</p>
+                <p class="save-pill">Speichern</p>
+              </div>
+            </div>
+          </div>
+          <figcaption class="phone-caption">Leser</figcaption>
         </figure>
       </div>
     </section>
 
     <section class="block wrap" id="learn">
-      <h2>Was du lernst</h2>
-      <p class="section-lede">Drei Level. Du fängst bei Basics an. Die App geht mit.</p>
-      <ul class="shelf" aria-label="Themen im Basics-Pfad">
-        <li class="cover cover-yellow"><span class="cover-index">01</span><span class="cover-title">Was KI ist</span></li>
-        <li class="cover cover-coral"><span class="cover-index">02</span><span class="cover-title">Ein Prompt</span></li>
-        <li class="cover cover-lime"><span class="cover-index">03</span><span class="cover-title">Ein Modell</span></li>
-        <li class="cover cover-paper"><span class="cover-index">04</span><span class="cover-title">Tokens</span></li>
-        <li class="cover cover-ice"><span class="cover-index">05</span><span class="cover-title">Context Window</span></li>
-        <li class="cover cover-yellow"><span class="cover-index">06</span><span class="cover-title">Alltags-Tools</span></li>
-        <li class="cover cover-coral"><span class="cover-index">07</span><span class="cover-title">Eine Grenze</span></li>
-        <li class="cover cover-paper"><span class="cover-index">08</span><span class="cover-title">Eine Meldung lesen</span></li>
+      <div class="path-grid">
+        <div>
+          <p class="section-eyebrow"><span>(01)</span><span class="section-eyebrow-dot" aria-hidden="true"></span><span>Der Pfad</span></p>
+          <h2 class="reveal-text">Drei Level. Du fängst beim ersten an.</h2>
+          <p class="lede">Ein geführter Pfad von null, ohne Fachjargon. Artikel, wenn du den Mechanismus willst. Ein Briefing am Tag, 5, 10 oder 15 Minuten, passend zu deinem Level, und eine Erinnerung auf dem Gerät. Wer die Übung behält, bleibt auf der Seite, die gewinnt. Wer sie auslässt, merkt es im Raum zu spät.</p>
+        </div>
+        <div class="chance-visual">
+          <p class="chance-badge">Hier fängst du an</p>
+          <div class="chance-row"><span>Basics</span><div class="chance-bar"><i style="width:100%"></i></div></div>
+          <div class="chance-row"><span>Core</span><div class="chance-bar"><i style="width:66%"></i></div></div>
+          <div class="chance-row"><span>Depth</span><div class="chance-bar"><i style="width:40%"></i></div></div>
+          <p class="chance-note">Ein Bild des Pfads, keine Punktzahl.</p>
+        </div>
+      </div>
+      <ul class="bento" aria-label="Themen im Basics-Pfad">
+        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">01</span><strong>Was KI ist</strong></li>
+        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">02</span><strong>Ein Prompt</strong></li>
+        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">03</span><strong>Ein Modell</strong></li>
+        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">04</span><strong>Tokens</strong></li>
+        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">05</span><strong>Context Window</strong></li>
+        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">06</span><strong>Alltags-Tools</strong></li>
+        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">07</span><strong>Eine Grenze</strong></li>
+        <li class="bento-card"><span class="bento-spot" aria-hidden="true"></span><span class="bento-num">08</span><strong>Eine Meldung lesen</strong></li>
       </ul>
       <ol class="levels">
-        <li class="level level-yellow">
+        <li class="level giant-row basics">
+          <p class="level-index">01</p>
           <div>
-            <p class="level-index">Level 01</p>
             <h3>Basics</h3>
+            <p>Was KI ist, was ein Prompt ist, und was die Tools auf deinem Handy schon können. Für den kompletten Anfang. Ohne Fachjargon.</p>
           </div>
-          <p>Was KI ist, was ein Prompt ist, und was die Tools auf deinem Handy schon können. Für den kompletten Anfang. Ohne Fachjargon.</p>
+          <span class="giant-arrow" aria-hidden="true">→</span>
         </li>
-        <li class="level level-coral">
+        <li class="level giant-row core">
+          <p class="level-index">02</p>
           <div>
-            <p class="level-index">Level 02</p>
             <h3>Core</h3>
+            <p>Die Bauteile, mit ihren Namen: Model, Token, Context Window. Jedes in normaler Sprache, bevor es wieder vorkommt.</p>
           </div>
-          <p>Die Bauteile, mit ihren Namen: Model, Token, Context Window. Jedes in normaler Sprache, bevor es wieder vorkommt.</p>
+          <span class="giant-arrow" aria-hidden="true">→</span>
         </li>
-        <li class="level level-lime">
+        <li class="level giant-row depth">
+          <p class="level-index">03</p>
           <div>
-            <p class="level-index">Level 03</p>
             <h3>Depth</h3>
+            <p>Längere Artikel. Agents, Benchmarks, Fine-tuning, und wie du eine Behauptung in einer KI-Meldung prüfst.</p>
           </div>
-          <p>Längere Artikel. Agents, Benchmarks, Fine-tuning, und wie du eine Behauptung in einer KI-Meldung prüfst.</p>
+          <span class="giant-arrow" aria-hidden="true">→</span>
         </li>
       </ol>
+      <div class="section-breadcrumb">
+        <div class="section-breadcrumb-row"><span><i class="section-breadcrumb-dot" aria-hidden="true"></i>Der Pfad</span><span>/ 01 / AILA</span></div>
+        <div class="section-breadcrumb-line"></div>
+      </div>
+    </section>
+
+    <section class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <p class="marquee-phrase"><span>Nicht zurückbleiben</span><span class="marquee-slash">/</span><span>Früher Sprachen mit Duolingo, heute KI mit AILA.</span></p>
+        <p class="marquee-phrase" aria-hidden="true"><span>Nicht zurückbleiben</span><span class="marquee-slash">/</span><span>Früher Sprachen mit Duolingo, heute KI mit AILA.</span></p>
+      </div>
     </section>
 
     <section class="block wrap" id="briefing" data-briefing data-locale="de">
-      <div class="brief-head">
-        <h2>Daily AI Briefing</h2>
-        <p class="meta">Aktuelles Briefing · <time data-briefing-date datetime="2026-10-11">11. Oktober 2026</time></p>
+      <div class="section-head">
+        <div>
+          <p class="section-eyebrow"><span>(02)</span><span class="section-eyebrow-dot" aria-hidden="true"></span><span>Einmal am Tag</span></p>
+          <h2 class="reveal-text">Daily AI Briefing</h2>
+        </div>
+        <p class="meta">Aktuelles Briefing · <time data-briefing-date datetime="2026-10-14">14. Oktober 2026</time></p>
       </div>
-      <p class="section-lede">Kuratierte KI-Nachrichten, dreimal am Tag. Aus dem Labor und aus Alltags-Tools. In der App passt das Briefing zu deinem Level.</p>
+      <p class="lede">Kuratierte KI-Nachrichten. Aus dem Labor und aus Alltags-Tools. In der App passt das Briefing zu deinem Level.</p>
       <ol class="brief-list" data-briefing-list>
         <li class="brief-item">
-          <p class="item-meta">Tools · Vertieft</p>
-          <h3>Claude Code Projects jetzt für alle auf der Warteliste</h3>
-          <p>Anthropic hat alle Pro- und Max-Abonnenten der Warteliste für Projects freigeschaltet: Ein Coordinator zerlegt ein Ziel in parallele Cloud-Threads, die selbst Pull Requests öffnen. Jeder Thread ist eine volle Session, das kostet Limits.</p>
-          <p class="item-source"><a href="https://metallab.ai/en/2026/10/claude-code-projects-waitlist-pro-max">METAL</a></p>
+          <p class="item-meta">Model Release · Einsteiger</p>
+          <h3>Gemini 4 Argon ist live für Entwickler und Abonnenten</h3>
+          <p>Google hat Gemini 4 Argon weltweit freigeschaltet: API, Antigravity, Gemini-App und AI Mode in Search für Pro und Ultra. Es zielt auf schwere Mehrschritt-Arbeit, mit 1M Token-Limit und Einführungspreis von 2/10 Dollar pro Million Tokens.</p>
+          <p class="item-source"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/">Google</a></p>
         </li>
         <li class="brief-item">
-          <p class="item-meta">Framework · Einsteiger</p>
-          <h3>KI-Labs proben den Tag nach einer KI-Katastrophe</h3>
-          <p>Manager von OpenAI, Anthropic und anderen spielen laut Axios durch, wie Politik und Öffentlichkeit auf einen schweren KI-Vorfall reagieren, etwa einen Cyberangriff auf Banken oder Stromnetze. Viele Insider erwarten ihn in 6 bis 12 Monaten.</p>
-          <p class="item-source"><a href="https://www.axios.com/2026/10/09/ai-companies-day-after-major-attack">Axios</a></p>
+          <p class="item-meta">Model Release · Einsteiger</p>
+          <h3>Liquid AI liefert 24B-Modell für Agents auf dem Gerät</h3>
+          <p>LFM2.5-24B-A2B ist Open-Weight mit 24B Parametern, aber nur 2B aktiv pro Token, 131K Context Window und Support für llama cpp, MLX und vLLM. Laut Liquid hält es bei mehreren Agent- und Tool-Benchmarks mit größeren MoEs mit.</p>
+          <p class="item-source"><a href="https://www.liquid.ai/blog/lfm2-5-24b-a2b">Liquid AI</a></p>
         </li>
         <li class="brief-item">
-          <p class="item-meta">Framework · Einsteiger</p>
-          <h3>Bund legt KI-Deal mit Mistral und SAP auf Eis</h3>
-          <p>Das Digitalministerium plant keine Beschaffung bei Mistral; der 2025 mit Frankreich angekündigte Rahmenvertrag für KI in der Verwaltung liegt auf Eis. Auch die Berliner Suchmaschine Ecosia trennt sich wegen Qualitätsmängeln von Mistral.</p>
-          <p class="item-source"><a href="https://www.drweb.de/mistral-sap-bund-verwaltungs-ki-rahmenvertrag/">Dr. Web</a></p>
+          <p class="item-meta">Tools · Einsteiger</p>
+          <h3>Claude baut Live-Dashboards und animierte Erklärer</h3>
+          <p>Anthropic startet Claude Dashboards und Claude Motion in der Beta: Live-Dashboards aus Firmendaten und editierbarer Animations-Code als MP4. Docs, Slides und Design sind aus der Beta und auf jedem Plan inklusive Free.</p>
+          <p class="item-source"><a href="https://claude.com/resources/articles/dashboards-and-motion">Anthropic</a></p>
         </li>
       </ol>
     </section>
 
-    <section class="band" id="beginners">
+    <section class="essay" id="stakes">
       <div class="wrap">
-        <h2>Bei null anfangen</h2>
-        <p>Basics ist für den ersten Tag geschrieben. Jedes Wort wird beim ersten Mal erklärt. Auf diesem Pfad zu bleiben reicht. Artikel warten, bis du den Mechanismus willst. Das Daily AI Briefing enthält Produkte, die Menschen auf dem Handy öffnen, neben den Meldungen aus dem Labor.</p>
+        <p class="section-eyebrow"><span>(03)</span><span class="section-eyebrow-dot" aria-hidden="true"></span><span>Warum jetzt</span></p>
+        <h2 class="reveal-text">Nicht zurückbleiben.</h2>
+        <p class="pull">Mit AILA bist du auf der Seite, die gewinnt.</p>
+        <div class="compare-pair">
+          <div class="compare-card compare-card--bad">
+            <h3>Zurückbleiben</h3>
+            <ul>
+              <li>Im Meeting fällt ein Wort, das du noch nicht kennst.</li>
+              <li>Eine Meldung über ein Modell bleibt nur eine Meldung.</li>
+              <li>Das Tool auf dem Handy bleibt eine Blackbox.</li>
+            </ul>
+          </div>
+          <div class="compare-card compare-card--good">
+            <h3>Mit AILA</h3>
+            <ul>
+              <li>Basics benennt die Sache beim ersten Mal.</li>
+              <li>Das Briefing passt zu deinem Level, einmal am Tag.</li>
+              <li>Du kannst sagen, was eine Behauptung nicht belegt.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="wording-pair">
+          <div class="wording">
+            <p class="kicker">Vorher</p>
+            <p>Das Context Window sättigt, die Aufmerksamkeit verteilt sich auf die Tokens.</p>
+          </div>
+          <div class="wording wording--after">
+            <p class="kicker">Nach Basics</p>
+            <p>Das Modell kann nur so viel auf einmal lesen. Sag die Aufgabe, und sag, was du nicht willst.</p>
+          </div>
+        </div>
+        <div class="stats-row">
+          <p class="stat"><strong>3</strong><span>Level. Du fängst bei Basics an.</span></p>
+          <p class="stat"><strong>1</strong><span>Ein Briefing am Tag.</span></p>
+          <p class="stat"><strong>5–15</strong><span>Minuten, die du wählst.</span></p>
+        </div>
+        <div class="section-breadcrumb">
+          <div class="section-breadcrumb-row"><span><i class="section-breadcrumb-dot" aria-hidden="true"></i>Warum jetzt</span><span>/ 03 / AILA</span></div>
+          <div class="section-breadcrumb-line"></div>
+        </div>
       </div>
     </section>
 
-    <section class="teams wrap" id="teams">
+    <section class="notice wrap" id="teams">
+      <p class="kicker">Für Teams</p>
       <h2>AILA for Teams</h2>
       <p>AI Literacy für Beschäftigte. Art. 4 des EU AI Act verlangt von Anbietern und Betreibern von KI-Systemen Maßnahmen, damit ihr Personal über ein ausreichendes Maß an AI Literacy verfügt.</p>
       <p><a class="mail" href="mailto:niklas.galli@getaila.de?subject=AILA%20for%20Teams">E-Mail an niklas.galli@getaila.de</a></p>
     </section>
 
     <section class="block wrap faq" id="faq">
-      <h2>FAQ</h2>
+      <p class="kicker">FAQ</p>
+      <h2>Vier Fragen.</h2>
       <details>
         <summary><h3>Was ist AILA?</h3></summary>
-        <p>AILA ist eine Lern-App: ein geführter Basics-Pfad, vertiefende Artikel und ein Daily AI Briefing dreimal am Tag. Das Briefing enthält auch Alltags-Tools. Was du siehst, passt zu deinem Level.</p>
+        <p>AILA ist eine Lern-App: ein geführter Basics-Pfad, vertiefende Artikel und ein Briefing am Tag. Du wählst 5, 10 oder 15 Minuten. Eine Erinnerung bleibt auf dem Gerät. Die App setzt die Uhrzeit aus der Zeit, zu der du AILA gewöhnlich öffnest. Es gibt keine Uhr zum Einstellen und kein Quiz. Das Briefing enthält auch Alltags-Tools und passt zu deinem Level.</p>
       </details>
       <details>
         <summary><h3>Ist AILA kostenlos?</h3></summary>
-        <p>Der Kern ist kostenlos. AILA Premium enthält eine kostenlose Testphase von 7 Tagen. Den Preis zeigt der App Store. Abo und Testphase schließt du bei Apple ab, im App Store.</p>
+        <p>Das tägliche Briefing bleibt frei: die Schlagzeilen und die kurzen Zusammenfassungen. Ebenso die erste Basics-Lektion, die erste Lektion jedes Pfads und drei Karten. AILA Premium öffnet die übrigen Lektionen, die längeren Artikel und Audio. Eine Testphase von 7 Tagen gibt es nur, wenn der Store sie anbietet. Den Preis zeigen App Store oder Google Play. Abo und Testphase schließt du im Store ab, nicht auf dieser Website.</p>
       </details>
       <details>
         <summary><h3>Und Android?</h3></summary>
-        <p>AILA ist für das iPhone am 21. Oktober 2026 geplant. Android folgt.</p>
+        <p>AILA kommt demnächst für das iPhone. Android folgt. Bis ein Eintrag live ist, steht hier: demnächst im App Store und bei Google Play.</p>
       </details>
       <details>
         <summary><h3>Was passiert mit meinen Daten?</h3></summary>
-        <p>Lesefortschritt und Einstellungen bleiben auf deinem Gerät. Diese Website setzt keine Cookies und nutzt keine Tracker von Dritten. Die <a href="../privacy/">Datenschutzerklärung</a> beschreibt es vollständig.</p>
+        <p>Lesefortschritt, Einstellungen und ein optionaler Name bleiben auf deinem Gerät. Die App verlangt keinen Namen, und es gibt kein Quiz. Diese Website setzt keine Cookies und nutzt keine Tracker von Dritten. Die <a href="../privacy/">Datenschutzerklärung</a> beschreibt es vollständig.</p>
       </details>
     </section>
   </main>
-  <footer class="site-footer wrap">
-    <address>
-      Niklas Galli – AILA<br>
-      Neuburger Straße 73a<br>
-      86668 Karlshuld<br>
-      Deutschland
-    </address>
-    <nav class="footer-nav" aria-label="Rechtliches">
-      <a href="../impressum/">Impressum</a>
-      <a href="../privacy/">Datenschutz</a>
-      <a href="mailto:niklas.galli@getaila.de">niklas.galli@getaila.de</a>
-    </nav>
-    <p class="fine">Diese Seite setzt keine Cookies und lädt keine Tracker von Dritten.</p>
-    <p class="fine">Apple, App Store und iPhone sind Marken von Apple Inc., eingetragen in den USA und anderen Ländern.</p>
+  <footer class="colophon">
+    <div class="wrap">
+      <div class="rules" aria-hidden="true"><span></span><span></span></div>
+      <div class="colo-grid">
+        <address>
+          Niklas Galli – AILA<br>
+          Neuburger Straße 73a<br>
+          86668 Karlshuld<br>
+          Deutschland
+        </address>
+        <nav class="footer-nav" aria-label="Rechtliches">
+          <a href="../impressum/">Impressum</a>
+          <a href="../privacy/">Datenschutz</a>
+          <a href="mailto:niklas.galli@getaila.de">niklas.galli@getaila.de</a>
+        </nav>
+        <div>
+          <p class="fine">Diese Seite setzt keine Cookies und lädt keine Tracker von Dritten.</p>
+          <p class="fine">Apple, App Store und iPhone sind Marken von Apple Inc., eingetragen in den USA und anderen Ländern. Google Play ist eine Marke von Google LLC.</p>
+        </div>
+      </div>
+      <p class="wordmark" aria-hidden="true">AILA</p>
+    </div>
   </footer>
+  <a class="aila-float" href="#screens">
+    <span class="aila-head aila-bob">
+      <picture>
+        <source srcset="../assets/aila-head-full.webp" type="image/webp">
+        <img src="../assets/aila-head-full.png" alt="" width="525" height="567">
+      </picture>
+      <span class="aila-lid" aria-hidden="true"></span>
+    </span>
+    <span class="visually-hidden">Hi, ich bin Aila</span>
+  </a>
+  <button type="button" class="back-top" id="back-to-top">Nach oben</button>
 </body>
 </html>

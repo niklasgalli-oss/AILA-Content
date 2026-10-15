@@ -8,7 +8,7 @@ The app fetches its feeds at runtime. The daily pulse is:
 https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/pulse.json
 ```
 
-An AI news bot updates `pulse.json` three times a day. Each entry is a `DailyPulseItem`. English is the primary language in the top-level fields. German copy lives under `i18n.de`.
+An AI news bot refreshes `pulse.json`. The published file keeps one timestamp per calendar day. The app shows one briefing package that day. Each entry is a `DailyPulseItem`. English is the primary language in the top-level fields. German copy lives under `i18n.de`.
 
 ## Legal
 
