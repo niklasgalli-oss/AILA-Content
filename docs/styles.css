@@ -1,8 +1,8 @@
-/* Legal pages. Same type as the landing, set as the inside sheet: newsprint, not the dark cover. */
+/* Legal pages. Same type as the landing: Fraunces and Source Sans 3 on app paper. */
 
 @font-face {
-  font-family: "Newsreader";
-  src: url("assets/newsreader-latin-500.woff2") format("woff2");
+  font-family: "Fraunces";
+  src: url("assets/fraunces-latin-500.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -10,8 +10,8 @@
 }
 
 @font-face {
-  font-family: "Newsreader";
-  src: url("assets/newsreader-latin-600.woff2") format("woff2");
+  font-family: "Fraunces";
+  src: url("assets/fraunces-latin-600.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -38,12 +38,12 @@
 
 :root {
   color-scheme: light;
-  --bg: #efe8dc;
-  --text: #1a1612;
-  --muted: #3f3832;
-  --line: #cfc4b4;
-  --focus: #1a1612;
-  --serif: "Newsreader", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+  --bg: #F6F1E8;
+  --text: #1C1916;
+  --muted: #6B635A;
+  --line: #E3DACD;
+  --focus: #1E6E8C;
+  --serif: "Fraunces", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
   --sans: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 

@@ -25,12 +25,12 @@
   <meta name="twitter:description" content="Earlier, languages with Duolingo. Now, AI with AILA. A path from zero, articles, and a Daily AI Briefing three times a day.">
   <meta name="twitter:image" content="https://niklasgalli-oss.github.io/AILA-Content/og.png">
   <meta name="twitter:image:alt" content="AILA. Learn AI like a language.">
-  <meta name="theme-color" content="#0e0d0c">
+  <meta name="theme-color" content="#F6F1E8">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preload" href="assets/newsreader-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fraunces-latin-600.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/source-sans-3-latin-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="landing.css">
   <script src="landing.js" defer></script>
@@ -75,6 +75,16 @@
       <div class="wrap front-grid">
         <div class="edition-frame">
           <p class="edition-bar"><span>Vol. I · No. 1</span><span>For iPhone and Android</span></p>
+          <div class="aila-hello">
+            <div class="aila-head aila-bob">
+              <picture>
+                <source srcset="assets/aila-head-full.webp" type="image/webp">
+                <img src="assets/aila-head-full.png" alt="" width="525" height="567">
+              </picture>
+              <span class="aila-lid" aria-hidden="true"></span>
+            </div>
+            <p class="aila-bubble">Hi, I'm Aila</p>
+          </div>
           <h1>Learn AI like a language.</h1>
           <div class="edition-split">
             <p class="standfirst">Earlier, languages with Duolingo. Now, AI with AILA.</p>
@@ -136,6 +146,81 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="block wrap" id="screens" aria-labelledby="screens-title">
+      <p class="section-eyebrow"><span class="section-eyebrow-dot" aria-hidden="true"></span><span>In the app</span></p>
+      <h2 id="screens-title" class="reveal-text">The same pages, on your phone.</h2>
+      <div class="phone-row">
+        <figure class="phone">
+          <div class="phone-bezel">
+            <div class="phone-screen">
+              <p class="app-mast">AILA</p>
+              <p class="app-kicker">Today</p>
+              <p class="app-title">Your three for today</p>
+              <div class="shelf">
+                <article class="book">
+                  <p class="app-kicker">Briefing</p>
+                  <h3>Claude Code Projects now open</h3>
+                  <p>METAL</p>
+                </article>
+                <article class="book">
+                  <p class="app-kicker">Basics</p>
+                  <h3>What a prompt is</h3>
+                  <p>AILA</p>
+                </article>
+                <article class="book">
+                  <p class="app-kicker">Basics</p>
+                  <h3>Context window</h3>
+                  <p>AILA</p>
+                </article>
+              </div>
+            </div>
+          </div>
+          <figcaption class="phone-caption">Home</figcaption>
+        </figure>
+        <figure class="phone">
+          <div class="phone-bezel">
+            <div class="phone-screen">
+              <p class="app-mast">AILA</p>
+              <p class="app-kicker">The path</p>
+              <p class="app-title">Basics</p>
+              <div class="path-row"><span class="mini-cover">01</span><span><span class="app-kicker">Basics</span><strong>What AI is</strong></span><span class="path-chev" aria-hidden="true">›</span></div>
+              <div class="path-row"><span class="mini-cover">02</span><span><span class="app-kicker">Basics</span><strong>A prompt</strong></span><span class="path-chev" aria-hidden="true">›</span></div>
+              <div class="path-row"><span class="mini-cover">03</span><span><span class="app-kicker">Basics</span><strong>A model</strong></span><span class="path-chev" aria-hidden="true">›</span></div>
+              <div class="path-row"><span class="mini-cover">04</span><span><span class="app-kicker">Basics</span><strong>Tokens</strong></span><span class="path-chev" aria-hidden="true">›</span></div>
+            </div>
+          </div>
+          <figcaption class="phone-caption">Basics</figcaption>
+        </figure>
+        <figure class="phone">
+          <div class="phone-bezel">
+            <div class="phone-screen">
+              <p class="app-kicker">Basics</p>
+              <h3 class="reader-title">What a context window is</h3>
+              <p class="reader-body">The model can only read so much at once. Say the task, and say what you do not want.</p>
+              <div class="term-card">
+                <div class="term-top">
+                  <span class="aila-head">
+                    <picture>
+                      <source srcset="assets/aila-head-full.webp" type="image/webp">
+                      <img src="assets/aila-head-full.png" alt="" width="525" height="567">
+                    </picture>
+                  </span>
+                  <p class="term-name">Context window</p>
+                </div>
+                <p>How much text the model can hold while it answers.</p>
+                <p class="app-kicker">Example</p>
+                <p>A long thread pushes the first instructions out of view.</p>
+                <p class="app-kicker">Why it matters</p>
+                <p>If the task falls out of the window, the answer drifts.</p>
+                <p class="save-pill">Save</p>
+              </div>
+            </div>
+          </div>
+          <figcaption class="phone-caption">Reader</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -330,6 +415,16 @@
       <p class="wordmark" aria-hidden="true">AILA</p>
     </div>
   </footer>
+  <a class="aila-float" href="#screens">
+    <span class="aila-head aila-bob">
+      <picture>
+        <source srcset="assets/aila-head-full.webp" type="image/webp">
+        <img src="assets/aila-head-full.png" alt="" width="525" height="567">
+      </picture>
+      <span class="aila-lid" aria-hidden="true"></span>
+    </span>
+    <span class="visually-hidden">Hi, I'm Aila</span>
+  </a>
   <button type="button" class="back-top" id="back-to-top">Top</button>
 </body>
 </html>

@@ -77,10 +77,11 @@ test("English and German pages carry the landing sections", () => {
 
 test("landing assets stay self-hosted and flat-colored", () => {
   const css = read("docs/landing.css");
-  assert.match(css, /newsreader-latin-500\.woff2/);
+  assert.match(css, /fraunces-latin-600\.woff2/);
   assert.match(css, /source-sans-3-latin-400\.woff2/);
   assert.doesNotMatch(css, /linear-gradient|radial-gradient|fonts\.googleapis/i);
-  assert.equal(existsSync(join(root, "docs/assets/newsreader-latin-500.woff2")), true);
+  assert.equal(existsSync(join(root, "docs/assets/fraunces-latin-600.woff2")), true);
+  assert.equal(existsSync(join(root, "docs/assets/aila-head-full.webp")), true);
   assert.equal(existsSync(join(root, "docs/assets/source-sans-3-latin-400.woff2")), true);
   assert.equal(existsSync(join(root, "docs/assets/OFL.txt")), true);
   assert.equal(existsSync(join(root, "docs/assets/app-store-badge-en.svg")), true);
