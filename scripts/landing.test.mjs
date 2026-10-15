@@ -19,9 +19,9 @@ function walk(dir, found = []) {
   return found;
 }
 
-test("custom domain is documented, not switched on", () => {
+test("custom domain is getaila.de", () => {
   assert.equal(existsSync(join(root, "CNAME")), false);
-  assert.equal(existsSync(join(root, "docs/CNAME")), false);
+  assert.equal(read("docs/CNAME").trim(), "getaila.de");
   const doc = read("docs/landing-domain.md");
   assert.match(doc, /185\.199\.108\.153/);
   assert.match(doc, /185\.199\.111\.153/);
@@ -31,6 +31,23 @@ test("custom domain is documented, not switched on", () => {
   assert.match(doc, /Enforce HTTPS/);
   assert.match(doc, /MX/);
   assert.match(doc, /apple-app-site-association/);
+  assert.match(read("docs/index.html"), /rel="canonical" href="https:\/\/getaila\.de\/"/);
+  assert.match(read("docs/index.html"), /property="og:url" content="https:\/\/getaila\.de\/"/);
+  assert.match(read("docs/de/index.html"), /rel="canonical" href="https:\/\/getaila\.de\/de\/"/);
+  assert.match(read("docs/de/index.html"), /property="og:url" content="https:\/\/getaila\.de\/de\/"/);
+  assert.match(read("docs/sitemap.xml"), /<loc>https:\/\/getaila\.de\/<\/loc>/);
+  assert.match(read("docs/sitemap.xml"), /<loc>https:\/\/getaila\.de\/de\/<\/loc>/);
+  for (const path of [
+    "docs/index.html",
+    "docs/de/index.html",
+    "docs/sitemap.xml",
+    "docs/robots.txt",
+    "docs/privacy/index.html",
+    "docs/privacy/en/index.html",
+    "docs/impressum/index.html"
+  ]) {
+    assert.doesNotMatch(read(path), /github\.io\/AILA-Content/);
+  }
 });
 
 test("apple-app-site-association is not a file", () => {
@@ -94,7 +111,7 @@ test("landing assets stay self-hosted and flat-colored", () => {
   const robots = read("docs/robots.txt");
   const sitemap = read("docs/sitemap.xml");
   assert.match(robots, /sitemap\.xml/);
-  assert.match(sitemap, /AILA-Content\/de\//);
-  assert.match(sitemap, /AILA-Content\/privacy\//);
-  assert.match(sitemap, /AILA-Content\/impressum\//);
+  assert.match(sitemap, /https:\/\/getaila\.de\/de\//);
+  assert.match(sitemap, /https:\/\/getaila\.de\/privacy\//);
+  assert.match(sitemap, /https:\/\/getaila\.de\/impressum\//);
 });

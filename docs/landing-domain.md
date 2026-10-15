@@ -1,28 +1,24 @@
 # getaila.de on GitHub Pages
 
-The site is published from the `/docs` folder on `main`. Today that is:
+The site is published from the `/docs` folder on `main`. The public host is `https://getaila.de/`. `docs/CNAME` contains exactly `getaila.de`.
 
-- https://niklasgalli-oss.github.io/AILA-Content/
-- https://niklasgalli-oss.github.io/AILA-Content/de/
-- https://niklasgalli-oss.github.io/AILA-Content/privacy/
-- https://niklasgalli-oss.github.io/AILA-Content/privacy/en/
-- https://niklasgalli-oss.github.io/AILA-Content/impressum/
+- https://getaila.de/
+- https://getaila.de/de/
+- https://getaila.de/privacy/
+- https://getaila.de/privacy/en/
+- https://getaila.de/impressum/
 
-The app already opens the privacy and imprint URLs on `github.io`. This file is the cutover note for `getaila.de` (DNS at IONOS). There is no `CNAME` file in the repo on purpose.
+Once GitHub Pages has that custom domain, `https://niklasgalli-oss.github.io/AILA-Content/...` redirects to the same path on `https://getaila.de/...`. The `/AILA-Content` prefix is dropped. `www.getaila.de` redirects to the apex.
 
-## Do not add a CNAME file yet
+## Custom domain file
 
-A custom domain for a branch-published site is a file named `CNAME` in the publishing root. Here that path is `docs/CNAME`, and the only line in it would be:
+`docs/CNAME` is the publishing hostname, one line:
 
 ```
 getaila.de
 ```
 
-Saving the domain in the repository’s Pages settings creates that file in a commit. As soon as it exists, GitHub Pages treats `getaila.de` as the site’s domain and redirects `https://niklasgalli-oss.github.io/AILA-Content/...` to `https://getaila.de/...`. The `/AILA-Content` prefix is dropped. `www.getaila.de` redirects to the apex once both DNS sets are in place.
-
-Until IONOS answers for `getaila.de` and GitHub has issued a certificate, that redirect has nowhere to land. The privacy and imprint pages the app already links to stop opening. Add `docs/CNAME`, or type the domain into Pages settings, only in the sitting described under “Turn the domain on”, after the `dig` checks match.
-
-Links inside the pages are relative, so the same files work on `github.io` now and on `getaila.de` later.
+That file is not a DNS record. The apex stays on the A and AAAA records below. Do not put a CNAME on `@` in DNS. Links inside the pages are relative, so the same files work on `github.io` and on `getaila.de`.
 
 ## Mail stays where it is
 
@@ -89,13 +85,9 @@ Source for the addresses: [Managing a custom domain for your GitHub Pages site](
 
 ## 3. Turn the domain on
 
-Do this only after the `dig` checks match, in the same sitting.
+`docs/CNAME` is already `getaila.de`. Pages settings should match it: repository **niklasgalli-oss/AILA-Content** → **Settings** → **Pages**, source **Deploy from a branch**, branch **main**, folder **/docs**, custom domain `getaila.de` (the apex, not `www`).
 
-1. Repository **niklasgalli-oss/AILA-Content** → **Settings** → **Pages**.
-2. Leave the source as **Deploy from a branch**, branch **main**, folder **/docs**.
-3. Under **Custom domain**, enter `getaila.de` (the apex, not `www`). Save.
-
-That save commits `docs/CNAME`. From then on, `https://niklasgalli-oss.github.io/AILA-Content/privacy/` redirects to `https://getaila.de/privacy/`, and the same for the imprint, the English page, and `/de/`.
+From then on, `https://niklasgalli-oss.github.io/AILA-Content/privacy/` redirects to `https://getaila.de/privacy/`, and the same for the imprint, the English page, and `/de/`.
 
 4. Wait until GitHub shows the DNS check as good and a certificate is issued. That can take up to 24 hours. [Securing your GitHub Pages site with HTTPS](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https).
 5. Then turn on **Enforce HTTPS** and leave it on. The checkbox stays disabled until the certificate exists. Do not force it earlier. If it never appears, extra A, AAAA, or CNAME records are the usual cause: remove the domain in Pages, clean the DNS, and add `getaila.de` again.
@@ -114,17 +106,9 @@ That save commits `docs/CNAME`. From then on, `https://niklasgalli-oss.github.io
 
 The app can keep the old `github.io` links once those redirects answer, including over HTTPS. Update the app when you want the address itself to be `getaila.de`.
 
-## 4. Absolute URLs to change after Enforce HTTPS is on
+## 4. Absolute URLs
 
-Relative links already work on both hosts. These absolute URLs still say `github.io` and should become `https://getaila.de` after the certificate is on:
-
-- `docs/index.html` (canonical, hreflang, Open Graph, Twitter)
-- `docs/de/index.html` (the same fields)
-- `docs/sitemap.xml`
-- `docs/robots.txt` (the Sitemap line)
-- `docs/privacy/index.html`
-- `docs/privacy/en/index.html`
-- `docs/impressum/index.html`
+Canonical, hreflang, Open Graph, Twitter, JSON-LD, `docs/sitemap.xml`, and the Sitemap line in `docs/robots.txt` use `https://getaila.de`. The same host is on the privacy and imprint pages. Mail links stay `mailto:niklas.galli@getaila.de`. The app still loads `pulse.json` and `briefing.json` from `raw.githubusercontent.com`.
 
 `robots.txt` and `sitemap.xml` are host-root files. On the project URL they are under `/AILA-Content/`, which crawlers do not read as the `github.io` robots file. After the cutover they are `https://getaila.de/robots.txt` and `https://getaila.de/sitemap.xml`.
 
@@ -175,4 +159,4 @@ cd docs
 python3 -m http.server 8080
 ```
 
-Open http://localhost:8080/ and http://localhost:8080/de/ . After merge, the public pages are the `github.io` URLs at the top of this file.
+Open http://localhost:8080/ and http://localhost:8080/de/ . The public pages are the `https://getaila.de/` URLs at the top of this file.
