@@ -1353,19 +1353,6 @@ summary:focus-visible {
     transition: none;
   }
 
-  .aila-bob,
-  .aila-lid {
-    animation: none;
-  }
-
-  .aila-bob {
-    transform: none;
-  }
-
-  .aila-lid {
-    transform: scaleY(0);
-  }
-
   .trust-set[aria-hidden="true"],
   .marquee-phrase[aria-hidden="true"] {
     display: none;
@@ -1398,37 +1385,46 @@ summary:focus-visible {
   padding: 1rem 1rem 0;
 }
 
-.aila-head {
+.aila-mark {
   position: relative;
   display: block;
+  overflow: visible;
+  flex: none;
   line-height: 0;
   background: transparent;
+  transform: translateY(var(--aila-nod, 0px)) rotate(var(--aila-turn, 0deg));
+  transform-origin: center center;
 }
 
-.aila-head picture,
-.aila-head img {
+.aila-hello .aila-mark {
+  width: 156px;
+  height: 168px;
+}
+
+.aila-mark img,
+.aila-face {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   background: transparent;
 }
 
-.aila-hello .aila-head {
-  width: 8.4rem;
-  flex: none;
+.aila-mark img {
+  object-fit: contain;
 }
 
-.aila-lid {
-  position: absolute;
-  left: 22%;
-  width: 54%;
-  top: 29%;
-  height: 17%;
-  border-radius: 46%;
-  background: #091624;
-  transform: scaleY(0);
-  transform-origin: center;
+.aila-face {
+  overflow: visible;
   pointer-events: none;
+}
+
+@media (max-height: 739px) {
+  .aila-hello .aila-mark {
+    width: 112px;
+    height: 121px;
+  }
 }
 
 .aila-bubble {
@@ -1447,13 +1443,21 @@ summary:focus-visible {
 
 .aila-float {
   position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 30;
-  width: 4.5rem;
+  right: 12px;
+  bottom: 12px;
+  z-index: 32;
+  width: 64px;
+  height: 69px;
   line-height: 0;
   text-decoration: none;
   background: transparent;
+  overflow: visible;
+  transform: translateY(var(--aila-float, 0px));
+}
+
+.aila-float .aila-mark {
+  width: 64px;
+  height: 69px;
 }
 
 .aila-float:focus-visible {
@@ -1541,10 +1545,6 @@ summary:focus-visible {
 }
 
 @media (min-width: 1100px) {
-  .aila-hello .aila-head {
-    width: 10.5rem;
-  }
-
   .phone-stage {
     grid-auto-flow: row;
     grid-template-columns: repeat(10, minmax(0, 1fr));
@@ -1585,35 +1585,6 @@ summary:focus-visible {
   .phone-briefing {
     grid-column: 6 / 8;
     justify-self: start;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .aila-bob {
-    animation: aila-float 4.6s ease-in-out infinite;
-  }
-
-  .aila-lid {
-    animation: aila-blink 6.5s linear infinite;
-  }
-}
-
-@keyframes aila-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-@keyframes aila-blink {
-  0%, 91.5% {
-    transform: scaleY(0);
-    animation-timing-function: ease-in;
-  }
-  93.2%, 94.4% {
-    transform: scaleY(1);
-    animation-timing-function: ease-out;
-  }
-  96.6%, 100% {
-    transform: scaleY(0);
   }
 }
 
