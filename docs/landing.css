@@ -1535,10 +1535,10 @@ summary:focus-visible {
 .aila-lid {
   position: absolute;
   left: 22%;
-  width: 56%;
-  top: 34.6%;
-  height: 3.6%;
-  border-radius: 999px;
+  width: 54%;
+  top: 29%;
+  height: 17%;
+  border-radius: 46%;
   background: #091624;
   transform: scaleY(0);
   transform-origin: center;
@@ -1597,13 +1597,23 @@ summary:focus-visible {
   background: #1C1916;
 }
 
-.phone-screen {
-  height: 32rem;
-  overflow: hidden;
-  padding: 0.85rem 0.85rem 1rem;
-  border-radius: 1.6rem;
+.phone-shot {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 390 / 844;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 1.55rem;
   background: var(--bg);
-  color: var(--ink);
+}
+
+.phone-bezel.is-pending::after {
+  content: "";
+  display: block;
+  aspect-ratio: 390 / 844;
+  border-radius: 1.55rem;
+  background: var(--bg);
 }
 
 .phone-caption {
@@ -1615,175 +1625,6 @@ summary:focus-visible {
   text-transform: uppercase;
 }
 
-.app-mast {
-  margin: 0.35rem 0 0;
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 1.35rem;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-
-.app-kicker {
-  margin: 0.85rem 0 0;
-  color: var(--accent);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  line-height: 1.3;
-  text-transform: uppercase;
-}
-
-.app-title {
-  margin: 0.2rem 0 0;
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 1.35rem;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-
-.shelf {
-  display: flex;
-  gap: 0.55rem;
-  margin-top: 0.8rem;
-}
-
-.book {
-  flex: 0 0 7.4rem;
-  min-height: 9.2rem;
-  padding: 0.7rem 0.65rem;
-  border: 1px solid var(--hairline);
-  border-radius: 16px;
-  background: var(--card);
-}
-
-.book h3 {
-  margin: 0.45rem 0 0;
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 0.98rem;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-
-.book p {
-  margin: 0.45rem 0 0;
-  color: var(--muted);
-  font-size: 0.75rem;
-}
-
-.path-row {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  min-height: 4rem;
-  margin-top: 0.55rem;
-  padding: 0.45rem 0.55rem 0.45rem 0.45rem;
-  border: 1px solid var(--hairline);
-  border-radius: 12px;
-  background: var(--surface);
-}
-
-.mini-cover {
-  display: grid;
-  place-items: center;
-  width: 2.4rem;
-  height: 3.15rem;
-  flex: none;
-  border-radius: 6px;
-  background: var(--accent);
-  color: var(--on-accent);
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 0.85rem;
-}
-
-.path-row strong {
-  display: block;
-  margin-top: 0.1rem;
-  font-size: 0.92rem;
-  line-height: 1.2;
-}
-
-.path-row .app-kicker {
-  margin: 0;
-}
-
-.path-chev {
-  margin-left: auto;
-  color: var(--faint);
-  font-size: 1.1rem;
-}
-
-.reader-title {
-  margin: 0.35rem 0 0;
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 1.45rem;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-
-.reader-body {
-  margin: 0.55rem 0 0;
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: 0.95rem;
-  line-height: 1.45;
-}
-
-.term-card {
-  margin-top: 0.85rem;
-  padding: 0.75rem 0.75rem 0.85rem;
-  border: 1px solid var(--hairline);
-  border-radius: 16px;
-  background: var(--surface);
-}
-
-.term-top {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.45rem;
-}
-
-.term-top .aila-head {
-  width: 3.1rem;
-  flex: none;
-}
-
-.term-name {
-  margin: 0.15rem 0 0;
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 1.35rem;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-
-.term-card p {
-  margin: 0.4rem 0 0;
-  font-size: 0.92rem;
-  line-height: 1.4;
-}
-
-.term-card .app-kicker {
-  margin-top: 0.7rem;
-}
-
-.save-pill {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.5rem;
-  margin-top: 0.75rem;
-  border-radius: 12px;
-  background: var(--accent);
-  color: var(--on-accent);
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
 @media (min-width: 1100px) {
   .aila-hello .aila-head {
     width: 10.5rem;
@@ -1791,7 +1632,7 @@ summary:focus-visible {
 
   .phone-row {
     grid-auto-flow: unset;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     overflow: visible;
   }
 }
@@ -1802,7 +1643,7 @@ summary:focus-visible {
   }
 
   .aila-lid {
-    animation: aila-blink 5.2s ease-in-out infinite;
+    animation: aila-blink 6.5s linear infinite;
   }
 }
 
@@ -1812,9 +1653,17 @@ summary:focus-visible {
 }
 
 @keyframes aila-blink {
-  0%, 88%, 100% { transform: scaleY(0); }
-  92% { transform: scaleY(1); }
-  96% { transform: scaleY(0); }
+  0%, 91.5% {
+    transform: scaleY(0);
+    animation-timing-function: ease-in;
+  }
+  93.2%, 94.4% {
+    transform: scaleY(1);
+    animation-timing-function: ease-out;
+  }
+  96.6%, 100% {
+    transform: scaleY(0);
+  }
 }
 
 @media print {

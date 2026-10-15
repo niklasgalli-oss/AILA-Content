@@ -168,8 +168,21 @@ async function loadBriefing() {
   }
 }
 
+function wirePhoneShots() {
+  document.querySelectorAll(".phone-shot").forEach((img) => {
+    const drop = () => {
+      const bezel = img.closest(".phone-bezel");
+      if (bezel) bezel.classList.add("is-pending");
+      img.remove();
+    };
+    if (img.complete && img.naturalWidth === 0) drop();
+    else img.addEventListener("error", drop, { once: true });
+  });
+}
+
 wireStore();
 loadBriefing();
+wirePhoneShots();
 wireEditionMotion();
 
 function wireEditionMotion() {
