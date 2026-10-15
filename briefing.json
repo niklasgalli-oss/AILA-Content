@@ -1,7 +1,130 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-14T04:45:00+02:00",
+  "updatedAt": "2026-10-15T04:45:00+02:00",
   "days": [
+    {
+      "date": "2026-10-15",
+      "items": [
+        {
+          "id": "2026-10-15-grok-voice-3",
+          "headline": "xAI ships Grok Voice 3.0 under one second",
+          "summary": "xAI's new speech-to-speech model tops Artificial Analysis's index at 86.9 with under-one-second latency. It is live in the Voice Agent API at $0.08 per minute, the same price as Grok Voice 2.0.",
+          "source": {
+            "name": "xAI",
+            "url": "https://x.ai/news/grok-voice-3"
+          },
+          "tag": "Model Release",
+          "priority": "breaking",
+          "i18n": {
+            "de": {
+              "headline": "xAI liefert Grok Voice 3.0 unter einer Sekunde",
+              "summary": "Das neue Speech-to-Speech-Modell von xAI führt den Artificial-Analysis-Index mit 86,9 an und antwortet unter einer Sekunde. Es ist in der Voice Agent API für 0,08 $ pro Minute verfügbar, zum gleichen Preis wie Grok Voice 2.0."
+            }
+          }
+        },
+        {
+          "id": "2026-10-15-claude-otel-traces",
+          "headline": "Claude agents export OpenTelemetry traces",
+          "summary": "Anthropic opened a public beta so Managed Agents, the Messages API, and Claude SDKs can send OpenTelemetry traces to tools such as Langfuse, Sentry, and Grafana Cloud. Teams see latency, tokens, and tool use in one place.",
+          "source": {
+            "name": "Anthropic",
+            "url": "https://claude.com/resources/articles/agent-observability-on-the-claude-platform"
+          },
+          "tag": "Tools",
+          "i18n": {
+            "de": {
+              "headline": "Claude-Agents exportieren OpenTelemetry-Traces",
+              "summary": "Anthropic startet eine Public Beta: Managed Agents, Messages API und Claude SDKs senden OpenTelemetry-Traces an Tools wie Langfuse, Sentry und Grafana Cloud. Teams sehen Latency, Tokens und Tool-Nutzung an einem Ort."
+            }
+          }
+        },
+        {
+          "id": "2026-10-15-neura-neuron-ai",
+          "headline": "German startup NEURA ships Neuron AI for robots",
+          "summary": "Metzingen-based NEURA Robotics introduced Neuron AI, a multimodal model that fuses 3D vision, touch, audio, robot state, and language with memory. It runs on five NEURA robot bodies and will demo laundry work at NVIDIA GTC Berlin.",
+          "source": {
+            "name": "NEURA Robotics",
+            "url": "https://neura-robotics.com/neura-robotics-introduces-neuron-ai/"
+          },
+          "tag": "Model Release",
+          "pulseId": "pulse-2026-10-14-neura-neuron-ai-senses",
+          "i18n": {
+            "de": {
+              "headline": "NEURA aus Metzingen bringt Neuron AI für Roboter",
+              "summary": "NEURA Robotics aus Metzingen stellt Neuron AI vor: ein multimodales Modell mit 3D-Vision, Tastsinn, Audio, Robot State, Sprache und Memory. Es läuft auf fünf NEURA-Roboterkörpern und zeigt Wäsche sortieren auf der NVIDIA GTC Berlin."
+            }
+          }
+        },
+        {
+          "id": "2026-10-15-chainguard-harness",
+          "headline": "Chainguard Harness hunts live app vulnerabilities",
+          "summary": "Chainguard opened a beta for Harness, which rebuilds your app in an isolated microVM and uses Claude Mythos 5.1 to probe the running instance. Every finding is replayed, and a named engineer reviews each recommended fix before you see it.",
+          "source": {
+            "name": "Chainguard",
+            "url": "https://www.chainguard.dev/unchained/introducing-chainguard-harness"
+          },
+          "tag": "Tools",
+          "level": "advanced",
+          "pulseId": "pulse-2026-10-14-chainguard-harness-bugs",
+          "i18n": {
+            "de": {
+              "headline": "Chainguard Harness jagt Bugs in laufenden Apps",
+              "summary": "Chainguard öffnet die Beta für Harness: Die App wird in einer isolierten microVM neu gebaut, Claude Mythos 5.1 greift die laufende Instanz an. Jeder Fund wird wiederholt, und ein benannter Engineer prüft jeden Fix, bevor er bei dir landet."
+            }
+          }
+        },
+        {
+          "id": "2026-10-15-states-sue-openai",
+          "headline": "Eight US states sue OpenAI over ChatGPT safety",
+          "summary": "Eight states filed consumer-protection suits alleging OpenAI put profit over ChatGPT safety for kids and vulnerable users. OpenAI says it has age-specific protections and wants pragmatic, industry-wide AI rules.",
+          "source": {
+            "name": "The Verge",
+            "url": "https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Acht US-Bundesstaaten verklagen OpenAI wegen ChatGPT",
+              "summary": "Acht US-Staaten werfen OpenAI vor, Profit vor die Sicherheit von ChatGPT für Kinder und vulnerable Nutzer zu stellen. OpenAI verweist auf altersbezogene Schutzmaßnahmen und will pragmatische, branchenweite KI-Regeln."
+            }
+          }
+        },
+        {
+          "id": "2026-10-15-openai-flagship-alignment",
+          "headline": "OpenAI's next flagship still needs alignment work",
+          "summary": "Employees say OpenAI will likely ship one or two models this year, but the next major upgrade still needs alignment and testing. Like Astra, it uses looped transformers that help math and coding while hiding more reasoning from monitors.",
+          "source": {
+            "name": "THE DECODER",
+            "url": "https://the-decoder.com/openai-will-reportedly-ship-at-least-one-model-this-year-but-its-flagship-still-needs-alignment-work/"
+          },
+          "tag": "Model Release",
+          "level": "advanced",
+          "i18n": {
+            "de": {
+              "headline": "OpenAIs nächstes Flagship braucht noch Alignment",
+              "summary": "Mitarbeiter sagen, OpenAI werde dieses Jahr wohl ein oder zwei Modelle liefern; das große Upgrade braucht aber noch Alignment und Tests. Wie Astra nutzt es Looped Transformers: stark in Math und Coding, aber schwerer zu überwachen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-15-fish-drama-3",
+          "headline": "Fish Audio Drama 3 directs voice feeling in plain words",
+          "summary": "Fish Audio released Drama 3, a text-to-speech model you steer with plain-language stage directions in brackets. It leads Artificial Analysis pronunciation robustness at 93.2%, speaks 83 languages, and offers open weights.",
+          "source": {
+            "name": "Fish Audio",
+            "url": "https://fish.audio/blog/fish-audio-drama-3/"
+          },
+          "tag": "Tools",
+          "pulseId": "pulse-2026-10-13-fish-drama-3-voices",
+          "i18n": {
+            "de": {
+              "headline": "Fish Audio Drama 3 lenkt Stimme per Klartext-Regie",
+              "summary": "Fish Audio veröffentlicht Drama 3: Text-to-Speech mit Klartext-Regie in Klammern. Es führt Artificial Analysis in Pronunciation Robustness mit 93,2 %, spricht 83 Sprachen und kommt als Open Weights unter Community License."
+            }
+          }
+        }
+      ]
+    },
     {
       "date": "2026-10-14",
       "items": [
@@ -766,117 +889,6 @@
             "de": {
               "headline": "Manus Cue gibt Agents E-Mail, Telefon und Wallet",
               "summary": "Manus stellte Cue vor: eine App, in der persönliche Agents eigene E-Mail-Adressen, Telefonnummern, digitale Wallets und Computer bekommen. Sie kommunizieren, erledigen Aufgaben über Dienste und zahlen innerhalb gesetzter Limits."
-            }
-          }
-        }
-      ]
-    },
-    {
-      "date": "2026-10-08",
-      "items": [
-        {
-          "id": "2026-10-08-chatgpt-gpt-6-intelligent-ui",
-          "headline": "GPT-6 arrives in ChatGPT with an interactive UI",
-          "summary": "GPT-6 in ChatGPT: Intelligent UI (interactive diagrams, charts, buttons, small calculators), which OpenAI says should make complex topics easier to understand; Plus/Pro/Business/Enterprise: GPT-6 Sol Oct 7, Free and Go get GPT-6 Luna Oct 8.",
-          "tag": "Tools",
-          "priority": "breaking",
-          "pulseId": "pulse-2026-10-07-gpt-6-intelligent-ui",
-          "level": "beginner",
-          "source": {
-            "name": "TechCrunch",
-            "url": "https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/"
-          },
-          "i18n": {
-            "de": {
-              "headline": "GPT-6 bringt ChatGPT eine interaktive Oberfläche",
-              "summary": "GPT-6 kommt mit Intelligent UI in ChatGPT (interaktive Diagramme, Charts, Buttons, kleine Rechner). Komplexe Themen werden laut OpenAI verständlicher. Plus/Pro/Business/Enterprise haben GPT-6 Sol seit 7.10., Free und Go GPT-6 Luna ab 8.10."
-            }
-          }
-        },
-        {
-          "id": "2026-10-08-claude-haiku-5-5",
-          "headline": "Claude Haiku 5.5 is Anthropic's cheapest, fastest model",
-          "summary": "Anthropic released Claude Haiku 5.5, its cheapest and fastest model, and says it is about 75% cheaper than Haiku 4.5 on average, with a 1M token context, effort control, from $0.10 per million input tokens. Sonnet 5.5 caching gets cheaper.",
-          "tag": "Model Release",
-          "priority": "normal",
-          "pulseId": "pulse-2026-10-07-claude-haiku-5-5",
-          "level": "beginner",
-          "source": {
-            "name": "Anthropic",
-            "url": "https://www.anthropic.com/claude-haiku-5-5"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Claude Haiku 5.5 ist Anthropics günstigstes Schnellmodell",
-              "summary": "Anthropic hat Claude Haiku 5.5 veröffentlicht, sein günstigstes und schnellstes Modell: im Schnitt 75 % günstiger als Haiku 4.5, Context Window 1 Mio. Token, Effort Control, ab 0,10 $/Mio. Input-Token. Caching für Sonnet 5.5 wird günstiger."
-            }
-          }
-        },
-        {
-          "id": "2026-10-08-openai-math-papers",
-          "headline": "An OpenAI model offers solutions to open math problems",
-          "summary": "An unnamed internal OpenAI model produced full or partial solutions to over 370 open math problems; New Scientist counts 722 papers. Mathematicians are impressed but criticize missing transparency on prompts, compute, and failed attempts.",
-          "tag": "Benchmarks",
-          "level": "beginner",
-          "source": {
-            "name": "New Scientist",
-            "url": "https://www.newscientist.com/article/2592421-openai-announces-722-mathematical-discoveries-in-one-go/"
-          },
-          "i18n": {
-            "de": {
-              "headline": "OpenAI-Modell liefert Lösungen für offene Matheprobleme",
-              "summary": "Ein unbenanntes internes OpenAI-Modell lieferte volle oder teils Lösungen zu über 370 offenen Matheproblemen; New Scientist: 722 Papers. Mathematiker sind beeindruckt, kritisieren Intransparenz zu Prompts, Rechenaufwand und Fehlversuchen."
-            }
-          }
-        },
-        {
-          "id": "2026-10-08-nous-research-hermes-business",
-          "headline": "Nous Research brings its agent Hermes to companies",
-          "summary": "Nous Research raised $90 million at a $1.5 billion valuation to bring its open-source agent Hermes to companies as Hermes for Businesses, with private, customizable agents for multi-step workflows.",
-          "tag": "Autonomous Agent",
-          "level": "advanced",
-          "source": {
-            "name": "TechCrunch",
-            "url": "https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Nous Research bringt den Agent Hermes in Unternehmen",
-              "summary": "Nous Research sammelte 90 Millionen US-Dollar bei einer Bewertung von 1,5 Milliarden ein, um den Open-Source-Agent Hermes als Hermes for Businesses in Unternehmen zu bringen: private, anpassbare Agents für Abläufe über mehrere Schritte."
-            }
-          }
-        },
-        {
-          "id": "2026-10-08-virtual-biology-initiative",
-          "headline": "Partners put $1.8B into a virtual cell data effort",
-          "summary": "Biohub (Chan Zuckerberg), US Department of Energy, NIH, Google DeepMind, Isomorphic Labs and Meta expand Virtual Biology Initiative, $1.8B for AI-ready biology data. A virtual cell model predicts disease and therapy outcomes, and open data.",
-          "tag": "Framework",
-          "level": "beginner",
-          "source": {
-            "name": "CNBC",
-            "url": "https://www.cnbc.com/2026/10/07/government-google-join-zuckerberg-backed-biohub-ai-biology-data.html"
-          },
-          "i18n": {
-            "de": {
-              "headline": "1,8 Milliarden für Daten zu einem virtuellen Zellmodell",
-              "summary": "Biohub (Chan Zuckerberg), US-Energieministerium, NIH, Google DeepMind, Isomorphic Labs, Meta: Virtual Biology Initiative plus 1,8 Mrd. $ für KI-fertige Biologiedaten, virtuelles Zellmodell für Krankheits- und Therapieverläufe, Daten offen."
-            }
-          }
-        },
-        {
-          "id": "2026-10-08-humanitys-sixth-sense",
-          "headline": "Humanity's Sixth Sense tests intuitive visual reasoning",
-          "summary": "Scale AI and Elorian introduced Humanity's Sixth Sense, 522 tasks on intuitive visual reasoning such as spatial logic, cause and effect, and social cues in images and videos. Even the best model, GPT-6 Astra, scores about 54%.",
-          "tag": "Benchmarks",
-          "level": "beginner",
-          "source": {
-            "name": "Elorian",
-            "url": "https://elorian.ai/blog/humanitys-sixth-sense"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Humanity's Sixth Sense prüft visuelles Reasoning",
-              "summary": "Scale AI und Elorian stellten Humanity's Sixth Sense vor: 522 Aufgaben zu intuitivem visuellem Reasoning, etwa räumliche Logik, Ursache und Wirkung, soziale Hinweise in Bildern und Videos. Das beste Modell, GPT-6 Astra, erreicht etwa 54 %."
             }
           }
         }
