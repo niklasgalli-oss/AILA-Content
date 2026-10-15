@@ -171,8 +171,8 @@ async function loadBriefing() {
 function wirePhoneShots() {
   document.querySelectorAll(".phone-shot").forEach((img) => {
     const drop = () => {
-      const bezel = img.closest(".phone-bezel");
-      if (bezel) bezel.classList.add("is-pending");
+      const screen = img.closest(".phone-screen");
+      if (screen) screen.classList.add("is-pending");
       img.remove();
     };
     if (img.complete && img.naturalWidth === 0) drop();
