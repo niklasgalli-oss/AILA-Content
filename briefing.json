@@ -1,7 +1,143 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-15T04:45:00+02:00",
+  "updatedAt": "2026-10-16T04:45:36+02:00",
   "days": [
+    {
+      "date": "2026-10-16",
+      "items": [
+        {
+          "id": "2026-10-16-meta-muse-spark-open",
+          "headline": "Meta releases Muse Spark Open with open weights",
+          "summary": "Meta's new model has 816B parameters and a 1M-token context window and is built for coding and agent work. It is live on API platforms now and runs locally on two Mac Studios with M5 Ultra.",
+          "source": {
+            "name": "Meta AI",
+            "url": "https://research.meta.ai/blog/muse-spark-open"
+          },
+          "tag": "Model Release",
+          "priority": "breaking",
+          "i18n": {
+            "de": {
+              "headline": "Meta veröffentlicht Muse Spark Open mit Open Weights",
+              "summary": "Das neue Modell von Meta hat 816 Mrd. Parameter, ein Context Window von 1 Mio. Tokens und ist für Coding und Agents gebaut. Es läuft ab sofort über API-Plattformen und lokal auf zwei Mac Studios mit M5 Ultra."
+            }
+          }
+        },
+        {
+          "id": "2026-10-16-nvidia-nemotron-super-vl",
+          "headline": "Nvidia opens Nemotron 3.5 Super VL for business agents",
+          "summary": "The open 120B model reads text, images, charts and PDFs and is built for agents that run nonstop. Nvidia also shares training data and recipes, plus a 24 GB Bolt version for local PCs.",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/nvidias-nemotron-3-5-super-vl-is-an-open-model-built-to-run-enterprise-ai-agents-nonstop/"
+          },
+          "tag": "Model Release",
+          "i18n": {
+            "de": {
+              "headline": "Nvidia gibt Nemotron 3.5 Super VL für Firmen-Agents frei",
+              "summary": "Das offene 120B-Modell versteht Text, Bilder, Diagramme und PDFs und ist für Agents gebaut, die rund um die Uhr laufen. Dazu gibt Nvidia Trainingsdaten, Rezepte und eine 24-GB-Version namens Bolt für lokale PCs frei."
+            }
+          }
+        },
+        {
+          "id": "2026-10-16-flux-3-image-klein",
+          "headline": "Freiburg's FLUX 3 Image Klein makes 4K images on your PC",
+          "summary": "Black Forest Labs released a 5.6B-parameter open weights model that creates and edits images in native 4K. With the INT8 build it runs on GeForce RTX cards with 8 GB of VRAM.",
+          "source": {
+            "name": "Black Forest Labs",
+            "url": "https://bfl.ai/blog/flux-3-image-klein"
+          },
+          "tag": "Model Release",
+          "pulseId": "pulse-2026-10-15-flux-3-klein-local-images",
+          "i18n": {
+            "de": {
+              "headline": "FLUX 3 Image Klein aus Freiburg: 4K-Bilder am eigenen PC",
+              "summary": "Black Forest Labs hat ein Open-Weights-Modell mit 5,6 Mrd. Parametern veröffentlicht, das Bilder nativ in 4K erzeugt und bearbeitet. Mit dem INT8-Build läuft es schon auf GeForce-RTX-Karten mit 8 GB VRAM."
+            }
+          }
+        },
+        {
+          "id": "2026-10-16-google-universal-cart",
+          "headline": "Google's Universal Cart gathers products from many shops",
+          "summary": "US users can now save items from different retailers in Search and the Gemini app in one cart. It alerts you to price drops and restocks and surfaces promo codes and card perks.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/15/googles-universal-cart-shopping-tool-launches-in-the-us/"
+          },
+          "tag": "Tools",
+          "pulseId": "pulse-2026-10-15-google-universal-cart",
+          "i18n": {
+            "de": {
+              "headline": "Googles Universal Cart sammelt Produkte aus vielen Shops",
+              "summary": "Nutzer in den USA können jetzt Produkte verschiedener Händler in der Google-Suche und der Gemini-App in einem Warenkorb sammeln. Er meldet Preissenkungen und wieder verfügbare Artikel und zeigt Rabattcodes."
+            }
+          }
+        },
+        {
+          "id": "2026-10-16-amazon-bee-frontier",
+          "headline": "Amazon's Bee launches a $75 wearable that remembers chats",
+          "summary": "Bee Frontier and the phone-mounted Bee Eclipse turn everyday conversations into summaries and to-dos. Raw audio is deleted after processing, and a $11.99 Pro plan adds Alexa+ and app links.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/15/amazons-bee-launches-two-new-personal-ai-devices-starting-at-75/"
+          },
+          "tag": "Hardware",
+          "i18n": {
+            "de": {
+              "headline": "Amazons Bee bringt Wearable für 75 $, das Gespräche merkt",
+              "summary": "Bee Frontier und das ans Smartphone geheftete Bee Eclipse machen aus Alltagsgesprächen Zusammenfassungen und To-dos. Rohaudio wird nach der Verarbeitung gelöscht; das Pro-Abo für 11,99 $ verbindet Alexa+ und Apps."
+            }
+          }
+        },
+        {
+          "id": "2026-10-16-ftc-subpoenas-openai-anthropic",
+          "headline": "FTC subpoenas OpenAI and Anthropic over safety incidents",
+          "summary": "The US consumer protection agency sent both labs demands of more than 50 pages for documents on security incidents, safeguards and marketing claims. It also plans to make top executives testify.",
+          "source": {
+            "name": "Axios",
+            "url": "https://www.axios.com/2026/10/15/ftc-openai-anthropic-ai-safety-investigation"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "US-Behörde FTC fordert Unterlagen von OpenAI und Anthropic",
+              "summary": "Die US-Verbraucherschutzbehörde verlangt von beiden Labs auf über 50 Seiten Dokumente zu Sicherheitsvorfällen, Schutzmaßnahmen und Werbeaussagen. Außerdem sollen Top-Manager aussagen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-16-anthropic-q3-revenue",
+          "headline": "Anthropic reports $16.8B quarterly revenue before IPO",
+          "summary": "Anthropic told prospective investors Q3 revenue rose to $16.8B from $11.6B in Q2 and that it was profitable on an adjusted basis, CNBC reports. The IPO is reportedly slated for November.",
+          "source": {
+            "name": "CNBC",
+            "url": "https://www.cnbc.com/2026/10/15/anthropics-third-quarter-revenue-hits-16point8-billion-ipo.html"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Anthropic meldet vor Börsengang 16,8 Mrd. $ Quartalsumsatz",
+              "summary": "Laut CNBC nannte Anthropic Investoren einen Q3-Umsatz von 16,8 Mrd. $ nach 11,6 Mrd. $ im Q2 und bereinigt einen Gewinn. Der Börsengang soll Berichten zufolge im November kommen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-16-anthropic-metr-access",
+          "headline": "Anthropic gives outside testers employee-level access",
+          "summary": "Six staff from the nonprofit METR now get hardware, office space and internal access similar to Anthropic's own risk teams, and will publish their findings. SecureBio and Accenture's Faculty also review Claude.",
+          "source": {
+            "name": "Anthropic",
+            "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Anthropic lässt externe Prüfer wie Mitarbeitende ran",
+              "summary": "Sechs Fachleute der Non-Profit-Organisation METR erhalten Hardware, Büros und internen Zugang wie Anthropics eigene Risiko-Teams und veröffentlichen ihre Ergebnisse. Auch SecureBio und Faculty von Accenture prüfen Claude."
+            }
+          }
+        }
+      ]
+    },
     {
       "date": "2026-10-15",
       "items": [
@@ -764,131 +900,6 @@
             "de": {
               "headline": "27B-Agent-Modell passt jetzt in unter 8 GB",
               "summary": "Underdog veröffentlicht Saluki 27B, eine auf 2 Bit komprimierte Version von Qwen3.8-27B: 7,89 statt 54 GB, damit es lokal läuft. Beim Tool Calling schlägt es im eigenen Test sogar das Original, 88 zu 84."
-            }
-          }
-        }
-      ]
-    },
-    {
-      "date": "2026-10-09",
-      "items": [
-        {
-          "id": "2026-10-09-gemini-workplace-agent",
-          "headline": "Google launches a Gemini agent for workplace tasks",
-          "summary": "At Gemini at Work, Google Cloud unveiled a universal Gemini agent that plans work, uses tools, and connects to Workspace, Microsoft 365, and Slack. It can act as a coworker with its own email and is in private preview for businesses.",
-          "tag": "Autonomous Agent",
-          "priority": "breaking",
-          "level": "beginner",
-          "source": {
-            "name": "TechCrunch",
-            "url": "https://techcrunch.com/2026/10/08/google-brings-agentic-ai-to-gemini-starting-with-businesses/"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Google startet einen Gemini-Agenten für die Arbeit",
-              "summary": "Auf Gemini at Work stellte Google Cloud einen universellen Gemini-Agent vor: Er plant Arbeit, nutzt Tools und verbindet Workspace, Microsoft 365 sowie Slack. Er kann als Kollege mit eigener E-Mail laufen; Private Preview für Firmen."
-            }
-          }
-        },
-        {
-          "id": "2026-10-09-anthropic-oss-scanner",
-          "headline": "Anthropic offers free AI vulnerability scans for open source",
-          "summary": "Anthropic launched OSS Scanner, an opt-in service that periodically scans eligible open-source projects with its strongest models at no cost. Reports are model-generated without human triage, so some findings may be wrong.",
-          "tag": "Tools",
-          "level": "beginner",
-          "source": {
-            "name": "Anthropic",
-            "url": "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Anthropic scannt Open Source gratis auf Schwachstellen",
-              "summary": "Anthropic startet OSS Scanner: ein Opt-in-Dienst, der geeignete Open-Source-Projekte periodisch mit den stärksten Modellen kostenlos prüft. Die Reports sind modellgeneriert ohne menschliche Triage; Fehler sind möglich."
-            }
-          }
-        },
-        {
-          "id": "2026-10-09-anthropic-critical-infra",
-          "headline": "Anthropic helps harden critical infrastructure cyber defense",
-          "summary": "Anthropic's Critical Infrastructure Defense Program pairs frontier models and engineers with partners such as Accenture, CrowdStrike, and Dragos that protect power grids and water systems. It sits under a broader Anthropic Cyber Mission.",
-          "tag": "Framework",
-          "level": "beginner",
-          "source": {
-            "name": "SiliconANGLE",
-            "url": "https://siliconangle.com/2026/10/08/anthropic-launches-critical-infrastructure-program-and-free-oss-scanner-for-open-source/"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Anthropic stärkt Cyberabwehr kritischer Infrastruktur",
-              "summary": "Das Critical Infrastructure Defense Program von Anthropic bringt Frontier-Modelle und Ingenieure zu Partnern wie Accenture, CrowdStrike und Dragos, die Stromnetze und Wasserwerke schützen. Es gehört zur Anthropic Cyber Mission."
-            }
-          }
-        },
-        {
-          "id": "2026-10-09-anthropic-usage-policy",
-          "headline": "Anthropic tightens rules on elections, abuse, and deception",
-          "summary": "Anthropic published a 2026 Usage Policy update that consolidates bans on deceptive campaigns, sharpens election interference rules, and limits sustained cruel abuse of models. The policy takes effect on November 12.",
-          "tag": "Framework",
-          "level": "beginner",
-          "source": {
-            "name": "Anthropic",
-            "url": "https://www.anthropic.com/news/2026-usage-policy-update"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Anthropic schärft Regeln zu Wahlen, Missbrauch und Täuschung",
-              "summary": "Anthropic hat die Usage Policy 2026 aktualisiert: gebündelte Verbote täuschender Kampagnen, schärfere Wahl-Interferenz-Regeln und Grenzen für anhaltenden grausamen Missbrauch der Modelle. Gültig ab 12. November."
-            }
-          }
-        },
-        {
-          "id": "2026-10-09-openai-false-front-ops",
-          "headline": "OpenAI bans Russia and Iran AI influence campaigns",
-          "summary": "OpenAI banned ChatGPT accounts behind two covert influence operations that used fake journalist personas and a Latin American think tank front. It rated the Russia-origin case Category 5, the highest it has disrupted so far.",
-          "tag": "Framework",
-          "level": "beginner",
-          "source": {
-            "name": "OpenAI",
-            "url": "https://openai.com/index/disrupting-ai-enabled-false-front-operations"
-          },
-          "i18n": {
-            "de": {
-              "headline": "OpenAI sperrt KI-Einflusskampagnen aus Russland und Iran",
-              "summary": "OpenAI hat ChatGPT-Konten hinter zwei verdeckten Einflussoperationen gesperrt: gefälschte Journalisten-Personas und eine Think-Tank-Fassade in Lateinamerika. Die Russland-Operation ist Category 5, bisher der höchste Score."
-            }
-          }
-        },
-        {
-          "id": "2026-10-09-manus-500m-funding",
-          "headline": "Manus raises over $500M after the Meta deal collapse",
-          "summary": "Butterfly Effect, parent of Chinese AI agent startup Manus, raised more than $500 million led by Boyu Capital and IDG Capital. Investors stayed in after China forced Meta to unwind a $2 billion acquisition.",
-          "tag": "Autonomous Agent",
-          "level": "beginner",
-          "source": {
-            "name": "CNBC",
-            "url": "https://www.cnbc.com/2026/10/08/manus-fund-raise-meta-muse-tencent.html"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Manus sammelt über 500 Mio. $ nach geplatztem Meta-Deal",
-              "summary": "Butterfly Effect, Mutter von Manus, holte über 500 Millionen Dollar ein, angeführt von Boyu Capital und IDG Capital. Investoren blieben dabei, nachdem China Metas Übernahme für 2 Milliarden Dollar gestoppt hatte."
-            }
-          }
-        },
-        {
-          "id": "2026-10-09-manus-cue-agents",
-          "headline": "Manus Cue gives personal agents email, phone, and wallets",
-          "summary": "Manus introduced Cue, a stand-alone app where personal agents get their own email addresses, phone numbers, digital wallets, and computers. Agents can communicate, handle tasks across services, and pay within user-set limits.",
-          "tag": "Tools",
-          "level": "beginner",
-          "source": {
-            "name": "TechCrunch",
-            "url": "https://techcrunch.com/2026/10/08/chinas-manus-raises-over-500m-in-first-funding-round-since-split-with-meta/"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Manus Cue gibt Agents E-Mail, Telefon und Wallet",
-              "summary": "Manus stellte Cue vor: eine App, in der persönliche Agents eigene E-Mail-Adressen, Telefonnummern, digitale Wallets und Computer bekommen. Sie kommunizieren, erledigen Aufgaben über Dienste und zahlen innerhalb gesetzter Limits."
             }
           }
         }
