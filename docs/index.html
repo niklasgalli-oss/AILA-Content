@@ -59,20 +59,12 @@
     <a class="nav-link" href="#stakes"><span class="mobile-nav-index">03</span>Why now</a>
     <a class="nav-link" href="#teams"><span class="mobile-nav-index">04</span>Teams</a>
     <a class="nav-link" href="#faq"><span class="mobile-nav-index">05</span>FAQ</a>
+    <a class="mobile-cta" href="#get-the-app">Get the app</a>
     <a href="de/" hreflang="de" lang="de">Deutsch</a>
   </nav>
   <header class="masthead" id="site-header">
-    <div class="wrap">
-      <div class="mast-top">
-        <a class="brand" href="./">AILA</a>
-        <p class="mast-issue">Vol. I · No. 1</p>
-        <div class="mast-tools">
-          <a class="lang" href="de/" hreflang="de" lang="de">Deutsch</a>
-          <button class="burger" id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav-panel" aria-label="Open menu">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
+    <div class="wrap mast-bar">
+      <a class="brand" href="./">AILA</a>
       <nav class="site-nav" aria-label="Primary">
         <a class="nav-link" href="#learn">Path</a>
         <a class="nav-link" href="#briefing">Briefing</a>
@@ -80,17 +72,48 @@
         <a class="nav-link" href="#teams">Teams</a>
         <a class="nav-link" href="#faq">FAQ</a>
       </nav>
-      <div class="rules" aria-hidden="true"><span></span><span></span></div>
+      <div class="mast-tools">
+        <a class="nav-cta" href="#get-the-app">Get the app</a>
+        <a class="lang" href="de/" hreflang="de" lang="de" aria-label="Deutsch">DE</a>
+        <button class="burger" id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav-panel" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
   <main id="content">
     <section class="front" id="hero-section">
-      <span class="hero-rule hero-rule-left" aria-hidden="true"></span>
-      <span class="hero-rule hero-rule-right" aria-hidden="true"></span>
-      <div class="wrap front-grid">
-        <div class="edition-frame">
-          <p class="edition-bar"><span>Vol. I · No. 1</span><span>For iPhone and Android</span></p>
-          <div class="aila-hello">
+      <div class="wrap hero">
+        <div class="hero-copy">
+          <h1>Learn AI like a language.</h1>
+          <p class="hero-sub">AI basics and daily AI news · 5 minutes a day · Read or listen</p>
+          <div class="store" id="get-the-app" data-aila-store data-badge="assets/app-store-badge-en.svg" data-badge-alt="Download on the App Store">
+            <p class="store-row">
+              <span class="store-pending" data-store-pending>Coming soon on App Store</span>
+              <span class="store-pending store-play">Coming soon on Google Play</span>
+            </p>
+          </div>
+        </div>
+        <div class="hero-stage">
+          <div class="hero-phones">
+            <figure class="hero-phone hero-phone-reader">
+              <div class="phone-bezel">
+                <div class="phone-screen">
+                  <img class="phone-shot" src="assets/screens/en/reader-780.webp" srcset="assets/screens/en/reader-390.webp 390w, assets/screens/en/reader-780.webp 780w" sizes="(min-width: 960px) 250px, 46vw" alt="Read or listen in AILA, with Aila's term card for token." width="780" height="1688" fetchpriority="high" decoding="async">
+                  <span class="phone-island" aria-hidden="true"></span>
+                </div>
+              </div>
+            </figure>
+            <figure class="hero-phone hero-phone-home">
+              <div class="phone-bezel">
+                <div class="phone-screen">
+                  <img class="phone-shot" src="assets/screens/en/home-780.webp" srcset="assets/screens/en/home-390.webp 390w, assets/screens/en/home-780.webp 780w" sizes="(min-width: 960px) 250px, 46vw" alt="AILA home with briefing covers and the next basics lesson, Fluent but false." width="780" height="1688" decoding="async">
+                  <span class="phone-island" aria-hidden="true"></span>
+                </div>
+              </div>
+            </figure>
+          </div>
+          <div class="hero-aila">
             <div class="aila-mark" data-aila-mark data-gaze="right" data-mood="neutral">
               <img src="assets/aila-head-full.png" alt="" width="525" height="567">
               <svg class="aila-face" viewBox="0 0 525 567" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
@@ -132,22 +155,62 @@
                 <ellipse class="ear" cx="476" cy="324" rx="16" ry="22" fill="#9EE7FF" opacity="0"/>
               </svg>
             </div>
-            <p class="aila-bubble">Hi, I'm Aila</p>
-          </div>
-          <h1>Learn AI like a language.</h1>
-          <div class="edition-split">
-            <p class="standfirst">Languages had Duolingo. AI has AILA.</p>
-            <div>
-              <div class="store" data-aila-store data-badge="assets/app-store-badge-en.svg" data-badge-alt="Download on the App Store">
-                <p class="store-row">
-                  <span class="store-pending" data-store-pending>Coming soon on App Store</span>
-                  <span class="store-pending store-play">Coming soon on Google Play</span>
-                </p>
-              </div>
-              <p class="price-note">The daily briefing stays free. Premium opens the longer lessons and audio. A 7-day trial appears only when the store offers it. The App Store or Google Play shows the price.</p>
-            </div>
+            <p class="hero-bubble">Hi, I'm Aila</p>
           </div>
         </div>
+      </div>
+      <div class="wrap plans-wrap">
+        <h2 class="visually-hidden">Ways to start</h2>
+        <ul class="plans">
+          <li>
+            <a class="plan" href="#learn">
+              <span class="plan-top">
+                <span class="plan-copy">
+                  <span class="plan-title">AI basics in 7 days</span>
+                  <span class="plan-meta">7-day plan</span>
+                </span>
+                <span class="plan-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><path d="M7.2 4.4 12.8 10l-5.6 5.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </span>
+              <span class="plan-covers" aria-hidden="true">
+                <span class="cover cover-clay"><span class="cover-kicker">Basics 01</span><span class="cover-name">What AI is</span></span>
+                <span class="cover cover-gold"><span class="cover-kicker">Basics 02</span><span class="cover-name">Prompts</span></span>
+                <span class="cover cover-wine"><span class="cover-kicker">Basics 03</span><span class="cover-name">Tokens</span></span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="plan" href="#stakes">
+              <span class="plan-top">
+                <span class="plan-copy">
+                  <span class="plan-title">Copilot at work</span>
+                  <span class="plan-meta">7-day plan</span>
+                </span>
+                <span class="plan-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><path d="M7.2 4.4 12.8 10l-5.6 5.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </span>
+              <span class="plan-covers" aria-hidden="true">
+                <span class="cover cover-ink"><span class="cover-kicker">Work 01</span><span class="cover-name">The meeting</span></span>
+                <span class="cover cover-pine"><span class="cover-kicker">Work 02</span><span class="cover-name">The headline</span></span>
+                <span class="cover cover-sand"><span class="cover-kicker">Work 03</span><span class="cover-name">The tool</span></span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="plan" href="#briefing">
+              <span class="plan-top">
+                <span class="plan-copy">
+                  <span class="plan-title">Daily Briefing</span>
+                  <span class="plan-meta">Every day</span>
+                </span>
+                <span class="plan-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><path d="M7.2 4.4 12.8 10l-5.6 5.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </span>
+              <span class="plan-covers" aria-hidden="true">
+                <span class="cover cover-sea"><span class="cover-kicker">Briefing</span><span class="cover-name">Models</span></span>
+                <span class="cover cover-sand"><span class="cover-kicker">Briefing</span><span class="cover-name">Tools</span></span>
+                <span class="cover cover-olive"><span class="cover-kicker">Briefing</span><span class="cover-name">Agents</span></span>
+              </span>
+            </a>
+          </li>
+        </ul>
       </div>
       <div class="wrap">
         <a class="scroll-indicator" href="#learn">Scroll<span class="scroll-indicator-line" aria-hidden="true"></span></a>
@@ -184,24 +247,6 @@
       <p class="section-eyebrow"><span class="section-eyebrow-dot" aria-hidden="true"></span><span>In the app</span></p>
       <h2 id="screens-title" class="reveal-text">On your phone.</h2>
       <div class="phone-stage">
-        <figure class="phone phone-home">
-          <div class="phone-bezel">
-            <div class="phone-screen">
-              <img class="phone-shot" src="assets/screens/en/home-780.webp" srcset="assets/screens/en/home-390.webp 390w, assets/screens/en/home-780.webp 780w" sizes="(min-width: 1100px) 36vw, 70vw" alt="AILA home with three cover cards: AI models get cheaper, What a prompt is, and A real limit." width="780" height="1688" loading="lazy" decoding="async">
-              <span class="phone-island" aria-hidden="true"></span>
-            </div>
-          </div>
-          <figcaption class="phone-caption">Home</figcaption>
-        </figure>
-        <figure class="phone phone-reader">
-          <div class="phone-bezel">
-            <div class="phone-screen">
-              <img class="phone-shot" src="assets/screens/en/reader-780.webp" srcset="assets/screens/en/reader-390.webp 390w, assets/screens/en/reader-780.webp 780w" sizes="(min-width: 1100px) 30vw, 70vw" alt="The lesson A real limit in AILA, with Aila's term card for Hallucination." width="780" height="1688" loading="lazy" decoding="async">
-              <span class="phone-island" aria-hidden="true"></span>
-            </div>
-          </div>
-          <figcaption class="phone-caption">Reader</figcaption>
-        </figure>
         <figure class="phone phone-activity">
           <div class="phone-bezel">
             <div class="phone-screen">
@@ -378,7 +423,7 @@
       </details>
       <details>
         <summary><h3>Is AILA free?</h3></summary>
-        <p>The daily briefing stays free: the headlines and the short summaries. So does the first Basics lesson, the first lesson of each path, and three cards. AILA Premium opens the rest of the lessons, the longer articles, and audio. A 7-day trial is included only when the store offers it. The App Store or Google Play shows the price. The subscription is made with the store, not on this website.</p>
+        <p>The daily briefing stays free. Premium opens the longer lessons and audio. A 7-day trial appears only when the store offers it. The App Store or Google Play shows the price. The free part is the headlines and the short summaries, the first Basics lesson, the first lesson of each path, and three cards. Premium also opens the rest of the lessons and the longer articles. The subscription is made with the store, not on this website.</p>
       </details>
       <details>
         <summary><h3>What about Android?</h3></summary>

@@ -405,10 +405,16 @@ function wireEditionMotion() {
   const header = document.getElementById("site-header");
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  const floater = document.querySelector(".aila-float");
+  const hero = document.getElementById("hero-section");
   const onScroll = () => {
     if (header) header.classList.toggle("is-scrolled", window.scrollY > 20);
     const top = document.getElementById("back-to-top");
     if (top) top.classList.toggle("is-visible", window.scrollY > 500);
+    if (floater) {
+      const pastHero = !hero || hero.getBoundingClientRect().bottom <= 96;
+      floater.classList.toggle("is-visible", pastHero);
+    }
   };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
