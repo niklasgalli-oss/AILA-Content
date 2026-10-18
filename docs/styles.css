@@ -170,6 +170,21 @@ address {
   margin: 0.7rem 0;
 }
 
+main p,
+main li {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+}
+
+main .lang,
+main .meta,
+main address {
+  text-align: start;
+  hyphens: manual;
+}
+
 ul,
 ol {
   padding-left: 1.25rem;
