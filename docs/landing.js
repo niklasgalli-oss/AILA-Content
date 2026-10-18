@@ -18,10 +18,26 @@ const AILA_APP_STORE_URL = "";
 
 const AILA_BRIEFING_URL = "https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/briefing.json";
 
-const LEVEL_LABEL = {
-  en: { beginner: "Beginner", advanced: "Advanced" },
-  de: { beginner: "Einsteiger", advanced: "Vertieft" }
+const TAG_LABEL = {
+  en: {
+    "Model Release": "New model",
+    "Autonomous Agent": "AI agents",
+    Benchmarks: "Study",
+    Tools: "Everyday tool",
+    Framework: "In the background",
+    Hardware: "Device"
+  },
+  de: {
+    "Model Release": "Neues Modell",
+    "Autonomous Agent": "KI-Agenten",
+    Benchmarks: "Studie",
+    Tools: "Alltags-Tool",
+    Framework: "Im Hintergrund",
+    Hardware: "Gerät"
+  }
 };
+
+const JARGON = /open[- ]?weights|benchmarks?|per million|pro Million|\bAPI\b|\$\s?\d|\d\s?\$|parameter|MoE|context window|\binference\b|GPT-\d|\bvon\s+\d{2,}\b|\bof\s+\d{2,}\b|llama|vLLM|Token-Limit|pro Token/i;
 
 function appStoreProductUrl(value) {
   if (typeof value !== "string") return "";
@@ -94,6 +110,12 @@ function formatDay(iso, locale) {
   }).format(date);
 }
 
+function plainEnough(item, locale) {
+  if (textOrEmpty(item && item.level) === "advanced") return false;
+  const copy = copyFor(item, locale);
+  return !JARGON.test(`${copy.headline} ${copy.summary}`);
+}
+
 function renderItem(item, locale) {
   const copy = copyFor(item, locale);
   if (!copy.headline || !copy.summary) return null;
@@ -102,14 +124,13 @@ function renderItem(item, locale) {
 
   const meta = document.createElement("p");
   meta.className = "item-meta";
-  const bits = [];
   const tag = textOrEmpty(item.tag);
-  if (tag) bits.push(tag);
-  const levelKey = textOrEmpty(item.level);
-  const level = LEVEL_LABEL[locale] && LEVEL_LABEL[locale][levelKey];
-  if (level) bits.push(level);
-  meta.textContent = bits.join(" · ");
-  if (bits.length) li.append(meta);
+  const labels = TAG_LABEL[locale] || TAG_LABEL.en;
+  const label = (tag && labels[tag]) || tag;
+  if (label) {
+    meta.textContent = label;
+    li.append(meta);
+  }
 
   const title = document.createElement("h3");
   title.textContent = copy.headline;
@@ -153,7 +174,9 @@ async function loadBriefing() {
     const data = await response.json();
     const day = data && Array.isArray(data.days) ? data.days[0] : null;
     if (!day || !Array.isArray(day.items)) return;
-    const nodes = day.items.slice(0, 3).map((item) => renderItem(item, locale)).filter(Boolean);
+    const picked = day.items.filter((item) => plainEnough(item, locale)).slice(0, 3);
+    if (picked.length < 3) return;
+    const nodes = picked.map((item) => renderItem(item, locale)).filter(Boolean);
     if (!nodes.length) return;
     list.replaceChildren(...nodes);
     const time = root.querySelector("[data-briefing-date]");

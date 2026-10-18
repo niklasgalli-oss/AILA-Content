@@ -437,6 +437,13 @@ summary:focus-visible {
   font-size: 1.05rem;
 }
 
+.prose {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+}
+
 .store-row {
   display: flex;
   flex-wrap: wrap;
@@ -1111,6 +1118,12 @@ summary:focus-visible {
   font-size: 1.55rem;
 }
 
+.compare-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .compare-card li {
   margin: 0.45rem 0 0;
   padding-left: 1.1rem;
@@ -1184,8 +1197,10 @@ summary:focus-visible {
   display: block;
   font-family: var(--serif);
   font-weight: 500;
-  font-size: 1.8rem;
+  font-size: clamp(1.45rem, 2.5vw, 1.8rem);
   letter-spacing: -0.03em;
+  line-height: 1.08;
+  text-wrap: balance;
 }
 
 .stat span {
@@ -1477,8 +1492,20 @@ summary:focus-visible {
   object-position: top center;
 }
 
+.phone-screen.is-crop::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: var(--mask, 46%);
+  bottom: var(--mask-bottom, 0%);
+  background: #f7f2e8;
+}
+
 .phone-island {
   position: absolute;
+  z-index: 2;
   top: 1.5%;
   left: 35%;
   width: 30%;
@@ -1518,6 +1545,51 @@ summary:focus-visible {
     overflow: visible;
     padding-bottom: 0.25rem;
   }
+
+  .phone-stage.story-row {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    justify-content: stretch;
+    align-items: start;
+    gap: 0.7rem;
+  }
+}
+
+.phone-stage.story-row {
+  grid-auto-columns: min(64vw, 15.5rem);
+}
+
+.soon-badge {
+  display: inline-block;
+  margin-left: 0.55rem;
+  padding: 0.2rem 0.45rem 0.15rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  vertical-align: 0.12em;
+}
+
+.waitlist {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 0.35rem;
+  padding: 0 1.05rem;
+  border-radius: 12px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.waitlist:hover {
+  text-decoration: none;
+  background: #185a74;
+  color: var(--on-accent);
 }
 
 .mobile-nav .mobile-cta {
