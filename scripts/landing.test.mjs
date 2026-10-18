@@ -105,6 +105,17 @@ test("landing assets stay self-hosted and flat-colored", () => {
   assert.doesNotMatch(css, /linear-gradient|radial-gradient|fonts\.googleapis/i);
   assert.equal(existsSync(join(root, "docs/assets/fraunces-latin-600.woff2")), true);
   assert.equal(existsSync(join(root, "docs/assets/aila-head-full.webp")), true);
+  for (const pose of ["idle", "blink", "think", "cheer", "present"]) {
+    assert.equal(existsSync(join(root, `docs/assets/aila-book/${pose}.webp`)), true);
+  }
+  assert.match(css, /@keyframes aila-bob/);
+  assert.match(css, /@keyframes aila-blink/);
+  const en = read("docs/index.html");
+  const de = read("docs/de/index.html");
+  assert.match(en, /assets\/aila-book\/idle\.webp/);
+  assert.match(de, /assets\/aila-book\/idle\.webp/);
+  assert.doesNotMatch(en, /aila-head-full/);
+  assert.doesNotMatch(de, /aila-head-full/);
   assert.equal(existsSync(join(root, "docs/assets/source-sans-3-latin-400.woff2")), true);
   assert.equal(existsSync(join(root, "docs/assets/OFL.txt")), true);
   assert.equal(existsSync(join(root, "docs/assets/app-store-badge-en.svg")), true);
