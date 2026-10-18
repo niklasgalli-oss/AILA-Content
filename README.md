@@ -35,7 +35,7 @@ Each item has:
 | `headline` | 2-5 words, at most 32 characters, in English and in `i18n.de` alike. Aim for 27 or fewer: 28-32 characters is a warning, and longer than 32 is an error. The title must state what changes or what the reader can now do (e.g. `ChatGPT answers visually now`), never just `<product> in <product>` or a bare product name. Sentence case, unless the whole headline is title case. Details belong in `hook` or `summaryPoints`, not in the title. `briefing.json` headlines are unaffected and stay at most 60 characters. |
 | `summaryPoints` | Exactly three strings: what the source shows, the limit of that claim, and what to check next. |
 | `takeaway` | One concrete action. |
-| `deepDiveMarkdown` | Exactly four `## ` sections, in this order: `The Hook`, `The Core Mechanism`, `The Trade-off`, `Practical Takeaway`. Aim for about 150–260 words in each section. |
+| `deepDiveMarkdown` | Exactly four `## ` sections, in this order of roles: entry, how it works, the catch, what to do. Each heading is a specific statement about this story, at most 9 words, never ending with a period, and never a template label such as `The Hook` or `Practical Takeaway`. The validator checks the section count, word count and trailing period. Aim for about 150–260 words in each section. |
 | `source` | Exactly one `{ "name", "url" }`. `name` is the publisher. `url` is one well-formed `https` URL. Do not reuse a URL on another item. |
 | `i18n.de` | German `headline` (same 2-5 words, max 32 characters), `hook`, `summaryPoints`, `takeaway`, and `deepDiveMarkdown`, with the same structure as English. Technical AI terms stay in English and are capitalised as German nouns. |
 

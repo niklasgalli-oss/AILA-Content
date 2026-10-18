@@ -17,12 +17,9 @@ const TAGS = [
 
 const PRIORITIES = ["normal", "breaking"];
 
-const HEADINGS = [
-  "## The Hook",
-  "## The Core Mechanism",
-  "## The Trade-off",
-  "## Practical Takeaway",
-];
+// Each deep dive has exactly four "## " sections (entry, how it works, the catch,
+// what to do). Headings are specific statements about the story, not fixed labels.
+export const MAX_HEADING_WORDS = 9;
 
 const ITEM_KEYS = [
   "id",
@@ -286,6 +283,15 @@ function headingsOf(markdown) {
     .filter((line) => line.startsWith("## "));
 }
 
+export function headingProblem(heading) {
+  const text = String(heading).replace(/^##\s+/, "").trim();
+  if (text === "") return "must not be empty";
+  const words = text.split(/\s+/).length;
+  if (words > MAX_HEADING_WORDS) return `must be at most ${MAX_HEADING_WORDS} words (has ${words})`;
+  if (text.endsWith(".")) return "must not end with a period";
+  return null;
+}
+
 function checkDeepDive(fail, path, markdown) {
   if (typeof markdown !== "string" || markdown.trim() === "") {
     fail(path, "deepDiveMarkdown must be a non-empty string");
@@ -296,11 +302,10 @@ function checkDeepDive(fail, path, markdown) {
     fail(path, `expected exactly 4 '## ' sections, found ${found.length}`);
     return;
   }
-  for (let i = 0; i < HEADINGS.length; i += 1) {
-    if (found[i] !== HEADINGS[i]) {
-      fail(path, `section ${i + 1} must be "${HEADINGS[i]}", found "${found[i]}"`);
-    }
-  }
+  found.forEach((heading, i) => {
+    const problem = headingProblem(heading);
+    if (problem) fail(path, `section ${i + 1} heading "${heading}" ${problem}`);
+  });
 }
 
 function checkSummary(fail, path, points) {

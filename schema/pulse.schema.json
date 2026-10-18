@@ -98,7 +98,7 @@
         "deepDiveMarkdown": {
           "type": "string",
           "minLength": 1,
-          "description": "Exactly four second-level headings, in order: The Hook, The Core Mechanism, The Trade-off, Practical Takeaway. Aim for about 150-260 words in each section. Glossary terms in this English text are lowercase common nouns."
+          "description": "Exactly four second-level headings, in order: entry, how it works, the catch, what to do. Each heading is a specific statement about the story, at most 9 words, not ending with a period, never a template label. Aim for about 150-260 words in each section. Glossary terms in this English text are lowercase common nouns."
         },
         "source": {
           "type": "object",

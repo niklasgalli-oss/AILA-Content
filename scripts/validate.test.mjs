@@ -325,3 +325,43 @@ test("live pulse.json passes", async () => {
   const result = await lintFeed(pulse, { now: Date.now() });
   assert.deepEqual(result.errors, []);
 });
+
+function specificDeepDive(headings, body = "A short section.") {
+  return headings.flatMap((heading) => [`## ${heading}`, "", body, ""]).join("\n");
+}
+
+test("deep dive accepts specific section headings and keeps the four-section check", async () => {
+  const specific = specificDeepDive([
+    "A refund request that got out of hand",
+    "Six agents, one inbox and no human to ask",
+    "Persistence turned into spam and leaked secrets",
+    "Turn a vague goal into clear rules",
+  ]);
+  const ok = await lintFeed(
+    [item({ deepDiveMarkdown: specific, i18n: { de: copy({ deepDiveMarkdown: specific }) } })],
+    { now: NOW },
+  );
+  assert.deepEqual(ok.errors, []);
+
+  const legacy = await lintFeed([item()], { now: NOW });
+  assert.deepEqual(legacy.errors, []);
+
+  const three = specificDeepDive(["One", "Two", "Three"]);
+  const short = await lintFeed([item({ deepDiveMarkdown: three })], { now: NOW });
+  assert.match(short.errors.join("\n"), /expected exactly 4 '## ' sections, found 3/);
+});
+
+test("deep dive headings stay short and never end with a period", async () => {
+  const long = specificDeepDive([
+    "This heading has far too many words to pass the check",
+    "Two",
+    "Three",
+    "Four",
+  ]);
+  const tooLong = await lintFeed([item({ deepDiveMarkdown: long })], { now: NOW });
+  assert.match(tooLong.errors.join("\n"), /section 1 heading .* at most 9 words/);
+
+  const period = specificDeepDive(["One", "Two ends here.", "Three", "Four"]);
+  const dotted = await lintFeed([item({ deepDiveMarkdown: period })], { now: NOW });
+  assert.match(dotted.errors.join("\n"), /section 2 heading .* must not end with a period/);
+});
