@@ -215,6 +215,8 @@ test("story row, path, briefing fallback, and teams copy stay in sync", () => {
     assert.doesNotMatch(html, /€|\$\s?\d/);
   }
 
+  assert.match(en, /data-story="quiz"[\s\S]*?--mask: 68\.5%/);
+  assert.match(de, /data-story="quiz"[\s\S]*?--mask: 68\.5%/);
   assert.match(de, /So lernst du mit AILA/);
   assert.match(en, /How you learn with AILA/);
   assert.match(de, /Drei Level\. Du startest dort, wo du stehst\./);
