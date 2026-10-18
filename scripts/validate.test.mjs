@@ -82,7 +82,10 @@ const NOW = Date.parse("2026-10-04T12:00:00.000Z");
 test("schema still matches the validator contract", () => {
   assert.deepEqual(collectSchemaErrors(schema), []);
   assert.equal(schema.$defs.dailyPulseItem.required.includes("priority"), false);
+  assert.equal(schema.$defs.dailyPulseItem.required.includes("levels"), false);
   assert.equal(schema.$defs.dailyPulseItem.additionalProperties, false);
+  assert.equal(schema.$defs.dailyPulseItem.properties.levels.additionalProperties, false);
+  assert.equal(schema.$defs.levelVariant.additionalProperties, false);
 });
 
 test("Tools tag is accepted and priority stays optional", async () => {
@@ -349,6 +352,186 @@ test("deep dive accepts specific section headings and keeps the four-section che
   const three = specificDeepDive(["One", "Two", "Three"]);
   const short = await lintFeed([item({ deepDiveMarkdown: three })], { now: NOW });
   assert.match(short.errors.join("\n"), /expected exactly 4 '## ' sections, found 3/);
+});
+
+function levelVariant(label, overrides = {}) {
+  const { de: deOverrides = {}, ...rest } = overrides;
+  const dive = (headingPrefix, body) =>
+    specificDeepDive(
+      [
+        `${headingPrefix} opens the story`,
+        `${headingPrefix} shows how it works`,
+        `${headingPrefix} names the catch`,
+        `${headingPrefix} tells you what to do`,
+      ],
+      body,
+    );
+  return {
+    headline: `${label} headline`,
+    hook: `${label} is a shorter version of the story.`,
+    summaryPoints: [
+      `${label} is the plain version of the claim.`,
+      `${label} does not replace the source.`,
+      `Check the ${label} limit before you act.`,
+    ],
+    takeaway: `Try the ${label} step once this week.`,
+    deepDiveMarkdown: dive(label, `${label} section body.`),
+    ...rest,
+    de: {
+      headline: `${label} Titel kurz`,
+      hook: `${label} ist die kuerzere Fassung der Geschichte.`,
+      summaryPoints: [
+        `${label} nennt die Quelle klar.`,
+        `${label} nennt die Grenze klar.`,
+        `${label} nennt den naechsten Schritt.`,
+      ],
+      takeaway: `Nutze die ${label} Fassung einmal.`,
+      deepDiveMarkdown: dive(`${label} de`, `${label} Abschnitt.`),
+      ...deOverrides,
+    },
+  };
+}
+
+test("accepts a levels object with distinct beginner and advanced variants", async () => {
+  const result = await lintFeed(
+    [
+      item({
+        levels: {
+          beginner: levelVariant("Beginner"),
+          advanced: levelVariant("Advanced", {
+            hook: "OpenAI shipped Sol at a lower price after internal tests.",
+            summaryPoints: [
+              "OpenAI says Sol approaches Astra on coding and computer use.",
+              "Those figures are the company's own comparisons.",
+              "Compare one real task before you trust the price.",
+            ],
+          }),
+        },
+      }),
+    ],
+    { now: NOW },
+  );
+  assert.deepEqual(result.errors, []);
+  assert.deepEqual(result.warnings, []);
+
+  const beginnerOnly = await lintFeed([item({ levels: { beginner: levelVariant("Beginner") } })], { now: NOW });
+  assert.deepEqual(beginnerOnly.errors, []);
+  assert.deepEqual(beginnerOnly.warnings, []);
+});
+
+test("rejects a levels variant with an unknown key, a missing field, or the wrong summary length", async () => {
+  const unknown = await lintFeed(
+    [item({ levels: { beginner: levelVariant("Beginner", { note: "extra" }) } })],
+    { now: NOW },
+  );
+  assert.match(unknown.errors.join("\n"), /levels\.beginner: unexpected field note/);
+
+  const missingTakeaway = levelVariant("Beginner");
+  delete missingTakeaway.takeaway;
+  const missing = await lintFeed([item({ levels: { beginner: missingTakeaway } })], { now: NOW });
+  assert.match(missing.errors.join("\n"), /levels\.beginner: missing takeaway/);
+
+  const shortPoints = await lintFeed(
+    [
+      item({
+        levels: {
+          advanced: levelVariant("Advanced", { summaryPoints: ["Only the claim.", "Only the limit."] }),
+        },
+      }),
+    ],
+    { now: NOW },
+  );
+  assert.match(
+    shortPoints.errors.join("\n"),
+    /levels\.advanced\.summaryPoints: summaryPoints must contain exactly 3 strings/,
+  );
+
+  const empty = await lintFeed([item({ levels: {} })], { now: NOW });
+  assert.match(empty.errors.join("\n"), /levels: must include beginner or advanced/);
+});
+
+test("variant headlines use the root length rules", async () => {
+  const longEn = await lintFeed(
+    [item({ levels: { beginner: levelVariant("Beginner", { headline: "A".repeat(33) }) } })],
+    { now: NOW },
+  );
+  assert.match(longEn.errors.join("\n"), /levels\.beginner\.headline: must be <= 32 characters \(is 33\)/);
+  assert.equal(longEn.warnings.some((warning) => warning.includes("characters")), false);
+
+  const longDe = await lintFeed(
+    [item({ levels: { advanced: levelVariant("Advanced", { de: { headline: "B".repeat(33) } }) } })],
+    { now: NOW },
+  );
+  assert.match(longDe.errors.join("\n"), /levels\.advanced\.de\.headline: must be <= 32 characters \(is 33\)/);
+
+  const warnEn = await lintFeed(
+    [item({ levels: { beginner: levelVariant("Beginner", { headline: "C".repeat(30) }) } })],
+    { now: NOW },
+  );
+  assert.deepEqual(warnEn.errors, []);
+  assert.deepEqual(warnEn.warnings, [
+    "pulse.json[0].levels.beginner.headline: is 30 characters; aim for 27 or fewer",
+  ]);
+});
+
+test("rejects a variant that copies root text", async () => {
+  const base = item();
+  const result = await lintFeed(
+    [
+      item({
+        levels: {
+          beginner: levelVariant("Beginner", {
+            hook: base.hook,
+            de: { headline: base.i18n.de.headline },
+          }),
+          advanced: levelVariant("Advanced", {
+            summaryPoints: base.summaryPoints,
+            deepDiveMarkdown: base.deepDiveMarkdown,
+          }),
+        },
+      }),
+    ],
+    { now: NOW },
+  );
+  assert.deepEqual(result.errors, [
+    "pulse.json[0].levels.beginner.de.headline: must not copy the root text",
+    "pulse.json[0].levels.beginner.hook: must not copy the root text",
+    "pulse.json[0].levels.advanced.summaryPoints: must not copy the root text",
+    "pulse.json[0].levels.advanced.deepDiveMarkdown: must not copy the root text",
+  ]);
+});
+
+test("variant English card fields keep glossary and deep-dive checks", async () => {
+  const capped = await lintFeed(
+    [
+      item({
+        levels: {
+          beginner: levelVariant("Beginner", {
+            takeaway: "Ask the Agent before you ship the change.",
+          }),
+        },
+      }),
+    ],
+    { now: NOW },
+  );
+  assert.match(capped.errors.join("\n"), /levels\.beginner\.takeaway: capitalised glossary term "Agent"/);
+
+  const shortDive = await lintFeed(
+    [
+      item({
+        levels: {
+          advanced: levelVariant("Advanced", {
+            deepDiveMarkdown: specificDeepDive(["One", "Two ends here.", "Three"]),
+          }),
+        },
+      }),
+    ],
+    { now: NOW },
+  );
+  assert.match(
+    shortDive.errors.join("\n"),
+    /levels\.advanced\.deepDiveMarkdown: expected exactly 4 '## ' sections, found 3/,
+  );
 });
 
 test("deep dive headings stay short and never end with a period", async () => {

@@ -130,6 +130,20 @@
           "additionalProperties": {
             "$ref": "#/$defs/localizedCopy"
           }
+        },
+        "levels": {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "description": "Optional beginner and advanced variants. Root fields stay the intermediate text. Each variant has headline, hook, summaryPoints (exactly 3), takeaway, deepDiveMarkdown, and de with the same five fields. Omit a whole variant rather than leaving fields empty. Variant text must not copy the corresponding root text.",
+          "properties": {
+            "beginner": {
+              "$ref": "#/$defs/levelVariant"
+            },
+            "advanced": {
+              "$ref": "#/$defs/levelVariant"
+            }
+          }
         }
       }
     },
@@ -171,6 +185,52 @@
           "type": "string",
           "minLength": 1,
           "description": "Same four ## headings as the English deep dive. Technical AI terms stay in English."
+        }
+      }
+    },
+    "levelVariant": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "A beginner or advanced telling of the same item. All six fields are required, and the text must differ from the matching root fields.",
+      "required": [
+        "headline",
+        "hook",
+        "summaryPoints",
+        "takeaway",
+        "deepDiveMarkdown",
+        "de"
+      ],
+      "properties": {
+        "headline": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32,
+          "description": "Same limit as the root headline: 2-5 words, at most 32 characters (aim for 27 or fewer)."
+        },
+        "hook": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summaryPoints": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "takeaway": {
+          "type": "string",
+          "minLength": 1
+        },
+        "deepDiveMarkdown": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Exactly four ## sections, same heading rules as the root deep dive."
+        },
+        "de": {
+          "$ref": "#/$defs/localizedCopy"
         }
       }
     }

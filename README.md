@@ -40,6 +40,7 @@ Each item has:
 | `deepDiveMarkdown` | Exactly four `## ` sections, in this order of roles: entry, how it works, the catch, what to do. Each heading is a specific statement about this story, at most 9 words, never ending with a period, and never a template label such as `The Hook` or `Practical Takeaway`. The validator checks the section count, word count and trailing period. Aim for about 150–260 words in each section. |
 | `source` | Exactly one `{ "name", "url" }`. `name` is the publisher. `url` is one well-formed `https` URL. Do not reuse a URL on another item. |
 | `i18n.de` | German `headline` (same 2-5 words, max 32 characters), `hook`, `summaryPoints`, `takeaway`, and `deepDiveMarkdown`, with the same structure as English. Technical AI terms stay in English and are capitalised as German nouns. |
+| `levels` | Optional. Root fields stay the intermediate text. `beginner` and `advanced` are each optional; a variant requires `headline`, `hook`, `summaryPoints`, `takeaway`, `deepDiveMarkdown`, and `de` with the same five fields. Omit a whole variant rather than leaving fields empty. Never copy root text. Headlines and deep dives follow the same rules as the root. |
 
 Run the check locally:
 

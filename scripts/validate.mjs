@@ -35,9 +35,12 @@ const ITEM_KEYS = [
   "deepDiveMarkdown",
   "source",
   "i18n",
+  "levels",
 ];
 
 const COPY_KEYS = ["headline", "hook", "summaryPoints", "takeaway", "deepDiveMarkdown"];
+const LEVEL_NAMES = ["beginner", "advanced"];
+const VARIANT_KEYS = [...COPY_KEYS, "de"];
 
 const ID_RE = /^pulse-[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const ISO_RE =
@@ -259,6 +262,40 @@ export function collectSchemaErrors(schema) {
   const points = item?.properties?.summaryPoints;
   if (points?.minItems !== 3 || points?.maxItems !== 3) fail("summaryPoints must be exactly 3");
   if (!item?.properties?.i18n?.required?.includes("de")) fail("i18n.de must be required");
+  if (item?.required?.includes("levels")) fail("levels must not be required");
+  const levels = item?.properties?.levels;
+  if (levels?.type !== "object" || levels?.additionalProperties !== false || levels?.minProperties !== 1) {
+    fail("levels must be an object with at least one variant and no extra fields");
+  }
+  const levelNames = Object.keys(levels?.properties ?? {}).sort();
+  if (levelNames.join("|") !== "advanced|beginner") {
+    fail("levels may contain only beginner and advanced");
+  }
+  if (
+    levels?.properties?.beginner?.$ref !== "#/$defs/levelVariant" ||
+    levels?.properties?.advanced?.$ref !== "#/$defs/levelVariant"
+  ) {
+    fail("beginner and advanced must use the level variant schema");
+  }
+  const variant = schema?.$defs?.levelVariant;
+  if (variant?.type !== "object" || variant?.additionalProperties !== false) {
+    fail("level variant must reject extra fields");
+  }
+  const variantRequired = [...(variant?.required ?? [])].sort();
+  if (variantRequired.join("|") !== "de|deepDiveMarkdown|headline|hook|summaryPoints|takeaway") {
+    fail("level variant must require headline, hook, summaryPoints, takeaway, deepDiveMarkdown, and de");
+  }
+  if (variant?.properties?.headline?.maxLength !== 32) fail("level variant headline maxLength must be 32");
+  const variantPoints = variant?.properties?.summaryPoints;
+  if (variantPoints?.minItems !== 3 || variantPoints?.maxItems !== 3) {
+    fail("level variant summaryPoints must be exactly 3");
+  }
+  if (variant?.properties?.de?.$ref !== "#/$defs/localizedCopy") {
+    fail("level variant de must use localizedCopy");
+  }
+  if (schema?.$defs?.localizedCopy?.additionalProperties !== false) {
+    fail("localized copy must reject extra fields");
+  }
   for (const key of ["readTimeMinutes", "listenTimeMinutes"]) {
     const field = item?.properties?.[key];
     if (field?.type !== "integer" || field?.minimum !== 1 || field?.maximum !== 30) {
@@ -332,6 +369,89 @@ function checkHeadline(fail, warn, path, headline) {
     fail(`${path}.headline`, "must be non-empty");
   } else if (length >= 28) {
     warn(`${path}.headline`, `is ${length} characters; aim for 27 or fewer`);
+  }
+}
+
+function sameText(left, right) {
+  if (typeof left === "string" && typeof right === "string") return left === right;
+  return (
+    Array.isArray(left) &&
+    Array.isArray(right) &&
+    left.length === right.length &&
+    left.every((value, index) => value === right[index])
+  );
+}
+
+function copyFieldsOf(source) {
+  const copy = {};
+  if (source === null || typeof source !== "object" || Array.isArray(source)) return copy;
+  for (const key of COPY_KEYS) {
+    if (Object.prototype.hasOwnProperty.call(source, key)) copy[key] = source[key];
+  }
+  return copy;
+}
+
+function checkCopiedText(fail, path, variantText, rootText) {
+  if (rootText === null || typeof rootText !== "object" || Array.isArray(rootText)) return;
+  for (const key of COPY_KEYS) {
+    if (!Object.prototype.hasOwnProperty.call(variantText, key)) continue;
+    if (!sameText(variantText[key], rootText[key])) continue;
+    fail(`${path}.${key}`, "must not copy the root text");
+  }
+}
+
+function checkLevelVariant(fail, warn, path, variant, rootEn, rootDe) {
+  if (variant === null || typeof variant !== "object" || Array.isArray(variant)) {
+    fail(path, "must be an object");
+    return;
+  }
+  for (const key of Object.keys(variant)) {
+    if (!VARIANT_KEYS.includes(key)) fail(path, `unexpected field ${key}`);
+  }
+  checkLocalized(fail, path, copyFieldsOf(variant), warn);
+  for (const field of CARD_FIELDS) {
+    if (!Object.prototype.hasOwnProperty.call(variant, field)) continue;
+    if (field === "summaryPoints") {
+      if (Array.isArray(variant.summaryPoints)) {
+        variant.summaryPoints.forEach((point, pointIndex) => {
+          checkGlossaryField(fail, `${path}.summaryPoints[${pointIndex}]`, point);
+        });
+      }
+    } else {
+      checkGlossaryField(fail, `${path}.${field}`, variant[field], { headline: field === "headline" });
+    }
+  }
+  if (!Object.prototype.hasOwnProperty.call(variant, "de")) {
+    fail(path, "missing de");
+  } else {
+    checkLocalized(fail, `${path}.de`, variant.de, warn);
+    if (variant.de !== null && typeof variant.de === "object" && !Array.isArray(variant.de)) {
+      checkCopiedText(fail, `${path}.de`, variant.de, rootDe);
+    }
+  }
+  checkCopiedText(fail, path, variant, rootEn);
+}
+
+// Root fields stay the intermediate text. beginner and advanced are whole
+// variants: omit one instead of leaving it empty, and do not repeat root text.
+// Advanced variants do not use the beginner-sentence warning.
+function checkLevels(fail, warn, path, levels, item) {
+  if (levels === null || typeof levels !== "object" || Array.isArray(levels)) {
+    fail(path, "must be an object with beginner and/or advanced");
+    return;
+  }
+  const names = Object.keys(levels);
+  if (names.length === 0) {
+    fail(path, "must include beginner or advanced; omit levels instead of an empty object");
+  }
+  for (const key of names) {
+    if (!LEVEL_NAMES.includes(key)) fail(path, `unexpected field ${key}`);
+  }
+  const rootDe =
+    item.i18n && typeof item.i18n === "object" && !Array.isArray(item.i18n) ? item.i18n.de : undefined;
+  for (const name of LEVEL_NAMES) {
+    if (!Object.prototype.hasOwnProperty.call(levels, name)) continue;
+    checkLevelVariant(fail, warn, `${path}.${name}`, levels[name], copyFieldsOf(item), rootDe);
   }
 }
 
@@ -485,6 +605,9 @@ export async function lintFeed(pulse, options = {}) {
       for (const [locale, copy] of Object.entries(item.i18n)) {
         checkLocalized(fail, `${path}.i18n.${locale}`, copy, warn);
       }
+    }
+    if (Object.prototype.hasOwnProperty.call(item, "levels")) {
+      checkLevels(fail, warn, `${path}.levels`, item.levels, item);
     }
   });
 
