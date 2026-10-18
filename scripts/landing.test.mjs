@@ -194,12 +194,12 @@ test("story row, path, briefing fallback, and teams copy stay in sync", () => {
   const de = read("docs/de/index.html");
   const css = read("docs/landing.css");
   const js = read("docs/landing.js");
-  const order = ["onboarding", "home", "lesson", "quiz", "briefing"];
+  const order = ["onboarding", "home", "lesson", "briefing"];
 
   for (const html of [en, de]) {
     const screens = html.slice(html.indexOf('id="screens"'), html.indexOf('id="learn"'));
     assert.deepEqual([...screens.matchAll(/data-story="([^"]+)"/g)].map((m) => m[1]), order);
-    assert.equal((screens.match(/<figure/g) || []).length, 5);
+    assert.equal((screens.match(/<figure/g) || []).length, 4);
     assert.doesNotMatch(screens, /<figcaption|phone-caption/);
     assert.doesNotMatch(screens, /activity-|\/home-/);
     assert.doesNotMatch(html, /Vector Databases/);
@@ -215,8 +215,6 @@ test("story row, path, briefing fallback, and teams copy stay in sync", () => {
     assert.doesNotMatch(html, /€|\$\s?\d/);
   }
 
-  assert.match(en, /data-story="quiz"[\s\S]*?--mask: 73%/);
-  assert.match(de, /data-story="quiz"[\s\S]*?--mask: 73%/);
   assert.match(de, /So lernst du mit AILA/);
   assert.match(en, /How you learn with AILA/);
   assert.match(de, /Drei Level\. Du startest dort, wo du stehst\./);
@@ -254,7 +252,7 @@ test("story row, path, briefing fallback, and teams copy stay in sync", () => {
   assert.match(css, /\.prose\s*\{[^}]*text-align:\s*justify/);
   assert.match(css, /hyphens:\s*auto/);
   assert.match(css, /\.compare-card ul\s*\{[^}]*list-style:\s*none/);
-  assert.match(css, /\.phone-stage\.story-row[\s\S]*repeat\(5,/);
+  assert.match(css, /\.phone-stage\.story-row[\s\S]*repeat\(4,/);
   assert.match(css, /\.phone-screen\.is-crop::after/);
   assert.match(en, /--mask:/);
   assert.match(de, /--mask:/);
