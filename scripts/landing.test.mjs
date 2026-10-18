@@ -157,6 +157,13 @@ test("name and address stay on the imprint only", () => {
   assert.match(imprint, /Neuburger Straße 73a/);
   assert.match(imprint, /86668 Karlshuld/);
   assert.match(imprint, /support@getaila\.de/);
+  assert.match(imprint, /innerhalb von 48 Stunden/);
+  assert.match(imprint, /within 48 hours/);
+  assert.match(imprint, /39,99 €/);
+  assert.match(imprint, /7,99 €/);
+  assert.match(imprint, /39\.99 €/);
+  assert.match(imprint, /7\.99 €/);
+  assert.doesNotMatch(imprint, /soweit Apple sie anbietet|where Apple offers it/);
   assert.doesNotMatch(imprint, /niklas\.galli@/);
   assert.doesNotMatch(imprint, /tel:/i);
   assert.doesNotMatch(imprint, /\+49/);
@@ -166,6 +173,12 @@ test("name and address stay on the imprint only", () => {
   assert.doesNotMatch(enPrivacy, /no quiz/i);
   assert.match(dePrivacy, /RevenueCat/);
   assert.match(enPrivacy, /RevenueCat/);
+  assert.match(dePrivacy, /IONOS SE, Elgendorfer Str\. 57, 56410 Montabaur/);
+  assert.match(enPrivacy, /IONOS SE, Elgendorfer Str\. 57, 56410 Montabaur/);
+  assert.match(dePrivacy, /Art\. 28 DSGVO/);
+  assert.match(enPrivacy, /Article 28 GDPR/);
+  assert.doesNotMatch(dePrivacy, /soweit Apple sie anbietet|soweit der Store sie anbietet/);
+  assert.doesNotMatch(enPrivacy, /where Apple offers it|where the store offers it/);
   assert.match(dePrivacy, /Kein Tracking/);
   assert.match(enPrivacy, /No tracking/);
   const deTerms = read("docs/de/nutzungsbedingungen/index.html");
@@ -176,6 +189,12 @@ test("name and address stay on the imprint only", () => {
   assert.match(enTerms, /essential contractual duty/);
   assert.match(deTerms, /stdeula/);
   assert.match(enTerms, /stdeula/);
+  assert.match(deTerms, /39,99 €/);
+  assert.match(deTerms, /7,99 €/);
+  assert.match(enTerms, /39\.99 €/);
+  assert.match(enTerms, /7\.99 €/);
+  assert.doesNotMatch(deTerms, /soweit Apple sie anbietet/);
+  assert.doesNotMatch(enTerms, /where Apple offers it/);
   for (const html of [
     read("docs/index.html"),
     read("docs/de/index.html"),
@@ -231,8 +250,12 @@ test("story row, path, briefing fallback, and teams copy stay in sync", () => {
   assert.match(en, /Every morning/);
   assert.match(de, /Neue Wörter werden beim ersten Mal in normaler Sprache erklärt\./);
   assert.match(en, /New words are explained in plain language the first time they appear\./);
-  assert.match(de, /Seit Februar 2025 müssen Unternehmen, die KI einsetzen, ihre Mitarbeitenden schulen/);
-  assert.match(en, /Since February 2025, companies that use AI have to train their staff/);
+  assert.match(de, /ausreichende KI-Kompetenz ihrer Mitarbeitenden/);
+  assert.match(en, /sufficient level of AI literacy/);
+  assert.doesNotMatch(de, /Duolingo|müssen Unternehmen, die KI einsetzen, ihre Mitarbeitenden schulen/);
+  assert.doesNotMatch(en, /Duolingo|have to train their staff/);
+  assert.match(de, /Das Monatsabo hat keine Testphase/);
+  assert.match(en, /The monthly plan has no trial/);
   assert.match(de, /Auf die Warteliste/);
   assert.match(en, /Join the waitlist/);
   assert.match(de, /Häufige Fragen\./);
