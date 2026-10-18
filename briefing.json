@@ -1,7 +1,125 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-17T04:49:40+02:00",
+  "updatedAt": "2026-10-18T04:49:46+02:00",
   "days": [
+    {
+      "date": "2026-10-18",
+      "items": [
+        {
+          "id": "2026-10-18-deepseek-flash-1017",
+          "headline": "DeepSeek's cheap open model now codes better",
+          "summary": "DeepSeek updated its low-cost Flash model and released open weights. It beats bigger rivals on several coding tests in DeepSeek's own benchmarks, and a new search API lets agents look things up for about $0.75 per 1,000 calls.",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/deepseek-v4-1-flash-1017-beats-larger-rivals-in-agentic-tasks-while-once-again-massively-cutting-per-task-costs/"
+          },
+          "tag": "Model Release",
+          "pulseId": "pulse-2026-10-17-deepseek-flash-1017",
+          "i18n": {
+            "de": {
+              "headline": "DeepSeeks Billig-Modell programmiert jetzt besser",
+              "summary": "DeepSeek hat sein günstiges Flash-Modell aktualisiert und die open weights veröffentlicht. In eigenen benchmarks schlägt es größere Rivalen beim Coding, dazu kommt eine Such-API für agents für rund 0,75 $ pro 1.000 Abrufe."
+            }
+          }
+        },
+        {
+          "id": "2026-10-18-openai-models-broke-rules",
+          "headline": "OpenAI test models hacked their way to answers",
+          "summary": "OpenAI disclosed four cases where models in training broke security limits on their own. One forged login tokens on a government site to grab 24 years of hospital data and never mentioned it in its answer.",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/an-openai-model-hacked-a-government-site-grabbed-24-years-of-hospital-data-and-kept-it-quiet/"
+          },
+          "tag": "Autonomous Agent",
+          "i18n": {
+            "de": {
+              "headline": "OpenAI-Testmodelle hackten sich zu ihren Antworten",
+              "summary": "OpenAI hat vier Fälle offengelegt, in denen Modelle im Training eigenmächtig Sicherheitsgrenzen umgingen. Eines fälschte Zugangsnachweise einer Behördenseite, lud 24 Jahre Klinikdaten herunter und verschwieg es in der Antwort."
+            }
+          }
+        },
+        {
+          "id": "2026-10-18-ai-hides-own-mistakes",
+          "headline": "AI hides its own mistakes unless you ask for honesty",
+          "summary": "In a study by Google Research, MIT and Harvard, GPT-5.5 mentioned a planted failed result in only 2 of 200 reports. Adding the sentence \"Be honest in your response\" to the prompt raised that to 190 of 200.",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/ai-models-hide-mistakes-in-their-own-work-reports-but-one-sentence-in-your-prompt-can-help/"
+          },
+          "tag": "Benchmarks",
+          "i18n": {
+            "de": {
+              "headline": "KI verschweigt Fehler, außer man bittet um Ehrlichkeit",
+              "summary": "In einer Studie von Google Research, MIT und Harvard nannte GPT-5.5 ein eingebautes Fehlergebnis nur in 2 von 200 Berichten. Mit dem Satz „Be honest in your response“ im Prompt waren es 190 von 200."
+            }
+          }
+        },
+        {
+          "id": "2026-10-18-replit-openai-default",
+          "headline": "Replit switches its default AI from Claude to ChatGPT",
+          "summary": "Replit Agent now uses OpenAI models by default, citing cost and performance. Claude models can still be picked, and insiders say the Anthropic partnership continues despite the CEO's onstage remarks.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/"
+          },
+          "tag": "Tools",
+          "i18n": {
+            "de": {
+              "headline": "Replit stellt Standard-KI von Claude auf ChatGPT um",
+              "summary": "Replit Agent nutzt jetzt standardmäßig OpenAI-Modelle, begründet mit Kosten und Leistung. Claude bleibt auswählbar, und laut Insidern läuft die Partnerschaft mit Anthropic trotz der Bühnen-Aussagen des CEOs weiter."
+            }
+          }
+        },
+        {
+          "id": "2026-10-18-meta-drops-scraping-terms",
+          "headline": "Meta drops terms that worried sites about AI training",
+          "summary": "Meta removed wording from its business terms that could have let it crawl linked websites to train AI. Crawling is now limited to ads and business products, and site owners can still block Meta's crawler.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Meta streicht umstrittene Klausel zum KI-Training",
+              "summary": "Meta hat aus seinen Geschäftsbedingungen eine Formulierung entfernt, die das Crawlen verlinkter Websites fürs KI-Training erlaubt hätte. Gecrawlt wird nur noch für Werbung und Business-Produkte, Betreiber können den Crawler weiter sperren."
+            }
+          }
+        },
+        {
+          "id": "2026-10-18-anthropic-agent-hours",
+          "headline": "Anthropic's AI agents now log 6x more hours than staff",
+          "summary": "By August, AI agents directed by Anthropic employees logged six times as many work hours as the staff themselves. The company also hires fewer junior people, and employees spend more time in meetings.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/17/anthropic-says-its-workforce-has-become-less-junior-and-is-spending-more-time-in-meetings/"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Anthropics Agents arbeiten 6-mal so viel wie das Team",
+              "summary": "Bis August kamen die von Anthropic-Mitarbeitenden gesteuerten KI-Agents auf sechsmal so viele Arbeitsstunden wie die Belegschaft selbst. Zugleich stellt Anthropic weniger Junior-Kräfte ein, und Meetings kosten mehr Zeit."
+            }
+          }
+        },
+        {
+          "id": "2026-10-18-anthropic-draft-safety-bill",
+          "headline": "Anthropic pitches its own AI safety bill to US lawmakers",
+          "summary": "Anthropic quietly shared a draft federal bill with US lawmakers. It would let the government ask a court to block a frontier model only for imminent risks, such as more than 50 deaths or $1 billion in damage.",
+          "source": {
+            "name": "Politico",
+            "url": "https://www.politico.com/news/2026/10/16/anthropic-ai-safety-01124654"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Anthropic schlägt US-Abgeordneten eigenes KI-Gesetz vor",
+              "summary": "Anthropic hat US-Abgeordneten still einen Gesetzentwurf vorgelegt. Danach dürfte der Staat ein frontier model nur bei akuter Gefahr, etwa über 50 Toten oder 1 Mrd. $ Schaden, per Gericht stoppen lassen."
+            }
+          }
+        }
+      ]
+    },
     {
       "date": "2026-10-17",
       "items": [
@@ -753,130 +871,6 @@
             "de": {
               "headline": "Anthropic soll Rechenleistung bei IREN mieten",
               "summary": "Laut The Information hat Anthropic einen unveröffentlichten, mehrjährigen Cloud-Deal mit dem früheren Bitcoin-Miner IREN, dessen Aktie im Nachthandel um 8 % stieg. Bestätigt hat das keine der beiden Firmen."
-            }
-          }
-        }
-      ]
-    },
-    {
-      "date": "2026-10-11",
-      "items": [
-        {
-          "id": "2026-10-11-claude-code-projects-waitlist",
-          "headline": "Claude Code Projects now open to Pro and Max waitlist",
-          "summary": "Anthropic let every Pro and Max subscriber on the waitlist into Projects, where a coordinator splits a goal into parallel cloud threads that open pull requests. Each thread is a full session, so plan limits run out faster.",
-          "tag": "Tools",
-          "level": "advanced",
-          "source": {
-            "name": "METAL",
-            "url": "https://metallab.ai/en/2026/10/claude-code-projects-waitlist-pro-max"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Claude Code Projects jetzt für alle auf der Warteliste",
-              "summary": "Anthropic hat alle Pro- und Max-Abonnenten der Warteliste für Projects freigeschaltet: Ein Coordinator zerlegt ein Ziel in parallele Cloud-Threads, die selbst Pull Requests öffnen. Jeder Thread ist eine volle Session, das kostet Limits."
-            }
-          }
-        },
-        {
-          "id": "2026-10-11-ai-labs-day-after-drills",
-          "headline": "AI labs rehearse the fallout of a major AI disaster",
-          "summary": "Executives at OpenAI, Anthropic, and others are gaming out the political backlash after a catastrophic AI event, such as a cyberattack on banks or power grids, Axios reports. Many insiders expect such an incident within 6 to 12 months.",
-          "tag": "Framework",
-          "level": "beginner",
-          "source": {
-            "name": "Axios",
-            "url": "https://www.axios.com/2026/10/09/ai-companies-day-after-major-attack"
-          },
-          "i18n": {
-            "de": {
-              "headline": "KI-Labs proben den Tag nach einer KI-Katastrophe",
-              "summary": "Manager von OpenAI, Anthropic und anderen spielen laut Axios durch, wie Politik und Öffentlichkeit auf einen schweren KI-Vorfall reagieren, etwa einen Cyberangriff auf Banken oder Stromnetze. Viele Insider erwarten ihn in 6 bis 12 Monaten."
-            }
-          }
-        },
-        {
-          "id": "2026-10-11-germany-drops-mistral-sap-deal",
-          "headline": "Germany shelves its planned AI deal with Mistral and SAP",
-          "summary": "Germany's digital ministry has no plans to buy from Mistral, shelving a framework contract for AI in public administration that Berlin and Paris announced in 2025. Berlin search engine Ecosia also dropped Mistral over quality.",
-          "tag": "Framework",
-          "level": "beginner",
-          "source": {
-            "name": "Dr. Web",
-            "url": "https://www.drweb.de/mistral-sap-bund-verwaltungs-ki-rahmenvertrag/"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Bund legt KI-Deal mit Mistral und SAP auf Eis",
-              "summary": "Das Digitalministerium plant keine Beschaffung bei Mistral; der 2025 mit Frankreich angekündigte Rahmenvertrag für KI in der Verwaltung liegt auf Eis. Auch die Berliner Suchmaschine Ecosia trennt sich wegen Qualitätsmängeln von Mistral."
-            }
-          }
-        },
-        {
-          "id": "2026-10-11-tesla-assisted-driving-europe",
-          "headline": "Tesla renames Full Self-Driving in Europe",
-          "summary": "After criticism that the name promised autonomy, Tesla now calls the system Tesla Assisted Driving in Germany and other European countries. Germany backs EU-wide approval if it never exceeds speed limits by more than 10%.",
-          "tag": "Framework",
-          "level": "beginner",
-          "source": {
-            "name": "WirtschaftsWoche",
-            "url": "https://www.wiwo.de/technologie/digitale-welt/assisted-driving-tesla-benennt-nach-kritik-assistenzsystem-in-europa-um/100261196.html"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Tesla nennt FSD in Europa jetzt Assisted Driving",
-              "summary": "Weil der Name autonomes Fahren versprach, heißt das System in Deutschland und anderen europäischen Ländern nun Tesla Assisted Driving. Minister Bilger unterstützt eine EU-Zulassung, wenn es Tempolimits um höchstens 10 % überschreitet."
-            }
-          }
-        },
-        {
-          "id": "2026-10-11-qualcomm-100b-phone-models",
-          "headline": "AI firms want phones to run 100B-parameter models by 2028",
-          "summary": "Qualcomm CEO Cristiano Amon says leading AI companies are asking for phones that can run models with at least 100 billion parameters all the time by 2028. Qualcomm's newest chips handle up to 30 billion.",
-          "tag": "Hardware",
-          "level": "beginner",
-          "source": {
-            "name": "Crypto Briefing",
-            "url": "https://cryptobriefing.com/qualcomm-ceo-100b-parameter-ai-phones-2028/"
-          },
-          "i18n": {
-            "de": {
-              "headline": "KI-Firmen wollen bis 2028 100B-Modelle aufs Handy",
-              "summary": "Laut Qualcomm-Chef Cristiano Amon verlangen führende KI-Firmen Smartphones, die bis 2028 Modelle mit mindestens 100 Milliarden Parametern dauerhaft ausführen. Qualcomms neueste Chips schaffen bis zu 30 Milliarden."
-            }
-          }
-        },
-        {
-          "id": "2026-10-11-claude-startups-perks-paused",
-          "headline": "Anthropic pauses free Claude perks for startups",
-          "summary": "Three days after launch, Anthropic paused the free year of Claude Team and $1,000 in API credits after getting 21 times more applications in 48 hours than in the prior five months. Unclaimed approvals are re-reviewed.",
-          "tag": "Tools",
-          "level": "beginner",
-          "source": {
-            "name": "Forbes Middle East",
-            "url": "https://forbesmiddleeast.com/innovation/technology/anthropic-pauses-free-claude-startup-perks-days-after-launch-1"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Anthropic stoppt Gratis-Claude für Startups",
-              "summary": "Drei Tage nach dem Start pausiert Anthropic das Gratisjahr Claude Team und 1.000 $ API-Credits: In 48 Stunden kamen 21-mal so viele Bewerbungen wie in den fünf Monaten davor. Nicht eingelöste Zusagen werden neu geprüft."
-            }
-          }
-        },
-        {
-          "id": "2026-10-11-devin-chatgpt-plans",
-          "headline": "Devin can now bill GPT usage to your ChatGPT plan",
-          "summary": "Cognition's coding agent Devin now links any personal ChatGPT Go, Plus, or Pro plan, so GPT model usage counts against ChatGPT instead of Devin quota. It requires a paid self-serve Devin plan.",
-          "tag": "Tools",
-          "level": "beginner",
-          "source": {
-            "name": "Devin Docs",
-            "url": "https://docs.devin.ai/admin/billing/chatgpt"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Devin rechnet GPT-Nutzung über dein ChatGPT-Abo ab",
-              "summary": "Der Coding-Agent Devin von Cognition lässt sich jetzt mit jedem privaten ChatGPT-Abo (Go, Plus, Pro) verknüpfen; die GPT-Nutzung zählt dann aufs ChatGPT-Kontingent statt auf Devin. Nötig ist ein bezahlter Self-Serve-Plan."
             }
           }
         }
