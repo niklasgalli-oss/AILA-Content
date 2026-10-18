@@ -71,7 +71,11 @@ test("English and German pages carry the landing sections", () => {
     assert.match(html, /rel="alternate" hreflang="x-default"/);
     assert.match(html, /og:image/);
     assert.match(html, /AILA for Teams/);
-    assert.match(html, /niklas\.galli@getaila\.de/);
+    assert.match(html, /support@getaila\.de/);
+    assert.doesNotMatch(html, /niklas\.galli@getaila\.de/);
+    assert.doesNotMatch(html, /Niklas Galli/);
+    assert.doesNotMatch(html, /Neuburger/);
+    assert.doesNotMatch(html, /Karlshuld/);
     assert.match(html, /data-briefing-list/);
     assert.equal((html.match(/class="brief-item"/g) || []).length, 3);
     assert.equal((html.match(/class="level /g) || []).length, 3);
@@ -88,8 +92,10 @@ test("English and German pages carry the landing sections", () => {
   assert.match(de, /KI lernen/);
   assert.match(en, /href="impressum\/"/);
   assert.match(en, /href="privacy\/en\/"/);
+  assert.match(en, /href="terms\/"/);
   assert.match(de, /href="\.\.\/impressum\/"/);
   assert.match(de, /href="\.\.\/privacy\/"/);
+  assert.match(de, /href="nutzungsbedingungen\/"/);
 });
 
 test("landing assets stay self-hosted and flat-colored", () => {
@@ -114,4 +120,60 @@ test("landing assets stay self-hosted and flat-colored", () => {
   assert.match(sitemap, /https:\/\/getaila\.de\/de\//);
   assert.match(sitemap, /https:\/\/getaila\.de\/privacy\//);
   assert.match(sitemap, /https:\/\/getaila\.de\/impressum\//);
+  assert.match(sitemap, /https:\/\/getaila\.de\/terms\//);
+  assert.match(sitemap, /https:\/\/getaila\.de\/de\/nutzungsbedingungen\//);
+});
+
+test("name and address stay on the imprint only", () => {
+  const publicPages = [
+    "docs/index.html",
+    "docs/de/index.html",
+    "docs/privacy/index.html",
+    "docs/privacy/en/index.html",
+    "docs/terms/index.html",
+    "docs/de/nutzungsbedingungen/index.html"
+  ];
+  for (const path of publicPages) {
+    const html = read(path);
+    assert.doesNotMatch(html, /Niklas Galli/, path);
+    assert.doesNotMatch(html, /Neuburger/, path);
+    assert.doesNotMatch(html, /Karlshuld/, path);
+    assert.doesNotMatch(html, /niklas\.galli@/, path);
+    assert.match(html, /support@getaila\.de/, path);
+  }
+  const imprint = read("docs/impressum/index.html");
+  assert.match(imprint, /Niklas Galli/);
+  assert.match(imprint, /Neuburger Straße 73a/);
+  assert.match(imprint, /86668 Karlshuld/);
+  assert.match(imprint, /support@getaila\.de/);
+  assert.doesNotMatch(imprint, /niklas\.galli@/);
+  assert.doesNotMatch(imprint, /tel:/i);
+  assert.doesNotMatch(imprint, /\+49/);
+  const dePrivacy = read("docs/privacy/index.html");
+  const enPrivacy = read("docs/privacy/en/index.html");
+  assert.doesNotMatch(dePrivacy, /kein Quiz/i);
+  assert.doesNotMatch(enPrivacy, /no quiz/i);
+  assert.match(dePrivacy, /RevenueCat/);
+  assert.match(enPrivacy, /RevenueCat/);
+  assert.match(dePrivacy, /Kein Tracking/);
+  assert.match(enPrivacy, /No tracking/);
+  const deTerms = read("docs/de/nutzungsbedingungen/index.html");
+  const enTerms = read("docs/terms/index.html");
+  assert.match(deTerms, /Produkthaftungsgesetz/);
+  assert.match(deTerms, /wesentlichen Vertragspflicht/);
+  assert.match(enTerms, /Product Liability Act/);
+  assert.match(enTerms, /essential contractual duty/);
+  assert.match(deTerms, /stdeula/);
+  assert.match(enTerms, /stdeula/);
+  for (const html of [
+    read("docs/index.html"),
+    read("docs/de/index.html"),
+    read("docs/impressum/index.html"),
+    dePrivacy,
+    enPrivacy,
+    deTerms,
+    enTerms
+  ]) {
+    assert.match(html, /KI erstellt oder unterstützt|generated or assisted by AI/);
+  }
 });

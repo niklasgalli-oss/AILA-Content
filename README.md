@@ -17,6 +17,8 @@ The privacy policy and the legal notice (Impressum) are static pages in `docs/`,
 - [Datenschutzerklärung](https://getaila.de/privacy/) (German)
 - [Privacy policy](https://getaila.de/privacy/en/) (English)
 - [Impressum / Legal notice](https://getaila.de/impressum/)
+- [Nutzungsbedingungen](https://getaila.de/de/nutzungsbedingungen/) (German)
+- [Terms of Use](https://getaila.de/terms/) (English)
 
 ## Item shape
 
