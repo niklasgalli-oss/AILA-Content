@@ -7,6 +7,8 @@ The site is published from the `/docs` folder on `main`. The public host is `htt
 - https://getaila.de/privacy/
 - https://getaila.de/privacy/en/
 - https://getaila.de/impressum/
+- https://getaila.de/terms/
+- https://getaila.de/de/nutzungsbedingungen/
 
 Once GitHub Pages has that custom domain, `https://niklasgalli-oss.github.io/AILA-Content/...` redirects to the same path on `https://getaila.de/...`. The `/AILA-Content` prefix is dropped. `www.getaila.de` redirects to the apex.
 
@@ -22,13 +24,13 @@ That file is not a DNS record. The apex stays on the A and AAAA records below. D
 
 ## Mail stays where it is
 
-`niklas.galli@getaila.de` is an IONOS mailbox. The website records and the mail records are separate.
+`hallo@getaila.de` is the public contact mailbox on IONOS. Create that mailbox before the pages go live. The website records and the mail records are separate.
 
 - Do not edit or delete MX records.
 - Do not put a CNAME on the apex (`@`). An apex CNAME would take the place of the records mail needs.
 - Do not edit TXT records that contain SPF, DKIM, or DMARC, or CNAMEs that belong to mail (autodiscover, DKIM selectors, and similar).
 
-After the website records change, send a test message to `niklas.galli@getaila.de` and confirm it still arrives. The MX answer from `dig` must be the same servers as before the edit.
+After the website records change, send a test message to `hallo@getaila.de` and confirm it still arrives. The MX answer from `dig` must be the same servers as before the edit.
 
 ## 1. Verify the domain first
 
@@ -98,17 +100,19 @@ From then on, `https://niklasgalli-oss.github.io/AILA-Content/privacy/` redirect
 - https://getaila.de/privacy/
 - https://getaila.de/privacy/en/
 - https://getaila.de/impressum/
+- https://getaila.de/terms/
+- https://getaila.de/de/nutzungsbedingungen/
 - https://www.getaila.de/ redirects to https://getaila.de/
 - https://niklasgalli-oss.github.io/AILA-Content/privacy/ redirects to https://getaila.de/privacy/
 - https://niklasgalli-oss.github.io/AILA-Content/impressum/ redirects to https://getaila.de/impressum/
 
-7. Send a test email to `niklas.galli@getaila.de`.
+7. Send a test email to `hallo@getaila.de`.
 
 The app can keep the old `github.io` links once those redirects answer, including over HTTPS. Update the app when you want the address itself to be `getaila.de`.
 
 ## 4. Absolute URLs
 
-Canonical, hreflang, Open Graph, Twitter, JSON-LD, `docs/sitemap.xml`, and the Sitemap line in `docs/robots.txt` use `https://getaila.de`. The same host is on the privacy and imprint pages. Mail links stay `mailto:niklas.galli@getaila.de`. The app still loads `pulse.json` and `briefing.json` from `raw.githubusercontent.com`.
+Canonical, hreflang, Open Graph, Twitter, JSON-LD, `docs/sitemap.xml`, and the Sitemap line in `docs/robots.txt` use `https://getaila.de`. The same host is on the privacy, imprint, and terms pages. Mail links stay `mailto:hallo@getaila.de`. The app still loads `pulse.json` and `briefing.json` from `raw.githubusercontent.com`.
 
 `robots.txt` and `sitemap.xml` are host-root files. On the project URL they are under `/AILA-Content/`, which crawlers do not read as the `github.io` robots file. After the cutover they are `https://getaila.de/robots.txt` and `https://getaila.de/sitemap.xml`.
 
@@ -129,7 +133,7 @@ Universal Links need `apple-app-site-association` only after the iOS app is on t
 
 No `.json` extension. The response `Content-Type` must be `application/json`. GitHub Pages does not set custom headers, and an extensionless file is often `application/octet-stream`, which Apple rejects. Check the header before relying on it.
 
-When the Team ID and bundle id exist, the file would be JSON in this shape. `TEAMID.BUNDLEID` is a placeholder. The four `exclude` lines keep Impressum and privacy in the browser. Add a component for each path that should open the app; without one, nothing does.
+When the Team ID and bundle id exist, the file would be JSON in this shape. `TEAMID.BUNDLEID` is a placeholder. The `exclude` lines keep Impressum, privacy, and the terms in the browser. Add a component for each path that should open the app; without one, nothing does.
 
 ```json
 {
@@ -142,7 +146,11 @@ When the Team ID and bundle id exist, the file would be JSON in this shape. `TEA
           { "/": "/privacy", "exclude": true },
           { "/": "/privacy/*", "exclude": true },
           { "/": "/impressum", "exclude": true },
-          { "/": "/impressum/*", "exclude": true }
+          { "/": "/impressum/*", "exclude": true },
+          { "/": "/terms", "exclude": true },
+          { "/": "/terms/*", "exclude": true },
+          { "/": "/de/nutzungsbedingungen", "exclude": true },
+          { "/": "/de/nutzungsbedingungen/*", "exclude": true }
         ]
       }
     ]
