@@ -71,7 +71,7 @@ test("English and German pages carry the landing sections", () => {
     assert.match(html, /rel="alternate" hreflang="x-default"/);
     assert.match(html, /og:image/);
     assert.match(html, /AILA for Teams/);
-    assert.match(html, /hallo@getaila\.de/);
+    assert.match(html, /support@getaila\.de/);
     assert.doesNotMatch(html, /niklas\.galli@getaila\.de/);
     assert.doesNotMatch(html, /Niklas Galli/);
     assert.doesNotMatch(html, /Neuburger/);
@@ -139,13 +139,13 @@ test("name and address stay on the imprint only", () => {
     assert.doesNotMatch(html, /Neuburger/, path);
     assert.doesNotMatch(html, /Karlshuld/, path);
     assert.doesNotMatch(html, /niklas\.galli@/, path);
-    assert.match(html, /hallo@getaila\.de/, path);
+    assert.match(html, /support@getaila\.de/, path);
   }
   const imprint = read("docs/impressum/index.html");
   assert.match(imprint, /Niklas Galli/);
   assert.match(imprint, /Neuburger Straße 73a/);
   assert.match(imprint, /86668 Karlshuld/);
-  assert.match(imprint, /hallo@getaila\.de/);
+  assert.match(imprint, /support@getaila\.de/);
   assert.doesNotMatch(imprint, /niklas\.galli@/);
   assert.doesNotMatch(imprint, /tel:/i);
   assert.doesNotMatch(imprint, /\+49/);

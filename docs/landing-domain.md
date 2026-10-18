@@ -24,13 +24,13 @@ That file is not a DNS record. The apex stays on the A and AAAA records below. D
 
 ## Mail stays where it is
 
-`hallo@getaila.de` is the public contact mailbox on IONOS. Create that mailbox before the pages go live. The website records and the mail records are separate.
+`support@getaila.de` is the public contact mailbox on IONOS. Create that mailbox before the pages go live. The website records and the mail records are separate.
 
 - Do not edit or delete MX records.
 - Do not put a CNAME on the apex (`@`). An apex CNAME would take the place of the records mail needs.
 - Do not edit TXT records that contain SPF, DKIM, or DMARC, or CNAMEs that belong to mail (autodiscover, DKIM selectors, and similar).
 
-After the website records change, send a test message to `hallo@getaila.de` and confirm it still arrives. The MX answer from `dig` must be the same servers as before the edit.
+After the website records change, send a test message to `support@getaila.de` and confirm it still arrives. The MX answer from `dig` must be the same servers as before the edit.
 
 ## 1. Verify the domain first
 
@@ -106,13 +106,13 @@ From then on, `https://niklasgalli-oss.github.io/AILA-Content/privacy/` redirect
 - https://niklasgalli-oss.github.io/AILA-Content/privacy/ redirects to https://getaila.de/privacy/
 - https://niklasgalli-oss.github.io/AILA-Content/impressum/ redirects to https://getaila.de/impressum/
 
-7. Send a test email to `hallo@getaila.de`.
+7. Send a test email to `support@getaila.de`.
 
 The app can keep the old `github.io` links once those redirects answer, including over HTTPS. Update the app when you want the address itself to be `getaila.de`.
 
 ## 4. Absolute URLs
 
-Canonical, hreflang, Open Graph, Twitter, JSON-LD, `docs/sitemap.xml`, and the Sitemap line in `docs/robots.txt` use `https://getaila.de`. The same host is on the privacy, imprint, and terms pages. Mail links stay `mailto:hallo@getaila.de`. The app still loads `pulse.json` and `briefing.json` from `raw.githubusercontent.com`.
+Canonical, hreflang, Open Graph, Twitter, JSON-LD, `docs/sitemap.xml`, and the Sitemap line in `docs/robots.txt` use `https://getaila.de`. The same host is on the privacy, imprint, and terms pages. Mail links stay `mailto:support@getaila.de`. The app still loads `pulse.json` and `briefing.json` from `raw.githubusercontent.com`.
 
 `robots.txt` and `sitemap.xml` are host-root files. On the project URL they are under `/AILA-Content/`, which crawlers do not read as the `github.io` robots file. After the cutover they are `https://getaila.de/robots.txt` and `https://getaila.de/sitemap.xml`.
 
