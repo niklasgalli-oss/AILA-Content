@@ -294,10 +294,10 @@ test("story row, path, briefing fallback, and teams copy stay in sync", () => {
   assert.equal(plain.length >= 3, true);
   const shown = plain.slice(0, 3).map((item) => item.headline);
   assert.deepEqual(shown, [
-    "OpenAI test models hacked their way to answers",
-    "Replit switches its default AI from Claude to ChatGPT",
-    "Meta drops terms that worried sites about AI training"
+    "Second German court makes Google answer for its AI",
+    "Anthropic sets aside 5% of its shares for public good",
+    "Four Gemini agents beat Minecraft with no human help"
   ]);
-  assert.equal(jargon.test(day.items[0].summary), true);
-  assert.equal(jargon.test(day.items[2].summary), true);
+  assert.equal(jargon.test(day.items[4].summary), true);
+  assert.equal(jargon.test(day.items[6].summary), true);
 });
