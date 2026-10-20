@@ -2,13 +2,14 @@
 
 The site is published from the `/docs` folder on `main`. The public host is `https://getaila.de/`. `docs/CNAME` contains exactly `getaila.de`.
 
-- https://getaila.de/
-- https://getaila.de/de/
+- https://getaila.de/ (German)
+- https://getaila.de/en/ (English)
+- https://getaila.de/de/ redirects to https://getaila.de/
 - https://getaila.de/privacy/
-- https://getaila.de/privacy/en/
+- https://getaila.de/en/privacy/
 - https://getaila.de/impressum/
-- https://getaila.de/terms/
-- https://getaila.de/de/nutzungsbedingungen/
+- https://getaila.de/nutzungsbedingungen/
+- https://getaila.de/en/terms/
 
 Once GitHub Pages has that custom domain, `https://niklasgalli-oss.github.io/AILA-Content/...` redirects to the same path on `https://getaila.de/...`. The `/AILA-Content` prefix is dropped. `www.getaila.de` redirects to the apex.
 
@@ -89,19 +90,20 @@ Source for the addresses: [Managing a custom domain for your GitHub Pages site](
 
 `docs/CNAME` is already `getaila.de`. Pages settings should match it: repository **niklasgalli-oss/AILA-Content** → **Settings** → **Pages**, source **Deploy from a branch**, branch **main**, folder **/docs**, custom domain `getaila.de` (the apex, not `www`).
 
-From then on, `https://niklasgalli-oss.github.io/AILA-Content/privacy/` redirects to `https://getaila.de/privacy/`, and the same for the imprint, the English page, and `/de/`.
+From then on, `https://niklasgalli-oss.github.io/AILA-Content/privacy/` redirects to `https://getaila.de/privacy/`, and the same for the imprint, `/en/`, and `/de/`. `/de/` on getaila.de itself redirects to `https://getaila.de/`.
 
 4. Wait until GitHub shows the DNS check as good and a certificate is issued. That can take up to 24 hours. [Securing your GitHub Pages site with HTTPS](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https).
 5. Then turn on **Enforce HTTPS** and leave it on. The checkbox stays disabled until the certificate exists. Do not force it earlier. If it never appears, extra A, AAAA, or CNAME records are the usual cause: remove the domain in Pages, clean the DNS, and add `getaila.de` again.
 6. Open each of these and confirm the padlock:
 
 - https://getaila.de/
-- https://getaila.de/de/
+- https://getaila.de/en/
+- https://getaila.de/de/ redirects to https://getaila.de/
 - https://getaila.de/privacy/
-- https://getaila.de/privacy/en/
+- https://getaila.de/en/privacy/
 - https://getaila.de/impressum/
-- https://getaila.de/terms/
-- https://getaila.de/de/nutzungsbedingungen/
+- https://getaila.de/nutzungsbedingungen/
+- https://getaila.de/en/terms/
 - https://www.getaila.de/ redirects to https://getaila.de/
 - https://niklasgalli-oss.github.io/AILA-Content/privacy/ redirects to https://getaila.de/privacy/
 - https://niklasgalli-oss.github.io/AILA-Content/impressum/ redirects to https://getaila.de/impressum/
@@ -147,6 +149,12 @@ When the Team ID and bundle id exist, the file would be JSON in this shape. `TEA
           { "/": "/privacy/*", "exclude": true },
           { "/": "/impressum", "exclude": true },
           { "/": "/impressum/*", "exclude": true },
+          { "/": "/en/privacy", "exclude": true },
+          { "/": "/en/privacy/*", "exclude": true },
+          { "/": "/nutzungsbedingungen", "exclude": true },
+          { "/": "/nutzungsbedingungen/*", "exclude": true },
+          { "/": "/en/terms", "exclude": true },
+          { "/": "/en/terms/*", "exclude": true },
           { "/": "/terms", "exclude": true },
           { "/": "/terms/*", "exclude": true },
           { "/": "/de/nutzungsbedingungen", "exclude": true },
@@ -167,4 +175,4 @@ cd docs
 python3 -m http.server 8080
 ```
 
-Open http://localhost:8080/ and http://localhost:8080/de/ . The public pages are the `https://getaila.de/` URLs at the top of this file.
+Open http://localhost:8080/ and http://localhost:8080/en/ . http://localhost:8080/de/ is the redirect to `/`. The public pages are the `https://getaila.de/` URLs at the top of this file.
