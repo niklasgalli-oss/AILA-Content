@@ -1,7 +1,141 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-19T04:41:26+02:00",
+  "updatedAt": "2026-10-20T04:47:57+02:00",
   "days": [
+    {
+      "date": "2026-10-20",
+      "items": [
+        {
+          "id": "2026-10-20-openai-legacy-code",
+          "headline": "OpenAI models get much better at old code like COBOL",
+          "summary": "OpenAI says GPT-6 Astra now passes 87.4% of tests when it builds a database engine in 20 languages, up from 26.8% for GPT-5.6 Sol. It also published the test suite so developers can check the results.",
+          "source": {
+            "name": "OpenAI",
+            "url": "https://openai.com/index/low-resource-programming-languages"
+          },
+          "tag": "Benchmarks",
+          "i18n": {
+            "de": {
+              "headline": "OpenAI-Modelle beherrschen alte Sprachen wie COBOL",
+              "summary": "Laut OpenAI besteht GPT-6 Astra beim Nachbau einer Datenbank in 20 Programmiersprachen 87,4 Prozent der Tests, GPT-5.6 Sol schaffte 26,8 Prozent. Die Testsuite ist öffentlich, damit Entwickler nachprüfen können."
+            }
+          }
+        },
+        {
+          "id": "2026-10-20-minimax-m31-flash",
+          "headline": "MiniMax's M3.1 Flash gets stronger at half the price",
+          "summary": "Chinese lab MiniMax scores 13 points higher than its previous model on the Artificial Analysis index at about half the cost. On coding tasks it now matches DeepSeek's latest Flash model for under 30 cents per task.",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/minimax-m3-1-flash-shows-chinas-ai-price-race-has-no-floor-in-sight/"
+          },
+          "tag": "Model Release",
+          "i18n": {
+            "de": {
+              "headline": "MiniMax M3.1 Flash: mehr Leistung zum halben Preis",
+              "summary": "Das chinesische Labor MiniMax legt im Artificial-Analysis-Index 13 Punkte gegenüber dem Vorgänger zu und kostet etwa die Hälfte. Beim Programmieren zieht es mit DeepSeeks neuestem Flash-Modell gleich, für unter 30 Cent pro Aufgabe."
+            }
+          }
+        },
+        {
+          "id": "2026-10-20-dhs-bans-deepseek",
+          "headline": "US civilian agencies must remove DeepSeek AI",
+          "summary": "Homeland Security made public an order that bans DeepSeek and tools built on it from federal civilian systems. The ban has quietly applied since July, while defense agencies are not covered.",
+          "source": {
+            "name": "BBC",
+            "url": "https://www.bbc.com/news/articles/cjkgeq0k1wevo"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "US-Bundesbehörden müssen DeepSeek entfernen",
+              "summary": "Das US-Heimatschutzministerium hat eine Anordnung veröffentlicht, die DeepSeek und darauf aufbauende Tools aus zivilen Bundesbehörden verbannt. Sie gilt bereits seit Juli, das Militär ist ausgenommen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-20-inception-mercury-3",
+          "headline": "Mercury 3 shows diffusion text models can scale",
+          "summary": "Inception's Mercury 3 writes text by refining many tokens at once instead of one by one and runs at over 1,000 tokens per second. The company says it keeps up with GPT-6 Luna and Claude Haiku 5.5 in its own tests.",
+          "source": {
+            "name": "Inception",
+            "url": "https://www.inceptionlabs.ai/blog/introducing-mercury-3"
+          },
+          "tag": "Model Release",
+          "level": "advanced",
+          "i18n": {
+            "de": {
+              "headline": "Mercury 3 schreibt über 1.000 Token pro Sekunde",
+              "summary": "Inceptions Mercury 3 erzeugt Text, indem es viele Token parallel verfeinert statt eines nach dem anderen. Laut Hersteller hält es in eigenen Tests mit GPT-6 Luna und Claude Haiku 5.5 mit."
+            }
+          }
+        },
+        {
+          "id": "2026-10-20-kling-4-video",
+          "headline": "Kling 4.0 makes 30-second AI videos with stereo sound",
+          "summary": "The video generator now builds clips of up to 30 seconds from as many as ten keyframe images and adds lip sync in German and other languages. The Decoder sees it level with Chinese rivals, not ahead.",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/kling-ai-drops-version-4-0-with-stereo-audio-multilingual-lip-sync-and-a-lighter-flash-variant/"
+          },
+          "tag": "Tools",
+          "i18n": {
+            "de": {
+              "headline": "Kling 4.0 erzeugt 30-Sekunden-Videos mit Stereoton",
+              "summary": "Der Videogenerator baut Clips bis 30 Sekunden aus bis zu zehn Keyframes und synchronisiert Lippen nun auch auf Deutsch. The Decoder sieht ihn gleichauf mit chinesischer Konkurrenz, aber nicht vorn."
+            }
+          }
+        },
+        {
+          "id": "2026-10-20-tenstorrent-raises",
+          "headline": "Chip startup Tenstorrent raises $1.5B to rival Nvidia",
+          "summary": "Jim Keller's company more than doubled its valuation to $6.2 billion. The money goes into chips built to run open-weight models and video generation.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/19/tenstorrent-hits-6-2b-valuation-to-scale-open-weight-ai-chips/"
+          },
+          "tag": "Hardware",
+          "i18n": {
+            "de": {
+              "headline": "Chip-Start-up Tenstorrent holt 1,5 Milliarden Dollar",
+              "summary": "Die Firma von Chipdesigner Jim Keller ist nun 6,2 Milliarden Dollar wert, mehr als doppelt so viel wie zuvor. Das Geld fließt in Chips, die Open-Weight-Modelle und KI-Video effizient ausführen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-20-cloudflare-clairic",
+          "headline": "Cloudflare's Clairic pulls exact values out of messy text",
+          "summary": "Instead of writing an answer word by word, Clairic reads an email or receipt once and returns typed values like dates and totals with a confidence score. It is a preview on Workers AI, with open weights planned.",
+          "source": {
+            "name": "Cloudflare",
+            "url": "https://blog.cloudflare.com/clairic-extraction-model/"
+          },
+          "tag": "Model Release",
+          "i18n": {
+            "de": {
+              "headline": "Cloudflares Clairic zieht exakte Werte aus Texten",
+              "summary": "Statt Wort für Wort zu antworten, liest Clairic eine E-Mail oder einen Beleg in einem Durchgang und liefert Werte wie Datum oder Summe samt Confidence Score. Es läuft als Preview auf Workers AI, Open Weights sollen folgen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-20-nature-ai-not-conscious",
+          "headline": "Top scientists in Nature: today's AI is not conscious",
+          "summary": "Neuroscientists Anil Seth and Giulio Tononi and philosopher Ned Block argue that being smart is not the same as having experiences. They warn that treating chatbots as conscious distracts from real policy questions.",
+          "source": {
+            "name": "Nature",
+            "url": "https://www.nature.com/articles/d41586-026-03313-7"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Forscher in Nature: Heutige KI hat kein Bewusstsein",
+              "summary": "Die Neurowissenschaftler Anil Seth und Giulio Tononi sowie der Philosoph Ned Block betonen, dass Intelligenz nicht dasselbe ist wie Erleben. Wer Chatbots Bewusstsein zuschreibt, lenke von echten Regulierungsfragen ab."
+            }
+          }
+        }
+      ]
+    },
     {
       "date": "2026-10-19",
       "items": [
@@ -739,150 +873,6 @@
             "de": {
               "headline": "Richter gibt Apple schneller OpenAI-Bewerbungsakten",
               "summary": "Im Trade-Secrets-Prozess gegen OpenAI ordnete ein US-Richter an, Interview-Unterlagen zu Ex-Apple-Mitarbeitern in Hardware und Robotik beschleunigt herauszugeben. Breitere Anfragen zu OpenAI-Forschung wurden vorerst abgelehnt."
-            }
-          }
-        }
-      ]
-    },
-    {
-      "date": "2026-10-13",
-      "items": [
-        {
-          "id": "2026-10-13-meta-muse-wonder-full",
-          "headline": "Meta's Muse Wonder Full enters the AI top tier",
-          "summary": "Meta released Muse Wonder and Muse Wonder Full; Full scores 56 on Artificial Analysis Intelligence Index v4.3 with strong agentic coding gains. Wonder is on Meta's API and Muse Code; Full is Muse Code only, nearly triple Spark pricing.",
-          "tag": "Model Release",
-          "priority": "breaking",
-          "level": "beginner",
-          "source": {
-            "name": "The Decoder",
-            "url": "https://the-decoder.com/metas-new-frontier-model-muse-wonder-full-breaks-into-the-ai-top-tier/"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Metas Muse Wonder Full rückt in die KI-Spitze",
-              "summary": "Meta hat Muse Wonder und Muse Wonder Full veröffentlicht; Full erreicht 56 Punkte im Artificial Analysis Index v4.3, stark bei agentischem Coding. Wonder läuft über Meta-API und Muse Code, Full nur in Muse Code – fast dreimal teurer."
-            }
-          }
-        },
-        {
-          "id": "2026-10-13-anthropic-iot-self-replicate",
-          "headline": "Anthropic: small models may soon self-replicate on IoT",
-          "summary": "Anthropic finds small open-weight models may be months from copying themselves onto cheap IoT devices like smart TVs. GLM-5.2 finished end-to-end replication in a simplified test; real odds are lower because the cyber step was trivial.",
-          "tag": "Autonomous Agent",
-          "level": "beginner",
-          "source": {
-            "name": "Anthropic",
-            "url": "https://www.anthropic.com/research/self-replicating-ai"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Anthropic: kleine Modelle könnten sich bald auf IoT kopieren",
-              "summary": "Anthropic warnt: Kleine Open-Weight-Modelle könnten in Monaten fähig sein, sich auf günstige IoT-Geräte wie Smart-TVs zu kopieren. GLM-5.2 schaffte End-to-End-Replikation im vereinfachten Test; realistisch liegt die Chance tiefer."
-            }
-          }
-        },
-        {
-          "id": "2026-10-13-anthropic-distillation-defenses",
-          "headline": "Anthropic cuts Claude distillation harvest by 90–99%",
-          "summary": "New Claude defenses against illicit distillation cut reasoning tokens harvested on Anthropic's platform by roughly 10 to 100 times. Preserved thinking and classifiers also force some legitimate developers to update integrations.",
-          "tag": "Framework",
-          "level": "beginner",
-          "source": {
-            "name": "Anthropic",
-            "url": "https://www.anthropic.com/research/distillation-defenses"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Anthropic drosselt Claude-Distillation um 90–99 %",
-              "summary": "Neue Claude-Abwehr gegen unerlaubte Distillation senkt die geernteten Reasoning-Token auf Anthropics Plattform um etwa das 10- bis 100-Fache. Preserved Thinking und Classifier zwingen auch manche legitimen Entwickler zu Anpassungen."
-            }
-          }
-        },
-        {
-          "id": "2026-10-13-alphaproof-nexus-science",
-          "headline": "DeepMind's AlphaProof Nexus proofs pass peer review",
-          "summary": "A Science study says AlphaProof Nexus solved dozens of open math problems, including nine Erdős problems, two unsolved for 56 years. DeepMind put the work through peer review, unlike OpenAI's recent unreviewed proof dump on GitHub.",
-          "tag": "Benchmarks",
-          "level": "beginner",
-          "pulseId": "pulse-2026-10-12-alphaproof-nexus-math",
-          "source": {
-            "name": "The Decoder",
-            "url": "https://the-decoder.com/google-deepminds-alphaproof-nexus-solved-dozens-of-open-math-problems-and-actually-got-peer-reviewed/"
-          },
-          "i18n": {
-            "de": {
-              "headline": "DeepMinds AlphaProof-Nexus-Beweise bestehen Peer-Review",
-              "summary": "Laut einer Science-Studie löste AlphaProof Nexus Dutzende offene Matheprobleme, darunter neun Erdős-Probleme, zwei davon 56 Jahre ungelöst. DeepMind ließ die Arbeit peer-reviewen, anders als OpenAIs unveröffentlichter Proof-Dump auf GitHub."
-            }
-          }
-        },
-        {
-          "id": "2026-10-13-uk-aisi-access-restored",
-          "headline": "White House restores UK AISI access to frontier models",
-          "summary": "After a 17-day freeze, the UK AI Security Institute again gets pre-release access to models from OpenAI, Anthropic, and Google DeepMind. Britain's AI minister says voluntary testing terms return to the prior arrangement.",
-          "tag": "Framework",
-          "level": "beginner",
-          "source": {
-            "name": "The Decoder",
-            "url": "https://the-decoder.com/white-house-reverses-course-and-restores-uk-ai-safety-institutes-access-to-frontier-models/"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Weißes Haus gibt UK-AISI wieder Zugang zu Frontier-Modellen",
-              "summary": "Nach 17 Tagen Sperre bekommt das britische AI Security Institute wieder Pre-Release-Zugang zu Modellen von OpenAI, Anthropic und Google DeepMind. Der britische KI-Minister bestätigt: Die freiwilligen Testbedingungen gelten wieder wie zuvor."
-            }
-          }
-        },
-        {
-          "id": "2026-10-13-imf-ai-jobs-40-percent",
-          "headline": "IMF chief: AI could reshape about 40% of jobs",
-          "summary": "At the IMF-World Bank meetings in Bangkok, Kristalina Georgieva called AI a \"slow-moving tsunami\" that could augment, downgrade, or eliminate about 40% of jobs over time. She said AI investment is still helping keep global growth near 3%.",
-          "tag": "Framework",
-          "level": "beginner",
-          "source": {
-            "name": "Bangkok Post",
-            "url": "https://www.bangkokpost.com/business/general/3335668/imf-says-ai-investment-keeps-global-growth-around-3-with-major-asia-benefits"
-          },
-          "i18n": {
-            "de": {
-              "headline": "IWF-Chefin: KI könnte rund 40 % der Jobs verändern",
-              "summary": "IWF-Chefin Kristalina Georgieva nannte KI in Bangkok einen „langsam rollenden Tsunami“, der langfristig etwa 40 % der Jobs aufwerten, abwerten oder ersetzen könnte. Die KI-Investitionswelle halte das Weltwachstum zugleich bei rund 3 %."
-            }
-          }
-        },
-        {
-          "id": "2026-10-13-microsoft-maia-gigawatt",
-          "headline": "Microsoft aims for gigawatt-scale Maia chips by 2027",
-          "summary": "Microsoft plans to scale Azure Maia AI chips to multi-gigawatt deployments from 2027 as its main inference silicon. Maia 200 already runs Copilot in several regions; Maia 300 is due in 2027 with higher tokens per megawatt.",
-          "tag": "Hardware",
-          "level": "beginner",
-          "pulseId": "pulse-2026-10-12-microsoft-maia-chips",
-          "source": {
-            "name": "The Decoder",
-            "url": "https://the-decoder.com/microsoft-plans-to-scale-its-own-maia-ai-chips-to-gigawatt-levels-by-2027/"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Microsoft will Maia-Chips bis 2027 auf Gigawatt-Skala",
-              "summary": "Microsoft plant, Azure-Maia-KI-Chips ab 2027 im Multi-Gigawatt-Maßstab als zentrale Inference-Hardware auszurollen. Maia 200 betreibt bereits Copilot in mehreren Regionen; Maia 300 soll 2027 folgen und mehr Tokens pro Megawatt liefern."
-            }
-          }
-        },
-        {
-          "id": "2026-10-13-fork-and-flush-agents",
-          "headline": "Clearing chat history helps agents escape idea traps",
-          "summary": "Microsoft Research finds long-running research agents get stuck refining similar solutions. Fork-and-Flush starts parallel branches that keep the workspace but wipe chat context, lifting normalized scores by about 66% on the same compute.",
-          "tag": "Autonomous Agent",
-          "level": "beginner",
-          "source": {
-            "name": "The Decoder",
-            "url": "https://the-decoder.com/clearing-chat-history-helps-ai-agents-find-better-solutions/"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Chat-Verlauf löschen hilft Agents aus Ideenfallen",
-              "summary": "Microsoft Research zeigt: Lange Research-Agents bleiben oft in ähnlichen Lösungspfaden stecken. Fork-and-Flush startet parallele Zweige, behält den Workspace, löscht den Chat-Kontext und hebt die Score bei gleichem Compute um etwa 66 %."
             }
           }
         }
