@@ -294,10 +294,10 @@ test("story row, path, briefing fallback, and teams copy stay in sync", () => {
   assert.equal(plain.length >= 3, true);
   const shown = plain.slice(0, 3).map((item) => item.headline);
   assert.deepEqual(shown, [
-    "Second German court makes Google answer for its AI",
-    "Anthropic sets aside 5% of its shares for public good",
-    "Four Gemini agents beat Minecraft with no human help"
+    "MiniMax's M3.1 Flash gets stronger at half the price",
+    "US civilian agencies must remove DeepSeek AI",
+    "Kling 4.0 makes 30-second AI videos with stereo sound"
   ]);
-  assert.equal(jargon.test(day.items[4].summary), true);
+  assert.equal(jargon.test(day.items[5].summary), true);
   assert.equal(jargon.test(day.items[6].summary), true);
 });
