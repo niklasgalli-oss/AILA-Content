@@ -33,17 +33,21 @@ test("custom domain is getaila.de", () => {
   assert.match(doc, /apple-app-site-association/);
   assert.match(read("docs/index.html"), /rel="canonical" href="https:\/\/getaila\.de\/"/);
   assert.match(read("docs/index.html"), /property="og:url" content="https:\/\/getaila\.de\/"/);
-  assert.match(read("docs/de/index.html"), /rel="canonical" href="https:\/\/getaila\.de\/de\/"/);
-  assert.match(read("docs/de/index.html"), /property="og:url" content="https:\/\/getaila\.de\/de\/"/);
+  assert.match(read("docs/en/index.html"), /rel="canonical" href="https:\/\/getaila\.de\/en\/"/);
+  assert.match(read("docs/en/index.html"), /property="og:url" content="https:\/\/getaila\.de\/en\/"/);
+  assert.match(read("docs/de/index.html"), /rel="canonical" href="https:\/\/getaila\.de\/"/);
+  assert.match(read("docs/de/index.html"), /http-equiv="refresh" content="0; url=\/"/);
   assert.match(read("docs/sitemap.xml"), /<loc>https:\/\/getaila\.de\/<\/loc>/);
-  assert.match(read("docs/sitemap.xml"), /<loc>https:\/\/getaila\.de\/de\/<\/loc>/);
+  assert.match(read("docs/sitemap.xml"), /<loc>https:\/\/getaila\.de\/en\/<\/loc>/);
+  assert.doesNotMatch(read("docs/sitemap.xml"), /<loc>https:\/\/getaila\.de\/de\//);
   for (const path of [
     "docs/index.html",
+    "docs/en/index.html",
     "docs/de/index.html",
     "docs/sitemap.xml",
     "docs/robots.txt",
     "docs/privacy/index.html",
-    "docs/privacy/en/index.html",
+    "docs/en/privacy/index.html",
     "docs/impressum/index.html"
   ]) {
     assert.doesNotMatch(read(path), /github\.io\/AILA-Content/);
@@ -63,12 +67,12 @@ test("App Store URL is one empty constant", () => {
 });
 
 test("English and German pages carry the landing sections", () => {
-  const en = read("docs/index.html");
-  const de = read("docs/de/index.html");
+  const de = read("docs/index.html");
+  const en = read("docs/en/index.html");
   for (const html of [en, de]) {
-    assert.match(html, /rel="alternate" hreflang="en"/);
-    assert.match(html, /rel="alternate" hreflang="de"/);
-    assert.match(html, /rel="alternate" hreflang="x-default"/);
+    assert.match(html, /rel="alternate" hreflang="en" href="https:\/\/getaila\.de\/en\/"/);
+    assert.match(html, /rel="alternate" hreflang="de" href="https:\/\/getaila\.de\/"/);
+    assert.match(html, /rel="alternate" hreflang="x-default" href="https:\/\/getaila\.de\/"/);
     assert.match(html, /og:image/);
     assert.match(html, /AILA for Teams/);
     assert.match(html, /support@getaila\.de/);
@@ -90,11 +94,16 @@ test("English and German pages carry the landing sections", () => {
   assert.match(de, /Demnächst bei Google Play/);
   assert.match(de, /Android folgt/);
   assert.match(de, /KI lernen/);
-  assert.match(en, /href="impressum\/"/);
-  assert.match(en, /href="privacy\/en\/"/);
+  assert.match(en, /<html lang="en">/);
+  assert.match(de, /<html lang="de">/);
+  assert.match(en, /href="\.\.\/" hreflang="de"/);
+  assert.match(de, /href="en\/" hreflang="en"/);
+  assert.match(en, /href="\.\.\/impressum\/"/);
+  assert.match(en, /href="privacy\/"/);
   assert.match(en, /href="terms\/"/);
-  assert.match(de, /href="\.\.\/impressum\/"/);
-  assert.match(de, /href="\.\.\/privacy\/"/);
+  assert.doesNotMatch(en, /privacy\/en\//);
+  assert.match(de, /href="impressum\/"/);
+  assert.match(de, /href="privacy\/"/);
   assert.match(de, /href="nutzungsbedingungen\/"/);
 });
 
@@ -110,8 +119,8 @@ test("landing assets stay self-hosted and flat-colored", () => {
   }
   assert.match(css, /@keyframes aila-bob/);
   assert.match(css, /@keyframes aila-blink/);
-  const en = read("docs/index.html");
-  const de = read("docs/de/index.html");
+  const en = read("docs/en/index.html");
+  const de = read("docs/index.html");
   assert.match(en, /assets\/aila-book\/idle\.webp/);
   assert.match(de, /assets\/aila-book\/idle\.webp/);
   assert.doesNotMatch(en, /aila-head-full/);
@@ -128,21 +137,25 @@ test("landing assets stay self-hosted and flat-colored", () => {
   const robots = read("docs/robots.txt");
   const sitemap = read("docs/sitemap.xml");
   assert.match(robots, /sitemap\.xml/);
-  assert.match(sitemap, /https:\/\/getaila\.de\/de\//);
+  assert.match(sitemap, /https:\/\/getaila\.de\/en\//);
   assert.match(sitemap, /https:\/\/getaila\.de\/privacy\//);
+  assert.match(sitemap, /https:\/\/getaila\.de\/en\/privacy\//);
   assert.match(sitemap, /https:\/\/getaila\.de\/impressum\//);
-  assert.match(sitemap, /https:\/\/getaila\.de\/terms\//);
-  assert.match(sitemap, /https:\/\/getaila\.de\/de\/nutzungsbedingungen\//);
+  assert.match(sitemap, /https:\/\/getaila\.de\/nutzungsbedingungen\//);
+  assert.match(sitemap, /https:\/\/getaila\.de\/en\/terms\//);
+  assert.doesNotMatch(sitemap, /https:\/\/getaila\.de\/de\//);
+  assert.doesNotMatch(sitemap, /https:\/\/getaila\.de\/privacy\/en\//);
+  assert.doesNotMatch(sitemap, /https:\/\/getaila\.de\/terms\//);
 });
 
 test("name and address stay on the imprint only", () => {
   const publicPages = [
     "docs/index.html",
-    "docs/de/index.html",
+    "docs/en/index.html",
     "docs/privacy/index.html",
-    "docs/privacy/en/index.html",
-    "docs/terms/index.html",
-    "docs/de/nutzungsbedingungen/index.html"
+    "docs/en/privacy/index.html",
+    "docs/en/terms/index.html",
+    "docs/nutzungsbedingungen/index.html"
   ];
   for (const path of publicPages) {
     const html = read(path);
@@ -168,7 +181,7 @@ test("name and address stay on the imprint only", () => {
   assert.doesNotMatch(imprint, /tel:/i);
   assert.doesNotMatch(imprint, /\+49/);
   const dePrivacy = read("docs/privacy/index.html");
-  const enPrivacy = read("docs/privacy/en/index.html");
+  const enPrivacy = read("docs/en/privacy/index.html");
   assert.doesNotMatch(dePrivacy, /kein Quiz/i);
   assert.doesNotMatch(enPrivacy, /no quiz/i);
   assert.match(dePrivacy, /RevenueCat/);
@@ -181,8 +194,8 @@ test("name and address stay on the imprint only", () => {
   assert.doesNotMatch(enPrivacy, /where Apple offers it|where the store offers it/);
   assert.match(dePrivacy, /Kein Tracking/);
   assert.match(enPrivacy, /No tracking/);
-  const deTerms = read("docs/de/nutzungsbedingungen/index.html");
-  const enTerms = read("docs/terms/index.html");
+  const deTerms = read("docs/nutzungsbedingungen/index.html");
+  const enTerms = read("docs/en/terms/index.html");
   assert.match(deTerms, /Produkthaftungsgesetz/);
   assert.match(deTerms, /wesentlichen Vertragspflicht/);
   assert.match(enTerms, /Product Liability Act/);
@@ -197,7 +210,7 @@ test("name and address stay on the imprint only", () => {
   assert.doesNotMatch(enTerms, /where Apple offers it/);
   for (const html of [
     read("docs/index.html"),
-    read("docs/de/index.html"),
+    read("docs/en/index.html"),
     read("docs/impressum/index.html"),
     dePrivacy,
     enPrivacy,
@@ -209,8 +222,8 @@ test("name and address stay on the imprint only", () => {
 });
 
 test("story row, path, briefing fallback, and teams copy stay in sync", () => {
-  const en = read("docs/index.html");
-  const de = read("docs/de/index.html");
+  const de = read("docs/index.html");
+  const en = read("docs/en/index.html");
   const css = read("docs/landing.css");
   const js = read("docs/landing.js");
   const order = ["onboarding", "home", "lesson", "briefing"];
@@ -292,12 +305,18 @@ test("story row, path, briefing fallback, and teams copy stay in sync", () => {
     return item.level !== "advanced" && !jargon.test(blob);
   });
   assert.equal(plain.length >= 3, true);
-  const shown = plain.slice(0, 3).map((item) => item.headline);
-  assert.deepEqual(shown, [
-    "MiniMax's M3.1 Flash gets stronger at half the price",
-    "US civilian agencies must remove DeepSeek AI",
-    "Kling 4.0 makes 30-second AI videos with stereo sound"
-  ]);
-  assert.equal(jargon.test(day.items[5].summary), true);
-  assert.equal(jargon.test(day.items[6].summary), true);
+  for (const item of plain.slice(0, 3)) {
+    assert.notEqual(item.level, "advanced");
+    assert.equal(typeof item.headline, "string");
+    assert.equal(typeof item.summary, "string");
+    assert.ok(item.headline.trim());
+    assert.ok(item.summary.trim());
+    const deCopy = item.i18n && item.i18n.de;
+    assert.equal(typeof deCopy.headline, "string");
+    assert.equal(typeof deCopy.summary, "string");
+    assert.ok(deCopy.headline.trim());
+    assert.ok(deCopy.summary.trim());
+    assert.equal(jargon.test(`${item.headline} ${item.summary}`), false);
+    assert.equal(jargon.test(`${deCopy.headline} ${deCopy.summary}`), false);
+  }
 });

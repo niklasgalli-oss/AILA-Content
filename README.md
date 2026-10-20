@@ -15,10 +15,10 @@ An AI news bot refreshes `pulse.json`. The published file keeps one timestamp pe
 The privacy policy and the legal notice (Impressum) are static pages in `docs/`, published with GitHub Pages from the `main` branch folder `/docs`. `pulse.json` stays at the repository root. The app keeps loading it from the raw URL above.
 
 - [Datenschutzerklärung](https://getaila.de/privacy/) (German)
-- [Privacy policy](https://getaila.de/privacy/en/) (English)
+- [Privacy policy](https://getaila.de/en/privacy/) (English)
 - [Impressum / Legal notice](https://getaila.de/impressum/)
-- [Nutzungsbedingungen](https://getaila.de/de/nutzungsbedingungen/) (German)
-- [Terms of Use](https://getaila.de/terms/) (English)
+- [Nutzungsbedingungen](https://getaila.de/nutzungsbedingungen/) (German)
+- [Terms of Use](https://getaila.de/en/terms/) (English)
 
 ## Item shape
 

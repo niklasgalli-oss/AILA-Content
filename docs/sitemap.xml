@@ -2,30 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://getaila.de/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
-    <loc>https://getaila.de/de/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://getaila.de/en/</loc>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://getaila.de/privacy/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
-    <loc>https://getaila.de/privacy/en/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://getaila.de/en/privacy/</loc>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://getaila.de/impressum/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
-    <loc>https://getaila.de/terms/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://getaila.de/nutzungsbedingungen/</loc>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
-    <loc>https://getaila.de/de/nutzungsbedingungen/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://getaila.de/en/terms/</loc>
+    <lastmod>2026-10-20</lastmod>
   </url>
 </urlset>
