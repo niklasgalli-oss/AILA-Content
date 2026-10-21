@@ -1,7 +1,126 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-20T04:47:57+02:00",
+  "updatedAt": "2026-10-21T04:42:15+02:00",
   "days": [
+    {
+      "date": "2026-10-21",
+      "items": [
+        {
+          "id": "2026-10-21-mistral-voxtral-3",
+          "headline": "Mistral ships a full voice agent kit",
+          "summary": "Voxtral 3 bundles transcription in 50+ languages, expressive speech output and an SDK that turns them into phone or web voice agents, hosted in the EU or on your own servers.",
+          "source": {
+            "name": "Mistral AI",
+            "url": "https://mistral.ai/news/voxtral-3/"
+          },
+          "tag": "Model Release",
+          "i18n": {
+            "de": {
+              "headline": "Mistral liefert Baukasten für Voice Agents",
+              "summary": "Voxtral 3 kombiniert Transkription in über 50 Sprachen, ausdrucksstarke Sprachausgabe und ein SDK für Voice Agents am Telefon oder im Web, wahlweise in der EU gehostet oder auf eigenen Servern."
+            }
+          }
+        },
+        {
+          "id": "2026-10-21-elevenlabs-realtime",
+          "headline": "ElevenLabs voice agents now reply in about half a second",
+          "summary": "Eleven Realtime is a new pair of speech-to-speech models: Mini for natural chats and tutors, Max for tasks like customer support. Developers on OpenAI's Realtime API can switch by changing the endpoint.",
+          "source": {
+            "name": "ElevenLabs",
+            "url": "https://elevenlabs.io/realtime"
+          },
+          "tag": "Model Release",
+          "i18n": {
+            "de": {
+              "headline": "ElevenLabs-Agents antworten in rund 0,6 Sekunden",
+              "summary": "Eleven Realtime sind zwei neue speech-to-speech-Modelle: Mini für lockere Gespräche und Tutoren, Max für Aufgaben wie Kundensupport. Wer OpenAIs Realtime API nutzt, wechselt durch Tausch des Endpoints."
+            }
+          }
+        },
+        {
+          "id": "2026-10-21-chatgpt-locked-chats",
+          "headline": "ChatGPT can now hide chats behind a PIN",
+          "summary": "A new locked chats feature keeps chosen conversations out of your history and search behind a PIN or Face ID. It is rolling out on all plans, but it is not end-to-end encryption.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/20/chatgpt-now-lets-you-lock-your-chats/"
+          },
+          "tag": "Tools",
+          "i18n": {
+            "de": {
+              "headline": "ChatGPT sperrt Chats jetzt per PIN",
+              "summary": "Mit Locked Chats verschwinden ausgewählte Unterhaltungen hinter PIN oder Face ID aus Verlauf und Suche. Die Funktion kommt für alle Tarife, ist aber keine Ende-zu-Ende-Verschlüsselung."
+            }
+          }
+        },
+        {
+          "id": "2026-10-21-deepseek-deepinfer",
+          "headline": "DeepSeek opens up the engine behind its cheap model",
+          "summary": "DeepSeek released DeepInfer, the inference software that serves its V4.1-Flash model, under the Apache 2.0 license. Parts of the full serving setup, like the KV cache system, stay private.",
+          "source": {
+            "name": "GitHub (DeepSeek)",
+            "url": "https://github.com/deepseek-ai/DeepInfer"
+          },
+          "tag": "Framework",
+          "level": "advanced",
+          "i18n": {
+            "de": {
+              "headline": "DeepSeek legt seine Inference-Software offen",
+              "summary": "DeepSeek hat DeepInfer, die inference-Software hinter V4.1-Flash, unter Apache 2.0 veröffentlicht. Teile des kompletten Serving-Setups wie das KV-cache-System bleiben intern."
+            }
+          }
+        },
+        {
+          "id": "2026-10-21-google-torchtpu",
+          "headline": "PyTorch code now runs natively on Google TPUs",
+          "summary": "Google open-sourced TorchTPU, built with Meta, so existing PyTorch projects can move to TPU chips with minimal changes. It is a direct challenge to Nvidia's grip on developers.",
+          "source": {
+            "name": "Google Cloud",
+            "url": "https://cloud.google.com/blog/topics/ai-infrastructure/torchtpu-is-now-open-source-run-native-pytorch-on-tpus"
+          },
+          "tag": "Hardware",
+          "level": "advanced",
+          "i18n": {
+            "de": {
+              "headline": "PyTorch läuft jetzt direkt auf Google-TPUs",
+              "summary": "Google hat zusammen mit Meta TorchTPU als Open Source veröffentlicht: Bestehende PyTorch-Projekte laufen damit fast ohne Änderungen auf TPU-Chips. Ein klarer Angriff auf Nvidias Stellung bei Entwicklern."
+            }
+          }
+        },
+        {
+          "id": "2026-10-21-openai-buys-orchestra-bio",
+          "headline": "OpenAI buys a biotech agent startup",
+          "summary": "OpenAI acquired Orchestra Bio, whose AI agents help drug developers track studies and spot delays. The team joins Rosalind, OpenAI's life sciences platform; the price was not disclosed.",
+          "source": {
+            "name": "OpenAI",
+            "url": "https://openai.com/index/openai-to-acquire-orchestra-bio/"
+          },
+          "tag": "Autonomous Agent",
+          "i18n": {
+            "de": {
+              "headline": "OpenAI kauft Biotech-Startup für AI Agents",
+              "summary": "OpenAI übernimmt Orchestra Bio, dessen AI Agents Pharmateams helfen, Studien zu verfolgen und Verzögerungen zu erkennen. Das Team wechselt zu Rosalind, OpenAIs Life-Sciences-Plattform; der Preis bleibt geheim."
+            }
+          }
+        },
+        {
+          "id": "2026-10-21-otter-raises-320m",
+          "headline": "Otter gets $320M to grow its meeting assistant",
+          "summary": "The AI note-taker Otter secured $320 million from General Catalyst, structured as repayable financing rather than equity. The money goes into enterprise sales, international growth and product work.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/20/otter-ai-raises-320-million-from-general-catalysts-growth-fund-for-its-meeting-tool/"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Otter holt 320 Mio. Dollar für Meeting-KI",
+              "summary": "Der KI-Protokollant Otter bekommt 320 Millionen Dollar von General Catalyst, als rückzahlbare Finanzierung statt Beteiligung. Das Geld fließt in Firmenkunden, Internationalisierung und das Produkt."
+            }
+          }
+        }
+      ]
+    },
     {
       "date": "2026-10-20",
       "items": [
@@ -746,133 +865,6 @@
             "de": {
               "headline": "Fish Audio Drama 3 lenkt Stimme per Klartext-Regie",
               "summary": "Fish Audio veröffentlicht Drama 3: Text-to-Speech mit Klartext-Regie in Klammern. Es führt Artificial Analysis in Pronunciation Robustness mit 93,2 %, spricht 83 Sprachen und kommt als Open Weights unter Community License."
-            }
-          }
-        }
-      ]
-    },
-    {
-      "date": "2026-10-14",
-      "items": [
-        {
-          "id": "2026-10-14-gemini-4-argon-live",
-          "headline": "Gemini 4 Argon is live for developers and subscribers",
-          "summary": "Google opened Gemini 4 Argon worldwide via the Gemini API, Antigravity, the Gemini app, and AI Mode in Search for Pro and Ultra. It targets hard multi-step work with a 1M unified token limit and intro pricing of $2/$10 per million tokens.",
-          "tag": "Model Release",
-          "priority": "breaking",
-          "level": "beginner",
-          "pulseId": "pulse-2026-10-13-gemini-4-argon-live",
-          "source": {
-            "name": "Google",
-            "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Gemini 4 Argon ist live für Entwickler und Abonnenten",
-              "summary": "Google hat Gemini 4 Argon weltweit freigeschaltet: API, Antigravity, Gemini-App und AI Mode in Search für Pro und Ultra. Es zielt auf schwere Mehrschritt-Arbeit, mit 1M Token-Limit und Einführungspreis von 2/10 Dollar pro Million Tokens."
-            }
-          }
-        },
-        {
-          "id": "2026-10-14-liquid-lfm25-on-device",
-          "headline": "Liquid AI ships a 24B on-device agent model",
-          "summary": "LFM2.5-24B-A2B is open-weight with 24B parameters but only 2B active per token and a 131K context window, with day-one support for llama cpp, MLX, and vLLM. Liquid says it matches larger MoEs on several agent and tool-use benchmarks.",
-          "tag": "Model Release",
-          "level": "beginner",
-          "source": {
-            "name": "Liquid AI",
-            "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Liquid AI liefert 24B-Modell für Agents auf dem Gerät",
-              "summary": "LFM2.5-24B-A2B ist Open-Weight mit 24B Parametern, aber nur 2B aktiv pro Token, 131K Context Window und Support für llama cpp, MLX und vLLM. Laut Liquid hält es bei mehreren Agent- und Tool-Benchmarks mit größeren MoEs mit."
-            }
-          }
-        },
-        {
-          "id": "2026-10-14-claude-dashboards-motion",
-          "headline": "Claude builds live dashboards and animated explainers",
-          "summary": "Anthropic put Claude Dashboards and Claude Motion into beta: live dashboards from company data, plus editable animation code you can export as MP4. Docs, Slides, and Design leave beta on every plan, including Free.",
-          "tag": "Tools",
-          "level": "beginner",
-          "pulseId": "pulse-2026-10-13-claude-dashboards-motion",
-          "source": {
-            "name": "Anthropic",
-            "url": "https://claude.com/resources/articles/dashboards-and-motion"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Claude baut Live-Dashboards und animierte Erklärer",
-              "summary": "Anthropic startet Claude Dashboards und Claude Motion in der Beta: Live-Dashboards aus Firmendaten und editierbarer Animations-Code als MP4. Docs, Slides und Design sind aus der Beta und auf jedem Plan inklusive Free."
-            }
-          }
-        },
-        {
-          "id": "2026-10-14-uk-binding-ai-rules",
-          "headline": "OpenAI and Anthropic ask the UK for binding AI rules",
-          "summary": "At a UK parliamentary hearing, Anthropic and OpenAI said voluntary safety pledges are not enough and backed a statutory framework, starting with mandatory incident reporting. Google DeepMind and Meta declined to endorse new legislation.",
-          "tag": "Framework",
-          "level": "beginner",
-          "source": {
-            "name": "WIRED",
-            "url": "https://www.wired.com/story/openai-and-anthropic-tell-british-lawmakers-regulate-us/"
-          },
-          "i18n": {
-            "de": {
-              "headline": "OpenAI und Anthropic fordern verbindliche KI-Regeln in UK",
-              "summary": "Vor dem britischen Parlament sagten Anthropic und OpenAI, freiwillige Safety-Zusagen reichten nicht, und unterstützten gesetzliche Regeln – beginnend mit Meldepflichten für Vorfälle. Google DeepMind und Meta wollten keine neue Gesetzgebung."
-            }
-          }
-        },
-        {
-          "id": "2026-10-14-play-private-vibe-apps",
-          "headline": "Google Play runs private AI-built apps on your phone",
-          "summary": "Android users in the US (18+) can vibe-code an app in Google AI Studio and install it via Play for personal use only. It stays off search and listings; later, trusted sharing and a path to a public listing after safety review are planned.",
-          "tag": "Tools",
-          "level": "beginner",
-          "source": {
-            "name": "TechCrunch",
-            "url": "https://techcrunch.com/2026/10/13/google-play-now-supports-private-vibe-coded-apps-built-just-for-you/"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Google Play führt private KI-Apps nur für dich aus",
-              "summary": "Android-Nutzer in den USA (18+) können eine App in Google AI Studio vibe-coden und über Play nur für sich installieren. Sie erscheint nicht in Suche oder Listen; später sollen Teilen und ein Weg zum öffentlichen Listing folgen."
-            }
-          }
-        },
-        {
-          "id": "2026-10-14-anthropic-q3-ipo-prep",
-          "headline": "Anthropic to share Q3 numbers ahead of a possible IPO",
-          "summary": "CNBC reports Anthropic will privately disclose Q3 financials to institutional investors this week while preparing what could be a record IPO. The move comes after OpenAI revenue accounting confusion rattled chip stocks last week.",
-          "tag": "Framework",
-          "level": "beginner",
-          "source": {
-            "name": "CNBC",
-            "url": "https://www.cnbc.com/2026/10/13/anthropic-q3-financials-ipo.html"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Anthropic zeigt Q3-Zahlen vor möglichem Börsengang",
-              "summary": "Laut CNBC legt Anthropic diese Woche Q3-Zahlen vertraulich institutionellen Investoren vor und bereitet einen möglichen Rekord-IPO vor. Der Schritt folgt auf Verwirrung um OpenAI-Umsatzzahlen, die zuletzt Chip-Aktien belastet hatten."
-            }
-          }
-        },
-        {
-          "id": "2026-10-14-apple-openai-hiring-records",
-          "headline": "Judge speeds Apple access to OpenAI hiring files",
-          "summary": "In Apple's trade-secrets suit, a US judge ordered OpenAI to turn over interview materials for ex-Apple hires in hardware and robotics on an expedited timeline. Broader requests for OpenAI R&D details were denied for now.",
-          "tag": "Hardware",
-          "level": "beginner",
-          "source": {
-            "name": "TechCrunch",
-            "url": "https://techcrunch.com/2026/10/13/judge-orders-openai-to-turn-over-hiring-records-in-apple-trade-secrets-case/"
-          },
-          "i18n": {
-            "de": {
-              "headline": "Richter gibt Apple schneller OpenAI-Bewerbungsakten",
-              "summary": "Im Trade-Secrets-Prozess gegen OpenAI ordnete ein US-Richter an, Interview-Unterlagen zu Ex-Apple-Mitarbeitern in Hardware und Robotik beschleunigt herauszugeben. Breitere Anfragen zu OpenAI-Forschung wurden vorerst abgelehnt."
             }
           }
         }
