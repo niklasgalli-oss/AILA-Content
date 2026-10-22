@@ -1,31 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://getaila.de/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://sapaude.de/</loc>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
-    <loc>https://getaila.de/en/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://sapaude.de/en/</loc>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
-    <loc>https://getaila.de/privacy/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://sapaude.de/privacy/</loc>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
-    <loc>https://getaila.de/en/privacy/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://sapaude.de/en/privacy/</loc>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
-    <loc>https://getaila.de/impressum/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://sapaude.de/impressum/</loc>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
-    <loc>https://getaila.de/nutzungsbedingungen/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://sapaude.de/nutzungsbedingungen/</loc>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
-    <loc>https://getaila.de/en/terms/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://sapaude.de/en/terms/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://sapaude.de/support/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://sapaude.de/en/support/</loc>
+    <lastmod>2026-10-22</lastmod>
   </url>
 </urlset>

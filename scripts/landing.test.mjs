@@ -19,9 +19,9 @@ function walk(dir, found = []) {
   return found;
 }
 
-test("custom domain is getaila.de", () => {
+test("custom domain is sapaude.de", () => {
   assert.equal(existsSync(join(root, "CNAME")), false);
-  assert.equal(read("docs/CNAME").trim(), "getaila.de");
+  assert.equal(read("docs/CNAME").trim(), "sapaude.de");
   const doc = read("docs/landing-domain.md");
   assert.match(doc, /185\.199\.108\.153/);
   assert.match(doc, /185\.199\.111\.153/);
@@ -31,15 +31,15 @@ test("custom domain is getaila.de", () => {
   assert.match(doc, /Enforce HTTPS/);
   assert.match(doc, /MX/);
   assert.match(doc, /apple-app-site-association/);
-  assert.match(read("docs/index.html"), /rel="canonical" href="https:\/\/getaila\.de\/"/);
-  assert.match(read("docs/index.html"), /property="og:url" content="https:\/\/getaila\.de\/"/);
-  assert.match(read("docs/en/index.html"), /rel="canonical" href="https:\/\/getaila\.de\/en\/"/);
-  assert.match(read("docs/en/index.html"), /property="og:url" content="https:\/\/getaila\.de\/en\/"/);
-  assert.match(read("docs/de/index.html"), /rel="canonical" href="https:\/\/getaila\.de\/"/);
+  assert.match(read("docs/index.html"), /rel="canonical" href="https:\/\/sapaude\.de\/"/);
+  assert.match(read("docs/index.html"), /property="og:url" content="https:\/\/sapaude\.de\/"/);
+  assert.match(read("docs/en/index.html"), /rel="canonical" href="https:\/\/sapaude\.de\/en\/"/);
+  assert.match(read("docs/en/index.html"), /property="og:url" content="https:\/\/sapaude\.de\/en\/"/);
+  assert.match(read("docs/de/index.html"), /rel="canonical" href="https:\/\/sapaude\.de\/"/);
   assert.match(read("docs/de/index.html"), /http-equiv="refresh" content="0; url=\/"/);
-  assert.match(read("docs/sitemap.xml"), /<loc>https:\/\/getaila\.de\/<\/loc>/);
-  assert.match(read("docs/sitemap.xml"), /<loc>https:\/\/getaila\.de\/en\/<\/loc>/);
-  assert.doesNotMatch(read("docs/sitemap.xml"), /<loc>https:\/\/getaila\.de\/de\//);
+  assert.match(read("docs/sitemap.xml"), /<loc>https:\/\/sapaude\.de\/<\/loc>/);
+  assert.match(read("docs/sitemap.xml"), /<loc>https:\/\/sapaude\.de\/en\/<\/loc>/);
+  assert.doesNotMatch(read("docs/sitemap.xml"), /<loc>https:\/\/sapaude\.de\/de\//);
   for (const path of [
     "docs/index.html",
     "docs/en/index.html",
@@ -70,13 +70,13 @@ test("English and German pages carry the landing sections", () => {
   const de = read("docs/index.html");
   const en = read("docs/en/index.html");
   for (const html of [en, de]) {
-    assert.match(html, /rel="alternate" hreflang="en" href="https:\/\/getaila\.de\/en\/"/);
-    assert.match(html, /rel="alternate" hreflang="de" href="https:\/\/getaila\.de\/"/);
-    assert.match(html, /rel="alternate" hreflang="x-default" href="https:\/\/getaila\.de\/"/);
+    assert.match(html, /rel="alternate" hreflang="en" href="https:\/\/sapaude\.de\/en\/"/);
+    assert.match(html, /rel="alternate" hreflang="de" href="https:\/\/sapaude\.de\/"/);
+    assert.match(html, /rel="alternate" hreflang="x-default" href="https:\/\/sapaude\.de\/"/);
     assert.match(html, /og:image/);
-    assert.match(html, /AILA for Teams/);
-    assert.match(html, /support@getaila\.de/);
-    assert.doesNotMatch(html, /niklas\.galli@getaila\.de/);
+    assert.match(html, /Sapaude for Teams/);
+    assert.match(html, /support@sapaude\.de/);
+    assert.doesNotMatch(html, /niklas\.galli@sapaude\.de/);
     assert.doesNotMatch(html, /Niklas Galli/);
     assert.doesNotMatch(html, /Neuburger/);
     assert.doesNotMatch(html, /Karlshuld/);
@@ -137,15 +137,15 @@ test("landing assets stay self-hosted and flat-colored", () => {
   const robots = read("docs/robots.txt");
   const sitemap = read("docs/sitemap.xml");
   assert.match(robots, /sitemap\.xml/);
-  assert.match(sitemap, /https:\/\/getaila\.de\/en\//);
-  assert.match(sitemap, /https:\/\/getaila\.de\/privacy\//);
-  assert.match(sitemap, /https:\/\/getaila\.de\/en\/privacy\//);
-  assert.match(sitemap, /https:\/\/getaila\.de\/impressum\//);
-  assert.match(sitemap, /https:\/\/getaila\.de\/nutzungsbedingungen\//);
-  assert.match(sitemap, /https:\/\/getaila\.de\/en\/terms\//);
-  assert.doesNotMatch(sitemap, /https:\/\/getaila\.de\/de\//);
-  assert.doesNotMatch(sitemap, /https:\/\/getaila\.de\/privacy\/en\//);
-  assert.doesNotMatch(sitemap, /https:\/\/getaila\.de\/terms\//);
+  assert.match(sitemap, /https:\/\/sapaude\.de\/en\//);
+  assert.match(sitemap, /https:\/\/sapaude\.de\/privacy\//);
+  assert.match(sitemap, /https:\/\/sapaude\.de\/en\/privacy\//);
+  assert.match(sitemap, /https:\/\/sapaude\.de\/impressum\//);
+  assert.match(sitemap, /https:\/\/sapaude\.de\/nutzungsbedingungen\//);
+  assert.match(sitemap, /https:\/\/sapaude\.de\/en\/terms\//);
+  assert.doesNotMatch(sitemap, /https:\/\/sapaude\.de\/de\//);
+  assert.doesNotMatch(sitemap, /https:\/\/sapaude\.de\/privacy\/en\//);
+  assert.doesNotMatch(sitemap, /https:\/\/sapaude\.de\/terms\//);
 });
 
 test("name and address stay on the imprint only", () => {
@@ -155,7 +155,9 @@ test("name and address stay on the imprint only", () => {
     "docs/privacy/index.html",
     "docs/en/privacy/index.html",
     "docs/en/terms/index.html",
-    "docs/nutzungsbedingungen/index.html"
+    "docs/nutzungsbedingungen/index.html",
+    "docs/support/index.html",
+    "docs/en/support/index.html"
   ];
   for (const path of publicPages) {
     const html = read(path);
@@ -163,13 +165,13 @@ test("name and address stay on the imprint only", () => {
     assert.doesNotMatch(html, /Neuburger/, path);
     assert.doesNotMatch(html, /Karlshuld/, path);
     assert.doesNotMatch(html, /niklas\.galli@/, path);
-    assert.match(html, /support@getaila\.de/, path);
+    assert.match(html, /support@sapaude\.de/, path);
   }
   const imprint = read("docs/impressum/index.html");
   assert.match(imprint, /Niklas Galli/);
   assert.match(imprint, /Neuburger Straße 73a/);
   assert.match(imprint, /86668 Karlshuld/);
-  assert.match(imprint, /support@getaila\.de/);
+  assert.match(imprint, /support@sapaude\.de/);
   assert.match(imprint, /innerhalb von 48 Stunden/);
   assert.match(imprint, /within 48 hours/);
   assert.match(imprint, /39,99 €/);
@@ -212,6 +214,8 @@ test("name and address stay on the imprint only", () => {
     read("docs/index.html"),
     read("docs/en/index.html"),
     read("docs/impressum/index.html"),
+    read("docs/support/index.html"),
+    read("docs/en/support/index.html"),
     dePrivacy,
     enPrivacy,
     deTerms,
@@ -239,7 +243,7 @@ test("story row, path, briefing fallback, and teams copy stay in sync", () => {
     assert.doesNotMatch(html, /Vier Fragen|Four questions/);
     assert.match(html, /class="prose"/);
     assert.match(html, /class="soon-badge"/);
-    assert.match(html, /mailto:support@getaila\.de\?subject=/);
+    assert.match(html, /mailto:support@sapaude\.de\?subject=/);
     assert.match(html, /Basics/);
     assert.match(html, /Core/);
     assert.match(html, /Depth/);
@@ -247,8 +251,8 @@ test("story row, path, briefing fallback, and teams copy stay in sync", () => {
     assert.doesNotMatch(html, /€|\$\s?\d/);
   }
 
-  assert.match(de, /So lernst du mit AILA/);
-  assert.match(en, /How you learn with AILA/);
+  assert.match(de, /So lernst du mit Sapaude/);
+  assert.match(en, /How you learn with Sapaude/);
   assert.match(de, /Drei Level\. Du startest dort, wo du stehst\./);
   assert.match(en, /Three levels\. You start where you stand\./);
   assert.doesNotMatch(de, /Ein Bild des Pfads|merkt es im Raum/);
@@ -318,5 +322,66 @@ test("story row, path, briefing fallback, and teams copy stay in sync", () => {
     assert.ok(deCopy.summary.trim());
     assert.equal(jargon.test(`${item.headline} ${item.summary}`), false);
     assert.equal(jargon.test(`${deCopy.headline} ${deCopy.summary}`), false);
+  }
+});
+
+test("sapaude wordmark, claims, and app mismatches", () => {
+  const de = read("docs/index.html");
+  const en = read("docs/en/index.html");
+  const css = read("docs/landing.css");
+  const legal = read("docs/styles.css");
+  assert.match(de, /class="hero-claim">Veni, vidi, KI\./);
+  assert.match(en, /class="hero-claim">Be brave\. Get smart\./);
+  assert.match(de, /class="footer-claim">Veni, vidi, KI\./);
+  assert.match(en, /class="footer-claim">Be brave\. Get smart\./);
+  assert.match(de, /content="Veni, vidi, KI\./);
+  assert.match(en, /content="Be brave\. Get smart\./);
+  assert.doesNotMatch(de, /Be brave/);
+  assert.doesNotMatch(en, /Veni, vidi/);
+  assert.doesNotMatch(de, /Sapere aude/);
+  assert.doesNotMatch(en, /Sapere aude/);
+  assert.match(de, /aria-label="sapaude\."/);
+  assert.match(en, /aria-label="sapaude\."/);
+  assert.match(de, /ich bin Sapi/);
+  assert.match(en, /I'm Sapi/);
+  assert.match(css, /#3C9EC4/);
+  assert.match(legal, /#3C9EC4/);
+  assert.match(read("docs/favicon.svg"), /#F6F1E8/);
+  assert.match(read("docs/favicon.svg"), /#3C9EC4/);
+  assert.match(de, /Basics 02<\/span><span class="cover-name">Tokens/);
+  assert.match(en, /Basics 02<\/span><span class="cover-name">Tokens/);
+  assert.doesNotMatch(de, /Prompts/);
+  assert.doesNotMatch(en, /Prompts/);
+  assert.match(de, /was ein Token ist/);
+  assert.match(en, /what a token is/);
+  assert.match(de, /Hören im Briefing ist Sapaude Pro/);
+  assert.match(en, /Listening to the briefing is part of Sapaude Pro/);
+  assert.doesNotMatch(de, /Briefing bleibt frei/);
+  assert.doesNotMatch(en, /Briefing stays free/);
+  assert.match(de, /data-briefing-date datetime="2026-10-22"/);
+  assert.match(en, /data-briefing-date datetime="2026-10-22"/);
+  assert.match(read("docs/landing.js"), /Europe\/Berlin/);
+  assert.match(read("docs/support/index.html"), /Veni, vidi, KI\./);
+  assert.match(read("docs/en/support/index.html"), /Be brave\. Get smart\./);
+  assert.match(read("docs/404.html"), /Diese Seite gibt es nicht/);
+  assert.match(read("docs/404.html"), /Be brave\. Get smart\./);
+  assert.match(read("docs/sitemap.xml"), /https:\/\/sapaude\.de\/support\//);
+  assert.match(read("docs/sitemap.xml"), /https:\/\/sapaude\.de\/en\/support\//);
+
+  function visible(html) {
+    const stripped = html.replace(/https?:\/\/\S*AILA-Content\S*/g, "");
+    const bits = [...stripped.matchAll(/(?:content|aria-label)="([^"]*)"/g)].map((m) => m[1]);
+    const titles = [...stripped.matchAll(/<title>([^<]*)<\/title>/g)].map((m) => m[1]);
+    const body = stripped
+      .replace(/<script[\s\S]*?<\/script>/gi, " ")
+      .replace(/<style[\s\S]*?<\/style>/gi, " ")
+      .replace(/<[^>]+>/g, " ");
+    return [body, ...bits, ...titles].join("\n");
+  }
+  const pages = walk(join(root, "docs")).filter((path) => path.endsWith(".html"));
+  assert.ok(pages.length >= 12);
+  for (const path of pages) {
+    const rel = path.slice(root.length + 1);
+    assert.doesNotMatch(visible(read(rel)), /\bAILA\b|\bAila\b|getaila/, rel);
   }
 });

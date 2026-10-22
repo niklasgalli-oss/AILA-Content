@@ -11,6 +11,15 @@
 
 @font-face {
   font-family: "Fraunces";
+  src: url("assets/fraunces-latin-500-italic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Fraunces";
   src: url("assets/fraunces-latin-600.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
@@ -110,12 +119,32 @@ body {
 
 .brand {
   font-family: var(--serif);
-  font-size: 1.45rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  font-size: 1.65rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
   line-height: 1;
   text-decoration: none;
   color: var(--text);
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.brand-dot {
+  display: inline-block;
+  width: 0.2em;
+  height: 0.2em;
+  margin-left: 0.09em;
+  background: #3C9EC4;
+  flex: none;
+}
+
+.claim {
+  margin: 0 0 0.85rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--muted);
 }
 
 .site-nav {
@@ -180,6 +209,7 @@ main li {
 
 main .lang,
 main .meta,
+main .claim,
 main address {
   text-align: start;
   hyphens: manual;

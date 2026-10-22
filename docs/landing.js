@@ -1,5 +1,5 @@
 /**
- * AILA landing config.
+ * Sapaude landing config.
  *
  * AILA_APP_STORE_URL is the only App Store link. Leave it as "" until the
  * listing exists. An empty value keeps the coming-soon lines: English says
@@ -158,12 +158,35 @@ function renderItem(item, locale) {
   return li;
 }
 
+async function berlinTodayIso() {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/Berlin",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).format(new Date());
+}
+
+async function freshenSampleDate(root, locale) {
+  if (!root || root.dataset.briefingState === "live") return;
+  const time = root.querySelector("[data-briefing-date]");
+  if (!time) return;
+  const today = await berlinTodayIso();
+  const iso = (time.dateTime || "").slice(0, 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(today) || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return;
+  if (iso >= today) return;
+  time.dateTime = today;
+  const label = formatDay(today, locale);
+  if (label) time.textContent = label;
+}
+
 async function loadBriefing() {
   const root = document.querySelector("[data-briefing]");
   if (!root) return;
   const list = root.querySelector("[data-briefing-list]");
   if (!list) return;
   const locale = root.dataset.locale === "de" ? "de" : "en";
+  await freshenSampleDate(root, locale);
   try {
     const response = await fetch(AILA_BRIEFING_URL, {
       credentials: "omit",

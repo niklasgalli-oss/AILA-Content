@@ -1,6 +1,6 @@
-# AILA-Content
+# Sapaude
 
-Content feed for [AILA](https://github.com/niklasgalli-oss/AILA-Development), an Expo / React Native app for learning about AI. This repository holds the stories the app loads. The app code lives in the private app repo.
+Content feed for [Sapaude](https://sapaude.de/), an Expo / React Native app for learning about AI. This repository holds the stories the app loads. The app code lives in the private app repo. The feed URLs below keep the repository path `AILA-Content`.
 
 The app fetches its feeds at runtime. The daily pulse is:
 
@@ -14,11 +14,13 @@ An AI news bot refreshes `pulse.json`. The published file keeps one timestamp pe
 
 The privacy policy and the legal notice (Impressum) are static pages in `docs/`, published with GitHub Pages from the `main` branch folder `/docs`. `pulse.json` stays at the repository root. The app keeps loading it from the raw URL above.
 
-- [Datenschutzerklärung](https://getaila.de/privacy/) (German)
-- [Privacy policy](https://getaila.de/en/privacy/) (English)
-- [Impressum / Legal notice](https://getaila.de/impressum/)
-- [Nutzungsbedingungen](https://getaila.de/nutzungsbedingungen/) (German)
-- [Terms of Use](https://getaila.de/en/terms/) (English)
+- [Datenschutzerklärung](https://sapaude.de/privacy/) (German)
+- [Privacy policy](https://sapaude.de/en/privacy/) (English)
+- [Impressum / Legal notice](https://sapaude.de/impressum/)
+- [Nutzungsbedingungen](https://sapaude.de/nutzungsbedingungen/) (German)
+- [Terms of Use](https://sapaude.de/en/terms/) (English)
+- [Support](https://sapaude.de/support/) (German)
+- [Support](https://sapaude.de/en/support/) (English)
 
 ## Item shape
 
