@@ -378,8 +378,8 @@
       "items": [
         {
           "id": "2026-10-19-german-courts-google-ai-liable",
-          "headline": "Second German court makes Google answer for its AI",
-          "summary": "A court in Aachen ordered Google to stop AI search answers that pinned another man's criminal case on a doctor. Like Munich before it, the court treats AI answers as Google's own statements, not mere links.",
+          "headline": "Aachen court stops a Google AI answer for now",
+          "summary": "In a preliminary, not final injunction, a court in Aachen ordered Google to stop an AI search answer that wrongly linked a doctor to someone else's criminal case. Like an earlier Munich ruling, it treats such answers as Google's statements.",
           "source": {
             "name": "The Decoder",
             "url": "https://the-decoder.com/two-german-courts-now-hold-google-liable-for-what-its-ai-overviews-say/"
@@ -388,8 +388,8 @@
           "pulseId": "pulse-2026-10-18-google-ai-answers-liable",
           "i18n": {
             "de": {
-              "headline": "Zweites deutsches Gericht: Google haftet für KI-Antworten",
-              "summary": "Das Landgericht Aachen untersagt Google per Eilverfügung KI-Suchantworten, die einem Arzt das Strafverfahren eines anderen Mannes zuschrieben. Wie zuvor München wertet es KI-Antworten als eigene Aussagen von Google."
+              "headline": "Gericht stoppt vorläufig Googles KI-Antwort",
+              "summary": "Per nicht rechtskräftiger Eilverfügung untersagt ein Gericht in Aachen Google eine KI-Antwort, die einen Arzt fälschlich mit dem Strafverfahren einer anderen Person verband. Wie zuvor München wertet es solche Antworten als Googles Aussagen."
             }
           }
         },
