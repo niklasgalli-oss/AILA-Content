@@ -1,4 +1,4 @@
-/* AILA landing. App paper and ink, Fraunces headlines, Source Sans 3 for UI. */
+/* Sapaude landing. App paper and ink, Fraunces headlines, Source Sans 3 for UI. */
 
 @font-face {
   font-family: "Fraunces";
@@ -170,16 +170,31 @@ body {
 .brand {
   color: var(--text);
   text-decoration: none;
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 1.28rem;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.65rem;
   letter-spacing: -0.03em;
   line-height: 1;
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
   min-height: 44px;
   padding: 0;
   flex: none;
+}
+
+.brand-dot {
+  display: inline-block;
+  width: 0.2em;
+  height: 0.2em;
+  margin-left: 0.09em;
+  background: #3C9EC4;
+  flex: none;
+}
+
+.brand-inline {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -0.03em;
 }
 
 .mast-tools {
@@ -1208,12 +1223,23 @@ summary:focus-visible {
   font-size: 0.95rem;
 }
 
+.footer-claim {
+  margin: 1.35rem 0 0;
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  color: var(--muted);
+}
+
 .wordmark {
-  margin: 1.5rem 0 0;
+  margin: 0.85rem 0 0;
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(4.2rem, 18vw, 10.5rem);
-  line-height: 0.8;
+  font-size: clamp(3.1rem, 13.5vw, 8.4rem);
+  line-height: 0.82;
   letter-spacing: -0.045em;
   text-align: center;
 }
@@ -1630,9 +1656,31 @@ summary:focus-visible {
   gap: 1.75rem;
 }
 
+.hero-claim {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 0.85rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2rem, 4.2vw, 3.15rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.hero-claim::before {
+  content: "";
+  width: 0.38em;
+  height: 0.38em;
+  background: #3C9EC4;
+  flex: none;
+}
+
 .hero-sub {
   margin: 1rem 0 0;
-  max-width: 34rem;
+  max-width: 38rem;
   color: var(--ink-soft);
   font-size: 1.08rem;
   line-height: 1.45;
