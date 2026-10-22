@@ -1,7 +1,125 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-21T04:42:15+02:00",
+  "updatedAt": "2026-10-22T04:49:06+02:00",
   "days": [
+    {
+      "date": "2026-10-22",
+      "items": [
+        {
+          "id": "2026-10-22-claude-duet-proactive-agent",
+          "headline": "Claude Duet messages you first and works in the background",
+          "summary": "Anthropic's new standalone app sends a morning brief, watches your connected apps and keeps working on tasks in its own cloud computer, asking before it sends or pays. Waitlist only, US Pro and Max for now.",
+          "source": {
+            "name": "Anthropic",
+            "url": "https://claude.com/resources/articles/claude-duet"
+          },
+          "tag": "Tools",
+          "priority": "breaking",
+          "i18n": {
+            "de": {
+              "headline": "Claude Duet meldet sich von selbst und arbeitet weiter",
+              "summary": "Die neue App von Anthropic schickt morgens ein Briefing, behält verbundene Apps im Blick und erledigt Aufgaben auf einem eigenen Cloud-Rechner. Vor Senden oder Zahlen fragt sie nach. Vorerst nur per Warteliste in den USA."
+            }
+          }
+        },
+        {
+          "id": "2026-10-22-openai-models-google-cloud",
+          "headline": "Companies can now buy OpenAI models through Google Cloud",
+          "summary": "GPT-6 Astra, GPT-6.1 Sol and GPT-6 Luna are rolling out in a private preview on Google Cloud, billed on the same invoice as Gemini and Claude. Wider availability is planned within weeks.",
+          "source": {
+            "name": "OpenAI",
+            "url": "https://openai.com/index/openai-models-google-cloud"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "OpenAI-Modelle gibt es jetzt auch über Google Cloud",
+              "summary": "GPT-6 Astra, GPT-6.1 Sol und GPT-6 Luna starten als Private Preview auf Google Cloud und laufen über dieselbe Rechnung wie Gemini und Claude. Die breite Freigabe soll in einigen Wochen folgen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-22-php2shell-ai-found-flaw",
+          "headline": "AI helped uncover a severe PHP flaw, so update now",
+          "summary": "Wiz, OpenAI and Calif used frontier models to turn old PHP bugs into a working takeover attack that hits nearly every version since 5.4. Patches shipped on October 21 and first attack attempts are already showing up.",
+          "source": {
+            "name": "Wiz",
+            "url": "https://www.wiz.io/blog/php2shell-php-rce"
+          },
+          "tag": "Autonomous Agent",
+          "i18n": {
+            "de": {
+              "headline": "KI deckt schwere PHP-Lücke auf: jetzt updaten",
+              "summary": "Wiz, OpenAI und Calif haben mit Frontier-Modellen alte PHP-Fehler zu einem echten Angriff ausgebaut, der fast alle Versionen seit 5.4 betrifft. Patches kamen am 21. Oktober, erste Angriffsversuche laufen bereits."
+            }
+          }
+        },
+        {
+          "id": "2026-10-22-recursive-flint-laptop-coder",
+          "headline": "Free coding model Flint runs on a normal laptop",
+          "summary": "Startup Recursive released Flint under Apache 2.0, a 40B model that uses only 2.5B parameters at a time. It says its own AI research system did most of the development work.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/"
+          },
+          "tag": "Model Release",
+          "i18n": {
+            "de": {
+              "headline": "Gratis-Coding-Modell Flint läuft auf dem Laptop",
+              "summary": "Das Start-up Recursive veröffentlicht Flint unter Apache 2.0: 40 Mrd. Parameter, davon nur 2,5 Mrd. pro Schritt aktiv. Den Großteil der Entwicklung soll ein hauseigenes KI-Forschungssystem erledigt haben."
+            }
+          }
+        },
+        {
+          "id": "2026-10-22-claude-scorpion-toxin-binders",
+          "headline": "Claude designs proteins that latch onto scorpion venom",
+          "summary": "In Anthropic's study, Claude ran most of a protein design campaign on its own; 17 of 211 lab-tested designs bound a toxin. Whether they can actually neutralize venom has not been tested yet.",
+          "source": {
+            "name": "Anthropic",
+            "url": "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design"
+          },
+          "tag": "Autonomous Agent",
+          "i18n": {
+            "de": {
+              "headline": "Claude entwirft Proteine gegen Skorpiongift",
+              "summary": "In einer Anthropic-Studie steuerte Claude große Teile eines Protein-Designs selbst; 17 von 211 im Labor getesteten Entwürfen banden ein Gift. Ob sie es auch unschädlich machen, ist noch offen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-22-nvidia-dsx-pod-containers",
+          "headline": "Nvidia ships AI data centers ready-built in containers",
+          "summary": "At GTC Berlin, Nvidia showed DSX POD, a design where partners assemble and test whole AI compute units in containers at the factory. Nvidia says setup drops from about six months to as little as 14 days.",
+          "source": {
+            "name": "Nvidia",
+            "url": "https://nvidianews.nvidia.com/news/nvidia-introduces-dsx-pod-ai-factories-to-accelerate-europes-infrastructure-deployment"
+          },
+          "tag": "Hardware",
+          "i18n": {
+            "de": {
+              "headline": "Nvidia liefert KI-Rechenzentren fertig im Container",
+              "summary": "Auf der GTC Berlin zeigte Nvidia DSX POD: Partner bauen komplette KI-Recheneinheiten im Werk in Container und testen sie dort. Laut Nvidia sinkt der Aufbau vor Ort von rund sechs Monaten auf bis zu 14 Tage."
+            }
+          }
+        },
+        {
+          "id": "2026-10-22-hamburg-ai-oversight",
+          "headline": "Hamburg's privacy office will police AI in city agencies",
+          "summary": "From January 2027, Hamburg's data protection authority becomes the AI Act market watchdog for AI used by the city's public bodies, and it may set up regulatory sandboxes for testing.",
+          "source": {
+            "name": "HmbBfDI",
+            "url": "https://datenschutz-hamburg.de/news/ki-einsatz-in-hamburgs-behoerden-hmbbfdi-wird-marktueberwachungsbehoerde"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Hamburgs Datenschutz kontrolliert KI in Behörden",
+              "summary": "Ab Januar 2027 überwacht Hamburgs Datenschutzbehörde nach der KI-Verordnung, wie öffentliche Stellen der Stadt KI einsetzen. Zudem darf sie KI-Reallabore zum Testen einrichten."
+            }
+          }
+        }
+      ]
+    },
     {
       "date": "2026-10-21",
       "items": [
@@ -742,129 +860,6 @@
             "de": {
               "headline": "Anthropic lässt externe Prüfer wie Mitarbeitende ran",
               "summary": "Sechs Fachleute der Non-Profit-Organisation METR erhalten Hardware, Büros und internen Zugang wie Anthropics eigene Risiko-Teams und veröffentlichen ihre Ergebnisse. Auch SecureBio und Faculty von Accenture prüfen Claude."
-            }
-          }
-        }
-      ]
-    },
-    {
-      "date": "2026-10-15",
-      "items": [
-        {
-          "id": "2026-10-15-grok-voice-3",
-          "headline": "xAI ships Grok Voice 3.0 under one second",
-          "summary": "xAI's new speech-to-speech model tops Artificial Analysis's index at 86.9 with under-one-second latency. It is live in the Voice Agent API at $0.08 per minute, the same price as Grok Voice 2.0.",
-          "source": {
-            "name": "xAI",
-            "url": "https://x.ai/news/grok-voice-3"
-          },
-          "tag": "Model Release",
-          "priority": "breaking",
-          "i18n": {
-            "de": {
-              "headline": "xAI liefert Grok Voice 3.0 unter einer Sekunde",
-              "summary": "Das neue Speech-to-Speech-Modell von xAI führt den Artificial-Analysis-Index mit 86,9 an und antwortet unter einer Sekunde. Es ist in der Voice Agent API für 0,08 $ pro Minute verfügbar, zum gleichen Preis wie Grok Voice 2.0."
-            }
-          }
-        },
-        {
-          "id": "2026-10-15-claude-otel-traces",
-          "headline": "Claude agents export OpenTelemetry traces",
-          "summary": "Anthropic opened a public beta so Managed Agents, the Messages API, and Claude SDKs can send OpenTelemetry traces to tools such as Langfuse, Sentry, and Grafana Cloud. Teams see latency, tokens, and tool use in one place.",
-          "source": {
-            "name": "Anthropic",
-            "url": "https://claude.com/resources/articles/agent-observability-on-the-claude-platform"
-          },
-          "tag": "Tools",
-          "i18n": {
-            "de": {
-              "headline": "Claude-Agents exportieren OpenTelemetry-Traces",
-              "summary": "Anthropic startet eine Public Beta: Managed Agents, Messages API und Claude SDKs senden OpenTelemetry-Traces an Tools wie Langfuse, Sentry und Grafana Cloud. Teams sehen Latency, Tokens und Tool-Nutzung an einem Ort."
-            }
-          }
-        },
-        {
-          "id": "2026-10-15-neura-neuron-ai",
-          "headline": "German startup NEURA ships Neuron AI for robots",
-          "summary": "Metzingen-based NEURA Robotics introduced Neuron AI, a multimodal model that fuses 3D vision, touch, audio, robot state, and language with memory. It runs on five NEURA robot bodies and will demo laundry work at NVIDIA GTC Berlin.",
-          "source": {
-            "name": "NEURA Robotics",
-            "url": "https://neura-robotics.com/neura-robotics-introduces-neuron-ai/"
-          },
-          "tag": "Model Release",
-          "pulseId": "pulse-2026-10-14-neura-neuron-ai-senses",
-          "i18n": {
-            "de": {
-              "headline": "NEURA aus Metzingen bringt Neuron AI für Roboter",
-              "summary": "NEURA Robotics aus Metzingen stellt Neuron AI vor: ein multimodales Modell mit 3D-Vision, Tastsinn, Audio, Robot State, Sprache und Memory. Es läuft auf fünf NEURA-Roboterkörpern und zeigt Wäsche sortieren auf der NVIDIA GTC Berlin."
-            }
-          }
-        },
-        {
-          "id": "2026-10-15-chainguard-harness",
-          "headline": "Chainguard Harness hunts live app vulnerabilities",
-          "summary": "Chainguard opened a beta for Harness, which rebuilds your app in an isolated microVM and uses Claude Mythos 5.1 to probe the running instance. Every finding is replayed, and a named engineer reviews each recommended fix before you see it.",
-          "source": {
-            "name": "Chainguard",
-            "url": "https://www.chainguard.dev/unchained/introducing-chainguard-harness"
-          },
-          "tag": "Tools",
-          "level": "advanced",
-          "pulseId": "pulse-2026-10-14-chainguard-harness-bugs",
-          "i18n": {
-            "de": {
-              "headline": "Chainguard Harness jagt Bugs in laufenden Apps",
-              "summary": "Chainguard öffnet die Beta für Harness: Die App wird in einer isolierten microVM neu gebaut, Claude Mythos 5.1 greift die laufende Instanz an. Jeder Fund wird wiederholt, und ein benannter Engineer prüft jeden Fix, bevor er bei dir landet."
-            }
-          }
-        },
-        {
-          "id": "2026-10-15-states-sue-openai",
-          "headline": "Eight US states sue OpenAI over ChatGPT safety",
-          "summary": "Eight states filed consumer-protection suits alleging OpenAI put profit over ChatGPT safety for kids and vulnerable users. OpenAI says it has age-specific protections and wants pragmatic, industry-wide AI rules.",
-          "source": {
-            "name": "The Verge",
-            "url": "https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety"
-          },
-          "tag": "Framework",
-          "i18n": {
-            "de": {
-              "headline": "Acht US-Bundesstaaten verklagen OpenAI wegen ChatGPT",
-              "summary": "Acht US-Staaten werfen OpenAI vor, Profit vor die Sicherheit von ChatGPT für Kinder und vulnerable Nutzer zu stellen. OpenAI verweist auf altersbezogene Schutzmaßnahmen und will pragmatische, branchenweite KI-Regeln."
-            }
-          }
-        },
-        {
-          "id": "2026-10-15-openai-flagship-alignment",
-          "headline": "OpenAI's next flagship still needs alignment work",
-          "summary": "Employees say OpenAI will likely ship one or two models this year, but the next major upgrade still needs alignment and testing. Like Astra, it uses looped transformers that help math and coding while hiding more reasoning from monitors.",
-          "source": {
-            "name": "THE DECODER",
-            "url": "https://the-decoder.com/openai-will-reportedly-ship-at-least-one-model-this-year-but-its-flagship-still-needs-alignment-work/"
-          },
-          "tag": "Model Release",
-          "level": "advanced",
-          "i18n": {
-            "de": {
-              "headline": "OpenAIs nächstes Flagship braucht noch Alignment",
-              "summary": "Mitarbeiter sagen, OpenAI werde dieses Jahr wohl ein oder zwei Modelle liefern; das große Upgrade braucht aber noch Alignment und Tests. Wie Astra nutzt es Looped Transformers: stark in Math und Coding, aber schwerer zu überwachen."
-            }
-          }
-        },
-        {
-          "id": "2026-10-15-fish-drama-3",
-          "headline": "Fish Audio Drama 3 directs voice feeling in plain words",
-          "summary": "Fish Audio released Drama 3, a text-to-speech model you steer with plain-language stage directions in brackets. It leads Artificial Analysis pronunciation robustness at 93.2%, speaks 83 languages, and offers open weights.",
-          "source": {
-            "name": "Fish Audio",
-            "url": "https://fish.audio/blog/fish-audio-drama-3/"
-          },
-          "tag": "Tools",
-          "pulseId": "pulse-2026-10-13-fish-drama-3-voices",
-          "i18n": {
-            "de": {
-              "headline": "Fish Audio Drama 3 lenkt Stimme per Klartext-Regie",
-              "summary": "Fish Audio veröffentlicht Drama 3: Text-to-Speech mit Klartext-Regie in Klammern. Es führt Artificial Analysis in Pronunciation Robustness mit 93,2 %, spricht 83 Sprachen und kommt als Open Weights unter Community License."
             }
           }
         }
