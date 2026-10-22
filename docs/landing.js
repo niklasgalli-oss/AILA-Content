@@ -237,16 +237,27 @@ function wireEditionMotion() {
 
   const floater = document.querySelector(".sapaude-float");
   const hero = document.getElementById("hero-section");
+  const screens = document.getElementById("screens");
+  const mobileChrome = window.matchMedia("(max-width: 959px)");
   const onScroll = () => {
     if (header) header.classList.toggle("is-scrolled", window.scrollY > 20);
     const top = document.getElementById("back-to-top");
     if (top) top.classList.toggle("is-visible", window.scrollY > 500);
     if (floater) {
       const pastHero = !hero || hero.getBoundingClientRect().bottom <= 96;
-      floater.classList.toggle("is-visible", pastHero);
+      floater.classList.toggle("is-visible", pastHero && !mobileChrome.matches);
+    }
+    if (top && screens && mobileChrome.matches) {
+      const box = screens.getBoundingClientRect();
+      const bandTop = window.innerHeight - 96;
+      const coversPhones = box.top < window.innerHeight - 8 && box.bottom > bandTop;
+      top.classList.toggle("is-clear", coversPhones);
+    } else if (top) {
+      top.classList.remove("is-clear");
     }
   };
   window.addEventListener("scroll", onScroll, { passive: true });
+  mobileChrome.addEventListener("change", onScroll);
   onScroll();
 
   const burger = document.getElementById("mobile-menu-btn");

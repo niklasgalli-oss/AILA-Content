@@ -391,8 +391,8 @@ test("sapaude wordmark, claims, and app mismatches", () => {
   assert.match(de, /Tägliches KI-Briefing/);
   assert.match(de, /Basics 1 &amp; 2 gratis – auch zum Hören/);
   assert.match(en, /Basics 1 &amp; 2 free – listening included/);
-  assert.match(de, /Lernpfad/);
-  assert.match(en, /Learning path/);
+  assert.doesNotMatch(de, /Copilot|Lernpfad|Arbeit 01/);
+  assert.doesNotMatch(en, /Copilot|Learning path|Work 01/);
   assert.match(de, /ich bin Sapi/);
   assert.match(en, /I'm Sapi/);
   assert.match(css, /#3C9EC4/);
