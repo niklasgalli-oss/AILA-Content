@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sapaude.de/sitemap.xml
+Sitemap: https://sapaude.app/sitemap.xml

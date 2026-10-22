@@ -19,9 +19,9 @@ function walk(dir, found = []) {
   return found;
 }
 
-test("custom domain is sapaude.de", () => {
+test("custom domain is sapaude.app", () => {
   assert.equal(existsSync(join(root, "CNAME")), false);
-  assert.equal(read("docs/CNAME").trim(), "sapaude.de");
+  assert.equal(read("docs/CNAME").trim(), "sapaude.app");
   const doc = read("docs/landing-domain.md");
   assert.match(doc, /185\.199\.108\.153/);
   assert.match(doc, /185\.199\.111\.153/);
@@ -29,17 +29,18 @@ test("custom domain is sapaude.de", () => {
   assert.match(doc, /2606:50c0:8003::153/);
   assert.match(doc, /niklasgalli-oss\.github\.io/);
   assert.match(doc, /Enforce HTTPS/);
+  assert.match(doc, /HSTS/);
   assert.match(doc, /MX/);
   assert.match(doc, /apple-app-site-association/);
-  assert.match(read("docs/index.html"), /rel="canonical" href="https:\/\/sapaude\.de\/"/);
-  assert.match(read("docs/index.html"), /property="og:url" content="https:\/\/sapaude\.de\/"/);
-  assert.match(read("docs/en/index.html"), /rel="canonical" href="https:\/\/sapaude\.de\/en\/"/);
-  assert.match(read("docs/en/index.html"), /property="og:url" content="https:\/\/sapaude\.de\/en\/"/);
-  assert.match(read("docs/de/index.html"), /rel="canonical" href="https:\/\/sapaude\.de\/"/);
+  assert.match(read("docs/index.html"), /rel="canonical" href="https:\/\/sapaude\.app\/"/);
+  assert.match(read("docs/index.html"), /property="og:url" content="https:\/\/sapaude\.app\/"/);
+  assert.match(read("docs/en/index.html"), /rel="canonical" href="https:\/\/sapaude\.app\/en\/"/);
+  assert.match(read("docs/en/index.html"), /property="og:url" content="https:\/\/sapaude\.app\/en\/"/);
+  assert.match(read("docs/de/index.html"), /rel="canonical" href="https:\/\/sapaude\.app\/"/);
   assert.match(read("docs/de/index.html"), /http-equiv="refresh" content="0; url=\/"/);
-  assert.match(read("docs/sitemap.xml"), /<loc>https:\/\/sapaude\.de\/<\/loc>/);
-  assert.match(read("docs/sitemap.xml"), /<loc>https:\/\/sapaude\.de\/en\/<\/loc>/);
-  assert.doesNotMatch(read("docs/sitemap.xml"), /<loc>https:\/\/sapaude\.de\/de\//);
+  assert.match(read("docs/sitemap.xml"), /<loc>https:\/\/sapaude\.app\/<\/loc>/);
+  assert.match(read("docs/sitemap.xml"), /<loc>https:\/\/sapaude\.app\/en\/<\/loc>/);
+  assert.doesNotMatch(read("docs/sitemap.xml"), /<loc>https:\/\/sapaude\.app\/de\//);
   for (const path of [
     "docs/index.html",
     "docs/en/index.html",
@@ -51,7 +52,15 @@ test("custom domain is sapaude.de", () => {
     "docs/impressum/index.html"
   ]) {
     assert.doesNotMatch(read(path), /github\.io\/AILA-Content/);
+    assert.doesNotMatch(read(path), /sapaude\.de/);
   }
+  for (const path of walk(join(root, "docs")).filter((item) => /\.(html|css|js)$/.test(item))) {
+    const rel = path.slice(root.length + 1);
+    assert.doesNotMatch(read(rel), /sapaude\.de/, rel);
+    assert.doesNotMatch(read(rel), /http:\/\//, rel);
+  }
+  assert.doesNotMatch(doc, /sapaude\.de/);
+  assert.doesNotMatch(read("README.md"), /sapaude\.de/);
 });
 
 test("apple-app-site-association is not a file", () => {
@@ -70,13 +79,13 @@ test("English and German pages carry the landing sections", () => {
   const de = read("docs/index.html");
   const en = read("docs/en/index.html");
   for (const html of [en, de]) {
-    assert.match(html, /rel="alternate" hreflang="en" href="https:\/\/sapaude\.de\/en\/"/);
-    assert.match(html, /rel="alternate" hreflang="de" href="https:\/\/sapaude\.de\/"/);
-    assert.match(html, /rel="alternate" hreflang="x-default" href="https:\/\/sapaude\.de\/"/);
+    assert.match(html, /rel="alternate" hreflang="en" href="https:\/\/sapaude\.app\/en\/"/);
+    assert.match(html, /rel="alternate" hreflang="de" href="https:\/\/sapaude\.app\/"/);
+    assert.match(html, /rel="alternate" hreflang="x-default" href="https:\/\/sapaude\.app\/"/);
     assert.match(html, /og:image/);
     assert.match(html, /Sapaude for Teams/);
-    assert.match(html, /support@sapaude\.de/);
-    assert.doesNotMatch(html, /niklas\.galli@sapaude\.de/);
+    assert.match(html, /support@sapaude\.app/);
+    assert.doesNotMatch(html, /niklas\.galli@sapaude\.app/);
     assert.doesNotMatch(html, /Niklas Galli/);
     assert.doesNotMatch(html, /Neuburger/);
     assert.doesNotMatch(html, /Karlshuld/);
@@ -137,15 +146,15 @@ test("landing assets stay self-hosted and flat-colored", () => {
   const robots = read("docs/robots.txt");
   const sitemap = read("docs/sitemap.xml");
   assert.match(robots, /sitemap\.xml/);
-  assert.match(sitemap, /https:\/\/sapaude\.de\/en\//);
-  assert.match(sitemap, /https:\/\/sapaude\.de\/privacy\//);
-  assert.match(sitemap, /https:\/\/sapaude\.de\/en\/privacy\//);
-  assert.match(sitemap, /https:\/\/sapaude\.de\/impressum\//);
-  assert.match(sitemap, /https:\/\/sapaude\.de\/nutzungsbedingungen\//);
-  assert.match(sitemap, /https:\/\/sapaude\.de\/en\/terms\//);
-  assert.doesNotMatch(sitemap, /https:\/\/sapaude\.de\/de\//);
-  assert.doesNotMatch(sitemap, /https:\/\/sapaude\.de\/privacy\/en\//);
-  assert.doesNotMatch(sitemap, /https:\/\/sapaude\.de\/terms\//);
+  assert.match(sitemap, /https:\/\/sapaude\.app\/en\//);
+  assert.match(sitemap, /https:\/\/sapaude\.app\/privacy\//);
+  assert.match(sitemap, /https:\/\/sapaude\.app\/en\/privacy\//);
+  assert.match(sitemap, /https:\/\/sapaude\.app\/impressum\//);
+  assert.match(sitemap, /https:\/\/sapaude\.app\/nutzungsbedingungen\//);
+  assert.match(sitemap, /https:\/\/sapaude\.app\/en\/terms\//);
+  assert.doesNotMatch(sitemap, /https:\/\/sapaude\.app\/de\//);
+  assert.doesNotMatch(sitemap, /https:\/\/sapaude\.app\/privacy\/en\//);
+  assert.doesNotMatch(sitemap, /https:\/\/sapaude\.app\/terms\//);
 });
 
 test("name and address stay on the imprint only", () => {
@@ -165,13 +174,13 @@ test("name and address stay on the imprint only", () => {
     assert.doesNotMatch(html, /Neuburger/, path);
     assert.doesNotMatch(html, /Karlshuld/, path);
     assert.doesNotMatch(html, /niklas\.galli@/, path);
-    assert.match(html, /support@sapaude\.de/, path);
+    assert.match(html, /support@sapaude\.app/, path);
   }
   const imprint = read("docs/impressum/index.html");
   assert.match(imprint, /Niklas Galli/);
   assert.match(imprint, /Neuburger Straße 73a/);
   assert.match(imprint, /86668 Karlshuld/);
-  assert.match(imprint, /support@sapaude\.de/);
+  assert.match(imprint, /support@sapaude\.app/);
   assert.match(imprint, /innerhalb von 48 Stunden/);
   assert.match(imprint, /within 48 hours/);
   assert.match(imprint, /39,99 €/);
@@ -243,7 +252,7 @@ test("story row, path, briefing fallback, and teams copy stay in sync", () => {
     assert.doesNotMatch(html, /Vier Fragen|Four questions/);
     assert.match(html, /class="prose"/);
     assert.match(html, /class="soon-badge"/);
-    assert.match(html, /mailto:support@sapaude\.de\?subject=/);
+    assert.match(html, /mailto:support@sapaude\.app\?subject=/);
     assert.match(html, /Basics/);
     assert.match(html, /Core/);
     assert.match(html, /Depth/);
@@ -365,8 +374,8 @@ test("sapaude wordmark, claims, and app mismatches", () => {
   assert.match(read("docs/en/support/index.html"), /Be brave\. Get smart\./);
   assert.match(read("docs/404.html"), /Diese Seite gibt es nicht/);
   assert.match(read("docs/404.html"), /Be brave\. Get smart\./);
-  assert.match(read("docs/sitemap.xml"), /https:\/\/sapaude\.de\/support\//);
-  assert.match(read("docs/sitemap.xml"), /https:\/\/sapaude\.de\/en\/support\//);
+  assert.match(read("docs/sitemap.xml"), /https:\/\/sapaude\.app\/support\//);
+  assert.match(read("docs/sitemap.xml"), /https:\/\/sapaude\.app\/en\/support\//);
 
   function visible(html) {
     const stripped = html.replace(/https?:\/\/\S*AILA-Content\S*/g, "");

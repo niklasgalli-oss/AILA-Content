@@ -1,6 +1,6 @@
 # Sapaude
 
-Content feed for [Sapaude](https://sapaude.de/), an Expo / React Native app for learning about AI. This repository holds the stories the app loads. The app code lives in the private app repo. The feed URLs below keep the repository path `AILA-Content`.
+Content feed for [Sapaude](https://sapaude.app/), an Expo / React Native app for learning about AI. This repository holds the stories the app loads. The app code lives in the private app repo. The feed URLs below keep the repository path `AILA-Content`.
 
 The app fetches its feeds at runtime. The daily pulse is:
 
@@ -14,13 +14,13 @@ An AI news bot refreshes `pulse.json`. The published file keeps one timestamp pe
 
 The privacy policy and the legal notice (Impressum) are static pages in `docs/`, published with GitHub Pages from the `main` branch folder `/docs`. `pulse.json` stays at the repository root. The app keeps loading it from the raw URL above.
 
-- [Datenschutzerklärung](https://sapaude.de/privacy/) (German)
-- [Privacy policy](https://sapaude.de/en/privacy/) (English)
-- [Impressum / Legal notice](https://sapaude.de/impressum/)
-- [Nutzungsbedingungen](https://sapaude.de/nutzungsbedingungen/) (German)
-- [Terms of Use](https://sapaude.de/en/terms/) (English)
-- [Support](https://sapaude.de/support/) (German)
-- [Support](https://sapaude.de/en/support/) (English)
+- [Datenschutzerklärung](https://sapaude.app/privacy/) (German)
+- [Privacy policy](https://sapaude.app/en/privacy/) (English)
+- [Impressum / Legal notice](https://sapaude.app/impressum/)
+- [Nutzungsbedingungen](https://sapaude.app/nutzungsbedingungen/) (German)
+- [Terms of Use](https://sapaude.app/en/terms/) (English)
+- [Support](https://sapaude.app/support/) (German)
+- [Support](https://sapaude.app/en/support/) (English)
 
 ## Item shape
 
