@@ -116,13 +116,13 @@ The app can keep the old `github.io` links once those redirects answer, includin
 
 ## 4. Absolute URLs
 
-Canonical, hreflang, Open Graph, Twitter, JSON-LD, `docs/sitemap.xml`, and the Sitemap line in `docs/robots.txt` use `https://sapaude.app`. The same host is on the privacy, imprint, and terms pages. Mail links stay `mailto:support@sapaude.app`. The app still loads `pulse.json` and `briefing.json` from `raw.githubusercontent.com`.
+Canonical, hreflang, Open Graph, Twitter, JSON-LD, `docs/sitemap.xml`, and the Sitemap line in `docs/robots.txt` use `https://sapaude.app`. The same host is on the privacy, imprint, and terms pages. Mail links stay `mailto:support@sapaude.app`. The website loads `https://sapaude.app/briefing.json`. `docs/pulse.json` and `docs/briefing.json` are copies of the root files. The app build that is live still requests `https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/pulse.json` and `https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/briefing.json`. Do not rename the repository until that app requests the `sapaude.app` paths.
 
 `robots.txt` and `sitemap.xml` are host-root files. On the project URL they are under `/AILA-Content/`, which crawlers do not read as the `github.io` robots file. After the cutover they are `https://sapaude.app/robots.txt` and `https://sapaude.app/sitemap.xml`.
 
 ## App Store link
 
-`docs/landing.js` has one constant, `AILA_APP_STORE_URL`. It is an empty string. That is the coming-soon state: the English page shows “Coming soon on App Store” and “Coming soon on Google Play”. The German page shows “Demnächst im App Store” and “Demnächst bei Google Play”. The Download badge is not rendered. Google Play has no URL on the page yet, so that line stays text.
+`docs/landing.js` has one constant, `SAPAUDE_APP_STORE_URL`. It is an empty string. That is the coming-soon state: the English page shows “Coming soon on App Store” and “Coming soon on Google Play”. The German page shows “Demnächst im App Store” and “Demnächst bei Google Play”. The Download badge is not rendered. Google Play has no URL on the page yet, so that line stays text.
 
 Apple’s badge has to link to the product page, unmodified, once per page, at least 40px tall, with clear space of a quarter of its height. This page uses the official white badge at 48px with 12px of clear space, only after the constant is an `https://apps.apple.com/...` URL. English uses the US-UK artwork. German uses the DE artwork (“Laden im App Store”). The words App Store stay in English on the badge. Do not redraw it.
 
