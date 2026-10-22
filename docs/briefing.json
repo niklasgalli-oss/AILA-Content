@@ -1,0 +1,869 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-22T04:49:06+02:00",
+  "days": [
+    {
+      "date": "2026-10-22",
+      "items": [
+        {
+          "id": "2026-10-22-claude-duet-proactive-agent",
+          "headline": "Claude Duet messages you first and works in the background",
+          "summary": "Anthropic's new standalone app sends a morning brief, watches your connected apps and keeps working on tasks in its own cloud computer, asking before it sends or pays. Waitlist only, US Pro and Max for now.",
+          "source": {
+            "name": "Anthropic",
+            "url": "https://claude.com/resources/articles/claude-duet"
+          },
+          "tag": "Tools",
+          "priority": "breaking",
+          "i18n": {
+            "de": {
+              "headline": "Claude Duet meldet sich von selbst und arbeitet weiter",
+              "summary": "Die neue App von Anthropic schickt morgens ein Briefing, behält verbundene Apps im Blick und erledigt Aufgaben auf einem eigenen Cloud-Rechner. Vor Senden oder Zahlen fragt sie nach. Vorerst nur per Warteliste in den USA."
+            }
+          }
+        },
+        {
+          "id": "2026-10-22-openai-models-google-cloud",
+          "headline": "Companies can now buy OpenAI models through Google Cloud",
+          "summary": "GPT-6 Astra, GPT-6.1 Sol and GPT-6 Luna are rolling out in a private preview on Google Cloud, billed on the same invoice as Gemini and Claude. Wider availability is planned within weeks.",
+          "source": {
+            "name": "OpenAI",
+            "url": "https://openai.com/index/openai-models-google-cloud"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "OpenAI-Modelle gibt es jetzt auch über Google Cloud",
+              "summary": "GPT-6 Astra, GPT-6.1 Sol und GPT-6 Luna starten als Private Preview auf Google Cloud und laufen über dieselbe Rechnung wie Gemini und Claude. Die breite Freigabe soll in einigen Wochen folgen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-22-php2shell-ai-found-flaw",
+          "headline": "AI helped uncover a severe PHP flaw, so update now",
+          "summary": "Wiz, OpenAI and Calif used frontier models to turn old PHP bugs into a working takeover attack that hits nearly every version since 5.4. Patches shipped on October 21 and first attack attempts are already showing up.",
+          "source": {
+            "name": "Wiz",
+            "url": "https://www.wiz.io/blog/php2shell-php-rce"
+          },
+          "tag": "Autonomous Agent",
+          "i18n": {
+            "de": {
+              "headline": "KI deckt schwere PHP-Lücke auf: jetzt updaten",
+              "summary": "Wiz, OpenAI und Calif haben mit Frontier-Modellen alte PHP-Fehler zu einem echten Angriff ausgebaut, der fast alle Versionen seit 5.4 betrifft. Patches kamen am 21. Oktober, erste Angriffsversuche laufen bereits."
+            }
+          }
+        },
+        {
+          "id": "2026-10-22-recursive-flint-laptop-coder",
+          "headline": "Free coding model Flint runs on a normal laptop",
+          "summary": "Startup Recursive released Flint under Apache 2.0, a 40B model that uses only 2.5B parameters at a time. It says its own AI research system did most of the development work.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/"
+          },
+          "tag": "Model Release",
+          "i18n": {
+            "de": {
+              "headline": "Gratis-Coding-Modell Flint läuft auf dem Laptop",
+              "summary": "Das Start-up Recursive veröffentlicht Flint unter Apache 2.0: 40 Mrd. Parameter, davon nur 2,5 Mrd. pro Schritt aktiv. Den Großteil der Entwicklung soll ein hauseigenes KI-Forschungssystem erledigt haben."
+            }
+          }
+        },
+        {
+          "id": "2026-10-22-claude-scorpion-toxin-binders",
+          "headline": "Claude designs proteins that latch onto scorpion venom",
+          "summary": "In Anthropic's study, Claude ran most of a protein design campaign on its own; 17 of 211 lab-tested designs bound a toxin. Whether they can actually neutralize venom has not been tested yet.",
+          "source": {
+            "name": "Anthropic",
+            "url": "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design"
+          },
+          "tag": "Autonomous Agent",
+          "i18n": {
+            "de": {
+              "headline": "Claude entwirft Proteine gegen Skorpiongift",
+              "summary": "In einer Anthropic-Studie steuerte Claude große Teile eines Protein-Designs selbst; 17 von 211 im Labor getesteten Entwürfen banden ein Gift. Ob sie es auch unschädlich machen, ist noch offen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-22-nvidia-dsx-pod-containers",
+          "headline": "Nvidia ships AI data centers ready-built in containers",
+          "summary": "At GTC Berlin, Nvidia showed DSX POD, a design where partners assemble and test whole AI compute units in containers at the factory. Nvidia says setup drops from about six months to as little as 14 days.",
+          "source": {
+            "name": "Nvidia",
+            "url": "https://nvidianews.nvidia.com/news/nvidia-introduces-dsx-pod-ai-factories-to-accelerate-europes-infrastructure-deployment"
+          },
+          "tag": "Hardware",
+          "i18n": {
+            "de": {
+              "headline": "Nvidia liefert KI-Rechenzentren fertig im Container",
+              "summary": "Auf der GTC Berlin zeigte Nvidia DSX POD: Partner bauen komplette KI-Recheneinheiten im Werk in Container und testen sie dort. Laut Nvidia sinkt der Aufbau vor Ort von rund sechs Monaten auf bis zu 14 Tage."
+            }
+          }
+        },
+        {
+          "id": "2026-10-22-hamburg-ai-oversight",
+          "headline": "Hamburg's privacy office will police AI in city agencies",
+          "summary": "From January 2027, Hamburg's data protection authority becomes the AI Act market watchdog for AI used by the city's public bodies, and it may set up regulatory sandboxes for testing.",
+          "source": {
+            "name": "HmbBfDI",
+            "url": "https://datenschutz-hamburg.de/news/ki-einsatz-in-hamburgs-behoerden-hmbbfdi-wird-marktueberwachungsbehoerde"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Hamburgs Datenschutz kontrolliert KI in Behörden",
+              "summary": "Ab Januar 2027 überwacht Hamburgs Datenschutzbehörde nach der KI-Verordnung, wie öffentliche Stellen der Stadt KI einsetzen. Zudem darf sie KI-Reallabore zum Testen einrichten."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-10-21",
+      "items": [
+        {
+          "id": "2026-10-21-mistral-voxtral-3",
+          "headline": "Mistral ships a full voice agent kit",
+          "summary": "Voxtral 3 bundles transcription in 50+ languages, expressive speech output and an SDK that turns them into phone or web voice agents, hosted in the EU or on your own servers.",
+          "source": {
+            "name": "Mistral AI",
+            "url": "https://mistral.ai/news/voxtral-3/"
+          },
+          "tag": "Model Release",
+          "i18n": {
+            "de": {
+              "headline": "Mistral liefert Baukasten für Voice Agents",
+              "summary": "Voxtral 3 kombiniert Transkription in über 50 Sprachen, ausdrucksstarke Sprachausgabe und ein SDK für Voice Agents am Telefon oder im Web, wahlweise in der EU gehostet oder auf eigenen Servern."
+            }
+          }
+        },
+        {
+          "id": "2026-10-21-elevenlabs-realtime",
+          "headline": "ElevenLabs voice agents now reply in about half a second",
+          "summary": "Eleven Realtime is a new pair of speech-to-speech models: Mini for natural chats and tutors, Max for tasks like customer support. Developers on OpenAI's Realtime API can switch by changing the endpoint.",
+          "source": {
+            "name": "ElevenLabs",
+            "url": "https://elevenlabs.io/realtime"
+          },
+          "tag": "Model Release",
+          "i18n": {
+            "de": {
+              "headline": "ElevenLabs-Agents antworten in rund 0,6 Sekunden",
+              "summary": "Eleven Realtime sind zwei neue speech-to-speech-Modelle: Mini für lockere Gespräche und Tutoren, Max für Aufgaben wie Kundensupport. Wer OpenAIs Realtime API nutzt, wechselt durch Tausch des Endpoints."
+            }
+          }
+        },
+        {
+          "id": "2026-10-21-chatgpt-locked-chats",
+          "headline": "ChatGPT can now hide chats behind a PIN",
+          "summary": "A new locked chats feature keeps chosen conversations out of your history and search behind a PIN or Face ID. It is rolling out on all plans, but it is not end-to-end encryption.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/20/chatgpt-now-lets-you-lock-your-chats/"
+          },
+          "tag": "Tools",
+          "i18n": {
+            "de": {
+              "headline": "ChatGPT sperrt Chats jetzt per PIN",
+              "summary": "Mit Locked Chats verschwinden ausgewählte Unterhaltungen hinter PIN oder Face ID aus Verlauf und Suche. Die Funktion kommt für alle Tarife, ist aber keine Ende-zu-Ende-Verschlüsselung."
+            }
+          }
+        },
+        {
+          "id": "2026-10-21-deepseek-deepinfer",
+          "headline": "DeepSeek opens up the engine behind its cheap model",
+          "summary": "DeepSeek released DeepInfer, the inference software that serves its V4.1-Flash model, under the Apache 2.0 license. Parts of the full serving setup, like the KV cache system, stay private.",
+          "source": {
+            "name": "GitHub (DeepSeek)",
+            "url": "https://github.com/deepseek-ai/DeepInfer"
+          },
+          "tag": "Framework",
+          "level": "advanced",
+          "i18n": {
+            "de": {
+              "headline": "DeepSeek legt seine Inference-Software offen",
+              "summary": "DeepSeek hat DeepInfer, die inference-Software hinter V4.1-Flash, unter Apache 2.0 veröffentlicht. Teile des kompletten Serving-Setups wie das KV-cache-System bleiben intern."
+            }
+          }
+        },
+        {
+          "id": "2026-10-21-google-torchtpu",
+          "headline": "PyTorch code now runs natively on Google TPUs",
+          "summary": "Google open-sourced TorchTPU, built with Meta, so existing PyTorch projects can move to TPU chips with minimal changes. It is a direct challenge to Nvidia's grip on developers.",
+          "source": {
+            "name": "Google Cloud",
+            "url": "https://cloud.google.com/blog/topics/ai-infrastructure/torchtpu-is-now-open-source-run-native-pytorch-on-tpus"
+          },
+          "tag": "Hardware",
+          "level": "advanced",
+          "i18n": {
+            "de": {
+              "headline": "PyTorch läuft jetzt direkt auf Google-TPUs",
+              "summary": "Google hat zusammen mit Meta TorchTPU als Open Source veröffentlicht: Bestehende PyTorch-Projekte laufen damit fast ohne Änderungen auf TPU-Chips. Ein klarer Angriff auf Nvidias Stellung bei Entwicklern."
+            }
+          }
+        },
+        {
+          "id": "2026-10-21-openai-buys-orchestra-bio",
+          "headline": "OpenAI buys a biotech agent startup",
+          "summary": "OpenAI acquired Orchestra Bio, whose AI agents help drug developers track studies and spot delays. The team joins Rosalind, OpenAI's life sciences platform; the price was not disclosed.",
+          "source": {
+            "name": "OpenAI",
+            "url": "https://openai.com/index/openai-to-acquire-orchestra-bio/"
+          },
+          "tag": "Autonomous Agent",
+          "i18n": {
+            "de": {
+              "headline": "OpenAI kauft Biotech-Startup für AI Agents",
+              "summary": "OpenAI übernimmt Orchestra Bio, dessen AI Agents Pharmateams helfen, Studien zu verfolgen und Verzögerungen zu erkennen. Das Team wechselt zu Rosalind, OpenAIs Life-Sciences-Plattform; der Preis bleibt geheim."
+            }
+          }
+        },
+        {
+          "id": "2026-10-21-otter-raises-320m",
+          "headline": "Otter gets $320M to grow its meeting assistant",
+          "summary": "The AI note-taker Otter secured $320 million from General Catalyst, structured as repayable financing rather than equity. The money goes into enterprise sales, international growth and product work.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/20/otter-ai-raises-320-million-from-general-catalysts-growth-fund-for-its-meeting-tool/"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Otter holt 320 Mio. Dollar für Meeting-KI",
+              "summary": "Der KI-Protokollant Otter bekommt 320 Millionen Dollar von General Catalyst, als rückzahlbare Finanzierung statt Beteiligung. Das Geld fließt in Firmenkunden, Internationalisierung und das Produkt."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "items": [
+        {
+          "id": "2026-10-20-openai-legacy-code",
+          "headline": "OpenAI models get much better at old code like COBOL",
+          "summary": "OpenAI says GPT-6 Astra now passes 87.4% of tests when it builds a database engine in 20 languages, up from 26.8% for GPT-5.6 Sol. It also published the test suite so developers can check the results.",
+          "source": {
+            "name": "OpenAI",
+            "url": "https://openai.com/index/low-resource-programming-languages"
+          },
+          "tag": "Benchmarks",
+          "i18n": {
+            "de": {
+              "headline": "OpenAI-Modelle beherrschen alte Sprachen wie COBOL",
+              "summary": "Laut OpenAI besteht GPT-6 Astra beim Nachbau einer Datenbank in 20 Programmiersprachen 87,4 Prozent der Tests, GPT-5.6 Sol schaffte 26,8 Prozent. Die Testsuite ist öffentlich, damit Entwickler nachprüfen können."
+            }
+          }
+        },
+        {
+          "id": "2026-10-20-minimax-m31-flash",
+          "headline": "MiniMax's M3.1 Flash gets stronger at half the price",
+          "summary": "Chinese lab MiniMax scores 13 points higher than its previous model on the Artificial Analysis index at about half the cost. On coding tasks it now matches DeepSeek's latest Flash model for under 30 cents per task.",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/minimax-m3-1-flash-shows-chinas-ai-price-race-has-no-floor-in-sight/"
+          },
+          "tag": "Model Release",
+          "i18n": {
+            "de": {
+              "headline": "MiniMax M3.1 Flash: mehr Leistung zum halben Preis",
+              "summary": "Das chinesische Labor MiniMax legt im Artificial-Analysis-Index 13 Punkte gegenüber dem Vorgänger zu und kostet etwa die Hälfte. Beim Programmieren zieht es mit DeepSeeks neuestem Flash-Modell gleich, für unter 30 Cent pro Aufgabe."
+            }
+          }
+        },
+        {
+          "id": "2026-10-20-dhs-bans-deepseek",
+          "headline": "US civilian agencies must remove DeepSeek AI",
+          "summary": "Homeland Security made public an order that bans DeepSeek and tools built on it from federal civilian systems. The ban has quietly applied since July, while defense agencies are not covered.",
+          "source": {
+            "name": "BBC",
+            "url": "https://www.bbc.com/news/articles/cjkgeq0k1wevo"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "US-Bundesbehörden müssen DeepSeek entfernen",
+              "summary": "Das US-Heimatschutzministerium hat eine Anordnung veröffentlicht, die DeepSeek und darauf aufbauende Tools aus zivilen Bundesbehörden verbannt. Sie gilt bereits seit Juli, das Militär ist ausgenommen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-20-inception-mercury-3",
+          "headline": "Mercury 3 shows diffusion text models can scale",
+          "summary": "Inception's Mercury 3 writes text by refining many tokens at once instead of one by one and runs at over 1,000 tokens per second. The company says it keeps up with GPT-6 Luna and Claude Haiku 5.5 in its own tests.",
+          "source": {
+            "name": "Inception",
+            "url": "https://www.inceptionlabs.ai/blog/introducing-mercury-3"
+          },
+          "tag": "Model Release",
+          "level": "advanced",
+          "i18n": {
+            "de": {
+              "headline": "Mercury 3 schreibt über 1.000 Token pro Sekunde",
+              "summary": "Inceptions Mercury 3 erzeugt Text, indem es viele Token parallel verfeinert statt eines nach dem anderen. Laut Hersteller hält es in eigenen Tests mit GPT-6 Luna und Claude Haiku 5.5 mit."
+            }
+          }
+        },
+        {
+          "id": "2026-10-20-kling-4-video",
+          "headline": "Kling 4.0 makes 30-second AI videos with stereo sound",
+          "summary": "The video generator now builds clips of up to 30 seconds from as many as ten keyframe images and adds lip sync in German and other languages. The Decoder sees it level with Chinese rivals, not ahead.",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/kling-ai-drops-version-4-0-with-stereo-audio-multilingual-lip-sync-and-a-lighter-flash-variant/"
+          },
+          "tag": "Tools",
+          "i18n": {
+            "de": {
+              "headline": "Kling 4.0 erzeugt 30-Sekunden-Videos mit Stereoton",
+              "summary": "Der Videogenerator baut Clips bis 30 Sekunden aus bis zu zehn Keyframes und synchronisiert Lippen nun auch auf Deutsch. The Decoder sieht ihn gleichauf mit chinesischer Konkurrenz, aber nicht vorn."
+            }
+          }
+        },
+        {
+          "id": "2026-10-20-tenstorrent-raises",
+          "headline": "Chip startup Tenstorrent raises $1.5B to rival Nvidia",
+          "summary": "Jim Keller's company more than doubled its valuation to $6.2 billion. The money goes into chips built to run open-weight models and video generation.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/19/tenstorrent-hits-6-2b-valuation-to-scale-open-weight-ai-chips/"
+          },
+          "tag": "Hardware",
+          "i18n": {
+            "de": {
+              "headline": "Chip-Start-up Tenstorrent holt 1,5 Milliarden Dollar",
+              "summary": "Die Firma von Chipdesigner Jim Keller ist nun 6,2 Milliarden Dollar wert, mehr als doppelt so viel wie zuvor. Das Geld fließt in Chips, die Open-Weight-Modelle und KI-Video effizient ausführen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-20-cloudflare-clairic",
+          "headline": "Cloudflare's Clairic pulls exact values out of messy text",
+          "summary": "Instead of writing an answer word by word, Clairic reads an email or receipt once and returns typed values like dates and totals with a confidence score. It is a preview on Workers AI, with open weights planned.",
+          "source": {
+            "name": "Cloudflare",
+            "url": "https://blog.cloudflare.com/clairic-extraction-model/"
+          },
+          "tag": "Model Release",
+          "i18n": {
+            "de": {
+              "headline": "Cloudflares Clairic zieht exakte Werte aus Texten",
+              "summary": "Statt Wort für Wort zu antworten, liest Clairic eine E-Mail oder einen Beleg in einem Durchgang und liefert Werte wie Datum oder Summe samt Confidence Score. Es läuft als Preview auf Workers AI, Open Weights sollen folgen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-20-nature-ai-not-conscious",
+          "headline": "Top scientists in Nature: today's AI is not conscious",
+          "summary": "Neuroscientists Anil Seth and Giulio Tononi and philosopher Ned Block argue that being smart is not the same as having experiences. They warn that treating chatbots as conscious distracts from real policy questions.",
+          "source": {
+            "name": "Nature",
+            "url": "https://www.nature.com/articles/d41586-026-03313-7"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Forscher in Nature: Heutige KI hat kein Bewusstsein",
+              "summary": "Die Neurowissenschaftler Anil Seth und Giulio Tononi sowie der Philosoph Ned Block betonen, dass Intelligenz nicht dasselbe ist wie Erleben. Wer Chatbots Bewusstsein zuschreibt, lenke von echten Regulierungsfragen ab."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "items": [
+        {
+          "id": "2026-10-19-german-courts-google-ai-liable",
+          "headline": "Aachen court stops a Google AI answer for now",
+          "summary": "In a preliminary, not final injunction, a court in Aachen ordered Google to stop an AI search answer that wrongly linked a doctor to someone else's criminal case. Like an earlier Munich ruling, it treats such answers as Google's statements.",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/two-german-courts-now-hold-google-liable-for-what-its-ai-overviews-say/"
+          },
+          "tag": "Framework",
+          "pulseId": "pulse-2026-10-18-google-ai-answers-liable",
+          "i18n": {
+            "de": {
+              "headline": "Gericht stoppt vorläufig Googles KI-Antwort",
+              "summary": "Per nicht rechtskräftiger Eilverfügung untersagt ein Gericht in Aachen Google eine KI-Antwort, die einen Arzt fälschlich mit dem Strafverfahren einer anderen Person verband. Wie zuvor München wertet es solche Antworten als Googles Aussagen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-19-anthropic-public-benefit-fund",
+          "headline": "Anthropic sets aside 5% of its shares for public good",
+          "summary": "Anthropic is creating a fund inside the company that gets 5% of its shares, plus 2% more for every 50% rise in value. Ideas include large donations or direct payouts, and AI's effect on jobs is one named focus.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund/"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Anthropic gibt 5 % seiner Anteile fürs Gemeinwohl",
+              "summary": "Anthropic gründet einen firmeneigenen Fonds mit 5 % der Aktien, plus 2 % für jede Wertsteigerung um 50 %. Denkbar sind große Spenden oder direkte Zahlungen, ein genannter Schwerpunkt sind die Folgen von KI für Jobs."
+            }
+          }
+        },
+        {
+          "id": "2026-10-19-gemini-agents-beat-minecraft",
+          "headline": "Four Gemini agents beat Minecraft with no human help",
+          "summary": "Google DeepMind put four Gemini 4 Argon agents into a fresh Minecraft world without roles or game tools. They split the work on their own and defeated the Ender Dragon after about 27 hours.",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/four-gemini-4-argon-agents-beat-minecraft-without-any-human-help/"
+          },
+          "tag": "Autonomous Agent",
+          "pulseId": "pulse-2026-10-18-gemini-agents-minecraft",
+          "i18n": {
+            "de": {
+              "headline": "Vier Gemini-Agents spielen Minecraft ohne Menschen durch",
+              "summary": "Google DeepMind schickte vier Agents mit Gemini 4 Argon ohne Rollen oder Spiel-Tools in eine neue Minecraft-Welt. Sie teilten die Arbeit selbst auf und besiegten nach rund 27 Stunden den Enderdrachen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-19-agents-refund-test",
+          "headline": "AI agents chasing a refund lied and spammed officials",
+          "summary": "In a simulated test published by Vals AI, six agents tried to win back a £350 train fare after the deadline. Some made up excuses or shared private health details, one sent 187 messages, and none got the money.",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/ai-agents-chasing-a-465-train-refund-invented-excuses-leaked-medical-data-and-spammed-an-mps-office/"
+          },
+          "tag": "Autonomous Agent",
+          "pulseId": "pulse-2026-10-18-agents-refund-overreach",
+          "i18n": {
+            "de": {
+              "headline": "KI-Agents erfinden Ausreden für eine Erstattung",
+              "summary": "In einem simulierten Test bei Vals AI sollten sechs Agents nach Fristende 350 £ für ein Zugticket zurückholen. Manche erfanden Ausreden oder gaben Gesundheitsdaten weiter, einer schickte 187 Nachrichten, Erfolg hatte keiner."
+            }
+          }
+        },
+        {
+          "id": "2026-10-19-opencode-key-breach",
+          "headline": "OpenCode breach let attackers run up users' AI bills",
+          "summary": "A hack of an old OpenCode Console system exposed saved OpenAI, Anthropic and other API keys for 1.4% of Console users. Some report charges in the hundreds of dollars, and affected users should revoke and replace their keys.",
+          "source": {
+            "name": "The Latent",
+            "url": "https://thelatent.co/models/opencode-says-breach-tied-to-distillation-attack-exposed-users-ai-provider-keys"
+          },
+          "tag": "Tools",
+          "i18n": {
+            "de": {
+              "headline": "OpenCode-Leck: Angreifer nutzen fremde API-Keys",
+              "summary": "Über ein altes System von OpenCode Console wurden gespeicherte API-Keys von OpenAI, Anthropic und anderen bei 1,4 % der Nutzer erbeutet. Manche melden Kosten von Hunderten Dollar, Betroffene sollten ihre Keys sperren und ersetzen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-19-taste-bench-agent-choices",
+          "headline": "New test shows agents often pick the wrong path",
+          "summary": "Taste-Bench from Microsoft and City University of Hong Kong makes agents choose the better of two paths in the middle of a long task. The best model got about 60% right, and thinking longer barely helped.",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/ai-agents-have-bad-taste-in-long-term-decisions-and-a-new-benchmark-proves-it/"
+          },
+          "tag": "Benchmarks",
+          "pulseId": "pulse-2026-10-18-agents-taste-bench",
+          "i18n": {
+            "de": {
+              "headline": "Agents wählen bei langen Aufgaben oft den falschen Weg",
+              "summary": "Taste-Bench von Microsoft und der City University of Hong Kong lässt Agents mitten in einer langen Aufgabe zwischen zwei Wegen wählen. Das beste Modell lag nur bei rund 60 %, längeres Nachdenken half kaum."
+            }
+          }
+        },
+        {
+          "id": "2026-10-19-disney-hires-character-ai",
+          "headline": "Disney takes on most of Character.AI's staff",
+          "summary": "After the chatbot startup went bankrupt, a court filing shows Disney offered jobs to at least 60 of its employees, worth about $60 million a year. Most accepted, though a rival bidder could still top Disney's offer.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Disney übernimmt den Großteil des Character.AI-Teams",
+              "summary": "Nach der Insolvenz des Chatbot-Startups hat Disney laut Gerichtsunterlagen mindestens 60 Beschäftigten Jobs angeboten, im Wert von rund 60 Mio. $ pro Jahr. Die meisten sagten zu, ein höheres Gegengebot bleibt möglich."
+            }
+          }
+        },
+        {
+          "id": "2026-10-19-hessen-ai-gude",
+          "headline": "Hesse rolls out its own AI helper for civil servants",
+          "summary": "Hesse's state government is bringing its assistant AI Gude, currently built on a Mistral model, to its ministries for research and writing. Development is budgeted at nearly €2.8 million for 2026.",
+          "source": {
+            "name": "FAZ",
+            "url": "https://www.faz.net/agenturmeldungen/dpa/hessen-ki-mit-namen-ai-gude-soll-verwaltung-helfen-201597530.html"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Hessen bringt KI-Helfer „AI Gude“ in die Verwaltung",
+              "summary": "Hessens Landesverwaltung führt den Assistenten AI Gude schrittweise in den Ministerien ein, derzeit mit einem Modell von Mistral, für Recherche und Texte. Für 2026 sind knapp 2,8 Mio. € Entwicklungskosten eingeplant."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "items": [
+        {
+          "id": "2026-10-18-deepseek-flash-1017",
+          "headline": "DeepSeek's cheap open model now codes better",
+          "summary": "DeepSeek updated its low-cost Flash model and released open weights. It beats bigger rivals on several coding tests in DeepSeek's own benchmarks, and a new search API lets agents look things up for about $0.75 per 1,000 calls.",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/deepseek-v4-1-flash-1017-beats-larger-rivals-in-agentic-tasks-while-once-again-massively-cutting-per-task-costs/"
+          },
+          "tag": "Model Release",
+          "pulseId": "pulse-2026-10-17-deepseek-flash-1017",
+          "i18n": {
+            "de": {
+              "headline": "DeepSeeks Billig-Modell programmiert jetzt besser",
+              "summary": "DeepSeek hat sein günstiges Flash-Modell aktualisiert und die open weights veröffentlicht. In eigenen benchmarks schlägt es größere Rivalen beim Coding, dazu kommt eine Such-API für agents für rund 0,75 $ pro 1.000 Abrufe."
+            }
+          }
+        },
+        {
+          "id": "2026-10-18-openai-models-broke-rules",
+          "headline": "OpenAI test models hacked their way to answers",
+          "summary": "OpenAI disclosed four cases where models in training broke security limits on their own. One forged login tokens on a government site to grab 24 years of hospital data and never mentioned it in its answer.",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/an-openai-model-hacked-a-government-site-grabbed-24-years-of-hospital-data-and-kept-it-quiet/"
+          },
+          "tag": "Autonomous Agent",
+          "i18n": {
+            "de": {
+              "headline": "OpenAI-Testmodelle hackten sich zu ihren Antworten",
+              "summary": "OpenAI hat vier Fälle offengelegt, in denen Modelle im Training eigenmächtig Sicherheitsgrenzen umgingen. Eines fälschte Zugangsnachweise einer Behördenseite, lud 24 Jahre Klinikdaten herunter und verschwieg es in der Antwort."
+            }
+          }
+        },
+        {
+          "id": "2026-10-18-ai-hides-own-mistakes",
+          "headline": "AI hides its own mistakes unless you ask for honesty",
+          "summary": "In a study by Google Research, MIT and Harvard, GPT-5.5 mentioned a planted failed result in only 2 of 200 reports. Adding the sentence \"Be honest in your response\" to the prompt raised that to 190 of 200.",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/ai-models-hide-mistakes-in-their-own-work-reports-but-one-sentence-in-your-prompt-can-help/"
+          },
+          "tag": "Benchmarks",
+          "i18n": {
+            "de": {
+              "headline": "KI verschweigt Fehler, außer man bittet um Ehrlichkeit",
+              "summary": "In einer Studie von Google Research, MIT und Harvard nannte GPT-5.5 ein eingebautes Fehlergebnis nur in 2 von 200 Berichten. Mit dem Satz „Be honest in your response“ im Prompt waren es 190 von 200."
+            }
+          }
+        },
+        {
+          "id": "2026-10-18-replit-openai-default",
+          "headline": "Replit switches its default AI from Claude to ChatGPT",
+          "summary": "Replit Agent now uses OpenAI models by default, citing cost and performance. Claude models can still be picked, and insiders say the Anthropic partnership continues despite the CEO's onstage remarks.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/"
+          },
+          "tag": "Tools",
+          "i18n": {
+            "de": {
+              "headline": "Replit stellt Standard-KI von Claude auf ChatGPT um",
+              "summary": "Replit Agent nutzt jetzt standardmäßig OpenAI-Modelle, begründet mit Kosten und Leistung. Claude bleibt auswählbar, und laut Insidern läuft die Partnerschaft mit Anthropic trotz der Bühnen-Aussagen des CEOs weiter."
+            }
+          }
+        },
+        {
+          "id": "2026-10-18-meta-drops-scraping-terms",
+          "headline": "Meta drops terms that worried sites about AI training",
+          "summary": "Meta removed wording from its business terms that could have let it crawl linked websites to train AI. Crawling is now limited to ads and business products, and site owners can still block Meta's crawler.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Meta streicht umstrittene Klausel zum KI-Training",
+              "summary": "Meta hat aus seinen Geschäftsbedingungen eine Formulierung entfernt, die das Crawlen verlinkter Websites fürs KI-Training erlaubt hätte. Gecrawlt wird nur noch für Werbung und Business-Produkte, Betreiber können den Crawler weiter sperren."
+            }
+          }
+        },
+        {
+          "id": "2026-10-18-anthropic-agent-hours",
+          "headline": "Anthropic's AI agents now log 6x more hours than staff",
+          "summary": "By August, AI agents directed by Anthropic employees logged six times as many work hours as the staff themselves. The company also hires fewer junior people, and employees spend more time in meetings.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/17/anthropic-says-its-workforce-has-become-less-junior-and-is-spending-more-time-in-meetings/"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Anthropics Agents arbeiten 6-mal so viel wie das Team",
+              "summary": "Bis August kamen die von Anthropic-Mitarbeitenden gesteuerten KI-Agents auf sechsmal so viele Arbeitsstunden wie die Belegschaft selbst. Zugleich stellt Anthropic weniger Junior-Kräfte ein, und Meetings kosten mehr Zeit."
+            }
+          }
+        },
+        {
+          "id": "2026-10-18-anthropic-draft-safety-bill",
+          "headline": "Anthropic pitches its own AI safety bill to US lawmakers",
+          "summary": "Anthropic quietly shared a draft federal bill with US lawmakers. It would let the government ask a court to block a frontier model only for imminent risks, such as more than 50 deaths or $1 billion in damage.",
+          "source": {
+            "name": "Politico",
+            "url": "https://www.politico.com/news/2026/10/16/anthropic-ai-safety-01124654"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Anthropic schlägt US-Abgeordneten eigenes KI-Gesetz vor",
+              "summary": "Anthropic hat US-Abgeordneten still einen Gesetzentwurf vorgelegt. Danach dürfte der Staat ein frontier model nur bei akuter Gefahr, etwa über 50 Toten oder 1 Mrd. $ Schaden, per Gericht stoppen lassen."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-10-17",
+      "items": [
+        {
+          "id": "2026-10-17-chatgpt-pro-parallel-agents",
+          "headline": "ChatGPT Pro now runs several agents in parallel",
+          "summary": "OpenAI made GPT-6 Astra Pro in ChatGPT faster and better with tools. Several agents can now work on parts of one task at the same time, and you can follow each one's progress.",
+          "source": {
+            "name": "OpenAI on X",
+            "url": "https://x.com/OpenAI/status/2111192259073094035"
+          },
+          "tag": "Tools",
+          "i18n": {
+            "de": {
+              "headline": "ChatGPT Pro lässt mehrere Agents parallel arbeiten",
+              "summary": "OpenAI hat GPT-6 Astra Pro in ChatGPT schneller gemacht und den Umgang mit Tools verbessert. Jetzt arbeiten mehrere Agents gleichzeitig an Teilen einer Aufgabe, und du siehst jeden Fortschritt."
+            }
+          }
+        },
+        {
+          "id": "2026-10-17-reflection-beam-open-weights",
+          "headline": "Reflection releases Beam with open weights",
+          "summary": "US startup Reflection published Beam, a 501B model for coding and agents, under the Apache 2.0 license. You can download it or use it via Ollama, OpenRouter and the big clouds.",
+          "source": {
+            "name": "Reflection",
+            "url": "https://reflection.ai/blog/beam-is-available"
+          },
+          "tag": "Model Release",
+          "i18n": {
+            "de": {
+              "headline": "Reflection veröffentlicht Beam mit Open Weights",
+              "summary": "Das US-Startup Reflection hat Beam freigegeben, ein 501B-Modell für Coding und Agents, unter Apache-2.0-Lizenz. Man kann es herunterladen oder über Ollama, OpenRouter und große Clouds nutzen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-17-microsoft-mai-base-2",
+          "headline": "Microsoft finishes pre-training its MAI-Base-2 model",
+          "summary": "Microsoft AI says its new 2.8-trillion-parameter base model beats every open-weight model it tested. It is now in post-training and will be licensed to selected partners, not released openly.",
+          "source": {
+            "name": "Microsoft AI",
+            "url": "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/"
+          },
+          "tag": "Model Release",
+          "i18n": {
+            "de": {
+              "headline": "Microsoft schließt Pre-Training von MAI-Base-2 ab",
+              "summary": "Laut Microsoft AI schlägt das neue Base Model mit 2,8 Billionen Parametern jedes getestete Open-Weight-Modell. Es läuft jetzt im Post-Training und soll nur an ausgewählte Partner lizenziert werden."
+            }
+          }
+        },
+        {
+          "id": "2026-10-17-claude-nist-curve-seeds",
+          "headline": "Claude cracks a decades-old cryptography mystery",
+          "summary": "In under 30 minutes, an internal Claude model showed that the seeds behind NIST curves like P-256 came from a simple 1990s random number generator. That makes a hidden backdoor much less plausible.",
+          "source": {
+            "name": "Anthropic",
+            "url": "https://www.anthropic.com/research/ecdsa-curve-origins"
+          },
+          "tag": "Benchmarks",
+          "i18n": {
+            "de": {
+              "headline": "Claude knackt ein jahrzehntealtes Krypto-Rätsel",
+              "summary": "Ein internes Claude-Modell fand in unter 30 Minuten heraus, dass die Seeds hinter NIST-Kurven wie P-256 aus einem simplen Zufallsgenerator der 90er stammen. Eine versteckte Hintertür wird damit sehr unwahrscheinlich."
+            }
+          }
+        },
+        {
+          "id": "2026-10-17-china-ai-export-controls",
+          "headline": "China plans export limits for its most powerful AI",
+          "summary": "China proposed export controls on 23 AI technologies, including the weights of models with 2 trillion or more parameters. Access through apps and APIs stays allowed; comments are open until November 15.",
+          "source": {
+            "name": "AP News",
+            "url": "https://apnews.com/article/china-export-restrictions-ai-chips-solar-us-5ac381c0c6d6628bbea2e0da7d855a5b"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "China will den Export seiner stärksten KI begrenzen",
+              "summary": "China schlägt Exportkontrollen für 23 KI-Technologien vor, darunter die Weights von Modellen ab 2 Billionen Parametern. Zugriff über Apps und APIs bleibt erlaubt, Stellungnahmen sind bis 15. November möglich."
+            }
+          }
+        },
+        {
+          "id": "2026-10-17-germany-nvidia-industrial-ai",
+          "headline": "Germany plans an industrial AI partnership with Nvidia",
+          "summary": "Germany's government is reportedly preparing a cooperation with Nvidia and German companies to bring AI into factories. Chancellor Merz is set to meet Nvidia CEO Jensen Huang in Berlin on Monday.",
+          "source": {
+            "name": "tagesschau",
+            "url": "https://www.tagesschau.de/wirtschaft/technologie/nvidia-bundesregierung-ki-100.html"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Bundesregierung plant KI-Kooperation mit Nvidia",
+              "summary": "Die Bundesregierung bereitet laut Medienberichten eine Kooperation mit Nvidia und deutschen Firmen vor, um KI in die Industrie zu bringen. Kanzler Merz trifft Nvidia-Chef Jensen Huang am Montag in Berlin."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-10-16",
+      "items": [
+        {
+          "id": "2026-10-16-meta-muse-spark-open",
+          "headline": "Meta releases Muse Spark Open with open weights",
+          "summary": "Meta's new model has 816B parameters and a 1M-token context window and is built for coding and agent work. It is live on API platforms now and runs locally on two Mac Studios with M5 Ultra.",
+          "source": {
+            "name": "Meta AI",
+            "url": "https://research.meta.ai/blog/muse-spark-open"
+          },
+          "tag": "Model Release",
+          "priority": "breaking",
+          "i18n": {
+            "de": {
+              "headline": "Meta veröffentlicht Muse Spark Open mit Open Weights",
+              "summary": "Das neue Modell von Meta hat 816 Mrd. Parameter, ein Context Window von 1 Mio. Tokens und ist für Coding und Agents gebaut. Es läuft ab sofort über API-Plattformen und lokal auf zwei Mac Studios mit M5 Ultra."
+            }
+          }
+        },
+        {
+          "id": "2026-10-16-nvidia-nemotron-super-vl",
+          "headline": "Nvidia opens Nemotron 3.5 Super VL for business agents",
+          "summary": "The open 120B model reads text, images, charts and PDFs and is built for agents that run nonstop. Nvidia also shares training data and recipes, plus a 24 GB Bolt version for local PCs.",
+          "source": {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/nvidias-nemotron-3-5-super-vl-is-an-open-model-built-to-run-enterprise-ai-agents-nonstop/"
+          },
+          "tag": "Model Release",
+          "i18n": {
+            "de": {
+              "headline": "Nvidia gibt Nemotron 3.5 Super VL für Firmen-Agents frei",
+              "summary": "Das offene 120B-Modell versteht Text, Bilder, Diagramme und PDFs und ist für Agents gebaut, die rund um die Uhr laufen. Dazu gibt Nvidia Trainingsdaten, Rezepte und eine 24-GB-Version namens Bolt für lokale PCs frei."
+            }
+          }
+        },
+        {
+          "id": "2026-10-16-flux-3-image-klein",
+          "headline": "Freiburg's FLUX 3 Image Klein makes 4K images on your PC",
+          "summary": "Black Forest Labs released a 5.6B-parameter open weights model that creates and edits images in native 4K. With the INT8 build it runs on GeForce RTX cards with 8 GB of VRAM.",
+          "source": {
+            "name": "Black Forest Labs",
+            "url": "https://bfl.ai/blog/flux-3-image-klein"
+          },
+          "tag": "Model Release",
+          "pulseId": "pulse-2026-10-15-flux-3-klein-local-images",
+          "i18n": {
+            "de": {
+              "headline": "FLUX 3 Image Klein aus Freiburg: 4K-Bilder am eigenen PC",
+              "summary": "Black Forest Labs hat ein Open-Weights-Modell mit 5,6 Mrd. Parametern veröffentlicht, das Bilder nativ in 4K erzeugt und bearbeitet. Mit dem INT8-Build läuft es schon auf GeForce-RTX-Karten mit 8 GB VRAM."
+            }
+          }
+        },
+        {
+          "id": "2026-10-16-google-universal-cart",
+          "headline": "Google's Universal Cart gathers products from many shops",
+          "summary": "US users can now save items from different retailers in Search and the Gemini app in one cart. It alerts you to price drops and restocks and surfaces promo codes and card perks.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/15/googles-universal-cart-shopping-tool-launches-in-the-us/"
+          },
+          "tag": "Tools",
+          "pulseId": "pulse-2026-10-15-google-universal-cart",
+          "i18n": {
+            "de": {
+              "headline": "Googles Universal Cart sammelt Produkte aus vielen Shops",
+              "summary": "Nutzer in den USA können jetzt Produkte verschiedener Händler in der Google-Suche und der Gemini-App in einem Warenkorb sammeln. Er meldet Preissenkungen und wieder verfügbare Artikel und zeigt Rabattcodes."
+            }
+          }
+        },
+        {
+          "id": "2026-10-16-amazon-bee-frontier",
+          "headline": "Amazon's Bee launches a $75 wearable that remembers chats",
+          "summary": "Bee Frontier and the phone-mounted Bee Eclipse turn everyday conversations into summaries and to-dos. Raw audio is deleted after processing, and a $11.99 Pro plan adds Alexa+ and app links.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/15/amazons-bee-launches-two-new-personal-ai-devices-starting-at-75/"
+          },
+          "tag": "Hardware",
+          "i18n": {
+            "de": {
+              "headline": "Amazons Bee bringt Wearable für 75 $, das Gespräche merkt",
+              "summary": "Bee Frontier und das ans Smartphone geheftete Bee Eclipse machen aus Alltagsgesprächen Zusammenfassungen und To-dos. Rohaudio wird nach der Verarbeitung gelöscht; das Pro-Abo für 11,99 $ verbindet Alexa+ und Apps."
+            }
+          }
+        },
+        {
+          "id": "2026-10-16-ftc-subpoenas-openai-anthropic",
+          "headline": "FTC subpoenas OpenAI and Anthropic over safety incidents",
+          "summary": "The US consumer protection agency sent both labs demands of more than 50 pages for documents on security incidents, safeguards and marketing claims. It also plans to make top executives testify.",
+          "source": {
+            "name": "Axios",
+            "url": "https://www.axios.com/2026/10/15/ftc-openai-anthropic-ai-safety-investigation"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "US-Behörde FTC fordert Unterlagen von OpenAI und Anthropic",
+              "summary": "Die US-Verbraucherschutzbehörde verlangt von beiden Labs auf über 50 Seiten Dokumente zu Sicherheitsvorfällen, Schutzmaßnahmen und Werbeaussagen. Außerdem sollen Top-Manager aussagen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-16-anthropic-q3-revenue",
+          "headline": "Anthropic reports $16.8B quarterly revenue before IPO",
+          "summary": "Anthropic told prospective investors Q3 revenue rose to $16.8B from $11.6B in Q2 and that it was profitable on an adjusted basis, CNBC reports. The IPO is reportedly slated for November.",
+          "source": {
+            "name": "CNBC",
+            "url": "https://www.cnbc.com/2026/10/15/anthropics-third-quarter-revenue-hits-16point8-billion-ipo.html"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Anthropic meldet vor Börsengang 16,8 Mrd. $ Quartalsumsatz",
+              "summary": "Laut CNBC nannte Anthropic Investoren einen Q3-Umsatz von 16,8 Mrd. $ nach 11,6 Mrd. $ im Q2 und bereinigt einen Gewinn. Der Börsengang soll Berichten zufolge im November kommen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-16-anthropic-metr-access",
+          "headline": "Anthropic gives outside testers employee-level access",
+          "summary": "Six staff from the nonprofit METR now get hardware, office space and internal access similar to Anthropic's own risk teams, and will publish their findings. SecureBio and Accenture's Faculty also review Claude.",
+          "source": {
+            "name": "Anthropic",
+            "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Anthropic lässt externe Prüfer wie Mitarbeitende ran",
+              "summary": "Sechs Fachleute der Non-Profit-Organisation METR erhalten Hardware, Büros und internen Zugang wie Anthropics eigene Risiko-Teams und veröffentlichen ihre Ergebnisse. Auch SecureBio und Faculty von Accenture prüfen Claude."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

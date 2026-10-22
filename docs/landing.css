@@ -2,15 +2,6 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("assets/fraunces-latin-400.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: "Fraunces";
   src: url("assets/fraunces-latin-500.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
@@ -37,15 +28,6 @@
 }
 
 @font-face {
-  font-family: "Fraunces";
-  src: url("assets/fraunces-latin-700.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
   font-family: "Source Sans 3";
   src: url("assets/source-sans-3-latin-400.woff2") format("woff2");
   font-weight: 400;
@@ -58,15 +40,6 @@
   font-family: "Source Sans 3";
   src: url("assets/source-sans-3-latin-600.woff2") format("woff2");
   font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: "Source Sans 3";
-  src: url("assets/source-sans-3-latin-700.woff2") format("woff2");
-  font-weight: 700;
   font-style: normal;
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
@@ -209,7 +182,7 @@ body {
   color: var(--muted);
   text-decoration: none;
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.04em;
   min-height: 44px;
   min-width: 44px;
@@ -304,12 +277,14 @@ body {
   color: var(--text);
   text-decoration: none;
   font-family: var(--serif);
+  font-weight: 500;
   font-size: 1.65rem;
   border-bottom: 1px solid var(--rule);
 }
 
 .mobile-nav-index {
   font-style: italic;
+  font-weight: 500;
   font-size: 0.95rem;
   color: var(--faint);
   width: 1.8rem;
@@ -453,7 +428,7 @@ summary:focus-visible {
 }
 
 .prose {
-  text-align: justify;
+  text-align: left;
   hyphens: auto;
   -webkit-hyphens: auto;
   hyphenate-limit-chars: 6 3 3;
@@ -542,6 +517,7 @@ summary:focus-visible {
   margin: 0;
   font-family: var(--serif);
   font-style: italic;
+  font-weight: 500;
   font-size: 1.65rem;
   line-height: 1;
   color: var(--faint);
@@ -926,6 +902,13 @@ summary:focus-visible {
 
 .trust-logos {
   overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 1.25rem, #000 calc(100% - 1.25rem), transparent);
+  mask-image: linear-gradient(to right, transparent, #000 1.25rem, #000 calc(100% - 1.25rem), transparent);
+}
+
+.trust-lead {
+  flex: none;
+  width: 1.25rem;
 }
 
 .trust-track,
@@ -991,6 +974,7 @@ summary:focus-visible {
   margin: 0;
   font-family: var(--serif);
   font-style: italic;
+  font-weight: 500;
   font-size: 1.2rem;
 }
 
@@ -1091,6 +1075,8 @@ summary:focus-visible {
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
   padding: 0.85rem 0;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 1.25rem, #000 calc(100% - 1.25rem), transparent);
+  mask-image: linear-gradient(to right, transparent, #000 1.25rem, #000 calc(100% - 1.25rem), transparent);
 }
 
 .marquee-phrase {
@@ -1356,23 +1342,23 @@ summary:focus-visible {
     flex-wrap: wrap;
   }
 
-  .aila-float,
+  .sapaude-float,
   .plan-arrow {
     transition: none;
   }
 
-  .aila-book,
-  .aila-pose {
+  .sapaude-book,
+  .sapaude-pose {
     animation: none;
     transition: none;
   }
 
-  .aila-pose-idle {
+  .sapaude-pose-idle {
     opacity: 1;
   }
 
-  .aila-pose-blink,
-  .aila-pose-present {
+  .sapaude-pose-blink,
+  .sapaude-pose-present {
     opacity: 0;
   }
 }
@@ -1389,31 +1375,31 @@ summary:focus-visible {
   border: 0;
 }
 
-.aila-hello {
+.sapaude-hello {
   display: flex;
   align-items: flex-end;
   gap: 0.85rem;
   padding: 1rem 1rem 0;
 }
 
-.aila-mark {
+.sapaude-mark {
   position: relative;
   display: block;
   overflow: visible;
   flex: none;
   line-height: 0;
   background: transparent;
-  transform: translateY(var(--aila-nod, 0px)) rotate(var(--aila-turn, 0deg));
+  transform: translateY(var(--sapaude-nod, 0px)) rotate(var(--sapaude-turn, 0deg));
   transform-origin: center center;
 }
 
-.aila-hello .aila-mark {
+.sapaude-hello .sapaude-mark {
   width: 156px;
   height: 168px;
 }
 
-.aila-mark img,
-.aila-face {
+.sapaude-mark img,
+.sapaude-face {
   position: absolute;
   inset: 0;
   display: block;
@@ -1422,23 +1408,23 @@ summary:focus-visible {
   background: transparent;
 }
 
-.aila-mark img {
+.sapaude-mark img {
   object-fit: contain;
 }
 
-.aila-face {
+.sapaude-face {
   overflow: visible;
   pointer-events: none;
 }
 
 @media (max-height: 739px) {
-  .aila-hello .aila-mark {
+  .sapaude-hello .sapaude-mark {
     width: 112px;
     height: 121px;
   }
 }
 
-.aila-bubble {
+.sapaude-bubble {
   margin: 0 0 0.85rem;
   padding: 0.8rem 0.95rem;
   background: var(--card);
@@ -1452,7 +1438,7 @@ summary:focus-visible {
   color: var(--ink);
 }
 
-.aila-float {
+.sapaude-float {
   position: fixed;
   right: 12px;
   bottom: 12px;
@@ -1463,22 +1449,22 @@ summary:focus-visible {
   text-decoration: none;
   background: transparent;
   overflow: visible;
-  transform: translateY(var(--aila-float, 0px));
+  transform: translateY(var(--sapaude-float, 0px));
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
 }
 
-.aila-float.is-visible {
+.sapaude-float.is-visible {
   opacity: 1;
   pointer-events: auto;
 }
 
-.aila-float .aila-book {
+.sapaude-float .sapaude-book {
   width: 72px;
 }
 
-.aila-float:focus-visible {
+.sapaude-float:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
@@ -1716,7 +1702,7 @@ summary:focus-visible {
     0 22px 44px rgba(28, 25, 22, 0.16);
 }
 
-.hero-aila {
+.hero-sapaude {
   position: absolute;
   z-index: 2;
   left: 0;
@@ -1727,7 +1713,7 @@ summary:focus-visible {
   pointer-events: none;
 }
 
-.hero-aila .aila-book {
+.hero-sapaude .sapaude-book {
   width: 8.4rem;
 }
 
@@ -1848,10 +1834,9 @@ summary:focus-visible {
 .cover-kicker {
   font-family: var(--sans);
   font-size: 0.58rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  opacity: 0.82;
 }
 
 .cover-name {
@@ -1870,12 +1855,12 @@ summary:focus-visible {
   opacity: 0.4;
 }
 
-.cover-clay { background: #c6533a; color: #fff8f3; }
-.cover-gold { background: #e2b12e; color: #1c1916; }
+.cover-clay { background: #b64c35; color: #fff8f3; }
+.cover-gold { background: #e2b12e; color: #14110e; }
 .cover-wine { background: #6e2436; color: #fff8f3; }
 .cover-ink { background: #24312e; color: #f6f1e8; }
 .cover-pine { background: #1c6b58; color: #f4fbfe; }
-.cover-sand { background: #e6d3b0; color: #1c1916; }
+.cover-sand { background: #e6d3b0; color: #14110e; }
 .cover-sea { background: #1e6e8c; color: #f4fbfe; }
 .cover-olive { background: #4e5c28; color: #f8f6ef; }
 
@@ -1922,7 +1907,7 @@ summary:focus-visible {
     margin-inline: 0;
   }
 
-  .hero-aila {
+  .hero-sapaude {
     transform: translateX(-28%);
     bottom: 3%;
   }
@@ -1942,13 +1927,17 @@ summary:focus-visible {
   }
 
   .hero-stage {
-    padding-bottom: 4.75rem;
+    padding-bottom: 6.35rem;
   }
 
-  .hero-aila {
+  .hero-sapaude {
     left: 0;
     bottom: 0;
     transform: none;
+  }
+
+  .hero-sapaude .sapaude-book {
+    width: 5.35rem;
   }
 }
 
@@ -1958,24 +1947,25 @@ summary:focus-visible {
     font-size: 0.88rem;
   }
 
-  .hero-aila .aila-book {
-    width: 6.5rem;
+  .hero-sapaude .sapaude-book {
+    width: 4.7rem;
   }
 
   .hero-bubble {
-    font-size: 0.86rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.1rem;
   }
 }
 
-.aila-book {
+.sapaude-book {
   position: relative;
   aspect-ratio: 1;
   flex: none;
   transform-origin: 50% 82%;
-  animation: aila-bob 3.6s ease-in-out infinite;
+  animation: sapaude-bob 3.6s ease-in-out infinite;
 }
 
-.aila-pose {
+.sapaude-pose {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1985,41 +1975,41 @@ summary:focus-visible {
   user-select: none;
 }
 
-.aila-pose-idle {
+.sapaude-pose-idle {
   opacity: 1;
-  animation: aila-idle 5.6s linear infinite;
+  animation: sapaude-idle 5.6s linear infinite;
 }
 
-.aila-pose-blink {
+.sapaude-pose-blink {
   opacity: 0;
-  animation: aila-blink 5.6s linear infinite;
+  animation: sapaude-blink 5.6s linear infinite;
 }
 
-.aila-pose-present {
+.sapaude-pose-present {
   opacity: 0;
   transition: opacity 180ms ease;
 }
 
-body:has(.nav-cta:is(:hover, :focus-visible)) .aila-pose-idle,
-body:has(.nav-cta:is(:hover, :focus-visible)) .aila-pose-blink,
-body:has(.mobile-cta:is(:hover, :focus-visible)) .aila-pose-idle,
-body:has(.mobile-cta:is(:hover, :focus-visible)) .aila-pose-blink,
-body:has(.store-pending:is(:hover, :focus-visible)) .aila-pose-idle,
-body:has(.store-pending:is(:hover, :focus-visible)) .aila-pose-blink,
-.aila-float:is(:hover, :focus-visible) .aila-pose-idle,
-.aila-float:is(:hover, :focus-visible) .aila-pose-blink {
+body:has(.nav-cta:is(:hover, :focus-visible)) .sapaude-pose-idle,
+body:has(.nav-cta:is(:hover, :focus-visible)) .sapaude-pose-blink,
+body:has(.mobile-cta:is(:hover, :focus-visible)) .sapaude-pose-idle,
+body:has(.mobile-cta:is(:hover, :focus-visible)) .sapaude-pose-blink,
+body:has(.store-pending:is(:hover, :focus-visible)) .sapaude-pose-idle,
+body:has(.store-pending:is(:hover, :focus-visible)) .sapaude-pose-blink,
+.sapaude-float:is(:hover, :focus-visible) .sapaude-pose-idle,
+.sapaude-float:is(:hover, :focus-visible) .sapaude-pose-blink {
   animation: none;
   opacity: 0;
 }
 
-body:has(.nav-cta:is(:hover, :focus-visible)) .aila-pose-present,
-body:has(.mobile-cta:is(:hover, :focus-visible)) .aila-pose-present,
-body:has(.store-pending:is(:hover, :focus-visible)) .aila-pose-present,
-.aila-float:is(:hover, :focus-visible) .aila-pose-present {
+body:has(.nav-cta:is(:hover, :focus-visible)) .sapaude-pose-present,
+body:has(.mobile-cta:is(:hover, :focus-visible)) .sapaude-pose-present,
+body:has(.store-pending:is(:hover, :focus-visible)) .sapaude-pose-present,
+.sapaude-float:is(:hover, :focus-visible) .sapaude-pose-present {
   opacity: 1;
 }
 
-@keyframes aila-bob {
+@keyframes sapaude-bob {
   0%,
   100% {
     transform: translateY(0) scale(1);
@@ -2030,7 +2020,7 @@ body:has(.store-pending:is(:hover, :focus-visible)) .aila-pose-present,
   }
 }
 
-@keyframes aila-idle {
+@keyframes sapaude-idle {
   0%,
   86% {
     opacity: 1;
@@ -2047,7 +2037,7 @@ body:has(.store-pending:is(:hover, :focus-visible)) .aila-pose-present,
   }
 }
 
-@keyframes aila-blink {
+@keyframes sapaude-blink {
   0%,
   86% {
     opacity: 0;
@@ -2065,34 +2055,34 @@ body:has(.store-pending:is(:hover, :focus-visible)) .aila-pose-present,
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .aila-book,
-  .aila-pose,
-  body:has(.nav-cta:is(:hover, :focus-visible)) .aila-pose,
-  body:has(.mobile-cta:is(:hover, :focus-visible)) .aila-pose,
-  body:has(.store-pending:is(:hover, :focus-visible)) .aila-pose,
-  .aila-float:is(:hover, :focus-visible) .aila-pose {
+  .sapaude-book,
+  .sapaude-pose,
+  body:has(.nav-cta:is(:hover, :focus-visible)) .sapaude-pose,
+  body:has(.mobile-cta:is(:hover, :focus-visible)) .sapaude-pose,
+  body:has(.store-pending:is(:hover, :focus-visible)) .sapaude-pose,
+  .sapaude-float:is(:hover, :focus-visible) .sapaude-pose {
     animation: none;
     transition: none;
   }
 
-  .aila-pose-idle,
-  body:has(.nav-cta:is(:hover, :focus-visible)) .aila-pose-idle,
-  body:has(.mobile-cta:is(:hover, :focus-visible)) .aila-pose-idle,
-  body:has(.store-pending:is(:hover, :focus-visible)) .aila-pose-idle,
-  .aila-float:is(:hover, :focus-visible) .aila-pose-idle {
+  .sapaude-pose-idle,
+  body:has(.nav-cta:is(:hover, :focus-visible)) .sapaude-pose-idle,
+  body:has(.mobile-cta:is(:hover, :focus-visible)) .sapaude-pose-idle,
+  body:has(.store-pending:is(:hover, :focus-visible)) .sapaude-pose-idle,
+  .sapaude-float:is(:hover, :focus-visible) .sapaude-pose-idle {
     opacity: 1;
   }
 
-  .aila-pose-blink,
-  .aila-pose-present,
-  body:has(.nav-cta:is(:hover, :focus-visible)) .aila-pose-blink,
-  body:has(.nav-cta:is(:hover, :focus-visible)) .aila-pose-present,
-  body:has(.mobile-cta:is(:hover, :focus-visible)) .aila-pose-blink,
-  body:has(.mobile-cta:is(:hover, :focus-visible)) .aila-pose-present,
-  body:has(.store-pending:is(:hover, :focus-visible)) .aila-pose-blink,
-  body:has(.store-pending:is(:hover, :focus-visible)) .aila-pose-present,
-  .aila-float:is(:hover, :focus-visible) .aila-pose-blink,
-  .aila-float:is(:hover, :focus-visible) .aila-pose-present {
+  .sapaude-pose-blink,
+  .sapaude-pose-present,
+  body:has(.nav-cta:is(:hover, :focus-visible)) .sapaude-pose-blink,
+  body:has(.nav-cta:is(:hover, :focus-visible)) .sapaude-pose-present,
+  body:has(.mobile-cta:is(:hover, :focus-visible)) .sapaude-pose-blink,
+  body:has(.mobile-cta:is(:hover, :focus-visible)) .sapaude-pose-present,
+  body:has(.store-pending:is(:hover, :focus-visible)) .sapaude-pose-blink,
+  body:has(.store-pending:is(:hover, :focus-visible)) .sapaude-pose-present,
+  .sapaude-float:is(:hover, :focus-visible) .sapaude-pose-blink,
+  .sapaude-float:is(:hover, :focus-visible) .sapaude-pose-present {
     opacity: 0;
   }
 }

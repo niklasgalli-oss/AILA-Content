@@ -1,7 +1,7 @@
 /**
  * Sapaude landing config.
  *
- * AILA_APP_STORE_URL is the only App Store link. Leave it as "" until the
+ * SAPAUDE_APP_STORE_URL is the only App Store link. Leave it as "" until the
  * listing exists. An empty value keeps the coming-soon lines: English says
  * "Coming soon on App Store" and "Coming soon on Google Play". German says
  * "Demnächst im App Store" and "Demnächst bei Google Play". Neither page
@@ -14,9 +14,9 @@
  * space. English uses the US-UK artwork. German uses the DE artwork
  * ("Laden im App Store"). App Store stays in English on the badge.
  */
-const AILA_APP_STORE_URL = "";
+const SAPAUDE_APP_STORE_URL = "";
 
-const AILA_BRIEFING_URL = "https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/briefing.json";
+const SAPAUDE_BRIEFING_URL = "https://sapaude.app/briefing.json";
 
 const TAG_LABEL = {
   en: {
@@ -54,9 +54,9 @@ function appStoreProductUrl(value) {
 }
 
 function wireStore() {
-  const root = document.querySelector("[data-aila-store]");
+  const root = document.querySelector("[data-sapaude-store]");
   if (!root) return;
-  const href = appStoreProductUrl(AILA_APP_STORE_URL);
+  const href = appStoreProductUrl(SAPAUDE_APP_STORE_URL);
   if (!href) return;
   const pending = root.querySelector("[data-store-pending]");
   if (!pending) return;
@@ -188,7 +188,7 @@ async function loadBriefing() {
   const locale = root.dataset.locale === "de" ? "de" : "en";
   await freshenSampleDate(root, locale);
   try {
-    const response = await fetch(AILA_BRIEFING_URL, {
+    const response = await fetch(SAPAUDE_BRIEFING_URL, {
       credentials: "omit",
       referrerPolicy: "no-referrer",
       signal: AbortSignal.timeout(5000)
@@ -235,7 +235,7 @@ function wireEditionMotion() {
   const header = document.getElementById("site-header");
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const floater = document.querySelector(".aila-float");
+  const floater = document.querySelector(".sapaude-float");
   const hero = document.getElementById("hero-section");
   const onScroll = () => {
     if (header) header.classList.toggle("is-scrolled", window.scrollY > 20);

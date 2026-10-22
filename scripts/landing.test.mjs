@@ -22,7 +22,8 @@ function walk(dir, found = []) {
 test("custom domain is sapaude.app", () => {
   assert.equal(existsSync(join(root, "CNAME")), false);
   assert.equal(read("docs/CNAME").trim(), "sapaude.app");
-  const doc = read("docs/landing-domain.md");
+  assert.equal(existsSync(join(root, "docs/landing-domain.md")), false);
+  const doc = read("ops/landing-domain.md");
   assert.match(doc, /185\.199\.108\.153/);
   assert.match(doc, /185\.199\.111\.153/);
   assert.match(doc, /2606:50c0:8000::153/);
@@ -63,6 +64,19 @@ test("custom domain is sapaude.app", () => {
   assert.doesNotMatch(read("README.md"), /sapaude\.de/);
 });
 
+test("published feeds match the repo root", () => {
+  assert.equal(
+    read("docs/pulse.json") === read("pulse.json"),
+    true,
+    "docs/pulse.json must stay a byte copy of pulse.json"
+  );
+  assert.equal(
+    read("docs/briefing.json") === read("briefing.json"),
+    true,
+    "docs/briefing.json must stay a byte copy of briefing.json"
+  );
+});
+
 test("apple-app-site-association is not a file", () => {
   const paths = walk(root).map((path) => path.slice(root.length + 1));
   const hit = paths.filter((path) => path.includes("apple-app-site-association"));
@@ -71,8 +85,10 @@ test("apple-app-site-association is not a file", () => {
 
 test("App Store URL is one empty constant", () => {
   const js = read("docs/landing.js");
-  assert.match(js, /const AILA_APP_STORE_URL = "";/);
-  assert.equal((js.match(/const AILA_APP_STORE_URL/g) || []).length, 1);
+  assert.match(js, /const SAPAUDE_APP_STORE_URL = "";/);
+  assert.equal((js.match(/const SAPAUDE_APP_STORE_URL/g) || []).length, 1);
+  assert.match(js, /const SAPAUDE_BRIEFING_URL = "https:\/\/sapaude\.app\/briefing\.json"/);
+  assert.doesNotMatch(js, /AILA_/);
 });
 
 test("English and German pages carry the landing sections", () => {
@@ -120,20 +136,23 @@ test("landing assets stay self-hosted and flat-colored", () => {
   const css = read("docs/landing.css");
   assert.match(css, /fraunces-latin-600\.woff2/);
   assert.match(css, /source-sans-3-latin-400\.woff2/);
-  assert.doesNotMatch(css, /linear-gradient|radial-gradient|fonts\.googleapis/i);
+  const cssNoMask = css.replace(/-webkit-mask-image:[^;]*;|mask-image:[^;]*;/g, "");
+  assert.doesNotMatch(cssNoMask, /linear-gradient|radial-gradient|fonts\.googleapis/i);
+  assert.match(css, /mask-image:/);
+  assert.doesNotMatch(css, /fraunces-latin-400|fraunces-latin-700|source-sans-3-latin-700/);
   assert.equal(existsSync(join(root, "docs/assets/fraunces-latin-600.woff2")), true);
-  assert.equal(existsSync(join(root, "docs/assets/aila-head-full.webp")), true);
+  assert.equal(existsSync(join(root, "docs/assets/sapaude-head-full.webp")), true);
   for (const pose of ["idle", "blink", "think", "cheer", "present"]) {
-    assert.equal(existsSync(join(root, `docs/assets/aila-book/${pose}.webp`)), true);
+    assert.equal(existsSync(join(root, `docs/assets/sapaude-book/${pose}.webp`)), true);
   }
-  assert.match(css, /@keyframes aila-bob/);
-  assert.match(css, /@keyframes aila-blink/);
+  assert.match(css, /@keyframes sapaude-bob/);
+  assert.match(css, /@keyframes sapaude-blink/);
   const en = read("docs/en/index.html");
   const de = read("docs/index.html");
-  assert.match(en, /assets\/aila-book\/idle\.webp/);
-  assert.match(de, /assets\/aila-book\/idle\.webp/);
-  assert.doesNotMatch(en, /aila-head-full/);
-  assert.doesNotMatch(de, /aila-head-full/);
+  assert.match(en, /assets\/sapaude-book\/idle\.webp/);
+  assert.match(de, /assets\/sapaude-book\/idle\.webp/);
+  assert.doesNotMatch(en, /sapaude-head-full/);
+  assert.doesNotMatch(de, /sapaude-head-full/);
   assert.equal(existsSync(join(root, "docs/assets/source-sans-3-latin-400.woff2")), true);
   assert.equal(existsSync(join(root, "docs/assets/OFL.txt")), true);
   assert.equal(existsSync(join(root, "docs/assets/app-store-badge-en.svg")), true);
@@ -178,6 +197,19 @@ test("name and address stay on the imprint only", () => {
   }
   const imprint = read("docs/impressum/index.html");
   assert.match(imprint, /Niklas Galli/);
+  assert.equal((imprint.match(/Niklas Galli/g) || []).length, 3);
+  assert.match(imprint, /wie oben/);
+  assert.match(imprint, /id="legal-notice"/);
+  const enImprint = read("docs/en/impressum/index.html");
+  assert.match(enImprint, /http-equiv="refresh" content="0; url=\/impressum\/#legal-notice"/);
+  assert.doesNotMatch(enImprint, /Niklas Galli/);
+  const dePrivacy = read("docs/privacy/index.html");
+  const enPrivacy = read("docs/en/privacy/index.html");
+  for (const html of [dePrivacy, enPrivacy]) {
+    assert.match(html, /https:\/\/sapaude\.app\/pulse\.json/);
+    assert.match(html, /https:\/\/sapaude\.app\/briefing\.json/);
+    assert.doesNotMatch(html, /AILA-Content|niklasgalli|raw\.githubusercontent/);
+  }
   assert.match(imprint, /Neuburger Straße 73a/);
   assert.match(imprint, /86668 Karlshuld/);
   assert.match(imprint, /support@sapaude\.app/);
@@ -191,8 +223,6 @@ test("name and address stay on the imprint only", () => {
   assert.doesNotMatch(imprint, /niklas\.galli@/);
   assert.doesNotMatch(imprint, /tel:/i);
   assert.doesNotMatch(imprint, /\+49/);
-  const dePrivacy = read("docs/privacy/index.html");
-  const enPrivacy = read("docs/en/privacy/index.html");
   assert.doesNotMatch(dePrivacy, /kein Quiz/i);
   assert.doesNotMatch(enPrivacy, /no quiz/i);
   assert.match(dePrivacy, /RevenueCat/);
@@ -268,12 +298,14 @@ test("story row, path, briefing fallback, and teams copy stay in sync", () => {
   assert.doesNotMatch(en, /A picture of the path|too late to notice/);
   assert.match(de, /Das Modell kann nur eine bestimmte Menge Text auf einmal im Blick behalten\. Bei langen Chats vergisst es den Anfang\./);
   assert.match(en, /A model can only hold a certain amount of text in view at once\. In a long chat, it forgets the beginning\./);
-  assert.match(de, /5 Min\./);
+  assert.match(de, /ab 5 Min\./);
   assert.match(de, /Ohne Fachjargon/);
-  assert.match(de, /Jeden Morgen/);
-  assert.match(en, /5 min/);
+  assert.match(de, /Mehrmals täglich/);
+  assert.doesNotMatch(de, /Jeden Morgen|7-Tage-Plan|5 Minuten am Tag/);
+  assert.match(en, /from 5 min/);
   assert.match(en, /Without jargon/);
-  assert.match(en, /Every morning/);
+  assert.match(en, /Fresh several times/);
+  assert.doesNotMatch(en, /Every morning|7-day plan|5 minutes a day/);
   assert.match(de, /Neue Wörter werden beim ersten Mal in normaler Sprache erklärt\./);
   assert.match(en, /New words are explained in plain language the first time they appear\./);
   assert.match(de, /ausreichende KI-Kompetenz ihrer Mitarbeitenden/);
@@ -298,7 +330,10 @@ test("story row, path, briefing fallback, and teams copy stay in sync", () => {
   assert.doesNotMatch(de, /open weights|benchmarks/i);
   assert.doesNotMatch(en, /open weights|benchmarks/i);
 
-  assert.match(css, /\.prose\s*\{[^}]*text-align:\s*justify/);
+  assert.match(css, /\.prose\s*\{[^}]*text-align:\s*left/);
+  assert.match(read("docs/styles.css"), /text-align:\s*left/);
+  assert.doesNotMatch(css, /text-align:\s*justify/);
+  assert.doesNotMatch(read("docs/styles.css"), /text-align:\s*justify/);
   assert.match(css, /hyphens:\s*auto/);
   assert.match(css, /\.compare-card ul\s*\{[^}]*list-style:\s*none/);
   assert.match(css, /\.phone-stage\.story-row[\s\S]*repeat\(4,/);
@@ -351,6 +386,13 @@ test("sapaude wordmark, claims, and app mismatches", () => {
   assert.doesNotMatch(en, /Sapere aude/);
   assert.match(de, /aria-label="sapaude\."/);
   assert.match(en, /aria-label="sapaude\."/);
+  assert.match(de, /aria-label="EN, English">EN</);
+  assert.match(en, /aria-label="DE, Deutsch">DE</);
+  assert.match(de, /Tägliches KI-Briefing/);
+  assert.match(de, /Basics 1 &amp; 2 gratis – auch zum Hören/);
+  assert.match(en, /Basics 1 &amp; 2 free – listening included/);
+  assert.match(de, /Lernpfad/);
+  assert.match(en, /Learning path/);
   assert.match(de, /ich bin Sapi/);
   assert.match(en, /I'm Sapi/);
   assert.match(css, /#3C9EC4/);

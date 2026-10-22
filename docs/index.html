@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sapaude — KI lernen wie eine Sprache</title>
-  <meta name="description" content="Veni, vidi, KI. KI lernen, wie man eine Sprache lernt. Ein geführter Pfad von null, Artikel, wenn du den Mechanismus willst, und ein Briefing am Tag, 5, 10 oder 15 Minuten. Demnächst im App Store und bei Google Play.">
+  <meta name="description" content="Veni, vidi, KI. KI lernen, wie man eine Sprache lernt. Ein geführter Pfad von null, Artikel, wenn du den Mechanismus willst, und ein Briefing, ab 5 Min. am Tag. Demnächst im App Store und bei Google Play.">
   <link rel="canonical" href="https://sapaude.app/">
   <link rel="alternate" hreflang="de" href="https://sapaude.app/">
   <link rel="alternate" hreflang="en" href="https://sapaude.app/en/">
@@ -32,6 +32,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preload" href="assets/fraunces-latin-600.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/source-sans-3-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/screens/de/activity-390.webp" imagesrcset="assets/screens/de/activity-390.webp 390w, assets/screens/de/activity-780.webp 780w" imagesizes="(min-width: 960px) 250px, 46vw" fetchpriority="high">
   <link rel="stylesheet" href="landing.css">
   <script type="application/ld+json">
   {
@@ -40,7 +41,7 @@
     "name": "Sapaude",
     "url": "https://sapaude.app/",
     "inLanguage": "de",
-    "description": "Veni, vidi, KI. KI lernen, wie man eine Sprache lernt. Ein Briefing am Tag, 5, 10 oder 15 Minuten."
+    "description": "Veni, vidi, KI. KI lernen, wie man eine Sprache lernt. Ein Briefing, ab 5 Min. am Tag."
   }
   </script>
   <script src="landing.js" defer></script>
@@ -69,7 +70,7 @@
       </nav>
       <div class="mast-tools">
         <a class="nav-cta" href="#get-the-app">App holen</a>
-        <a class="lang" href="en/" hreflang="en" lang="en" aria-label="English">EN</a>
+        <a class="lang" href="en/" hreflang="en" lang="en" aria-label="EN, English">EN</a>
         <button class="burger" id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav-panel" aria-label="Menü öffnen">
           <span></span><span></span><span></span>
         </button>
@@ -82,8 +83,8 @@
         <div class="hero-copy">
           <p class="hero-claim">Veni, vidi, KI.</p>
           <h1>KI lernen wie eine Sprache.</h1>
-          <p class="hero-sub">KI-Grundlagen und tägliche KI-News · 5 Minuten am Tag · Basics 1 und 2 inklusive Hören</p>
-          <div class="store" id="get-the-app" data-aila-store data-badge="assets/app-store-badge-de.svg" data-badge-alt="Laden im App Store">
+          <p class="hero-sub">KI-Grundlagen und tägliche KI-News · ab 5 Min. am Tag · Basics 1 &amp; 2 gratis – auch zum Hören</p>
+          <div class="store" id="get-the-app" data-sapaude-store data-badge="assets/app-store-badge-de.svg" data-badge-alt="Laden im App Store">
             <p class="store-row">
               <span class="store-pending" data-store-pending>Demnächst im App Store</span>
               <span class="store-pending store-play">Demnächst bei Google Play</span>
@@ -103,17 +104,17 @@
             <figure class="hero-phone hero-phone-home">
               <div class="phone-bezel">
                 <div class="phone-screen">
-                  <img class="phone-shot" src="assets/screens/de/home-780.webp" srcset="assets/screens/de/home-390.webp 390w, assets/screens/de/home-780.webp 780w" sizes="(min-width: 960px) 250px, 46vw" alt="Sapaude Home mit Briefing-Covern und der nächsten Grundlagen-Lektion, Flüssig, aber falsch." width="780" height="1688" decoding="async">
+                  <img class="phone-shot" src="assets/screens/de/home-780.webp" srcset="assets/screens/de/home-390.webp 390w, assets/screens/de/home-780.webp 780w" sizes="(min-width: 960px) 250px, 46vw" alt="Sapaude Home mit Briefing-Covern und der nächsten Grundlagen-Lektion, Flüssig, aber falsch." width="780" height="1688" fetchpriority="low" decoding="async">
                   <span class="phone-island" aria-hidden="true"></span>
                 </div>
               </div>
             </figure>
           </div>
-          <div class="hero-aila">
-            <div class="aila-book" data-aila-book>
-              <img class="aila-pose aila-pose-idle" src="assets/aila-book/idle.webp" alt="" width="512" height="512" decoding="async">
-              <img class="aila-pose aila-pose-blink" src="assets/aila-book/blink.webp" alt="" width="512" height="512" aria-hidden="true" decoding="async">
-              <img class="aila-pose aila-pose-present" src="assets/aila-book/present.webp" alt="" width="512" height="512" aria-hidden="true" decoding="async">
+          <div class="hero-sapaude">
+            <div class="sapaude-book" data-sapaude-book>
+              <img class="sapaude-pose sapaude-pose-idle" src="assets/sapaude-book/idle.webp" alt="" width="512" height="512" decoding="async">
+              <img class="sapaude-pose sapaude-pose-blink" src="assets/sapaude-book/blink.webp" alt="" width="512" height="512" aria-hidden="true" decoding="async" fetchpriority="low">
+              <img class="sapaude-pose sapaude-pose-present" src="assets/sapaude-book/present.webp" alt="" width="512" height="512" aria-hidden="true" decoding="async" fetchpriority="low">
             </div>
             <p class="hero-bubble">Hi, ich bin Sapi</p>
           </div>
@@ -126,8 +127,8 @@
             <a class="plan" href="#learn">
               <span class="plan-top">
                 <span class="plan-copy">
-                  <span class="plan-title">KI-Grundlagen in 7 Tagen</span>
-                  <span class="plan-meta">7-Tage-Plan</span>
+                  <span class="plan-title">KI-Grundlagen</span>
+                  <span class="plan-meta">Basics</span>
                 </span>
                 <span class="plan-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><path d="M7.2 4.4 12.8 10l-5.6 5.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
               </span>
@@ -143,7 +144,7 @@
               <span class="plan-top">
                 <span class="plan-copy">
                   <span class="plan-title">Copilot bei der Arbeit</span>
-                  <span class="plan-meta">7-Tage-Plan</span>
+                  <span class="plan-meta">Lernpfad</span>
                 </span>
                 <span class="plan-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18" focusable="false" aria-hidden="true"><path d="M7.2 4.4 12.8 10l-5.6 5.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
               </span>
@@ -183,6 +184,7 @@
         <div class="trust-logos">
           <div class="trust-track">
             <div class="trust-set">
+              <span class="trust-lead" aria-hidden="true"></span>
               <span class="trust-item">Von null</span><span class="trust-slash" aria-hidden="true">/</span>
               <span class="trust-item">Ohne Fachjargon</span><span class="trust-slash" aria-hidden="true">/</span>
               <span class="trust-item">Ein Briefing am Tag</span><span class="trust-slash" aria-hidden="true">/</span>
@@ -191,6 +193,7 @@
               <span class="trust-item">Testphase im Store</span><span class="trust-slash" aria-hidden="true">/</span>
             </div>
             <div class="trust-set" aria-hidden="true">
+              <span class="trust-lead" aria-hidden="true"></span>
               <span class="trust-item">Von null</span><span class="trust-slash">/</span>
               <span class="trust-item">Ohne Fachjargon</span><span class="trust-slash">/</span>
               <span class="trust-item">Ein Briefing am Tag</span><span class="trust-slash">/</span>
@@ -247,7 +250,7 @@
         <div>
           <p class="section-eyebrow"><span>(01)</span><span class="section-eyebrow-dot" aria-hidden="true"></span><span>Der Pfad</span></p>
           <h2 class="reveal-text">Drei Level. Du startest dort, wo du stehst.</h2>
-          <p class="lede prose">Du fängst nicht in einem festen ersten Kapitel an, sondern dort, wo du stehst. Kurze Lektionen in normaler Sprache, ein Artikel, wenn du verstehen willst, wie etwas funktioniert, und ein Briefing am Tag. Du wählst 5, 10 oder 15 Minuten. Eine Erinnerung bleibt auf dem Gerät.</p>
+          <p class="lede prose">Du fängst nicht in einem festen ersten Kapitel an, sondern dort, wo du stehst. Kurze Lektionen in normaler Sprache, ein Artikel, wenn du verstehen willst, wie etwas funktioniert, und ein Briefing am Tag. Du wählst ab 5 Min. am Tag. Eine Erinnerung bleibt auf dem Gerät.</p>
         </div>
         <div class="chance-visual">
           <p class="chance-badge">Drei Stufen</p>
@@ -300,7 +303,7 @@
       <div class="section-head">
         <div>
           <p class="section-eyebrow"><span>(02)</span><span class="section-eyebrow-dot" aria-hidden="true"></span><span>Einmal am Tag</span></p>
-          <h2 class="reveal-text">Daily AI Briefing</h2>
+          <h2 class="reveal-text">Tägliches KI-Briefing</h2>
         </div>
         <p class="meta">Aktuelles Briefing · <time data-briefing-date datetime="2026-10-22">22. Oktober 2026</time></p>
       </div>
@@ -361,9 +364,9 @@
           </div>
         </div>
         <div class="stats-row">
-          <p class="stat"><strong>5 Min.</strong><span>am Tag</span></p>
+          <p class="stat"><strong>ab 5 Min.</strong><span>am Tag</span></p>
           <p class="stat"><strong>Ohne Fachjargon</strong><span>erklärt</span></p>
-          <p class="stat"><strong>Jeden Morgen</strong><span>neu</span></p>
+          <p class="stat"><strong>Mehrmals täglich</strong><span>neu</span></p>
         </div>
         <div class="section-breadcrumb">
           <div class="section-breadcrumb-row"><span><i class="section-breadcrumb-dot" aria-hidden="true"></i>Warum jetzt</span><span>/ 03 / Sapaude</span></div>
@@ -384,7 +387,7 @@
       <h2>Häufige Fragen.</h2>
       <details>
         <summary><h3>Was ist Sapaude?</h3></summary>
-        <p class="prose">Sapaude ist eine Lern-App: ein geführter Pfad, kurze Erklärungen, Quiz und ein Briefing am Tag. Du wählst 5, 10 oder 15 Minuten. Eine Erinnerung bleibt auf dem Gerät. Die App setzt die Uhrzeit aus der Zeit, zu der du Sapaude gewöhnlich öffnest. Es gibt keine Uhr zum Einstellen. Das Briefing enthält auch Alltags-Werkzeuge und passt zu deinem Level.</p>
+        <p class="prose">Sapaude ist eine Lern-App: ein geführter Pfad, kurze Erklärungen, Quiz und ein Briefing am Tag. Du wählst ab 5 Min. am Tag: 5, 10 oder 15. Eine Erinnerung bleibt auf dem Gerät. Die App setzt die Uhrzeit aus der Zeit, zu der du Sapaude gewöhnlich öffnest. Es gibt keine Uhr zum Einstellen. Das Briefing enthält auch Alltags-Werkzeuge und passt zu deinem Level.</p>
       </details>
       <details>
         <summary><h3>Für wen ist Sapaude?</h3></summary>
@@ -435,11 +438,11 @@
       <p class="wordmark" aria-hidden="true">sapaude<span class="brand-dot"></span></p>
     </div>
   </footer>
-  <a class="aila-float" href="#screens">
-    <div class="aila-book" data-aila-book>
-      <img class="aila-pose aila-pose-idle" src="assets/aila-book/idle.webp" alt="" width="512" height="512" decoding="async">
-      <img class="aila-pose aila-pose-blink" src="assets/aila-book/blink.webp" alt="" width="512" height="512" aria-hidden="true" decoding="async">
-      <img class="aila-pose aila-pose-present" src="assets/aila-book/present.webp" alt="" width="512" height="512" aria-hidden="true" decoding="async">
+  <a class="sapaude-float" href="#screens">
+    <div class="sapaude-book" data-sapaude-book>
+      <img class="sapaude-pose sapaude-pose-idle" src="assets/sapaude-book/idle.webp" alt="" width="512" height="512" decoding="async">
+      <img class="sapaude-pose sapaude-pose-blink" src="assets/sapaude-book/blink.webp" alt="" width="512" height="512" aria-hidden="true" decoding="async" fetchpriority="low">
+      <img class="sapaude-pose sapaude-pose-present" src="assets/sapaude-book/present.webp" alt="" width="512" height="512" aria-hidden="true" decoding="async" fetchpriority="low">
     </div>
     <span class="visually-hidden">Hi, ich bin Sapi</span>
   </a>
