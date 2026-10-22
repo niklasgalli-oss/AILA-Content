@@ -65,8 +65,16 @@ test("custom domain is sapaude.app", () => {
 });
 
 test("published feeds match the repo root", () => {
-  assert.equal(read("docs/pulse.json"), read("pulse.json"));
-  assert.equal(read("docs/briefing.json"), read("briefing.json"));
+  assert.equal(
+    read("docs/pulse.json") === read("pulse.json"),
+    true,
+    "docs/pulse.json must stay a byte copy of pulse.json"
+  );
+  assert.equal(
+    read("docs/briefing.json") === read("briefing.json"),
+    true,
+    "docs/briefing.json must stay a byte copy of briefing.json"
+  );
 });
 
 test("apple-app-site-association is not a file", () => {
