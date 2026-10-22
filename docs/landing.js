@@ -167,11 +167,11 @@ async function berlinTodayIso() {
   }).format(new Date());
 }
 
-function freshenSampleDate(root, locale) {
+async function freshenSampleDate(root, locale) {
   if (!root || root.dataset.briefingState === "live") return;
   const time = root.querySelector("[data-briefing-date]");
   if (!time) return;
-  const today = berlinTodayIso();
+  const today = await berlinTodayIso();
   const iso = (time.dateTime || "").slice(0, 10);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(today) || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return;
   if (iso >= today) return;
@@ -180,13 +180,13 @@ function freshenSampleDate(root, locale) {
   if (label) time.textContent = label;
 }
 
-function loadBriefing() {
+async function loadBriefing() {
   const root = document.querySelector("[data-briefing]");
   if (!root) return;
   const list = root.querySelector("[data-briefing-list]");
   if (!list) return;
   const locale = root.dataset.locale === "de" ? "de" : "en";
-  freshenSampleDate(root, locale);
+  await freshenSampleDate(root, locale);
   try {
     const response = await fetch(AILA_BRIEFING_URL, {
       credentials: "omit",
