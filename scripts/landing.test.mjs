@@ -155,6 +155,15 @@ test("landing assets stay self-hosted and flat-colored", () => {
   assert.doesNotMatch(de, /sapaude-head-full/);
   assert.equal(existsSync(join(root, "docs/assets/source-sans-3-latin-400.woff2")), true);
   assert.equal(existsSync(join(root, "docs/assets/OFL.txt")), true);
+  for (const locale of ["de", "en"]) {
+    for (const name of ["activity", "basics", "briefing", "home", "reader"]) {
+      for (const width of ["390", "780"]) {
+        for (const ext of ["webp", "avif"]) {
+          assert.equal(existsSync(join(root, `docs/assets/screens/${locale}/${name}-${width}.${ext}`)), true);
+        }
+      }
+    }
+  }
   assert.equal(existsSync(join(root, "docs/assets/app-store-badge-en.svg")), true);
   assert.equal(existsSync(join(root, "docs/assets/app-store-badge-de.svg")), true);
   assert.equal(existsSync(join(root, "docs/og.png")), true);
@@ -276,7 +285,9 @@ test("story row, path, briefing fallback, and teams copy stay in sync", () => {
     assert.deepEqual([...screens.matchAll(/data-story="([^"]+)"/g)].map((m) => m[1]), order);
     assert.equal((screens.match(/<figure/g) || []).length, 4);
     assert.doesNotMatch(screens, /<figcaption|phone-caption/);
-    assert.doesNotMatch(screens, /activity-|\/home-/);
+    assert.doesNotMatch(screens, /activity-|is-crop|--mask/);
+    assert.match(screens, /\/home-/);
+    assert.match(screens, /type="image\/avif"/);
     assert.doesNotMatch(html, /Vector Databases/);
     assert.doesNotMatch(html, /kein Quiz|no quiz/i);
     assert.doesNotMatch(html, /Vier Fragen|Four questions/);
@@ -337,9 +348,11 @@ test("story row, path, briefing fallback, and teams copy stay in sync", () => {
   assert.match(css, /hyphens:\s*auto/);
   assert.match(css, /\.compare-card ul\s*\{[^}]*list-style:\s*none/);
   assert.match(css, /\.phone-stage\.story-row[\s\S]*repeat\(4,/);
-  assert.match(css, /\.phone-screen\.is-crop::after/);
-  assert.match(en, /--mask:/);
-  assert.match(de, /--mask:/);
+  assert.doesNotMatch(css, /\.phone-screen\.is-crop/);
+  assert.doesNotMatch(en, /--mask:|is-crop|Platzhalter|Placeholder/);
+  assert.doesNotMatch(de, /--mask:|is-crop|Platzhalter|Placeholder/);
+  assert.match(en, /type="image\/avif"/);
+  assert.match(de, /type="image\/avif"/);
   assert.match(js, /plainEnough/);
   assert.match(js, /Neues Modell/);
   assert.match(js, /if \(picked\.length < 3\) return/);
