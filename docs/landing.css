@@ -1510,23 +1510,18 @@ summary:focus-visible {
   line-height: 0;
 }
 
+.phone-screen picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .phone-shot {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
-}
-
-.phone-screen.is-crop::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  right: 0;
-  top: var(--mask, 46%);
-  bottom: var(--mask-bottom, 0%);
-  background: #f7f2e8;
 }
 
 .phone-island {

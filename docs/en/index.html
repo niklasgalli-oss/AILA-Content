@@ -32,7 +32,7 @@
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="preload" href="../assets/fraunces-latin-600.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/source-sans-3-latin-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="../assets/screens/en/activity-390.webp" imagesrcset="../assets/screens/en/activity-390.webp 390w, ../assets/screens/en/activity-780.webp 780w" imagesizes="(min-width: 960px) 250px, 46vw" fetchpriority="high">
+  <link rel="preload" as="image" type="image/avif" href="../assets/screens/en/activity-390.avif" imagesrcset="../assets/screens/en/activity-390.avif 390w, ../assets/screens/en/activity-780.avif 780w" imagesizes="(min-width: 960px) 250px, 46vw" fetchpriority="high">
   <link rel="stylesheet" href="../landing.css">
   <script type="application/ld+json">
   {
@@ -96,7 +96,10 @@
             <figure class="hero-phone hero-phone-activity">
               <div class="phone-bezel">
                 <div class="phone-screen">
-                  <img class="phone-shot" src="../assets/screens/en/activity-780.webp" srcset="../assets/screens/en/activity-390.webp 390w, ../assets/screens/en/activity-780.webp 780w" sizes="(min-width: 960px) 250px, 46vw" alt="Activity in Sapaude: a 12-day streak, daily missions, and a 10-minute plan." width="780" height="1688" fetchpriority="high" decoding="async">
+                  <picture>
+                    <source type="image/avif" srcset="../assets/screens/en/activity-390.avif 390w, ../assets/screens/en/activity-780.avif 780w" sizes="(min-width: 960px) 250px, 46vw">
+                    <img class="phone-shot" src="../assets/screens/en/activity-780.webp" srcset="../assets/screens/en/activity-390.webp 390w, ../assets/screens/en/activity-780.webp 780w" sizes="(min-width: 960px) 250px, 46vw" alt="Activity in Sapaude: daily missions, no streak yet, and zero readings." width="780" height="1688" fetchpriority="high" decoding="async">
+                  </picture>
                   <span class="phone-island" aria-hidden="true"></span>
                 </div>
               </div>
@@ -104,7 +107,10 @@
             <figure class="hero-phone hero-phone-home">
               <div class="phone-bezel">
                 <div class="phone-screen">
-                  <img class="phone-shot" src="../assets/screens/en/home-780.webp" srcset="../assets/screens/en/home-390.webp 390w, ../assets/screens/en/home-780.webp 780w" sizes="(min-width: 960px) 250px, 46vw" alt="Sapaude home with briefing covers and the next basics lesson, Fluent but false." width="780" height="1688" fetchpriority="low" decoding="async">
+                  <picture>
+                    <source type="image/avif" srcset="../assets/screens/en/home-390.avif 390w, ../assets/screens/en/home-780.avif 780w" sizes="(min-width: 960px) 250px, 46vw">
+                    <img class="phone-shot" src="../assets/screens/en/home-780.webp" srcset="../assets/screens/en/home-390.webp 390w, ../assets/screens/en/home-780.webp 780w" sizes="(min-width: 960px) 250px, 46vw" alt="Sapaude home: the lesson What you can already do with a chat, and today's briefing." width="780" height="1688" fetchpriority="low" decoding="async">
+                  </picture>
                   <span class="phone-island" aria-hidden="true"></span>
                 </div>
               </div>
@@ -196,16 +202,22 @@
       <div class="phone-stage story-row">
         <figure class="phone" data-story="onboarding">
           <div class="phone-bezel">
-            <div class="phone-screen is-crop" style="--mask: 45.5%; --mask-bottom: 5.2%">
-              <img class="phone-shot" src="../assets/screens/en/basics-780.webp" srcset="../assets/screens/en/basics-390.webp 390w, ../assets/screens/en/basics-780.webp 780w" sizes="(min-width: 1100px) 16rem, 64vw" alt="Placeholder for the onboarding questions: lesson cards in Sapaude, including the next token." width="780" height="1688" loading="lazy" decoding="async">
+            <div class="phone-screen">
+              <picture>
+                <source type="image/avif" srcset="../assets/screens/en/basics-390.avif 390w, ../assets/screens/en/basics-780.avif 780w" sizes="(min-width: 1100px) 16rem, 64vw">
+                <img class="phone-shot" src="../assets/screens/en/basics-780.webp" srcset="../assets/screens/en/basics-390.webp 390w, ../assets/screens/en/basics-780.webp 780w" sizes="(min-width: 1100px) 16rem, 64vw" alt="Discover in Sapaude: Basics lessons, including Next token, Fluent but false, and Temperature." width="780" height="1688" loading="lazy" decoding="async">
+              </picture>
               <span class="phone-island" aria-hidden="true"></span>
             </div>
           </div>
         </figure>
         <figure class="phone" data-story="home">
           <div class="phone-bezel">
-            <div class="phone-screen is-crop" style="--mask: 76%; --mask-bottom: 0%">
-              <img class="phone-shot" src="../assets/screens/en/briefing-780.webp" srcset="../assets/screens/en/briefing-390.webp 390w, ../assets/screens/en/briefing-780.webp 780w" sizes="(min-width: 1100px) 16rem, 64vw" alt="Placeholder for the personal home: the top briefing covers in Sapaude." width="780" height="1688" loading="lazy" decoding="async">
+            <div class="phone-screen">
+              <picture>
+                <source type="image/avif" srcset="../assets/screens/en/home-390.avif 390w, ../assets/screens/en/home-780.avif 780w" sizes="(min-width: 1100px) 16rem, 64vw">
+                <img class="phone-shot" src="../assets/screens/en/home-780.webp" srcset="../assets/screens/en/home-390.webp 390w, ../assets/screens/en/home-780.webp 780w" sizes="(min-width: 1100px) 16rem, 64vw" alt="Sapaude home: the lesson What you can already do with a chat, and today's briefing." width="780" height="1688" loading="lazy" decoding="async">
+              </picture>
               <span class="phone-island" aria-hidden="true"></span>
             </div>
           </div>
@@ -213,7 +225,10 @@
         <figure class="phone" data-story="lesson">
           <div class="phone-bezel">
             <div class="phone-screen">
-              <img class="phone-shot" src="../assets/screens/en/reader-780.webp" srcset="../assets/screens/en/reader-390.webp 390w, ../assets/screens/en/reader-780.webp 780w" sizes="(min-width: 1100px) 16rem, 64vw" alt="The start of a lesson in Sapaude: a long mail arrives five minutes before the meeting." width="780" height="1688" loading="lazy" decoding="async">
+              <picture>
+                <source type="image/avif" srcset="../assets/screens/en/reader-390.avif 390w, ../assets/screens/en/reader-780.avif 780w" sizes="(min-width: 1100px) 16rem, 64vw">
+                <img class="phone-shot" src="../assets/screens/en/reader-780.webp" srcset="../assets/screens/en/reader-390.webp 390w, ../assets/screens/en/reader-780.webp 780w" sizes="(min-width: 1100px) 16rem, 64vw" alt="A lesson in Sapaude: All of Uber now works with AI." width="780" height="1688" loading="lazy" decoding="async">
+              </picture>
               <span class="phone-island" aria-hidden="true"></span>
             </div>
           </div>
@@ -221,7 +236,10 @@
         <figure class="phone" data-story="briefing">
           <div class="phone-bezel">
             <div class="phone-screen">
-              <img class="phone-shot" src="../assets/screens/en/briefing-780.webp" srcset="../assets/screens/en/briefing-390.webp 390w, ../assets/screens/en/briefing-780.webp 780w" sizes="(min-width: 1100px) 16rem, 64vw" alt="The daily briefing in Sapaude, with cover cards across several days." width="780" height="1688" loading="lazy" decoding="async">
+              <picture>
+                <source type="image/avif" srcset="../assets/screens/en/briefing-390.avif 390w, ../assets/screens/en/briefing-780.avif 780w" sizes="(min-width: 1100px) 16rem, 64vw">
+                <img class="phone-shot" src="../assets/screens/en/briefing-780.webp" srcset="../assets/screens/en/briefing-390.webp 390w, ../assets/screens/en/briefing-780.webp 780w" sizes="(min-width: 1100px) 16rem, 64vw" alt="The daily briefing in Sapaude on October 22, with covers across two days." width="780" height="1688" loading="lazy" decoding="async">
+              </picture>
               <span class="phone-island" aria-hidden="true"></span>
             </div>
           </div>
