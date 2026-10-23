@@ -148,6 +148,7 @@ test("allows sentence starts, title case, and product names", () => {
     "Microsoft Agent 365",
     "Claude Managed Agents",
     "Agent Toolkit",
+    "1Password for Agents",
   ]) {
     assert.deepEqual(glossaryViolations(`The release pairs ${name} with a local runtime.`), [], name);
   }

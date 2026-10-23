@@ -68,6 +68,7 @@ export const PRODUCT_NAME_ALLOWLIST = [
   "Claude Managed Agents",
   "Microsoft Agent 365",
   "Agent Toolkit",
+  "1Password for Agents",
 ];
 
 const CARD_FIELDS = ["headline", "hook", "summaryPoints", "takeaway"];
