@@ -1,73 +1,5 @@
 [
   {
-    "id": "pulse-2026-10-21-ai-writes-all-at-once",
-    "date": "2026-10-21T14:45:45.000Z",
-    "tag": "Model Release",
-    "priority": "normal",
-    "readTimeMinutes": 4,
-    "listenTimeMinutes": 4,
-    "hook": "Chatbots usually type their answer word by word, and you wait. The startup Inception has released Mercury 3, a language model that drafts the whole answer at once and then sharpens it, and it says that makes it several times faster.",
-    "headline": "AI that writes all at once",
-    "summaryPoints": [
-      "Mercury 3 is a diffusion language model: instead of writing one word after the other like GPT or Claude, it sketches a rough full answer and refines it in several passes, The Decoder explains.",
-      "Inception says the model runs four to eight times faster than GPT-6 Luna and Claude Haiku 5.5 and wins eight of 12 benchmarks, its own tests; the rivals still lead on a longer coding test and on finding facts in long texts.",
-      "No independent tests exist yet. The model is available through Inception's platform and services such as OpenRouter, and it speaks the same interface as OpenAI's models, so developers can try it with little effort."
-    ],
-    "takeaway": "Speed stops being a nice extra when an AI has to take fifty small steps in a row.",
-    "deepDiveMarkdown": "## Waiting for the next word may soon end\n\nWhen you ask ChatGPT something, you watch the answer appear piece by piece. That is not a design choice for drama: models like GPT or Claude really do produce text one small chunk after the other, and each chunk has to wait for the one before. For a single question that is fine. But more and more AI work runs in agents, systems that complete a task in dozens of steps and wait for the model at every one. The startup Inception now claims a different approach that cuts those waits sharply.\n\n## The model sketches first and then sharpens\n\nMercury 3 is a diffusion model, a technique best known from image generators. It does not start at the first word. It first produces a rough draft of the whole answer and then improves it over several passes, working on many words at the same time. Inception says this makes Mercury 3 four to eight times faster than GPT-6 Luna and Claude Haiku 5.5, at more than 1,000 tokens per second on Nvidia hardware. A token is a small piece of text, often part of a word. Early partners report hints for students in about one second and search answers on smart glasses in under one.\n\n## The impressive numbers come from the maker\n\nAll results so far come from Inception itself. In its table, Mercury 3 wins eight of 12 benchmarks, the standard tests used to compare models, but Claude Haiku 5.5 still does better on a longer coding task and on finding information in long texts. Inception's own short summary calls the quality on par or better, which is more cautious than the headline claims. Google is working on the same idea and has said its open DiffusionGemma runs faster than the standard Gemma 4 but delivers slightly weaker results.\n\n## Notice where waiting costs you time\n\nThis week, pay attention to the moments when you wait for an AI tool at work: a long summary, a translation, an assistant that clicks through several steps. If the waiting is what slows you down rather than the quality, faster models like this one are worth watching. If you work with a developer team, ask whether speed or accuracy is the bigger bottleneck in your AI features.",
-    "source": {
-      "name": "The Decoder",
-      "url": "https://the-decoder.com/inceptions-mercury-3-diffusion-model-claims-to-beat-gpt-6-luna-and-claude-haiku-5-5-at-a-fraction-of-the-wait/"
-    },
-    "i18n": {
-      "de": {
-        "headline": "KI schreibt alles zugleich",
-        "hook": "Chatbots tippen ihre Antwort normalerweise Wort für Wort, und du wartest. Das Start-up Inception hat mit Mercury 3 ein Sprachmodell veröffentlicht, das erst die ganze Antwort grob entwirft und sie dann schärft. Das mache es um ein Vielfaches schneller, sagt die Firma.",
-        "summaryPoints": [
-          "Mercury 3 ist ein Diffusion-Sprachmodell: Statt wie GPT oder Claude ein Wort nach dem anderen zu schreiben, skizziert es zuerst eine grobe Gesamtantwort und verfeinert sie in mehreren Durchgängen, erklärt The Decoder.",
-          "Laut Inception läuft das Modell vier- bis achtmal schneller als GPT-6 Luna und Claude Haiku 5.5 und gewinnt acht von zwölf Benchmarks, allerdings in eigenen Tests. Bei einer längeren Programmieraufgabe und bei der Suche in langen Texten liegen die Konkurrenten vorn.",
-          "Unabhängige Tests gibt es noch nicht. Das Modell ist über Inceptions Plattform und Dienste wie OpenRouter verfügbar und nutzt dieselbe Schnittstelle wie OpenAIs Modelle, Entwickler können es also ohne großen Aufwand ausprobieren."
-        ],
-        "takeaway": "Tempo ist kein Luxus mehr, wenn eine KI fünfzig kleine Schritte hintereinander gehen muss.",
-        "deepDiveMarkdown": "## Das Warten aufs nächste Wort könnte enden\n\nWenn du ChatGPT etwas fragst, siehst du, wie die Antwort Stück für Stück erscheint. Das ist kein Effekt für die Spannung: Modelle wie GPT oder Claude erzeugen Text tatsächlich Häppchen für Häppchen, und jedes muss auf das vorherige warten. Bei einer einzelnen Frage stört das kaum. Doch immer mehr KI-Arbeit läuft über Agents, also Systeme, die eine Aufgabe in Dutzenden Schritten erledigen und bei jedem Schritt auf das Modell warten. Das Start-up Inception verspricht nun einen anderen Ansatz, der diese Wartezeiten deutlich verkürzt.\n\n## Erst grob skizzieren, dann scharfstellen\n\nMercury 3 ist ein Diffusion-Modell, eine Technik, die vor allem von Bildgeneratoren bekannt ist. Es beginnt nicht beim ersten Wort, sondern entwirft zunächst die komplette Antwort grob und verbessert sie dann in mehreren Durchgängen, an vielen Stellen gleichzeitig. Inception zufolge ist Mercury 3 dadurch vier- bis achtmal schneller als GPT-6 Luna und Claude Haiku 5.5 und schafft auf Nvidia-Hardware mehr als 1.000 Token pro Sekunde. Ein Token ist ein kleines Textstück, oft ein Wortteil. Erste Partner berichten von Lernhinweisen für Schüler in etwa einer Sekunde und von Suchantworten auf einer smarten Brille in weniger als einer Sekunde.\n\n## Die starken Zahlen stammen vom Hersteller\n\nAlle bisherigen Ergebnisse kommen von Inception selbst. In der eigenen Tabelle gewinnt Mercury 3 acht von zwölf Benchmarks, also Standardtests zum Vergleich von Modellen. Claude Haiku 5.5 schneidet aber bei einer längeren Programmieraufgabe und bei der Suche in langen Texten besser ab. Inceptions eigene Kurzfassung spricht vorsichtiger von gleichwertiger oder besserer Qualität. Auch Google arbeitet an der Idee: Das offene DiffusionGemma ist nach Googles Angaben schneller als das normale Gemma 4, liefert aber etwas schwächere Ergebnisse.\n\n## Achte darauf, wo dich Warten Zeit kostet\n\nAchte diese Woche darauf, wann du bei der Arbeit auf ein KI-Tool wartest: bei einer langen Zusammenfassung, einer Übersetzung oder einem Assistenten, der sich durch mehrere Schritte klickt. Bremst dich eher die Wartezeit als die Qualität, lohnt es sich, schnelle Modelle wie dieses im Blick zu behalten. Arbeitest du mit einem Entwicklerteam zusammen, frag nach, ob bei euren KI-Funktionen Tempo oder Genauigkeit der größere Engpass ist."
-      }
-    }
-  },
-  {
-    "id": "pulse-2026-10-20-lightroom-opens-closed-eyes",
-    "date": "2026-10-20T13:12:02.000Z",
-    "tag": "Tools",
-    "priority": "normal",
-    "readTimeMinutes": 3,
-    "listenTimeMinutes": 3,
-    "hook": "The team photo is perfect, except one colleague blinked. Adobe's Lightroom app for phones and tablets can now open closed eyes with a single tap, using AI that copies the person's real eyes from other shots.",
-    "headline": "Lightroom opens closed eyes",
-    "summaryPoints": [
-      "Lightroom mobile for iOS, iPadOS and Android now spots closed eyes in a photo and offers an Open Eyes button that fixes them with generative AI, AI that creates new image content, The Verge reports.",
-      "To make the eyes look right, the app uses other photos of the same person in your Lightroom library as a reference for color, size and shape, and matches lighting and pose.",
-      "Free users can try it twice before Adobe asks them to subscribe to a Creative Cloud plan with more credits for its AI tools."
-    ],
-    "takeaway": "A one-tap fix is also a one-tap edit, so tell people when a photo is retouched.",
-    "deepDiveMarkdown": "## One blink no longer ruins a group shot\n\nEveryone knows the moment: the team photo for the website or the event recap looks great, but one person has their eyes shut. Usually you either take ten more shots or pick a weaker one. Adobe now offers a shortcut in the mobile version of its photo app Lightroom. When the app notices closed eyes, a small button called Open Eyes appears over the picture, and one tap opens them.\n\n## The AI borrows your real eyes from other photos\n\nThe feature relies on generative AI, meaning AI that creates new image content instead of only adjusting brightness or colors. It paints in open eyes that match the lighting and the angle of the face. To avoid generic stranger eyes, Lightroom looks for other pictures of the same person in your Lightroom library and uses them as a reference for color, size and shape. Adobe's older Photoshop Elements could already swap in eyes from a second photo, but results depended heavily on how similar the two shots were, The Verge notes.\n\n## Free only for the first two tries\n\nWithout a paid plan you can use Open Eyes twice; after that Adobe asks you to subscribe. There is also a quieter issue. To find reference pictures, the app works with the faces in your photo library, so think about whose photos you store there. And an image with AI-generated eyes is no longer exactly what the camera saw. For a casual team picture that is harmless, but for ID photos, press images or anything used as evidence, it is not.\n\n## Agree on a rule for retouched team photos\n\nIf you handle photos for your team, a newsletter or social media, try the feature on one blinked shot and judge the result at full size. Then agree with your team on a simple rule: which kinds of photos may be retouched by AI, and whether you mark them as edited.",
-    "source": {
-      "name": "The Verge",
-      "url": "https://www.theverge.com/tech/1014246/adobe-lightroom-mobile-ai-quick-action-open-eyes-closed-blink-repair"
-    },
-    "i18n": {
-      "de": {
-        "headline": "Blinzler per Tipp retten",
-        "hook": "Das Teamfoto ist perfekt, nur eine Kollegin hat geblinzelt. Adobes Lightroom-App für Smartphone und Tablet öffnet geschlossene Augen jetzt mit einem Tipp. Die KI orientiert sich dabei an den echten Augen der Person aus anderen Aufnahmen.",
-        "summaryPoints": [
-          "Lightroom Mobile für iOS, iPadOS und Android erkennt jetzt geschlossene Augen auf einem Foto und bietet eine Schaltfläche namens Open Eyes an, die sie mit generativer KI öffnet, also KI, die neue Bildinhalte erzeugt, berichtet The Verge.",
-          "Damit die Augen echt wirken, nutzt die App andere Fotos derselben Person aus deiner Lightroom-Bibliothek als Vorlage für Farbe, Größe und Form und passt Licht und Kopfhaltung an.",
-          "In der Gratisversion kannst du die Funktion zweimal testen, danach fordert Adobe ein Creative-Cloud-Abo mit mehr Guthaben für seine KI-Werkzeuge."
-        ],
-        "takeaway": "Was ein Tipp repariert, verändert ein Tipp auch: Sag dazu, wenn ein Foto bearbeitet ist.",
-        "deepDiveMarkdown": "## Ein Blinzeln ruiniert kein Gruppenfoto mehr\n\nJeder kennt das: Das Teamfoto für die Website oder den Rückblick auf die Veranstaltung ist gelungen, nur einer hat die Augen zu. Meist heißt das, zehn weitere Bilder zu machen oder ein schwächeres zu nehmen. Adobe bietet jetzt eine Abkürzung in der Mobilversion seiner Foto-App Lightroom. Erkennt die App geschlossene Augen, erscheint über dem Bild eine kleine Schaltfläche namens Open Eyes, und ein Tipp darauf öffnet sie.\n\n## Die KI leiht sich echte Augen aus anderen Fotos\n\nDahinter steckt generative KI, also KI, die neue Bildinhalte erzeugt, statt nur Helligkeit oder Farben zu verändern. Sie malt offene Augen ein, die zu Licht und Blickwinkel des Gesichts passen. Damit keine fremd wirkenden Augen entstehen, sucht Lightroom in deiner Bibliothek nach weiteren Bildern derselben Person und nimmt sie als Vorlage für Farbe, Größe und Form. Adobes älteres Photoshop Elements konnte zwar schon Augen aus einem zweiten Foto einsetzen, das Ergebnis hing aber stark davon ab, wie ähnlich sich beide Aufnahmen waren, schreibt The Verge.\n\n## Gratis nur für die ersten zwei Versuche\n\nOhne Abo kannst du Open Eyes zweimal nutzen, danach will Adobe ein Abonnement. Dazu kommt ein leiserer Punkt: Um Vorlagen zu finden, arbeitet die App mit den Gesichtern in deiner Fotobibliothek. Überleg also, wessen Bilder du dort ablegst. Und ein Foto mit KI-generierten Augen zeigt nicht mehr genau das, was die Kamera gesehen hat. Beim lockeren Teamfoto ist das harmlos, bei Passbildern, Pressefotos oder Bildern, die etwas belegen sollen, nicht.\n\n## Vereinbart eine Regel für bearbeitete Teamfotos\n\nWenn du Fotos für dein Team, einen Newsletter oder Social Media betreust, probier die Funktion an einem Blinzel-Foto aus und beurteile das Ergebnis in voller Größe. Vereinbart dann im Team eine einfache Regel: Welche Fotos darf KI nachbessern, und kennzeichnet ihr sie als bearbeitet?"
-      }
-    }
-  },
-  {
     "id": "pulse-2026-10-21-claude-duet-watches-apps",
     "date": "2026-10-21T19:54:52.000Z",
     "tag": "Autonomous Agent",
@@ -404,6 +336,74 @@
         ],
         "takeaway": "Einem Agent eine Aufgabe zu geben, darf nie heißen, ihm deinen Schlüsselbund zu geben.",
         "deepDiveMarkdown": "## Dein Passwort gehört nicht in den Chat\n\nImmer mehr KI-Assistenten beantworten nicht nur Fragen, sondern erledigen im Netz Dinge für dich: bestellen, buchen, einen Kontostand prüfen. Man nennt sie Agents, also KI, die eine Aufgabe selbstständig in mehreren Schritten abarbeitet. Dafür müssen sie sich anmelden, und die schnelle Lösung war oft, das Passwort einfach in den Chat zu kopieren. Der Passwortmanager 1Password bietet dafür jetzt einen anderen Weg: 1Password for Agents.\n\n## Du gibst frei, 1Password tippt\n\nDas Prinzip erinnert an einen Pförtner, der jeden Besucher kontrolliert. Will ein Agent sich in eines deiner Konten einloggen, beweist er 1Password zuerst mit einem eigenen digitalen Schlüssel, wer er ist. Dann bekommst du eine Benachrichtigung und entscheidest, ob du diese Anmeldung erlaubst. Erst nach deinem Ja trägt 1Password die Zugangsdaten ein, das Passwort selbst erfährt der Agent nie. Laut TechCrunch funktioniert das bereits mit Agents wie Claude Duet, OpenAIs Dots und ChatGPT Work, Grok Bot und Metas Muse.\n\n## Banken sind schon alarmiert\n\nDer Zeitpunkt ist kein Zufall. Am selben Tag berichtete Axios, dass große US-Banken Agents in Kundenkonten beobachten und oft nicht erkennen können, ob der Kunde das überhaupt wollte. Manche Banken schränken den Zugang für Agents bereits ein. Ein Werkzeug wie dieses hält dein Passwort aus dem Chat heraus, entscheidet aber nicht, welche Konten ein Agent überhaupt anfassen sollte. Das bleibt deine Entscheidung, und die Regeln deiner Bank gelten weiter.\n\n## Prüf, wo deine Passwörter gelandet sind\n\nÜberleg kurz: Hast du schon mal ein Passwort oder einen Zugangscode in einen Chatbot kopiert, im Job oder privat? Dann ändere dieses Passwort noch diese Woche. Und bevor du einem Agent künftig irgendeinen Zugang gibst, schau in die IT-Regeln deiner Firma, ob eine Anmeldung auf diesem Weg erlaubt ist."
+      }
+    }
+  },
+  {
+    "id": "pulse-2026-10-22-ai-chooses-in-a-blink",
+    "date": "2026-10-22T19:00:00.000Z",
+    "tag": "Model Release",
+    "priority": "normal",
+    "readTimeMinutes": 3,
+    "listenTimeMinutes": 3,
+    "hook": "Not every AI job needs a long, thoughtful answer. Often a quick choice between a few options is enough, and OpenAI now offers exactly that to every developer: an AI that picks in about a tenth of a second.",
+    "headline": "AI now chooses in a blink",
+    "summaryPoints": [
+      "OpenAI's Decisions API is a service that gets a set of options and quickly returns one choice plus how confident it is. Since Thursday every customer can use it, TechCrunch reports.",
+      "OpenAI says it cuts response times from one to three seconds down to about 100 to 180 milliseconds. In public rankings, though, rival decision models from startups currently score higher.",
+      "It now also handles voice and images. Companies like Box, Ramp and Speak tested it early, and OpenAI uses it to make its own voice assistant react faster."
+    ],
+    "takeaway": "Plenty of everyday AI work isn't writing at all, it's sorting.",
+    "deepDiveMarkdown": "## Many AI jobs are really sorting\n\nThink of the emails landing in a shared inbox: is this a complaint, an invoice or a sales lead? A human decides that in a second. A chatbot like ChatGPT can do it too, but it is built to write long answers, so it is slow and comparatively expensive for such a tiny task. That is why a new kind of AI has taken off this year: decision models, which do nothing but pick one option from a short list. OpenAI has now opened its own version, the Decisions API, to all customers. An API is the connection developers use to build an AI into their own software.\n\n## A fast chooser with a confidence score\n\nYou hand the model a question and a set of possible answers, and it returns its pick along with a score for how sure it is. OpenAI didn't train a new model for this; it reconfigured its existing model ChatGPT Luna to run faster and cheaper, the company says. According to its product lead, an answer that used to take one to three seconds now comes back in about 100 to 180 milliseconds. Language-learning app Speak says it cut the pause between steps from 1.4 seconds to 0.13 seconds. The public version also understands voice and images.\n\n## Fast doesn't mean best\n\nOpenAI is late to this market. Startup TypeSafe created the category with its Jev model, and in two independent rankings OpenAI's model currently lands eighth and fourteenth, behind several rivals. Even the makers admit nobody quite knows what makes a good decision model: it depends on the task, and a confident score can still be wrong.\n\n## Spot the sorting tasks in your week\n\nThis week, note every task where you read something and simply sort it: tickets, leads, requests, receipts. Those are the first jobs a fast decision AI could take over. Ask your IT or digital team whether such a tool is being tested, and which mistakes would be costly enough to keep a human check.",
+    "source": {
+      "name": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/openai-makes-its-jev-competitor-widely-available-as-decision-model-competition-heats-up/"
+    },
+    "i18n": {
+      "de": {
+        "headline": "KI wählt jetzt blitzschnell",
+        "hook": "Nicht jede KI-Aufgabe braucht eine lange, durchdachte Antwort. Oft reicht eine schnelle Wahl zwischen ein paar Optionen, und genau das bietet OpenAI jetzt allen Entwicklern an: eine KI, die sich in rund einer Zehntelsekunde entscheidet.",
+        "summaryPoints": [
+          "Die Decisions API von OpenAI ist ein Dienst, der eine Reihe von Optionen bekommt und schnell eine davon auswählt, samt Angabe, wie sicher er sich ist. Seit Donnerstag steht sie allen Kunden offen, berichtet TechCrunch.",
+          "Laut OpenAI sinkt die Antwortzeit von ein bis drei Sekunden auf etwa 100 bis 180 Millisekunden. In öffentlichen Ranglisten liegen Konkurrenzmodelle von Start-ups derzeit allerdings vorn.",
+          "Inzwischen versteht der Dienst auch Sprache und Bilder. Firmen wie Box, Ramp und Speak haben ihn früh getestet, und OpenAI macht damit seinen eigenen Sprachassistenten reaktionsschneller."
+        ],
+        "takeaway": "Ein großer Teil der KI-Arbeit im Alltag ist gar kein Schreiben, sondern Sortieren.",
+        "deepDiveMarkdown": "## Viele KI-Aufgaben sind eigentlich Sortierarbeit\n\nDenk an die Mails in einem Sammelpostfach: Ist das eine Beschwerde, eine Rechnung oder eine Verkaufschance? Ein Mensch entscheidet das in einer Sekunde. Ein Chatbot wie ChatGPT kann das auch, ist aber darauf gebaut, lange Antworten zu schreiben, und für so eine Mini-Aufgabe deshalb langsam und vergleichsweise teuer. Darum hat sich dieses Jahr eine neue Art von KI durchgesetzt: Decision Models, die nichts anderes tun, als aus einer kurzen Liste eine Option auszuwählen. OpenAI hat seine eigene Variante, die Decisions API, jetzt für alle Kunden geöffnet. Eine API ist die Schnittstelle, über die Entwickler eine KI in ihre eigene Software einbauen.\n\n## Ein schneller Auswähler mit Sicherheitswert\n\nMan gibt dem Modell eine Frage und mehrere mögliche Antworten, und es liefert seine Wahl plus einen Wert, wie sicher es sich ist. Ein neues Modell hat OpenAI dafür nicht trainiert, sondern nach eigenen Angaben sein bestehendes Modell ChatGPT Luna so umgebaut, dass es schneller und billiger läuft. Laut dem zuständigen Produktchef kommt eine Antwort, die früher ein bis drei Sekunden brauchte, jetzt in etwa 100 bis 180 Millisekunden zurück. Die Sprachlern-App Speak hat die Pause zwischen zwei Schritten nach eigener Aussage von 1,4 auf 0,13 Sekunden gedrückt. Die öffentliche Version versteht außerdem Sprache und Bilder.\n\n## Schnell heißt nicht automatisch gut\n\nOpenAI kommt spät in diesen Markt. Das Start-up TypeSafe hat die Kategorie mit seinem Modell Jev begründet, und in zwei unabhängigen Ranglisten landet OpenAIs Modell derzeit nur auf Platz acht und vierzehn, hinter mehreren Konkurrenten. Selbst die Anbieter räumen ein, dass niemand genau weiß, was ein gutes Decision Model ausmacht: Es hängt von der Aufgabe ab, und auch ein hoher Sicherheitswert kann danebenliegen.\n\n## Finde die Sortieraufgaben in deiner Woche\n\nNotier dir diese Woche jede Aufgabe, bei der du etwas liest und es nur einordnest: Tickets, Leads, Anfragen, Belege. Genau das sind die ersten Jobs, die eine schnelle Entscheidungs-KI übernehmen könnte. Frag bei deiner IT oder dem Digitalteam nach, ob so ein Werkzeug schon getestet wird und bei welchen Fehlern ein Mensch weiter draufschauen sollte."
+      }
+    }
+  },
+  {
+    "id": "pulse-2026-10-22-ai-beats-doctors-in-test",
+    "date": "2026-10-22T19:48:37.000Z",
+    "tag": "Benchmarks",
+    "priority": "normal",
+    "readTimeMinutes": 3,
+    "listenTimeMinutes": 3,
+    "hook": "Microsoft has built an AI system that works through tricky medical cases like a team of specialists. In tests on past patient cases it found the right diagnosis far more often than doctors, the company says, but it hasn't treated a single real patient yet.",
+    "headline": "AI beats doctors in a test",
+    "summaryPoints": [
+      "Microsoft's Diagnostic Orchestrator is a group of AI agents that question, order tests and debate like a panel of doctors. A study on it appeared Thursday in the journal Science, The Verge reports.",
+      "On hard cases from The New England Journal of Medicine it was right about 83 percent of the time, against roughly 36 percent for general doctors who could look things up. All cases were from the past.",
+      "Next comes a trial in a Boston hospital to see how it holds up with real patients. Microsoft hasn't said when or how it might become a product."
+    ],
+    "takeaway": "Several AIs checking each other can beat one brilliant AI working alone.",
+    "deepDiveMarkdown": "## A second opinion from a team of AIs\n\nWhen a case gets tricky at work, you rarely solve it alone: you pull in colleagues, ask questions, check facts, and argue until the picture is clear. Microsoft has copied that habit for medicine. Its Diagnostic Orchestrator is not one chatbot but a group of AI agents, meaning programs that work through a task step by step on their own. Together they act like a panel of doctors investigating a puzzling case. A study on the system appeared on Thursday in Science, one of the world's most respected journals.\n\n## Agents ask, order tests and argue\n\nThe system gets a case and does what a doctor would: it asks about symptoms and history, decides which tests are worth ordering, weighs possible explanations and only then commits to a diagnosis. On hundreds of difficult cases from The New England Journal of Medicine it reached about 83 percent accuracy. General doctors managed roughly 36 percent with reference books and 22 percent without. On emergency room cases from a Boston hospital it scored 80 percent against an average of 47 percent for physicians, and it usually got there with cheaper tests. Microsoft packed the cases into its own benchmark, a standard test for comparing systems, called SDBench, which it plans to release openly.\n\n## Old cases are not real patients\n\nEvery test used cases that had already been solved and written up. How the system copes with a stressed patient, missing records or a busy ward is still unknown, and Microsoft itself says it needs clinical validation. The study also ran on GPT-5 and doesn't include the newest AI models. A trial at Beth Israel Deaconess Medical Center should start in the next few months, but there's no date for a product.\n\n## Try the panel trick yourself\n\nThe idea behind the study works far beyond medicine: AI gets better when several roles check each other. Next time you use a chatbot for an important decision this week, ask it to answer first as an advocate, then as a critic, and finally to weigh both sides. Compare that with its first quick answer.",
+    "source": {
+      "name": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1016690/suleyman-microsoft-diagnostic-orchestrator-science-medical-superintelligence"
+    },
+    "i18n": {
+      "de": {
+        "headline": "KI schlägt Ärzte im Test",
+        "hook": "Microsoft hat ein KI-System gebaut, das knifflige medizinische Fälle wie ein Team aus Fachärzten durchspielt. In Tests mit alten Patientenfällen lag es laut Microsoft deutlich öfter richtig als Ärzte, echte Patienten hat es aber noch keine gesehen.",
+        "summaryPoints": [
+          "Der Diagnostic Orchestrator von Microsoft ist eine Gruppe von KI-Agents, die wie ein Ärztegremium nachfragen, Tests anordnen und abwägen. Eine Studie dazu erschien am Donnerstag in der Fachzeitschrift Science, berichtet The Verge.",
+          "Bei schweren Fällen aus dem New England Journal of Medicine lag das System in rund 83 Prozent richtig, Allgemeinärzte mit Nachschlagewerken in etwa 36 Prozent. Alle Fälle stammten aus der Vergangenheit.",
+          "Als Nächstes soll ein Test in einer Bostoner Klinik zeigen, wie es sich bei echten Patienten schlägt. Wann oder ob daraus ein Produkt wird, sagt Microsoft nicht."
+        ],
+        "takeaway": "Mehrere KIs, die sich gegenseitig prüfen, schlagen oft die eine Super-KI.",
+        "deepDiveMarkdown": "## Zweitmeinung von einem ganzen KI-Team\n\nWird ein Fall im Job kompliziert, löst du ihn selten allein: Du holst Kollegen dazu, stellst Fragen, prüfst Fakten und diskutierst, bis das Bild klar ist. Genau diese Gewohnheit hat Microsoft auf die Medizin übertragen. Der Diagnostic Orchestrator ist kein einzelner Chatbot, sondern eine Gruppe von KI-Agents, also Programmen, die eine Aufgabe selbstständig Schritt für Schritt abarbeiten. Gemeinsam treten sie auf wie ein Ärztegremium, das einen rätselhaften Fall untersucht. Eine Studie dazu erschien am Donnerstag in Science, einer der angesehensten Fachzeitschriften der Welt.\n\n## Agents fragen nach, ordnen Tests an, streiten\n\nDas System bekommt einen Fall und geht vor wie eine Ärztin: Es fragt nach Symptomen und Vorgeschichte, entscheidet, welche Untersuchungen sich lohnen, wägt mögliche Erklärungen ab und legt sich erst dann fest. Bei Hunderten schwierigen Fällen aus dem New England Journal of Medicine lag es in rund 83 Prozent richtig. Allgemeinärzte kamen mit Nachschlagewerken auf etwa 36 Prozent, ohne auf 22 Prozent. Bei Fällen aus der Notaufnahme einer Bostoner Klinik erreichte es 80 Prozent, die Ärzte im Schnitt 47 Prozent, meist mit günstigeren Tests. Die Fälle hat Microsoft in einem eigenen Benchmark gebündelt, also einem Standardtest zum Vergleich von Systemen. Er heißt SDBench und soll frei veröffentlicht werden.\n\n## Alte Akten sind keine echten Patienten\n\nGetestet wurde ausschließlich mit Fällen, die längst gelöst und dokumentiert waren. Wie das System mit gestressten Patienten, lückenhaften Unterlagen oder einer vollen Station zurechtkommt, ist offen, und Microsoft selbst spricht von nötiger klinischer Prüfung. Zudem lief die Studie mit GPT-5, die neuesten KI-Modelle fehlen. Ein Praxistest am Beth Israel Deaconess Medical Center soll in den nächsten Monaten beginnen, ein Termin für ein Produkt fehlt.\n\n## Probier den Gremiums-Trick selbst aus\n\nDie Idee hinter der Studie funktioniert weit über die Medizin hinaus: KI wird besser, wenn sich mehrere Rollen gegenseitig kontrollieren. Wenn du diese Woche einen Chatbot bei einer wichtigen Entscheidung nutzt, lass ihn erst als Befürworter antworten, dann als Kritiker und zum Schluss beide Seiten abwägen. Vergleich das mit seiner ersten schnellen Antwort."
       }
     }
   }
