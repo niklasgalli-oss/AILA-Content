@@ -1,7 +1,124 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-22T04:49:06+02:00",
+  "updatedAt": "2026-10-23T04:41:44+02:00",
   "days": [
+    {
+      "date": "2026-10-23",
+      "items": [
+        {
+          "id": "2026-10-23-1password-agent-sign-in",
+          "headline": "AI agents can sign in for you without seeing passwords",
+          "summary": "1Password now lets supported agents like Claude Duet, ChatGPT Work and Grok Bot log in once you approve on your own device. The password is filled in directly and never reaches the agent.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/"
+          },
+          "tag": "Tools",
+          "i18n": {
+            "de": {
+              "headline": "KI-Agents loggen sich ein, ohne dein Passwort zu sehen",
+              "summary": "Bei 1Password können unterstützte Agents wie Claude Duet, ChatGPT Work oder Grok Bot sich jetzt nach deiner Freigabe auf dem eigenen Gerät anmelden. Das Passwort sieht der Agent nie. Konten auf 1Password.eu gehen noch nicht."
+            }
+          }
+        },
+        {
+          "id": "2026-10-23-canva-craft-image-model",
+          "headline": "Canva launches its own image model built for design",
+          "summary": "Craft first plans the layout, then renders images up to 2K with readable text. It is live in Canva's Dream Lab and via API, and Canva says it ranks fourth on the DesignArena leaderboard.",
+          "source": {
+            "name": "Canva",
+            "url": "https://www.canva.com/newsroom/news/canva-craft/"
+          },
+          "tag": "Model Release",
+          "i18n": {
+            "de": {
+              "headline": "Canva startet ein eigenes Bildmodell für Designs",
+              "summary": "Craft plant zuerst das Layout und erzeugt dann Bilder bis 2K mit lesbarem Text. Es steckt in Dream Lab von Canva und ist per API nutzbar; im DesignArena-Ranking liegt es laut Canva auf Platz vier."
+            }
+          }
+        },
+        {
+          "id": "2026-10-23-openai-decisions-api",
+          "headline": "OpenAI's Decisions API makes quick app choices cheap",
+          "summary": "Now generally available, it answers yes/no, pick-one or rating questions for apps and agents, up to 10x faster than a regular GPT-6 Luna call. Input costs $0.10 per million tokens, output is free.",
+          "source": {
+            "name": "OpenAI",
+            "url": "https://openai.com/index/decisions-api"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "OpenAI macht schnelle App-Entscheidungen günstig",
+              "summary": "Die jetzt allgemein verfügbare API beantwortet Ja/Nein-, Auswahl- oder Bewertungsfragen für Apps und Agents, laut OpenAI bis zu 10x schneller als ein normaler GPT-6-Luna-Aufruf. Input kostet 0,10 $ pro Million Tokens."
+            }
+          }
+        },
+        {
+          "id": "2026-10-23-google-agent-compute-engine",
+          "headline": "Google gives each AI agent its own isolated mini computer",
+          "summary": "Agent Compute Engine runs every agent in a small, hardware-isolated virtual machine that pauses when idle. It already powers Gemini and should reach Google Cloud customers as a preview in the coming months.",
+          "source": {
+            "name": "Google Cloud",
+            "url": "https://cloud.google.com/blog/topics/ai-infrastructure/introducing-agent-compute-engine-and-expanded-agent-governance"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "Google gibt jedem KI-Agent einen eigenen Mini-Rechner",
+              "summary": "Die Agent Compute Engine startet jeden Agent in einer kleinen, per Hardware abgeschotteten virtuellen Maschine, die im Leerlauf pausiert. Sie läuft schon hinter Gemini; Cloud-Kunden sollen bald eine Preview bekommen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-23-openai-funding-report",
+          "headline": "OpenAI reportedly nears $30B raise at $1.25T value",
+          "summary": "According to media reports, UAE investors and Coatue lead the round, which is meant to bridge the time until a possible IPO. The deal is not final yet.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "OpenAI soll kurz vor einer 30-Mrd.-Runde stehen",
+              "summary": "Laut Medienberichten führen Investoren aus den VAE und Coatue die Runde bei 1,25 Billionen Dollar Bewertung an. Sie soll die Zeit bis zu einem möglichen Börsengang überbrücken und ist noch nicht abgeschlossen."
+            }
+          }
+        },
+        {
+          "id": "2026-10-23-deepseek-funding-report",
+          "headline": "DeepSeek reportedly raises about $15B after US ban",
+          "summary": "Bloomberg reports one of the largest funding rounds in China's history, with CATL and Tencent named as possible backers. It comes days after US civilian agencies were told to remove DeepSeek.",
+          "source": {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/2026/10/22/deepseek-reportedly-raises-15b-days-after-us-restrictions/"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "DeepSeek soll rund 15 Mrd. Dollar einsammeln",
+              "summary": "Laut Bloomberg ist es eine der größten Finanzierungsrunden in Chinas Geschichte, als mögliche Geldgeber gelten CATL und Tencent. Sie kommt Tage nachdem US-Bundesbehörden DeepSeek entfernen mussten."
+            }
+          }
+        },
+        {
+          "id": "2026-10-23-eu-ai-liability-debate",
+          "headline": "EU lawmakers clash over making AI firms liable for harm",
+          "summary": "In Thursday's European Parliament debate, Socialists and Greens called for a new AI liability law after the Commission dropped its draft, while the center-right stuck to simpler rules. It was a debate, not a vote.",
+          "source": {
+            "name": "Politico Europe",
+            "url": "https://www.politico.eu/article/ursula-von-der-leyen-coalition-fractures-over-need-for-ai-liability-rules/"
+          },
+          "tag": "Framework",
+          "i18n": {
+            "de": {
+              "headline": "EU-Parlament streitet über Haftung von KI-Firmen",
+              "summary": "In der Debatte am Donnerstag forderten Sozialdemokraten und Grüne ein neues KI-Haftungsgesetz, nachdem die Kommission ihren Entwurf zurückgezogen hatte. Mitte-rechts setzt auf Vereinfachung. Abgestimmt wurde nicht."
+            }
+          }
+        }
+      ]
+    },
     {
       "date": "2026-10-22",
       "items": [
@@ -724,142 +841,6 @@
             "de": {
               "headline": "Bundesregierung plant KI-Kooperation mit Nvidia",
               "summary": "Die Bundesregierung bereitet laut Medienberichten eine Kooperation mit Nvidia und deutschen Firmen vor, um KI in die Industrie zu bringen. Kanzler Merz trifft Nvidia-Chef Jensen Huang am Montag in Berlin."
-            }
-          }
-        }
-      ]
-    },
-    {
-      "date": "2026-10-16",
-      "items": [
-        {
-          "id": "2026-10-16-meta-muse-spark-open",
-          "headline": "Meta releases Muse Spark Open with open weights",
-          "summary": "Meta's new model has 816B parameters and a 1M-token context window and is built for coding and agent work. It is live on API platforms now and runs locally on two Mac Studios with M5 Ultra.",
-          "source": {
-            "name": "Meta AI",
-            "url": "https://research.meta.ai/blog/muse-spark-open"
-          },
-          "tag": "Model Release",
-          "priority": "breaking",
-          "i18n": {
-            "de": {
-              "headline": "Meta veröffentlicht Muse Spark Open mit Open Weights",
-              "summary": "Das neue Modell von Meta hat 816 Mrd. Parameter, ein Context Window von 1 Mio. Tokens und ist für Coding und Agents gebaut. Es läuft ab sofort über API-Plattformen und lokal auf zwei Mac Studios mit M5 Ultra."
-            }
-          }
-        },
-        {
-          "id": "2026-10-16-nvidia-nemotron-super-vl",
-          "headline": "Nvidia opens Nemotron 3.5 Super VL for business agents",
-          "summary": "The open 120B model reads text, images, charts and PDFs and is built for agents that run nonstop. Nvidia also shares training data and recipes, plus a 24 GB Bolt version for local PCs.",
-          "source": {
-            "name": "The Decoder",
-            "url": "https://the-decoder.com/nvidias-nemotron-3-5-super-vl-is-an-open-model-built-to-run-enterprise-ai-agents-nonstop/"
-          },
-          "tag": "Model Release",
-          "i18n": {
-            "de": {
-              "headline": "Nvidia gibt Nemotron 3.5 Super VL für Firmen-Agents frei",
-              "summary": "Das offene 120B-Modell versteht Text, Bilder, Diagramme und PDFs und ist für Agents gebaut, die rund um die Uhr laufen. Dazu gibt Nvidia Trainingsdaten, Rezepte und eine 24-GB-Version namens Bolt für lokale PCs frei."
-            }
-          }
-        },
-        {
-          "id": "2026-10-16-flux-3-image-klein",
-          "headline": "Freiburg's FLUX 3 Image Klein makes 4K images on your PC",
-          "summary": "Black Forest Labs released a 5.6B-parameter open weights model that creates and edits images in native 4K. With the INT8 build it runs on GeForce RTX cards with 8 GB of VRAM.",
-          "source": {
-            "name": "Black Forest Labs",
-            "url": "https://bfl.ai/blog/flux-3-image-klein"
-          },
-          "tag": "Model Release",
-          "pulseId": "pulse-2026-10-15-flux-3-klein-local-images",
-          "i18n": {
-            "de": {
-              "headline": "FLUX 3 Image Klein aus Freiburg: 4K-Bilder am eigenen PC",
-              "summary": "Black Forest Labs hat ein Open-Weights-Modell mit 5,6 Mrd. Parametern veröffentlicht, das Bilder nativ in 4K erzeugt und bearbeitet. Mit dem INT8-Build läuft es schon auf GeForce-RTX-Karten mit 8 GB VRAM."
-            }
-          }
-        },
-        {
-          "id": "2026-10-16-google-universal-cart",
-          "headline": "Google's Universal Cart gathers products from many shops",
-          "summary": "US users can now save items from different retailers in Search and the Gemini app in one cart. It alerts you to price drops and restocks and surfaces promo codes and card perks.",
-          "source": {
-            "name": "TechCrunch",
-            "url": "https://techcrunch.com/2026/10/15/googles-universal-cart-shopping-tool-launches-in-the-us/"
-          },
-          "tag": "Tools",
-          "pulseId": "pulse-2026-10-15-google-universal-cart",
-          "i18n": {
-            "de": {
-              "headline": "Googles Universal Cart sammelt Produkte aus vielen Shops",
-              "summary": "Nutzer in den USA können jetzt Produkte verschiedener Händler in der Google-Suche und der Gemini-App in einem Warenkorb sammeln. Er meldet Preissenkungen und wieder verfügbare Artikel und zeigt Rabattcodes."
-            }
-          }
-        },
-        {
-          "id": "2026-10-16-amazon-bee-frontier",
-          "headline": "Amazon's Bee launches a $75 wearable that remembers chats",
-          "summary": "Bee Frontier and the phone-mounted Bee Eclipse turn everyday conversations into summaries and to-dos. Raw audio is deleted after processing, and a $11.99 Pro plan adds Alexa+ and app links.",
-          "source": {
-            "name": "TechCrunch",
-            "url": "https://techcrunch.com/2026/10/15/amazons-bee-launches-two-new-personal-ai-devices-starting-at-75/"
-          },
-          "tag": "Hardware",
-          "i18n": {
-            "de": {
-              "headline": "Amazons Bee bringt Wearable für 75 $, das Gespräche merkt",
-              "summary": "Bee Frontier und das ans Smartphone geheftete Bee Eclipse machen aus Alltagsgesprächen Zusammenfassungen und To-dos. Rohaudio wird nach der Verarbeitung gelöscht; das Pro-Abo für 11,99 $ verbindet Alexa+ und Apps."
-            }
-          }
-        },
-        {
-          "id": "2026-10-16-ftc-subpoenas-openai-anthropic",
-          "headline": "FTC subpoenas OpenAI and Anthropic over safety incidents",
-          "summary": "The US consumer protection agency sent both labs demands of more than 50 pages for documents on security incidents, safeguards and marketing claims. It also plans to make top executives testify.",
-          "source": {
-            "name": "Axios",
-            "url": "https://www.axios.com/2026/10/15/ftc-openai-anthropic-ai-safety-investigation"
-          },
-          "tag": "Framework",
-          "i18n": {
-            "de": {
-              "headline": "US-Behörde FTC fordert Unterlagen von OpenAI und Anthropic",
-              "summary": "Die US-Verbraucherschutzbehörde verlangt von beiden Labs auf über 50 Seiten Dokumente zu Sicherheitsvorfällen, Schutzmaßnahmen und Werbeaussagen. Außerdem sollen Top-Manager aussagen."
-            }
-          }
-        },
-        {
-          "id": "2026-10-16-anthropic-q3-revenue",
-          "headline": "Anthropic reports $16.8B quarterly revenue before IPO",
-          "summary": "Anthropic told prospective investors Q3 revenue rose to $16.8B from $11.6B in Q2 and that it was profitable on an adjusted basis, CNBC reports. The IPO is reportedly slated for November.",
-          "source": {
-            "name": "CNBC",
-            "url": "https://www.cnbc.com/2026/10/15/anthropics-third-quarter-revenue-hits-16point8-billion-ipo.html"
-          },
-          "tag": "Framework",
-          "i18n": {
-            "de": {
-              "headline": "Anthropic meldet vor Börsengang 16,8 Mrd. $ Quartalsumsatz",
-              "summary": "Laut CNBC nannte Anthropic Investoren einen Q3-Umsatz von 16,8 Mrd. $ nach 11,6 Mrd. $ im Q2 und bereinigt einen Gewinn. Der Börsengang soll Berichten zufolge im November kommen."
-            }
-          }
-        },
-        {
-          "id": "2026-10-16-anthropic-metr-access",
-          "headline": "Anthropic gives outside testers employee-level access",
-          "summary": "Six staff from the nonprofit METR now get hardware, office space and internal access similar to Anthropic's own risk teams, and will publish their findings. SecureBio and Accenture's Faculty also review Claude.",
-          "source": {
-            "name": "Anthropic",
-            "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators"
-          },
-          "tag": "Framework",
-          "i18n": {
-            "de": {
-              "headline": "Anthropic lässt externe Prüfer wie Mitarbeitende ran",
-              "summary": "Sechs Fachleute der Non-Profit-Organisation METR erhalten Hardware, Büros und internen Zugang wie Anthropics eigene Risiko-Teams und veröffentlichen ihre Ergebnisse. Auch SecureBio und Faculty von Accenture prüfen Claude."
             }
           }
         }
