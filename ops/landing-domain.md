@@ -11,7 +11,7 @@ The site is published from the `/docs` folder on `main`. The public host is `htt
 - https://sapaude.app/nutzungsbedingungen/
 - https://sapaude.app/en/terms/
 
-Once GitHub Pages has that custom domain, `https://niklasgalli-oss.github.io/AILA-Content/...` redirects to the same path on `https://sapaude.app/...`. The `/AILA-Content` prefix is dropped. `www.sapaude.app` redirects to the apex.
+Once GitHub Pages has that custom domain, `https://niklasgalli-oss.github.io/Sapaude-Content/...` redirects to the same path on `https://sapaude.app/...`. The `/Sapaude-Content` prefix is dropped. `www.sapaude.app` redirects to the apex.
 
 ## Custom domain file
 
@@ -90,9 +90,9 @@ Source for the addresses: [Managing a custom domain for your GitHub Pages site](
 
 ## 3. Turn the domain on
 
-`docs/CNAME` is already `sapaude.app`. Pages settings should match it: repository **niklasgalli-oss/AILA-Content** → **Settings** → **Pages**, source **Deploy from a branch**, branch **main**, folder **/docs**, custom domain `sapaude.app` (the apex, not `www`).
+`docs/CNAME` is already `sapaude.app`. Leave that file as it is. Pages settings should match it: repository **niklasgalli-oss/Sapaude-Content** → **Settings** → **Pages**, source **Deploy from a branch**, branch **main**, folder **/docs**, custom domain `sapaude.app` (the apex, not `www`).
 
-From then on, `https://niklasgalli-oss.github.io/AILA-Content/privacy/` redirects to `https://sapaude.app/privacy/`, and the same for the imprint, `/en/`, and `/de/`. `/de/` on sapaude.app itself redirects to `https://sapaude.app/`.
+From then on, `https://niklasgalli-oss.github.io/Sapaude-Content/privacy/` redirects to `https://sapaude.app/privacy/`, and the same for the imprint, `/en/`, and `/de/`. `/de/` on sapaude.app itself redirects to `https://sapaude.app/`.
 
 4. Wait until GitHub shows the DNS check as good and a certificate is issued. That can take up to 24 hours. [Securing your GitHub Pages site with HTTPS](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https).
 5. Then turn on **Enforce HTTPS** and leave it on. This is required for `.app`: the TLD is HSTS-preloaded, so the host is unreachable until the certificate exists and HTTPS is enforced. The checkbox stays disabled until the certificate exists. Do not force it earlier. If it never appears, extra A, AAAA, or CNAME records are the usual cause: remove the domain in Pages, clean the DNS, and add `sapaude.app` again.
@@ -107,8 +107,8 @@ From then on, `https://niklasgalli-oss.github.io/AILA-Content/privacy/` redirect
 - https://sapaude.app/nutzungsbedingungen/
 - https://sapaude.app/en/terms/
 - https://www.sapaude.app/ redirects to https://sapaude.app/
-- https://niklasgalli-oss.github.io/AILA-Content/privacy/ redirects to https://sapaude.app/privacy/
-- https://niklasgalli-oss.github.io/AILA-Content/impressum/ redirects to https://sapaude.app/impressum/
+- https://niklasgalli-oss.github.io/Sapaude-Content/privacy/ redirects to https://sapaude.app/privacy/
+- https://niklasgalli-oss.github.io/Sapaude-Content/impressum/ redirects to https://sapaude.app/impressum/
 
 7. Send a test email to `support@sapaude.app`.
 
@@ -116,9 +116,9 @@ The app can keep the old `github.io` links once those redirects answer, includin
 
 ## 4. Absolute URLs
 
-Canonical, hreflang, Open Graph, Twitter, JSON-LD, `docs/sitemap.xml`, and the Sitemap line in `docs/robots.txt` use `https://sapaude.app`. The same host is on the privacy, imprint, and terms pages. Mail links stay `mailto:support@sapaude.app`. The website loads `https://sapaude.app/briefing.json`. `docs/pulse.json` and `docs/briefing.json` are copies of the root files. The app build that is live still requests `https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/pulse.json` and `https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/briefing.json`. Do not rename the repository until that app requests the `sapaude.app` paths.
+Canonical, hreflang, Open Graph, Twitter, JSON-LD, `docs/sitemap.xml`, and the Sitemap line in `docs/robots.txt` use `https://sapaude.app`. The same host is on the privacy, imprint, and terms pages. Mail links stay `mailto:support@sapaude.app`. The website loads `https://sapaude.app/briefing.json` and `https://sapaude.app/pulse.json`. `docs/pulse.json` and `docs/briefing.json` are copies of the root files. The repository feeds are `https://raw.githubusercontent.com/niklasgalli-oss/Sapaude-Content/main/pulse.json` and `https://raw.githubusercontent.com/niklasgalli-oss/Sapaude-Content/main/briefing.json`.
 
-`robots.txt` and `sitemap.xml` are host-root files. On the project URL they are under `/AILA-Content/`, which crawlers do not read as the `github.io` robots file. After the cutover they are `https://sapaude.app/robots.txt` and `https://sapaude.app/sitemap.xml`.
+`robots.txt` and `sitemap.xml` are host-root files. On the project URL they are under `/Sapaude-Content/`, which crawlers do not read as the `github.io` robots file. After the cutover they are `https://sapaude.app/robots.txt` and `https://sapaude.app/sitemap.xml`.
 
 ## App Store link
 

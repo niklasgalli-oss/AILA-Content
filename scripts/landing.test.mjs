@@ -52,7 +52,7 @@ test("custom domain is sapaude.app", () => {
     "docs/en/privacy/index.html",
     "docs/impressum/index.html"
   ]) {
-    assert.doesNotMatch(read(path), /github\.io\/AILA-Content/);
+    assert.doesNotMatch(read(path), /github\.io\/(?:AILA|Sapaude)-Content/);
     assert.doesNotMatch(read(path), /sapaude\.de/);
   }
   for (const path of walk(join(root, "docs")).filter((item) => /\.(html|css|js)$/.test(item))) {
@@ -62,6 +62,27 @@ test("custom domain is sapaude.app", () => {
   }
   assert.doesNotMatch(doc, /sapaude\.de/);
   assert.doesNotMatch(read("README.md"), /sapaude\.de/);
+});
+
+test("repository path is Sapaude-Content", () => {
+  const allowed = new Set(["scripts/landing.test.mjs"]);
+  const hits = [];
+  for (const path of walk(root)) {
+    const rel = path.slice(root.length + 1);
+    if (!/\.(md|mjs|js|json|yml|yaml|html|txt|xml|css)$/.test(rel)) continue;
+    if (allowed.has(rel)) continue;
+    if (read(rel).includes("AILA-Content")) hits.push(rel);
+  }
+  assert.deepEqual(hits, []);
+  const readme = read("README.md");
+  assert.match(readme, /niklasgalli-oss\/Sapaude-Content\/main\/pulse\.json/);
+  assert.match(readme, /niklasgalli-oss\/Sapaude-Content\/main\/briefing\.json/);
+  assert.match(read("ops/landing-domain.md"), /github\.io\/Sapaude-Content\/privacy\//);
+  assert.match(read("schema/pulse.schema.json"), /Sapaude-Content\/main\/schema\/pulse\.schema\.json/);
+  assert.match(read("schema/briefing.schema.json"), /Sapaude-Content\/main\/schema\/briefing\.schema\.json/);
+  assert.match(read("scripts/validate.mjs"), /Sapaude-Content-validator\/1\.0 \(\+https:\/\/github\.com\/niklasgalli-oss\/Sapaude-Content\)/);
+  assert.equal(read("docs/CNAME").trim(), "sapaude.app");
+  assert.doesNotMatch(read(".github/workflows/validate-pulse.yml"), /AILA-Content/);
 });
 
 test("published feeds match the repo root", () => {
@@ -433,7 +454,7 @@ test("sapaude wordmark, claims, and app mismatches", () => {
   assert.match(read("docs/sitemap.xml"), /https:\/\/sapaude\.app\/en\/support\//);
 
   function visible(html) {
-    const stripped = html.replace(/https?:\/\/\S*AILA-Content\S*/g, "");
+    const stripped = html.replace(/https?:\/\/\S*(?:AILA|Sapaude)-Content\S*/g, "");
     const bits = [...stripped.matchAll(/(?:content|aria-label)="([^"]*)"/g)].map((m) => m[1]);
     const titles = [...stripped.matchAll(/<title>([^<]*)<\/title>/g)].map((m) => m[1]);
     const body = stripped

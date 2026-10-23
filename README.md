@@ -1,11 +1,11 @@
 # Sapaude
 
-Content feed for [Sapaude](https://sapaude.app/), an Expo / React Native app for learning about AI. This repository holds the stories the app loads. The app code lives in the private app repo. The feed URLs below keep the repository path `AILA-Content`.
+Content feed for [Sapaude](https://sapaude.app/), an Expo / React Native app for learning about AI. This repository holds the stories the app loads. The app code lives in the private app repo. The repository is [niklasgalli-oss/Sapaude-Content](https://github.com/niklasgalli-oss/Sapaude-Content).
 
 The app fetches its feeds at runtime. The daily pulse the current app build requests is:
 
 ```
-https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/pulse.json
+https://raw.githubusercontent.com/niklasgalli-oss/Sapaude-Content/main/pulse.json
 ```
 
 The same file is published for the website, with no repository name in the address:
@@ -14,7 +14,7 @@ The same file is published for the website, with no repository name in the addre
 https://sapaude.app/pulse.json
 ```
 
-`docs/pulse.json` is a byte-for-byte copy of the root file. GitHub Pages serves only `docs/`, so that copy is what `https://sapaude.app/pulse.json` returns. Keep the two files identical. Do not rename this repository until the app requests the `sapaude.app` address. A rename breaks `raw.githubusercontent.com/niklasgalli-oss/AILA-Content/...` and `https://niklasgalli-oss.github.io/AILA-Content/...`.
+`docs/pulse.json` is a byte-for-byte copy of the root file. GitHub Pages serves only `docs/`, so that copy is what `https://sapaude.app/pulse.json` returns. Keep the two files identical. `docs/CNAME` stays `sapaude.app`. Pages keeps the custom domain `sapaude.app`, branch `main`, folder `/docs`.
 
 An AI news bot refreshes `pulse.json`. The published file keeps one timestamp per calendar day. The app shows one briefing package that day. Each entry is a `DailyPulseItem`. English is the primary language in the top-level fields. German copy lives under `i18n.de`.
 
@@ -105,7 +105,7 @@ In English fields the same words are ordinary lowercase nouns (`agent`, `token`,
 The app also fetches a short daily briefing. The current app build requests:
 
 ```
-https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/briefing.json
+https://raw.githubusercontent.com/niklasgalli-oss/Sapaude-Content/main/briefing.json
 ```
 
 The website publishes the same file at `https://sapaude.app/briefing.json` (`docs/briefing.json`, kept identical to the root file). The product page loads that address.
