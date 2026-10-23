@@ -227,7 +227,7 @@ export async function fetchHttpStatus(url) {
       signal: AbortSignal.timeout(20000),
       headers: {
         accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "user-agent": "AILA-Content-validator/1.0 (+https://github.com/niklasgalli-oss/AILA-Content)",
+        "user-agent": "Sapaude-Content-validator/1.0 (+https://github.com/niklasgalli-oss/Sapaude-Content)",
       },
     });
     await response.body?.cancel();

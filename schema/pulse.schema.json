@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/schema/pulse.schema.json",
+  "$id": "https://raw.githubusercontent.com/niklasgalli-oss/Sapaude-Content/main/schema/pulse.schema.json",
   "title": "AILA Daily Pulse",
   "description": "Rolling list of DailyPulseItem objects fetched by the AILA app. English is canonical. German lives under i18n.de. At most 12 items. Ids and source URLs are never reused. Dates are not in the future.",
   "type": "array",

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/niklasgalli-oss/AILA-Content/main/schema/briefing.schema.json",
+  "$id": "https://raw.githubusercontent.com/niklasgalli-oss/Sapaude-Content/main/schema/briefing.schema.json",
   "title": "AILA Daily Briefing",
   "description": "Rolling daily briefing fetched by the AILA app. English is canonical. German lives under i18n.de. At most 7 days, newest first, with 6 to 8 items each day.",
   "type": "object",
